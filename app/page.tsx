@@ -1,21 +1,19 @@
 import Header from '@/components/Header';
-import Hero from '@/components/Hero';
-import ParadigmShift from '@/components/ParadigmShift';
-import SolutionsGrid from '@/components/SolutionsGrid';
-import FleetShowcase from '@/components/FleetShowcase';
-import ProprietaryTech from '@/components/ProprietaryTech';
-import LeadGenFooter from '@/components/LeadGenFooter';
+import HeroSlider from '@/components/HeroSlider';
+import ProductsShowcase from '@/components/ProductsShowcase';
+import AutonomousService from '@/components/AutonomousService';
+import CoreInfrastructure from '@/components/CoreInfrastructure';
+import SimpleLeadGen from '@/components/SimpleLeadGen';
 
 export default function Page() {
   return (
-    <main className="flex min-h-screen flex-col overflow-x-hidden">
+    <main className="flex min-h-screen flex-col overflow-x-hidden bg-white">
       <Header />
-      <Hero />
-      <ParadigmShift />
-      <SolutionsGrid />
-      <FleetShowcase />
-      <ProprietaryTech />
-      <LeadGenFooter />
+      <HeroSlider />
+      <ProductsShowcase />
+      <AutonomousService />
+      <CoreInfrastructure />
+      <SimpleLeadGen />
     </main>
   );
 }
