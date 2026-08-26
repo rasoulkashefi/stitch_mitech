@@ -1,55 +1,103 @@
-import React from 'react';
+"use client";
+
+import React, { useState } from 'react';
+import { ArrowUpLeft } from 'lucide-react';
+
+const products = [
+  {
+    name: 'MOBI ONE',
+    title: 'ویلچر هوشمند همراه شما',
+    image: '/images/product-wheelchair.png',
+    category: 'شخصی',
+    copy: 'حرکت روان و مستقل، برای هر روز زندگی.',
+  },
+  {
+    name: 'MOBI PRO',
+    title: 'قدرت بیشتر، آزادی بیشتر',
+    image: '/images/hero-mobility.png',
+    category: 'حرفه‌ای',
+    copy: 'تجربه‌ای تازه از کنترل و اطمینان.',
+  },
+  {
+    name: 'FLEET',
+    title: 'ناوگان خدمات خودران',
+    image: '/images/fleet-service.png',
+    category: 'سازمانی',
+    copy: 'تجربه‌ای هوشمند برای فضاهای پرتردد.',
+  },
+];
+
+const filters = ['همه', 'شخصی', 'حرفه‌ای', 'سازمانی'];
 
 export default function ProductsShowcase() {
-  const products = [
-    {
-      id: 'wheelchair',
-      title: 'ویلچر برقی خودران',
-      description: 'طراحی ارگونومیک با قابلیت مسیریابی خودکار و کنترل هوشمند از طریق اپلیکیشن موبایل.',
-      image: 'https://images.unsplash.com/photo-1571008887538-b36bb32f4571?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', // placeholder for wheelchair
-    },
-    {
-      id: 'cargo-bot',
-      title: 'ربات باربر تعقیب‌کننده',
-      description: 'دستیار هوشمند برای حمل بارهای سنگین در محیط‌های فروشگاهی و فرودگاهی با قابلیت دنبال کردن کاربر.',
-      image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', // placeholder for robot
-    },
-    {
-      id: 'smart-stroller',
-      title: 'کالسکه هوشمند خانواده',
-      description: 'ترکیبی از ایمنی و تکنولوژی برای حمل راحت کودکان و خریدها در مجتمع‌های تجاری بزرگ.',
-      image: 'https://images.unsplash.com/photo-1544253303-34e872cffb4d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', // placeholder for stroller/family
-    }
-  ];
+  const [filter, setFilter] = useState('همه');
+  const visibleProducts =
+    filter === 'همه' ? products : products.filter((p) => p.category === filter);
 
   return (
-    <section className="w-full bg-white py-24">
-      <div className="mx-auto max-w-[1440px] px-4 md:px-8 flex flex-col gap-12">
-        <div className="text-center">
-          <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900">
-            محصولات هوشمند ام. آی. تک.
+    <section id="products" className="mx-auto max-w-7xl px-5 py-24 lg:px-8">
+      {/* Header */}
+      <div className="flex flex-wrap items-end justify-between gap-6">
+        <div>
+          <p className="mb-3 text-sm font-bold text-emerald-600">راهکارهای mitech</p>
+          <h2 className="text-4xl font-bold text-slate-900 lg:text-5xl">
+            برای هر مسیر،
+            <br />
+            <span className="text-slate-500">یک راهکار بهتر.</span>
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-4">
-          {products.map((product) => (
-            <div key={product.id} className="bg-slate-50 rounded-2xl overflow-hidden border border-slate-100 hover:shadow-xl transition-shadow duration-300 flex flex-col">
-              <div 
-                className="h-64 w-full bg-cover bg-center"
-                style={{ backgroundImage: `url('${product.image}')` }}
-              ></div>
-              <div className="p-8 flex flex-col flex-1 gap-4">
-                <h3 className="text-2xl font-bold text-slate-800">{product.title}</h3>
-                <p className="text-slate-600 text-base leading-relaxed flex-1">
-                  {product.description}
-                </p>
-                <button className="w-full mt-4 bg-white border-2 border-blue-700 text-blue-700 hover:bg-blue-700 hover:text-white font-bold py-3 rounded-xl transition-colors">
-                  جزئیات و خرید
-                </button>
-              </div>
-            </div>
+        {/* Filter Tabs */}
+        <div className="flex gap-2 rounded-full bg-slate-100 p-1">
+          {filters.map((item) => (
+            <button
+              key={item}
+              onClick={() => setFilter(item)}
+              className={`rounded-full px-4 py-2 text-xs font-bold transition-colors ${
+                filter === item
+                  ? 'bg-blue-900 text-white'
+                  : 'text-slate-500 hover:text-slate-900'
+              }`}
+            >
+              {item}
+            </button>
           ))}
         </div>
+      </div>
+
+      {/* Products Grid */}
+      <div className="mt-12 grid gap-5 md:grid-cols-3">
+        {visibleProducts.map((product, index) => (
+          <article
+            key={product.name}
+            className={`group overflow-hidden rounded-2xl transition-shadow duration-300 hover:shadow-md ${
+              index === 0
+                ? 'bg-blue-900 text-white'
+                : 'bg-slate-50'
+            }`}
+          >
+            <div className="aspect-[1.15] overflow-hidden">
+              <img
+                src={product.image}
+                alt={product.title}
+                className="size-full object-cover transition duration-700 group-hover:scale-105"
+              />
+            </div>
+            <div className="p-6">
+              <p className="mb-2 text-xs font-bold tracking-[.2em] text-emerald-500">
+                {product.name}
+              </p>
+              <h3 className="text-xl font-bold">{product.title}</h3>
+              <p className="mt-3 text-sm leading-6 opacity-70">{product.copy}</p>
+              <div className="mt-6 flex items-center justify-between">
+                <span className="text-xs opacity-60">{product.category}</span>
+                <span className="grid size-9 place-items-center rounded-full border border-current/20 hover:bg-current/5 transition-colors cursor-pointer">
+                  <ArrowUpLeft size={17} />
+                </span>
+              </div>
+            </div>
+          </article>
+        ))}
       </div>
     </section>
   );
