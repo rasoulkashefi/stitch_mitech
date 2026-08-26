@@ -28,7 +28,7 @@ export default function Blog() {
         <article className="group">
           <div className="overflow-hidden rounded-2xl bg-slate-100">
             <img
-              src="/images/hero-mobility.png"
+              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80"
               alt="آینده حمل‌ونقل هوشمند"
               className="aspect-[1.4] w-full object-cover grayscale transition duration-500 group-hover:scale-105 group-hover:grayscale-0"
             />
@@ -42,7 +42,7 @@ export default function Blog() {
         <article className="group">
           <div className="overflow-hidden rounded-2xl bg-slate-100">
             <img
-              src="/images/fleet-service.png"
+              src="https://images.unsplash.com/photo-1473163928189-364b2c4e1135?w=600&q=80"
               alt="فضاهای هوشمند"
               className="aspect-[1.4] w-full object-cover grayscale transition duration-500 group-hover:scale-105 group-hover:grayscale-0"
             />

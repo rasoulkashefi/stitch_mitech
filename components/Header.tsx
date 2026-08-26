@@ -24,13 +24,6 @@ export default function Header() {
 
   return (
     <>
-      {/* Top Announcement Bar */}
-      <div className="bg-emerald-600 px-5 py-2 text-center text-xs font-bold text-white">
-        مشاوره تخصصی رایگان برای انتخاب راهکار مناسب شما{' '}
-        <a href="#contact" className="mr-2 underline underline-offset-4">
-          همین حالا تماس بگیرید
-        </a>
-      </div>
 
       <header
         className={`sticky top-0 z-50 transition-all duration-300 ${

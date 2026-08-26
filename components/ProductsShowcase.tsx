@@ -7,56 +7,67 @@ const products = [
   {
     name: 'MOBI ONE',
     title: 'ویلچر هوشمند همراه شما',
-    image: '/images/product-wheelchair.png',
+    image: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=700&q=80',
     category: 'شخصی',
     copy: 'حرکت روان و مستقل، برای هر روز زندگی.',
   },
   {
     name: 'MOBI PRO',
     title: 'قدرت بیشتر، آزادی بیشتر',
-    image: '/images/hero-mobility.png',
-    category: 'حرفه‌ای',
+    image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=700&q=80',
+    category: 'تجاری',
     copy: 'تجربه‌ای تازه از کنترل و اطمینان.',
   },
   {
     name: 'FLEET',
     title: 'ناوگان خدمات خودران',
-    image: '/images/fleet-service.png',
+    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=700&q=80',
     category: 'سازمانی',
     copy: 'تجربه‌ای هوشمند برای فضاهای پرتردد.',
   },
+  {
+    name: 'REHAB',
+    title: 'تجهیزات توانبخشی هوشمند',
+    image: 'https://images.unsplash.com/photo-1576765608866-5b51046452be?w=700&q=80',
+    category: 'شخصی',
+    copy: 'سیستم‌های کنترلی دقیق برای توانبخشی بهتر.',
+  },
 ];
 
-const filters = ['همه', 'شخصی', 'حرفه‌ای', 'سازمانی'];
+const filters = ['همه', 'شخصی', 'تجاری', 'سازمانی'];
 
 export default function ProductsShowcase() {
   const [filter, setFilter] = useState('همه');
+
   const visibleProducts =
     filter === 'همه' ? products : products.filter((p) => p.category === filter);
 
   return (
     <section id="products" className="mx-auto max-w-7xl px-5 py-24 lg:px-8">
-      {/* Header */}
-      <div className="flex flex-wrap items-end justify-between gap-6">
-        <div>
-          <p className="mb-3 text-sm font-bold text-emerald-600">راهکارهای mitech</p>
-          <h2 className="text-4xl font-bold text-slate-900 lg:text-5xl">
+
+      {/* Section Header */}
+      <div className="mb-10 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+
+        {/* Title – first in DOM = right side in RTL */}
+        <div className="text-right">
+          <p className="mb-2 text-sm font-bold text-emerald-600">راهکارهای mitech</p>
+          <h2 className="text-4xl font-bold text-slate-900 lg:text-5xl leading-tight">
             برای هر مسیر،
             <br />
-            <span className="text-slate-500">یک راهکار بهتر.</span>
+            <span className="text-slate-400">یک راهکار بهتر.</span>
           </h2>
         </div>
 
-        {/* Filter Tabs */}
-        <div className="flex gap-2 rounded-full bg-slate-100 p-1">
+        {/* Filter Buttons – second in DOM = left side in RTL */}
+        <div className="flex flex-wrap gap-2">
           {filters.map((item) => (
             <button
               key={item}
               onClick={() => setFilter(item)}
-              className={`rounded-full px-4 py-2 text-xs font-bold transition-colors ${
+              className={`rounded-full px-5 py-2 text-sm font-bold transition-colors duration-200 ${
                 filter === item
-                  ? 'bg-blue-900 text-white'
-                  : 'text-slate-500 hover:text-slate-900'
+                  ? 'bg-blue-900 text-white shadow-sm'
+                  : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
               }`}
             >
               {item}
@@ -66,33 +77,38 @@ export default function ProductsShowcase() {
       </div>
 
       {/* Products Grid */}
-      <div className="mt-12 grid gap-5 md:grid-cols-3">
-        {visibleProducts.map((product, index) => (
+      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {visibleProducts.map((product) => (
           <article
             key={product.name}
-            className={`group overflow-hidden rounded-2xl transition-shadow duration-300 hover:shadow-md ${
-              index === 0
-                ? 'bg-blue-900 text-white'
-                : 'bg-slate-50'
-            }`}
+            className="group flex flex-col overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm hover:-translate-y-1 hover:shadow-xl transition-all duration-300"
           >
-            <div className="aspect-[1.15] overflow-hidden">
+            {/* Product Image */}
+            <div className="aspect-[1.05] overflow-hidden">
               <img
                 src={product.image}
                 alt={product.title}
-                className="size-full object-cover transition duration-700 group-hover:scale-105"
+                className="size-full object-cover transition duration-500 group-hover:scale-105"
               />
             </div>
-            <div className="p-6">
-              <p className="mb-2 text-xs font-bold tracking-[.2em] text-emerald-500">
-                {product.name}
-              </p>
-              <h3 className="text-xl font-bold">{product.title}</h3>
-              <p className="mt-3 text-sm leading-6 opacity-70">{product.copy}</p>
-              <div className="mt-6 flex items-center justify-between">
-                <span className="text-xs opacity-60">{product.category}</span>
-                <span className="grid size-9 place-items-center rounded-full border border-current/20 hover:bg-current/5 transition-colors cursor-pointer">
-                  <ArrowUpLeft size={17} />
+
+            {/* Card Body */}
+            <div className="flex flex-1 flex-col justify-between p-5">
+              <div>
+                <p className="mb-1.5 text-xs font-bold tracking-widest text-emerald-600 uppercase">
+                  {product.name}
+                </p>
+                <h3 className="text-lg font-bold text-slate-900">{product.title}</h3>
+                <p className="mt-2 text-sm leading-6 text-slate-500">{product.copy}</p>
+              </div>
+
+              {/* Footer */}
+              <div className="mt-5 flex items-center justify-between">
+                <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-500">
+                  {product.category}
+                </span>
+                <span className="grid size-9 place-items-center rounded-full border border-slate-200 text-slate-400 transition-colors duration-200 group-hover:border-blue-900 group-hover:bg-blue-900 group-hover:text-white">
+                  <ArrowUpLeft size={16} />
                 </span>
               </div>
             </div>

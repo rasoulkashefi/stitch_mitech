@@ -2,7 +2,7 @@ import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import StatsBar from '@/components/StatsBar';
 import ProductsShowcase from '@/components/ProductsShowcase';
-import Technology from '@/components/Technology';
+import FeaturesBento from '@/components/FeaturesBento';
 import Experience from '@/components/Experience';
 import Enterprise from '@/components/Enterprise';
 import Story from '@/components/Story';
@@ -19,7 +19,7 @@ export default function Page() {
       <Hero />
       <StatsBar />
       <ProductsShowcase />
-      <Technology />
+      <FeaturesBento />
       <Experience />
       <Enterprise />
       <Story />

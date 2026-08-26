@@ -34,41 +34,43 @@ export default function Hero() {
       {/* Content */}
       <div className="relative z-10 mx-auto max-w-7xl px-5 lg:px-8 w-full">
         <div className="max-w-2xl text-white">
-          <p className="mb-6 flex items-center gap-3 text-sm font-bold text-emerald-400">
+          {/* Eyebrow - brighter green for better contrast */}
+          <p className="mb-6 flex items-center gap-3 text-sm font-semibold text-white/70">
             <span className="h-px w-10 bg-emerald-400" />
             پلتفرم جامع رباتیک و توانبخشی ام. آی. تک.
           </p>
 
-          <h1 className="text-balance text-5xl font-bold leading-[1.2] lg:text-7xl">
-            آزادی در حرکت؛
+          {/* H1 - fully white, only accent word is green */}
+          <h1 className="text-balance text-5xl font-bold leading-[1.2] lg:text-7xl text-white">
+            <span className="text-emerald-400">آزادی</span> در حرکت؛
             <br />
-            <span className="text-emerald-400">با ربات‌های خودران</span>
+            با ربات‌های خودران
           </h1>
 
-          <p className="mt-7 max-w-lg text-pretty text-lg leading-8 text-white/80">
-            تجربه‌ای امن و روان از جابه‌جایی. تولیدکننده برتر کنترلرهای متحرک، کالسکه هوشمند خانواده و تجهیزات توانبخشی؛ ترکیبی از استقلال برای کاربران خانگی و راهکارهای نوین حمل‌ونقل برای مال‌ها و فرودگاه‌ها.
+          {/* Description - tighter max-width for better line length */}
+          <p className="mt-7 max-w-md text-base leading-8 text-white/70">
+            تجربه‌ای امن، روان و مستقل از جابه‌جایی. ارائه‌دهنده راهکارهای نوین رباتیک و تجهیزات توانبخشی هوشمند؛ از افزایش استقلال کاربران خانگی تا حمل‌ونقل پیشرفته در فرودگاه‌ها و مجتمع‌های تجاری.
           </p>
 
+          {/* CTAs */}
           <div className="mt-9 flex flex-wrap gap-3">
             <a
               href="#products"
-              className="flex items-center gap-2 rounded-full bg-emerald-600 px-6 py-3.5 font-bold text-white hover:bg-emerald-500 transition-colors"
+              className="flex items-center gap-2 rounded-full bg-emerald-600 px-6 py-3.5 font-bold text-white hover:bg-emerald-500 transition-colors shadow-lg shadow-emerald-900/30"
             >
               مشاهده محصولات
               <ArrowLeft size={17} />
             </a>
             <a
               href="#enterprise"
-              className="flex items-center gap-2 rounded-full border border-white/35 px-6 py-3.5 font-bold text-white hover:bg-white/10 transition-colors"
+              className="flex items-center gap-2 rounded-full border border-white/30 px-6 py-3.5 font-bold text-white hover:bg-white/10 transition-colors"
             >
-              راهکارهای حمل‌ونقل سازمانی
+              برای سازمان‌ها
             </a>
           </div>
         </div>
 
-        <div className="absolute bottom-8 left-8 hidden text-xs text-white/60 lg:block">
-          برای انسان‌ها، نه فقط ماشین‌ها
-        </div>
+
       </div>
     </section>
   );
