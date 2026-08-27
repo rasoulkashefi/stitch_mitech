@@ -1,72 +1,112 @@
 import React from 'react';
-import { Clock3, ArrowLeft } from 'lucide-react';
+import { ArrowLeft } from 'lucide-react';
+
+interface BlogPost {
+  category: string;
+  date: string;
+  title: string;
+  image: string;
+  imageAlt: string;
+}
+
+const posts: BlogPost[] = [
+  {
+    category: 'راهنمای خرید',
+    date: '۱۵ مرداد ۱۴۰۴',
+    title: '۵ نکته کلیدی برای انتخاب ویلچر برقی هوشمند مناسب شما',
+    image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&q=80',
+    imageAlt: 'ویلچر برقی هوشمند',
+  },
+  {
+    category: 'راهکار سازمانی',
+    date: '۲ شهریور ۱۴۰۴',
+    title: 'چگونه فناوری خودران (AMaaS) هزینه‌های لجستیک فرودگاهی را کاهش می‌دهد؟',
+    image: 'https://images.unsplash.com/photo-1473163928189-364b2c4e1135?w=800&q=80',
+    imageAlt: 'حمل‌ونقل خودران در فرودگاه',
+  },
+  {
+    category: 'فناوری و آینده',
+    date: '۱۰ شهریور ۱۴۰۴',
+    title: 'آینده حمل‌ونقل توانیابان؛ تعامل بینایی ماشین و رباتیک',
+    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80',
+    imageAlt: 'رباتیک و بینایی ماشین',
+  },
+];
 
 export default function Blog() {
   return (
-    <section className="mx-auto max-w-7xl px-5 py-24 lg:px-8">
-      {/* Header */}
-      <div className="flex flex-wrap items-end justify-between gap-6">
+    <section
+      dir="rtl"
+      className="mx-auto max-w-7xl px-5 py-24 lg:px-8 font-[Vazirmatn,sans-serif]"
+    >
+      {/* ── Section Header ── */}
+      <div className="mb-12 flex flex-wrap items-end justify-between gap-6">
         <div>
-          <p className="mb-3 text-sm font-bold text-emerald-600">مجله mitech</p>
-          <h2 className="text-4xl font-bold text-slate-900">
-            ایده‌هایی برای
-            <br />
-            <span className="text-slate-500">حرکت رو به جلو.</span>
+          <span className="inline-block rounded-full border border-emerald-200 bg-emerald-50 px-4 py-1.5 text-sm font-bold text-emerald-600 tracking-wide">
+            مجله فناوری ام. آی. تک.
+          </span>
+          <h2 className="mt-4 text-3xl font-extrabold text-blue-950 lg:text-4xl">
+            ایده‌هایی برای حرکت رو به جلو.
           </h2>
         </div>
+
         <a
-          href="#contact"
-          className="flex items-center gap-2 font-bold text-blue-900 hover:text-blue-700 transition-colors"
+          href="#blog"
+          className="group inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-5 py-2.5 text-sm font-bold text-blue-900 shadow-sm transition-all hover:border-blue-200 hover:shadow-md hover:text-blue-700"
         >
-          مشاهده همه مطالب
-          <ArrowLeft size={16} />
+          مشاهده همه مقالات
+          <ArrowLeft
+            size={16}
+            className="transition-transform group-hover:-translate-x-1"
+          />
         </a>
       </div>
 
-      {/* Blog Grid */}
-      <div className="mt-12 grid gap-5 md:grid-cols-3">
-        <article className="group">
-          <div className="overflow-hidden rounded-2xl bg-slate-100">
-            <img
-              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80"
-              alt="آینده حمل‌ونقل هوشمند"
-              className="aspect-[1.4] w-full object-cover grayscale transition duration-500 group-hover:scale-105 group-hover:grayscale-0"
-            />
-          </div>
-          <p className="mt-5 text-xs font-bold text-emerald-600">فناوری و آینده</p>
-          <h3 className="mt-2 text-xl font-bold leading-8 text-slate-900">
-            چرا آینده حمل‌ونقل، انسانی‌تر خواهد بود؟
-          </h3>
-        </article>
-
-        <article className="group">
-          <div className="overflow-hidden rounded-2xl bg-slate-100">
-            <img
-              src="https://images.unsplash.com/photo-1473163928189-364b2c4e1135?w=600&q=80"
-              alt="فضاهای هوشمند"
-              className="aspect-[1.4] w-full object-cover grayscale transition duration-500 group-hover:scale-105 group-hover:grayscale-0"
-            />
-          </div>
-          <p className="mt-5 text-xs font-bold text-emerald-600">راهکار سازمانی</p>
-          <h3 className="mt-2 text-xl font-bold leading-8 text-slate-900">
-            ساختن فضاهایی که برای همه قابل دسترس‌اند
-          </h3>
-        </article>
-
-        <article className="rounded-2xl bg-blue-900 p-7 text-white shadow-sm">
-          <Clock3 className="text-emerald-400" />
-          <p className="mt-14 text-xs font-bold text-emerald-400">راهنمای mitech</p>
-          <h3 className="mt-3 text-xl font-bold leading-8">
-            ۵ نکته برای انتخاب راهکار حرکتی مناسب
-          </h3>
-          <a
-            href="#contact"
-            className="mt-7 inline-flex items-center gap-2 text-sm font-bold text-white hover:text-emerald-400 transition-colors"
+      {/* ── Blog Cards Grid ── */}
+      <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+        {posts.map((post, i) => (
+          <article
+            key={i}
+            className="group cursor-pointer overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
           >
-            مطالعه راهنما
-            <ArrowLeft size={15} />
-          </a>
-        </article>
+            {/* Image */}
+            <div className="h-48 overflow-hidden bg-slate-100">
+              <img
+                src={post.image}
+                alt={post.imageAlt}
+                className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+            </div>
+
+            {/* Content */}
+            <div className="p-6">
+              {/* Category + Date row */}
+              <div className="flex items-center justify-between">
+                <span className="text-sm font-semibold text-emerald-600">
+                  {post.category}
+                </span>
+                <span className="text-sm text-slate-400">{post.date}</span>
+              </div>
+
+              {/* Title */}
+              <h3 className="mb-5 mt-3 text-lg font-bold leading-8 text-slate-900 transition-colors group-hover:text-blue-700">
+                {post.title}
+              </h3>
+
+              {/* Divider */}
+              <div className="mb-5 h-px bg-slate-100" />
+
+              {/* Read-more link */}
+              <a
+                href="#blog"
+                className="inline-flex items-center gap-2 text-sm font-medium text-blue-700 transition-transform group-hover:-translate-x-1"
+              >
+                مطالعه مقاله
+                <ArrowLeft className="h-4 w-4" />
+              </a>
+            </div>
+          </article>
+        ))}
       </div>
     </section>
   );
