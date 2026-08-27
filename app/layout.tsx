@@ -4,8 +4,14 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'میتک | بازآفرینی تجربه تحرک',
-  description: 'پلتفرم یکپارچه AMaaS',
+  title: 'فناوری هوشمند میکائیل | پلتفرم جامع رباتیک و حمل‌ونقل خودران',
+  description:
+    'شرکت دانش‌بنیان فناوری هوشمند میکائیل؛ ارائه‌دهنده راهکارهای نوین حمل‌ونقل خودران (AMaaS)، تولیدکننده ویلچر برقی هوشمند، ربات باربر و پیشرفته‌ترین تجهیزات کنترلی برای استقلال فردی و هوشمندسازی سازمانی.',
+  icons: {
+    icon: '/logo/mitech-icon.png',
+    shortcut: '/logo/mitech-icon.png',
+    apple: '/logo/mitech-icon.png',
+  },
 };
 
 export default function RootLayout({

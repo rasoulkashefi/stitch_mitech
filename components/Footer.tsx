@@ -1,5 +1,5 @@
-import React from 'react';
-import { Cpu, Phone, Mail, MapPin, Link2, Globe, X } from 'lucide-react';
+import Image from 'next/image';
+import { Phone, Mail, MapPin, Link2, Globe, X } from 'lucide-react';
 
 const products = [
   { label: 'ویلچر برقی خودران', href: '#products' },
@@ -36,15 +36,14 @@ export default function Footer() {
 
           {/* Column 1 — Brand (col-span-4) */}
           <div className="lg:col-span-4">
-            {/* Logotype */}
-            <div className="flex items-center gap-3">
-              <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-600/20 text-emerald-400">
-                <Cpu size={22} strokeWidth={1.8} />
-              </span>
-              <span className="text-xl font-extrabold text-white tracking-tight">
-                ام. آی. تک<span className="text-emerald-400">.</span>
-              </span>
-            </div>
+                      {/* Logo */}
+            <Image
+              src="/logo/mitech-logo.png"
+              alt="فناوری هوشمند میکائیل"
+              width={180}
+              height={56}
+              className="h-14 w-auto object-contain brightness-0 invert"
+            />
 
             {/* SEO Description */}
             <p className="mt-6 text-sm leading-relaxed text-slate-400 max-w-sm">
@@ -144,7 +143,7 @@ export default function Footer() {
         <div className="flex flex-col items-center justify-between gap-4 border-t border-slate-800 pt-8 md:flex-row">
           {/* Copyright */}
           <p className="text-sm text-slate-500">
-            © ۲۰۲۶ (۱۴۰۵) تمامی حقوق برای شرکت دانش‌بنیان ام. آی. تک. محفوظ است.
+            © ۲۰۲۶ (۱۴۰۵) تمامی حقوق برای شرکت دانش‌بنیان فناوری هوشمند میکائیل محفوظ است.
           </p>
 
           {/* Legal Links */}

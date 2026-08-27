@@ -2,7 +2,8 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Menu, X, Network, ArrowLeft } from 'lucide-react';
+import Image from 'next/image';
+import { Menu, X, ArrowLeft } from 'lucide-react';
 
 const navLinks = [
   { label: 'محصولات', href: '#products' },
@@ -34,13 +35,15 @@ export default function Header() {
       >
         <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 lg:px-8">
           {/* Logo */}
-          <Link href="#home" className="flex items-center gap-3">
-            <span className="grid size-10 place-items-center rounded-xl bg-blue-900 text-white">
-              <Network size={21} />
-            </span>
-            <b className="text-xl tracking-tight text-slate-900">
-              mitech<span className="text-emerald-600">.</span>
-            </b>
+          <Link href="#home" className="flex items-center">
+            <Image
+              src="/logo/logo.png"
+              alt="فناوری هوشمند میکائیل"
+              width={140}
+              height={48}
+              className="h-12 w-auto object-contain"
+              priority
+            />
           </Link>
 
           {/* Desktop Nav */}
@@ -73,7 +76,7 @@ export default function Header() {
 
         {/* Mobile Nav */}
         {isMobileMenuOpen && (
-          <nav className="flex flex-col gap-5 border-t border-slate-200 bg-white px-6 py-6 text-sm md:hidden">
+          <nav dir="rtl" className="flex flex-col gap-5 border-t border-slate-200 bg-white px-6 py-6 text-sm md:hidden font-[Vazirmatn,sans-serif]">
             {navLinks.map(({ label, href }) => (
               <a
                 key={href}
