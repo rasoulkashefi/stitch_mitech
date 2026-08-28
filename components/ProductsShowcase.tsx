@@ -8,7 +8,7 @@ const products = [
   {
     name: 'MOBI ONE',
     title: 'ویلچر هوشمند همراه شما',
-    image: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=700&q=80',
+    image: '/images/products/mobi-one.jpg',
     category: 'شخصی',
     copy: 'حرکت روان و مستقل، برای هر روز زندگی.',
     href: '/fleet/autonomous-wheelchairs',
@@ -16,7 +16,7 @@ const products = [
   {
     name: 'MOBI PRO',
     title: 'قدرت بیشتر، آزادی بیشتر',
-    image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=700&q=80',
+    image: '/images/products/mobi-pro.jpg',
     category: 'تجاری',
     copy: 'تجربه‌ای تازه از کنترل و اطمینان.',
     href: '/fleet/autonomous-wheelchairs',
@@ -24,7 +24,7 @@ const products = [
   {
     name: 'FLEET',
     title: 'ناوگان خدمات خودران',
-    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=700&q=80',
+    image: '/images/products/fleet.jpg',
     category: 'سازمانی',
     copy: 'تجربه‌ای هوشمند برای فضاهای پرتردد.',
     href: '/fleet/following-amrs',
@@ -32,7 +32,7 @@ const products = [
   {
     name: 'REHAB',
     title: 'کالسکه‌ها و مبلمان هوشمند',
-    image: 'https://images.unsplash.com/photo-1576765608866-5b51046452be?w=700&q=80',
+    image: '/images/products/rehab.jpg',
     category: 'شخصی',
     copy: 'سیستم‌های کنترلی دقیق برای آسایش خانواده و مراکز.',
     href: '/fleet/smart-family-carts',

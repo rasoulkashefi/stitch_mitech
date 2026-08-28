@@ -11,7 +11,7 @@ export default function Experience() {
           <div className="order-1">
             <div className="relative overflow-hidden rounded-3xl shadow-2xl">
               <img
-                src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=800&q=85"
+                src="/images/sections/experience.jpg"
                 alt="فلسفه طراحی انسان‌محور ام. آی. تک."
                 className="aspect-[4/5] w-full object-cover"
               />

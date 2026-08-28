@@ -50,7 +50,7 @@ export default function Enterprise() {
         {/* ── Hero Image ── */}
         <div className="relative mb-12 h-80 w-full overflow-hidden rounded-3xl shadow-2xl md:h-[420px]">
           <img
-            src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1400&q=85"
+            src="/images/sections/enterprise.jpg"
             alt="ناوگان خودران سازمانی ام. آی. تک."
             className="size-full object-cover"
           />

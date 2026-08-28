@@ -17,7 +17,7 @@ const posts: BlogPost[] = [
     categoryHref: '/blog/category/industry-insights',
     date: '۱۵ مرداد ۱۴۰۴',
     title: '۵ نکته کلیدی برای انتخاب ویلچر برقی هوشمند مناسب شما',
-    image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&q=80',
+    image: '/images/blog/smart-wheelchair.jpg',
     imageAlt: 'ویلچر برقی هوشمند',
   },
   {
@@ -25,7 +25,7 @@ const posts: BlogPost[] = [
     categoryHref: '/blog/category/case-studies',
     date: '۲ شهریور ۱۴۰۴',
     title: 'چگونه فناوری خودران (AMaaS) هزینه‌های لجستیک فرودگاهی را کاهش می‌دهد؟',
-    image: 'https://images.unsplash.com/photo-1473163928189-364b2c4e1135?w=800&q=80',
+    image: '/images/blog/autonomous-airport.jpg',
     imageAlt: 'حمل‌ونقل خودران در فرودگاه',
   },
   {
@@ -33,7 +33,7 @@ const posts: BlogPost[] = [
     categoryHref: '/blog/category/industry-insights',
     date: '۱۰ شهریور ۱۴۰۴',
     title: 'آینده حمل‌ونقل توانیابان؛ تعامل بینایی ماشین و رباتیک',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80',
+    image: '/images/blog/robotics-vision.jpg',
     imageAlt: 'رباتیک و بینایی ماشین',
   },
 ];

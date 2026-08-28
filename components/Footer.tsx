@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Phone, Mail, MapPin, Link2, Globe, ArrowLeft, Send } from 'lucide-react';
+import { Phone, Mail, MapPin, Link2, Globe } from 'lucide-react';
 
 const solutionLinks = [
   { label: 'مجتمع‌های تجاری و مال‌ها', href: '/solutions/malls' },
@@ -47,32 +47,6 @@ export default function Footer() {
       className="bg-blue-950 px-5 pt-16 pb-8 lg:px-8 font-[Vazirmatn,sans-serif] text-slate-300"
     >
       <div className="mx-auto max-w-7xl">
-        
-        {/* ── Top CTA Banner ── */}
-        <div className="mb-16 rounded-3xl bg-gradient-to-r from-blue-900 via-slate-900 to-emerald-950 p-8 sm:p-10 border border-slate-800 flex flex-col md:flex-row items-center justify-between gap-6">
-          <div>
-            <h3 className="text-2xl font-bold text-white">آماده همکاری و پیاده‌سازی ناوگان خودران هستید؟</h3>
-            <p className="mt-2 text-sm text-slate-400 max-w-xl">
-              امکان‌سنجی فنی و ارزیابی اقتصادی مجتمع تجاری، فرودگاه یا مرکز درمانی شما توسط مهندسین ارشد میکائیل.
-            </p>
-          </div>
-          <div className="flex flex-wrap items-center gap-3 shrink-0">
-            <Link
-              href="/contact/request-demo"
-              className="inline-flex items-center gap-2 rounded-xl bg-emerald-500 px-6 py-3.5 text-sm font-bold text-white shadow-lg hover:bg-emerald-600 transition-colors"
-            >
-              <Send size={15} />
-              ثبت درخواست دمو
-            </Link>
-            <Link
-              href="/contact/sales"
-              className="inline-flex items-center gap-2 rounded-xl border border-slate-700 bg-white/5 px-6 py-3.5 text-sm font-bold text-white hover:bg-white/10 transition-colors"
-            >
-              تماس با واحد فروش
-            </Link>
-          </div>
-        </div>
-
         {/* ── Main Links Grid ── */}
         <div className="mb-14 grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-12">
           
