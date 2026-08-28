@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
+import Link from 'next/link';
 import { ArrowUpLeft } from 'lucide-react';
 
 const products = [
@@ -10,6 +11,7 @@ const products = [
     image: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=700&q=80',
     category: 'شخصی',
     copy: 'حرکت روان و مستقل، برای هر روز زندگی.',
+    href: '/fleet/autonomous-wheelchairs',
   },
   {
     name: 'MOBI PRO',
@@ -17,6 +19,7 @@ const products = [
     image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=700&q=80',
     category: 'تجاری',
     copy: 'تجربه‌ای تازه از کنترل و اطمینان.',
+    href: '/fleet/autonomous-wheelchairs',
   },
   {
     name: 'FLEET',
@@ -24,15 +27,18 @@ const products = [
     image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=700&q=80',
     category: 'سازمانی',
     copy: 'تجربه‌ای هوشمند برای فضاهای پرتردد.',
+    href: '/fleet/following-amrs',
   },
   {
     name: 'REHAB',
-    title: 'تجهیزات توانبخشی هوشمند',
+    title: 'کالسکه‌ها و مبلمان هوشمند',
     image: 'https://images.unsplash.com/photo-1576765608866-5b51046452be?w=700&q=80',
     category: 'شخصی',
-    copy: 'سیستم‌های کنترلی دقیق برای توانبخشی بهتر.',
+    copy: 'سیستم‌های کنترلی دقیق برای آسایش خانواده و مراکز.',
+    href: '/fleet/smart-family-carts',
   },
 ];
+
 
 const filters = ['همه', 'شخصی', 'تجاری', 'سازمانی'];
 
@@ -79,8 +85,9 @@ export default function ProductsShowcase() {
       {/* Products Grid */}
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {visibleProducts.map((product) => (
-          <article
+          <Link
             key={product.name}
+            href={product.href}
             className="group flex flex-col overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm hover:-translate-y-1 hover:shadow-xl transition-all duration-300"
           >
             {/* Product Image */}
@@ -98,7 +105,7 @@ export default function ProductsShowcase() {
                 <p className="mb-1.5 text-xs font-bold tracking-widest text-emerald-600 uppercase">
                   {product.name}
                 </p>
-                <h3 className="text-lg font-bold text-slate-900">{product.title}</h3>
+                <h3 className="text-lg font-bold text-slate-900 group-hover:text-blue-900 transition-colors">{product.title}</h3>
                 <p className="mt-2 text-sm leading-6 text-slate-500">{product.copy}</p>
               </div>
 
@@ -112,9 +119,10 @@ export default function ProductsShowcase() {
                 </span>
               </div>
             </div>
-          </article>
+          </Link>
         ))}
       </div>
+
     </section>
   );
 }

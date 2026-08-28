@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
-// If using standard next.js setup without local Vazirmatn font files, you would import a generic font.
-// Assuming the CSS brings in Vazirmatn globally via import.
 import './globals.css';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
   title: 'فناوری هوشمند میکائیل | پلتفرم جامع رباتیک و حمل‌ونقل خودران',
@@ -21,9 +21,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fa" dir="rtl">
-      <body className="antialiased font-sans bg-slate-50 text-slate-900">
-        {children}
+      <body className="antialiased font-sans bg-slate-50 text-slate-900 flex flex-col min-h-screen">
+        <Header />
+        <div className="flex-1">{children}</div>
+        <Footer />
       </body>
     </html>
   );
 }
+

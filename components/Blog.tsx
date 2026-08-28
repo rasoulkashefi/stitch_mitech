@@ -1,8 +1,10 @@
 import React from 'react';
+import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 
 interface BlogPost {
   category: string;
+  categoryHref: string;
   date: string;
   title: string;
   image: string;
@@ -12,6 +14,7 @@ interface BlogPost {
 const posts: BlogPost[] = [
   {
     category: 'راهنمای خرید',
+    categoryHref: '/blog/category/industry-insights',
     date: '۱۵ مرداد ۱۴۰۴',
     title: '۵ نکته کلیدی برای انتخاب ویلچر برقی هوشمند مناسب شما',
     image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&q=80',
@@ -19,6 +22,7 @@ const posts: BlogPost[] = [
   },
   {
     category: 'راهکار سازمانی',
+    categoryHref: '/blog/category/case-studies',
     date: '۲ شهریور ۱۴۰۴',
     title: 'چگونه فناوری خودران (AMaaS) هزینه‌های لجستیک فرودگاهی را کاهش می‌دهد؟',
     image: 'https://images.unsplash.com/photo-1473163928189-364b2c4e1135?w=800&q=80',
@@ -26,6 +30,7 @@ const posts: BlogPost[] = [
   },
   {
     category: 'فناوری و آینده',
+    categoryHref: '/blog/category/industry-insights',
     date: '۱۰ شهریور ۱۴۰۴',
     title: 'آینده حمل‌ونقل توانیابان؛ تعامل بینایی ماشین و رباتیک',
     image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80',
@@ -50,8 +55,8 @@ export default function Blog() {
           </h2>
         </div>
 
-        <a
-          href="#blog"
+        <Link
+          href="/blog"
           className="group inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-5 py-2.5 text-sm font-bold text-blue-900 shadow-sm transition-all hover:border-blue-200 hover:shadow-md hover:text-blue-700"
         >
           مشاهده همه مقالات
@@ -59,7 +64,7 @@ export default function Blog() {
             size={16}
             className="transition-transform group-hover:-translate-x-1"
           />
-        </a>
+        </Link>
       </div>
 
       {/* ── Blog Cards Grid ── */}
@@ -67,7 +72,7 @@ export default function Blog() {
         {posts.map((post, i) => (
           <article
             key={i}
-            className="group cursor-pointer overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+            className="group overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
           >
             {/* Image */}
             <div className="h-48 overflow-hidden bg-slate-100">
@@ -82,28 +87,30 @@ export default function Blog() {
             <div className="p-6">
               {/* Category + Date row */}
               <div className="flex items-center justify-between">
-                <span className="text-sm font-semibold text-emerald-600">
+                <Link href={post.categoryHref} className="text-sm font-semibold text-emerald-600 hover:underline">
                   {post.category}
-                </span>
+                </Link>
                 <span className="text-sm text-slate-400">{post.date}</span>
               </div>
 
               {/* Title */}
               <h3 className="mb-5 mt-3 text-lg font-bold leading-8 text-slate-900 transition-colors group-hover:text-blue-700">
-                {post.title}
+                <Link href={post.categoryHref}>
+                  {post.title}
+                </Link>
               </h3>
 
               {/* Divider */}
               <div className="mb-5 h-px bg-slate-100" />
 
               {/* Read-more link */}
-              <a
-                href="#blog"
+              <Link
+                href={post.categoryHref}
                 className="inline-flex items-center gap-2 text-sm font-medium text-blue-700 transition-transform group-hover:-translate-x-1"
               >
                 مطالعه مقاله
                 <ArrowLeft className="h-4 w-4" />
-              </a>
+              </Link>
             </div>
           </article>
         ))}
@@ -111,3 +118,4 @@ export default function Blog() {
     </section>
   );
 }
+
