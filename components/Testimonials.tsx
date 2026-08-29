@@ -12,24 +12,24 @@ interface Testimonial {
 const testimonials: Testimonial[] = [
   {
     quote:
-      'ام. آی. تک. فقط یک وسیله حرکتی نیست؛ بخشی از استقلال من است. حالا برای رفتن به جاهایی که دوست دارم، کمتر فکر می‌کنم.',
+      'ویلچر هوشمند میکائیل فقط یک وسیله نقلیه نیست؛ بازگشت واقعی استقلال و حس اطمینان به زندگی روزمره من است.',
     name: 'مریم رضایی',
     role: 'کاربر ویلچر هوشمند',
     initial: 'م',
   },
   {
     quote:
-      'استفاده از سیستم‌های ناوبری خودران برای حمل‌ونقل در مجتمع ما، یک تحول اساسی بود. همگامی دقیق مهندسی و نیاز انسانی.',
+      'پیاده‌سازی ناوگان ناوبری خودران برای مراجعان مال، هم رضایت بازدیدکنندگان را چندبرابر کرد و هم تصویر برند ما را به عنوان مجموعه‌ای پیشرو ارتقا داد.',
     name: 'مهندس ابوطالبی',
-    role: 'مدیر توسعه مال تجاری',
+    role: 'مدیر توسعه مجتمع تجاری',
     initial: 'ا',
     featured: true,
   },
   {
     quote:
-      'کنترلرهای پله‌پیما نصب‌شده، از نظر کیفیت و پایداری با بهترین نمونه‌های خارجی رقابت می‌کنند و پشتیبانی بی‌نظیری دارند.',
+      'کیفیت ساخت کنترلرها و پایداری عملکرد ربات‌ها در فضاهای شلوغ، با معتبرترین استانداردهای بین‌المللی برابری می‌کند.',
     name: 'علیرضا حسینی',
-    role: 'خریدار تجهیزات',
+    role: 'کارشناس تجهیزات پزشکی',
     initial: 'ع',
   },
 ];
@@ -54,9 +54,9 @@ function StarRating({ featured }: { featured?: boolean }) {
       {[1, 2, 3, 4, 5].map((s) => (
         <Star
           key={s}
-          size={16}
+          size={15}
           fill="currentColor"
-          className={featured ? 'text-yellow-300' : 'text-emerald-500'}
+          className={featured ? 'text-amber-400' : 'text-emerald-500'}
         />
       ))}
     </div>
@@ -65,18 +65,17 @@ function StarRating({ featured }: { featured?: boolean }) {
 
 export default function Testimonials() {
   return (
-    <section dir="rtl" className="bg-slate-50 px-5 py-24 lg:px-8 font-[Vazirmatn,sans-serif]">
+    <section dir="rtl" className="bg-slate-50/70 px-5 py-24 lg:px-8 font-[Vazirmatn,sans-serif] border-t border-slate-100">
       <div className="mx-auto max-w-7xl">
 
-        {/* Section Header — Centered */}
+        {/* Section Header */}
         <div className="mb-14 text-center">
-          <span className="inline-block rounded-full border border-emerald-200 bg-emerald-50 px-4 py-1.5 text-sm font-bold text-emerald-600 tracking-wide">
-            همراهان ما می‌گویند
-          </span>
-          <h2 className="mt-4 text-3xl font-extrabold text-blue-950 lg:text-4xl">
-            تجربه واقعی، تغییر واقعی.
+          <p className="mb-2 text-xs font-bold uppercase tracking-wider text-emerald-600">
+            نظرات و تجربیات همراهان
+          </p>
+          <h2 className="text-3xl font-extrabold text-slate-900 lg:text-4xl tracking-tight">
+            تجربه واقعی استقلال و تحول سازمانی
           </h2>
-          <div className="mx-auto mt-4 h-1 w-16 rounded-full bg-gradient-to-r from-emerald-400 to-blue-500" />
         </div>
 
         {/* Cards Grid */}
@@ -84,43 +83,47 @@ export default function Testimonials() {
           {testimonials.map((t, i) => (
             <div
               key={i}
-              className={`relative overflow-hidden rounded-3xl border p-8 shadow-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-1 ${
+              className={`relative flex flex-col justify-between overflow-hidden rounded-3xl border p-8 shadow-xs transition-all duration-300 hover:shadow-xl hover:-translate-y-1 ${
                 t.featured
-                  ? 'border-blue-800 bg-blue-900 text-white'
-                  : 'border-slate-200 bg-white'
+                  ? 'border-slate-800 bg-slate-950 text-white'
+                  : 'border-slate-200/80 bg-white text-slate-900'
               }`}
             >
               {/* Background Quote Icon */}
               <QuoteIcon
-                className={`pointer-events-none absolute right-4 top-4 h-16 w-16 select-none ${
-                  t.featured ? 'text-white/10' : 'text-slate-100'
+                className={`pointer-events-none absolute left-4 top-4 h-16 w-16 select-none ${
+                  t.featured ? 'text-white/5' : 'text-slate-100'
                 }`}
               />
 
-              {/* Stars */}
-              <div className="mb-5 relative z-10">
-                <StarRating featured={t.featured} />
+              <div>
+                {/* Stars */}
+                <div className="mb-5 relative z-10">
+                  <StarRating featured={t.featured} />
+                </div>
+
+                {/* Quote Text */}
+                <p
+                  className={`relative z-10 mb-8 text-base leading-8 ${
+                    t.featured ? 'text-slate-200' : 'text-slate-600'
+                  }`}
+                >
+                  «{t.quote}»
+                </p>
               </div>
 
-              {/* Quote Text */}
-              <p
-                className={`relative z-10 mb-8 text-base italic leading-8 ${
-                  t.featured ? 'text-blue-100' : 'text-slate-700'
-                }`}
-              >
-                «{t.quote}»
-              </p>
-
               {/* Profile Footer */}
-              <div className="relative z-10 flex items-center gap-4 border-t pt-6 mt-auto"
-                style={{ borderColor: t.featured ? 'rgba(255,255,255,0.15)' : '' }}
+              <div
+                className={`relative z-10 flex items-center gap-4 border-t pt-6 mt-auto ${
+                  t.featured ? 'border-slate-800' : 'border-slate-100'
+                }`}
               >
                 {/* Avatar */}
                 <div
                   className={`grid h-11 w-11 shrink-0 place-items-center rounded-full text-base font-bold ${
                     t.featured
-                      ? 'bg-white/20 text-white ring-2 ring-white/30'
-                      : 'bg-emerald-100 text-emerald-700 ring-2 ring-emerald-200'
+                      ? 'bg-white/10 text-white border border-white/20'
+                      : 'bg-emerald-50 text-emerald-700 border border-emerald-200'
                   }`}
                 >
                   {t.initial}
@@ -131,7 +134,7 @@ export default function Testimonials() {
                   <p className={`font-bold text-sm ${t.featured ? 'text-white' : 'text-slate-900'}`}>
                     {t.name}
                   </p>
-                  <p className={`text-xs mt-0.5 ${t.featured ? 'text-blue-300' : 'text-slate-500'}`}>
+                  <p className={`text-xs mt-0.5 ${t.featured ? 'text-emerald-400' : 'text-slate-500'}`}>
                     {t.role}
                   </p>
                 </div>

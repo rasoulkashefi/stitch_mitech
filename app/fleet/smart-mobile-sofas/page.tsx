@@ -1,50 +1,66 @@
 import type { Metadata } from 'next';
-import ComingSoonTemplate from '@/components/ComingSoonTemplate';
+import SofaHero from '@/components/fleet/smart-mobile-sofas/SofaHero';
+import ParadigmShift from '@/components/fleet/smart-mobile-sofas/ParadigmShift';
+import B2BVenues from '@/components/fleet/smart-mobile-sofas/B2BVenues';
+import SafetyAndComfort from '@/components/fleet/smart-mobile-sofas/SafetyAndComfort';
+import TechSpecs from '@/components/fleet/smart-mobile-sofas/TechSpecs';
+import SofaCTA from '@/components/fleet/smart-mobile-sofas/SofaCTA';
 
 export const metadata: Metadata = {
-  title: 'مبل‌ها و صندلی‌های هوشمند متحرک | میکائیل',
-  description: 'مبلمان برقی متحرک و هوشمند برای سالن‌های VIP، نمایشگاه‌ها، موزه‌ها و لابی‌های مدرن.',
+  title: 'مبل هوشمند سیار | مبلمان متحرک برای سالمندان | ام. آی. تک. (Mitech)',
+  description:
+    'مبل‌های هوشمند سیار ام. آی. تک.؛ راهکاری لوکس و راحت برای جابه‌جایی سالمندان و افراد کم‌توان در مجتمع‌های تجاری، مال‌ها و موزه‌ها با کنترل لمسی و ناوبری ایمن.',
+  keywords: [
+    'مبل هوشمند سیار',
+    'مبلمان متحرک',
+    'جابجایی سالمندان در مال',
+    'ویلچر مبله',
+    'تحرک هوشمند',
+    'ام آی تک',
+    'Smart Mobile Sofa',
+  ],
+  openGraph: {
+    title: 'مبل هوشمند سیار ام. آی. تک. | تجربه یک گردش خانوادگی بدون خستگی',
+    description:
+      'همراهی پدربزرگ‌ها و مادربزرگ‌ها در فضاهای وسیع تجاری با مبلمان متحرک لوکس، هدایت آسان لمسی و سیستم ضدتصادف ۳۶۰ درجه.',
+    url: 'https://mitech.ir/fleet/smart-mobile-sofas',
+    siteName: 'ام. آی. تک. (Mitech)',
+    images: [
+      {
+        url: '/images/fleet/smart-mobile-sofa-og.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'سالمندان در حال استفاده از مبل هوشمند سیار در مجتمع تجاری',
+      },
+    ],
+    locale: 'fa_IR',
+    type: 'website',
+  },
+  alternates: {
+    canonical: 'https://mitech.ir/fleet/smart-mobile-sofas',
+  },
 };
 
 export default function SmartMobileSofasPage() {
   return (
-    <ComingSoonTemplate
-      title="مبل‌ها و صندلی‌های هوشمند متحرک"
-      englishTitle="Smart Mobile Sofas & Lounge Pods"
-      category="ناوگان"
-      categoryHref="/fleet"
-      description="تلفیق راحتی مبلمان لوکس با پلتفرم خودران. مناسب برای تورهای نمایشگاهی بدون خستگی، لابی هتل‌های مجلل و استراحتگاه‌های فرودگاهی با کنترل اختصاصی یا مسیردهی خودکار."
-      highlights={[
-        {
-          title: 'ارگونومی فوق‌العاده با متریال پریمیوم',
-          desc: 'روکش‌های چرمی باکیفیت، نشیمن طبی ارگونومیک، پورت شارژ سریع و زیرپایی برقی قابل تنظیم.',
-        },
-        {
-          title: 'حرکت گروهی سنکرون (Swarm Navigation)',
-          desc: 'قابلیت حرکت هماهنگ چند مبل به صورت همزمان در تورهای هدایت‌شده موزه و گالری.',
-        },
-        {
-          title: 'سیستم صوتی استریو محیطی و مانیتورینگ',
-          desc: 'اسپیکرهای داخلی با کیفیت بالا جهت پخش موسیقی آرامش‌بخش یا راهنمای صوتی تور.',
-        },
-      ]}
-      siblingLinks={[
-        {
-          label: 'راهکار مراکز گردشگری و هتل‌ها',
-          href: '/solutions/tourism',
-          desc: 'کاربردهای مبلمان متحرک در گردشگری',
-        },
-        {
-          label: 'کالسکه‌های هوشمند خانواده',
-          href: '/fleet/smart-family-carts',
-          desc: 'ناوگان خانواده در مجموعه‌های تفریحی',
-        },
-        {
-          label: 'سیستم‌های پیشران و موقعیت‌یابی',
-          href: '/technology/drives-and-positioning',
-          desc: 'موتورها و درایورهای بی‌صدا و پرقدرت',
-        },
-      ]}
-    />
+    <main className="w-full overflow-hidden" dir="rtl">
+      {/* ماژول ۱: هیرو سکشن مبل هوشمند (SofaHero.tsx) */}
+      <SofaHero />
+
+      {/* ماژول ۲: تغییر پارادایم - از ویلچر تا مبلمان متحرک (ParadigmShift.tsx) */}
+      <ParadigmShift />
+
+      {/* ماژول ۳: ارزش افزوده برای مجتمع‌های تجاری (B2B Value) (B2BVenues.tsx) */}
+      <B2BVenues />
+
+      {/* ماژول ۴: ویژگی‌های ایمنی و راحتی (SafetyAndComfort.tsx) */}
+      <SafetyAndComfort />
+
+      {/* ماژول ۵: جدول مشخصات فنی (TechSpecs.tsx) */}
+      <TechSpecs />
+
+      {/* ماژول ۶: فراخوان پایانی خدمات ناوگان (SofaCTA.tsx) */}
+      <SofaCTA />
+    </main>
   );
 }

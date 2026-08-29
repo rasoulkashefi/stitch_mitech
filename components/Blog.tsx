@@ -13,10 +13,10 @@ interface BlogPost {
 
 const posts: BlogPost[] = [
   {
-    category: 'راهنمای خرید',
+    category: 'راهنمای انتخاب',
     categoryHref: '/blog/category/industry-insights',
     date: '۱۵ مرداد ۱۴۰۴',
-    title: '۵ نکته کلیدی برای انتخاب ویلچر برقی هوشمند مناسب شما',
+    title: '۵ نکته کلیدی برای انتخاب ویلچر برقی هوشمند متناسب با نیاز شما',
     image: '/images/blog/smart-wheelchair.jpg',
     imageAlt: 'ویلچر برقی هوشمند',
   },
@@ -24,7 +24,7 @@ const posts: BlogPost[] = [
     category: 'راهکار سازمانی',
     categoryHref: '/blog/category/case-studies',
     date: '۲ شهریور ۱۴۰۴',
-    title: 'چگونه فناوری خودران (AMaaS) هزینه‌های لجستیک فرودگاهی را کاهش می‌دهد؟',
+    title: 'چگونه مدل خدمات خودران (AMaaS) هزینه‌های لجستیک فرودگاهی را کاهش می‌دهد؟',
     image: '/images/blog/autonomous-airport.jpg',
     imageAlt: 'حمل‌ونقل خودران در فرودگاه',
   },
@@ -32,7 +32,7 @@ const posts: BlogPost[] = [
     category: 'فناوری و آینده',
     categoryHref: '/blog/category/industry-insights',
     date: '۱۰ شهریور ۱۴۰۴',
-    title: 'آینده حمل‌ونقل توانیابان؛ تعامل بینایی ماشین و رباتیک',
+    title: 'آینده حمل‌ونقل توانیابان؛ تعامل الگوریتم‌های بینایی ماشین و رباتیک خودران',
     image: '/images/blog/robotics-vision.jpg',
     imageAlt: 'رباتیک و بینایی ماشین',
   },
@@ -47,21 +47,21 @@ export default function Blog() {
       {/* ── Section Header ── */}
       <div className="mb-12 flex flex-wrap items-end justify-between gap-6">
         <div>
-          <span className="inline-block rounded-full border border-emerald-200 bg-emerald-50 px-4 py-1.5 text-sm font-bold text-emerald-600 tracking-wide">
-            مجله فناوری ام. آی. تک.
-          </span>
-          <h2 className="mt-4 text-3xl font-extrabold text-blue-950 lg:text-4xl">
-            ایده‌هایی برای حرکت رو به جلو.
+          <p className="mb-2 text-xs font-bold uppercase tracking-wider text-emerald-600">
+            مجله تخصصی و مقالات
+          </p>
+          <h2 className="text-3xl font-extrabold text-slate-900 lg:text-4xl tracking-tight">
+            ایده‌ها و نوآوری‌های دنیای رباتیک
           </h2>
         </div>
 
         <Link
           href="/blog"
-          className="group inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-5 py-2.5 text-sm font-bold text-blue-900 shadow-sm transition-all hover:border-blue-200 hover:shadow-md hover:text-blue-700"
+          className="group inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-5 py-2.5 text-xs font-bold text-slate-800 shadow-xs transition-all hover:border-slate-300 hover:shadow-md hover:text-emerald-600"
         >
           مشاهده همه مقالات
           <ArrowLeft
-            size={16}
+            size={15}
             className="transition-transform group-hover:-translate-x-1"
           />
         </Link>
@@ -72,10 +72,10 @@ export default function Blog() {
         {posts.map((post, i) => (
           <article
             key={i}
-            className="group overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+            className="group flex flex-col justify-between overflow-hidden rounded-2xl border border-slate-200/70 bg-white shadow-xs transition-all duration-300 hover:border-slate-300 hover:shadow-xl hover:-translate-y-1"
           >
             {/* Image */}
-            <div className="h-48 overflow-hidden bg-slate-100">
+            <div className="h-48 overflow-hidden bg-slate-50">
               <img
                 src={post.image}
                 alt={post.imageAlt}
@@ -84,33 +84,34 @@ export default function Blog() {
             </div>
 
             {/* Content */}
-            <div className="p-6">
-              {/* Category + Date row */}
-              <div className="flex items-center justify-between">
-                <Link href={post.categoryHref} className="text-sm font-semibold text-emerald-600 hover:underline">
-                  {post.category}
-                </Link>
-                <span className="text-sm text-slate-400">{post.date}</span>
+            <div className="flex flex-1 flex-col justify-between p-6">
+              <div>
+                {/* Category + Date row */}
+                <div className="flex items-center justify-between">
+                  <span className="text-xs font-bold text-emerald-600">
+                    {post.category}
+                  </span>
+                  <span className="text-xs text-slate-400">{post.date}</span>
+                </div>
+
+                {/* Title */}
+                <h3 className="mt-3 text-base font-bold leading-7 text-slate-900 transition-colors group-hover:text-emerald-600">
+                  <Link href={post.categoryHref}>
+                    {post.title}
+                  </Link>
+                </h3>
               </div>
 
-              {/* Title */}
-              <h3 className="mb-5 mt-3 text-lg font-bold leading-8 text-slate-900 transition-colors group-hover:text-blue-700">
-                <Link href={post.categoryHref}>
-                  {post.title}
-                </Link>
-              </h3>
-
-              {/* Divider */}
-              <div className="mb-5 h-px bg-slate-100" />
-
               {/* Read-more link */}
-              <Link
-                href={post.categoryHref}
-                className="inline-flex items-center gap-2 text-sm font-medium text-blue-700 transition-transform group-hover:-translate-x-1"
-              >
-                مطالعه مقاله
-                <ArrowLeft className="h-4 w-4" />
-              </Link>
+              <div className="mt-6 border-t border-slate-100 pt-4">
+                <Link
+                  href={post.categoryHref}
+                  className="inline-flex items-center gap-1.5 text-xs font-bold text-slate-700 transition-colors group-hover:text-emerald-600"
+                >
+                  مطالعه مقاله
+                  <ArrowLeft className="h-3.5 w-3.5 transition-transform group-hover:-translate-x-1" />
+                </Link>
+              </div>
             </div>
           </article>
         ))}
@@ -118,4 +119,3 @@ export default function Blog() {
     </section>
   );
 }
-

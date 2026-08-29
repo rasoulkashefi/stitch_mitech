@@ -6,20 +6,23 @@ import { Phone, Mail, MapPin, ArrowLeft, Check } from 'lucide-react';
 const contactItems = [
   {
     icon: Phone,
+    title: 'تماس تلفنی مستقیم',
     label: '۰۲۱-۸۸۷۷۴۴۱۱',
   },
   {
     icon: Mail,
+    title: 'پست الکترونیک رسمی',
     label: 'info@mitech.ir',
   },
   {
     icon: MapPin,
-    label: 'دفتر مرکزی: تهران، ایران | در حال توسعه در خاورمیانه',
+    title: 'دفتر مرکزی و پارک فناوری',
+    label: 'تهران، پارک علم و فناوری | ایران',
   },
 ];
 
 const inputBase =
-  'w-full rounded-xl border border-slate-200 bg-slate-50 p-4 text-slate-900 outline-none transition-all placeholder:text-slate-400 focus:border-blue-300 focus:bg-white focus:ring-2 focus:ring-blue-500/20';
+  'w-full rounded-xl border border-slate-200/90 bg-slate-50/70 p-3.5 text-sm text-slate-900 outline-none transition-all placeholder:text-slate-400 focus:border-emerald-500 focus:bg-white focus:ring-2 focus:ring-emerald-500/20';
 
 export default function Contact() {
   const [sent, setSent] = useState(false);
@@ -28,50 +31,45 @@ export default function Contact() {
     <section
       id="contact"
       dir="rtl"
-      className="bg-slate-50 px-5 py-24 lg:px-8 font-[Vazirmatn,sans-serif]"
+      className="bg-slate-50/80 px-5 py-24 lg:px-8 font-[Vazirmatn,sans-serif] border-t border-slate-100"
     >
       <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-2">
 
         {/* ── Right Column: Info & Contact Details ── */}
         <div>
-          {/* Eyebrow */}
-          <span className="inline-block rounded-full border border-emerald-200 bg-emerald-50 px-4 py-1.5 text-sm font-bold text-emerald-600 tracking-wide">
-            ارتباط با ام. آی. تک.
-          </span>
+          <p className="mb-2 text-xs font-bold uppercase tracking-wider text-emerald-600">
+            ارتباط مستقیم و دریافت مشاوره
+          </p>
 
-          {/* Heading */}
-          <h2 className="mt-5 text-4xl font-extrabold leading-snug text-blue-950 mb-4">
+          <h2 className="text-3xl font-extrabold leading-tight text-slate-900 lg:text-4xl tracking-tight mb-4">
             آماده شروع یک مسیر هوشمند هستید؟
           </h2>
 
-          {/* Description */}
-          <p className="mb-10 text-lg leading-9 text-slate-600 max-w-lg">
-            برای دریافت مشاوره تخصصی خرید محصولات، تامین قطعات کنترلی، یا پیاده‌سازی
-            سیستم‌های ناوگان خودران سازمانی، فرم زیر را تکمیل کنید. کارشناسان ما در
-            کوتاه‌ترین زمان با شما تماس خواهند گرفت.
+          <p className="mb-10 text-base leading-8 text-slate-600 max-w-lg">
+            برای دریافت مشاوره تخصصی خرید محصولات، استقرار ناوگان خودران سازمانی (AMaaS) یا تامین سیستم‌های کنترلی، کارشناسان ما آماده پاسخگویی و همراهی با شما هستند.
           </p>
 
           {/* Contact Rows */}
           <div className="flex flex-col gap-4">
-            {contactItems.map(({ icon: Icon, label }, i) => (
+            {contactItems.map(({ icon: Icon, title, label }, i) => (
               <div key={i} className="flex items-center gap-4">
-                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-blue-50 text-blue-700">
-                  <Icon size={20} strokeWidth={1.8} />
+                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white border border-slate-200/70 text-emerald-600 shadow-xs">
+                  <Icon size={18} strokeWidth={2} />
                 </span>
-                <span className="text-base text-slate-700 leading-6">{label}</span>
+                <div>
+                  <p className="text-xs text-slate-400">{title}</p>
+                  <p className="text-sm font-bold text-slate-800 leading-6">{label}</p>
+                </div>
               </div>
             ))}
           </div>
-
-          {/* Decorative gradient bar */}
-          <div className="mt-12 h-1.5 w-24 rounded-full bg-gradient-to-l from-emerald-400 to-blue-500" />
         </div>
 
         {/* ── Left Column: Contact Form Card ── */}
-        <div className="rounded-3xl border border-slate-100 bg-white p-8 shadow-xl">
-          <p className="mb-6 text-lg font-bold text-slate-900">
-            فرم درخواست مشاوره
-          </p>
+        <div className="rounded-3xl border border-slate-200/80 bg-white p-8 shadow-xl">
+          <h3 className="mb-6 text-lg font-bold text-slate-900">
+            فرم درخواست مشاوره و همکاری
+          </h3>
 
           <form
             className="flex flex-col gap-4"
@@ -83,7 +81,7 @@ export default function Contact() {
             {/* Row 1: Name + Phone */}
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
               <div className="flex flex-col gap-1.5">
-                <label className="text-sm font-medium text-slate-700">
+                <label className="text-xs font-bold text-slate-700">
                   نام و نام خانوادگی
                 </label>
                 <input
@@ -94,7 +92,7 @@ export default function Contact() {
                 />
               </div>
               <div className="flex flex-col gap-1.5">
-                <label className="text-sm font-medium text-slate-700">
+                <label className="text-xs font-bold text-slate-700">
                   شماره موبایل
                 </label>
                 <input
@@ -109,8 +107,8 @@ export default function Contact() {
 
             {/* Row 2: Subject Select */}
             <div className="flex flex-col gap-1.5">
-              <label className="text-sm font-medium text-slate-700">
-                موضوع مشاوره
+              <label className="text-xs font-bold text-slate-700">
+                موضوع درخواست
               </label>
               <select
                 required
@@ -121,26 +119,26 @@ export default function Contact() {
                   انتخاب کنید...
                 </option>
                 <option value="product">
-                  خرید محصولات هوشمند (ویلچر، کالسکه و...)
+                  خرید محصولات فردی (ویلچر هوشمند، کالسکه و...)
                 </option>
                 <option value="amaas">
                   راهکارهای حمل‌ونقل سازمانی (AMaaS)
                 </option>
-                <option value="parts">تامین قطعات و کنترلرها</option>
+                <option value="parts">تامین قطعات و بردهای کنترلی</option>
                 <option value="support">
-                  خدمات پس از فروش و پشتیبانی
+                  خدمات پس از فروش و پشتیبانی فنی
                 </option>
               </select>
             </div>
 
             {/* Row 3: Message */}
             <div className="flex flex-col gap-1.5">
-              <label className="text-sm font-medium text-slate-700">
+              <label className="text-xs font-bold text-slate-700">
                 توضیحات تکمیلی
               </label>
               <textarea
                 rows={4}
-                placeholder="توضیحات تکمیلی شما..."
+                placeholder="جزئیات درخواست یا مشخصات پروژه خود را بنویسید..."
                 className={`${inputBase} resize-none`}
               />
             </div>
@@ -148,7 +146,11 @@ export default function Contact() {
             {/* Submit Button */}
             <button
               type="submit"
-              className="group mt-2 flex w-full items-center justify-center gap-2.5 rounded-xl bg-blue-800 py-4 text-base font-bold text-white transition-all hover:bg-blue-900 hover:shadow-lg active:scale-[0.98]"
+              className={`group mt-2 flex w-full items-center justify-center gap-2 rounded-xl py-3.5 text-sm font-bold text-white transition-all duration-200 active:scale-[0.98] ${
+                sent
+                  ? 'bg-emerald-600 shadow-md shadow-emerald-950/20'
+                  : 'bg-slate-900 hover:bg-emerald-600 hover:shadow-lg'
+              }`}
             >
               {sent ? (
                 <>
@@ -159,8 +161,8 @@ export default function Contact() {
                 <>
                   ثبت درخواست مشاوره
                   <ArrowLeft
-                    size={18}
-                    className="transition-transform group-hover:-translate-x-1"
+                    size={16}
+                    className="transition-transform duration-200 group-hover:-translate-x-1"
                   />
                 </>
               )}

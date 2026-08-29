@@ -1,50 +1,37 @@
 import type { Metadata } from 'next';
-import ComingSoonTemplate from '@/components/ComingSoonTemplate';
+import AboutHero from '@/components/about/AboutHero';
+import OurExpertise from '@/components/about/OurExpertise';
+import MiddleEastVision from '@/components/about/MiddleEastVision';
+import OfficialContact from '@/components/about/OfficialContact';
 
 export const metadata: Metadata = {
-  title: 'درباره شرکت دانش‌بنیان میکائیل | هوش و رباتیک خودران',
-  description: 'پیشگام ایرانی در طراحی و ساخت سیستم‌های ناوبری خودران، ربات‌های هوشمند توانبخشی و راهکارهای حمل‌ونقل نوین شهری.',
+  title: 'درباره ام. آی. تک. | پیشگام در فناوری ناوبری خودران و تحرک هوشمند',
+  description:
+    'داستان توسعه شرکت ام آی تک از سال ۲۰۱۰؛ تیمی متخصص در مهندسی درایوهای الکتریکی، رباتیک صنعتی و تجهیزات توانبخشی هوشمند با چشمانداز توسعه در خاورمیانه.',
+  keywords: [
+    'درباره ام آی تک',
+    'تاریخچه mitech',
+    'رباتیک هوشمند',
+    'CTSC خاورمیانه',
+    'تجهیزات توانبخشی',
+    'ناوبری خودران',
+  ],
 };
 
 export default function AboutPage() {
   return (
-    <ComingSoonTemplate
-      title="درباره فناوری هوشمند میکائیل"
-      englishTitle="About Mitech Autonomous Robotics"
-      category="درباره ما"
-      categoryHref="/about"
-      description="شرکت دانش‌بنیان فناوری هوشمند میکائیل با تیمی متشکل از نخبگان رباتیک، هوش مصنوعی و مهندسی پزشکی، مأموریت دارد آزادی حرکت، استقلال فردی و دسترسی برابر به فضاهای مدرن را برای همگان به ارمغان آورد."
-      highlights={[
-        {
-          title: 'تحقیق و توسعه (R&D) بومی',
-          desc: 'طراحی ۱۰۰٪ اختصاصی بردهای کنترلی، الگوریتم‌های ناوبری و سیستم‌های ایمنی منطبق بر استانداردهای جهانی.',
-        },
-        {
-          title: 'مسئولیت اجتماعی و توانمندسازی',
-          desc: 'تعهد عمیق به بازگرداندن کرامت و راحتی تردد به افراد دارای محدودیت‌های حرکتی و سالمندان.',
-        },
-        {
-          title: 'نگاه به بازارهای منطقه‌ای و بین‌المللی',
-          desc: 'توسعه محصولات با پتانسیل بالای صادراتی به کشورهای همسایه و حوزه خلیج فارس.',
-        },
-      ]}
-      siblingLinks={[
-        {
-          label: 'تاریخچه و چشم‌انداز',
-          href: '/about/history-vision',
-          desc: 'مسیر شکل‌گیری میکائیل و افق‌های آینده شرکت',
-        },
-        {
-          label: 'دیدگاه‌های صنعت در وبلاگ',
-          href: '/blog/category/industry-insights',
-          desc: 'مقالات تحلیلی تیم مهندسی درباره آینده رباتیک',
-        },
-        {
-          label: 'درخواست همکاری و تماس',
-          href: '/contact/sales',
-          desc: 'فرصت‌های شغلی و شراکت‌های راهبردی',
-        },
-      ]}
-    />
+    <main className="min-h-screen bg-white text-slate-900 overflow-hidden font-[Vazirmatn,sans-serif]">
+      {/* 1. Hero Section & Story Genesis */}
+      <AboutHero />
+
+      {/* 2. Product Architecture & Expertise Bento Grid */}
+      <OurExpertise />
+
+      {/* 3. Regional Vision & CTSC Hub */}
+      <MiddleEastVision />
+
+      {/* 4. Official Headquarters & Contact Hub */}
+      <OfficialContact />
+    </main>
   );
 }

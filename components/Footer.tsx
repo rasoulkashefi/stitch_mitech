@@ -16,6 +16,8 @@ const fleetLinks = [
   { label: 'کالسکه‌های هوشمند خانواده', href: '/fleet/smart-family-carts' },
   { label: 'ربات‌های باربر تعقیب‌کننده (AMR)', href: '/fleet/following-amrs' },
   { label: 'مبل‌های هوشمند متحرک', href: '/fleet/smart-mobile-sofas' },
+  { label: 'سیستم‌های کنترل و جویستیک توانبخشی', href: '/fleet/wheelchair-controllers' },
+  { label: 'سیستم‌های کنترل و ناوبری رباتیک', href: '/fleet/robotic-navigation-systems' },
   { label: 'مشاهده کل محصولات و ناوگان', href: '/fleet' },
 ];
 
@@ -44,7 +46,7 @@ export default function Footer() {
   return (
     <footer
       dir="rtl"
-      className="bg-blue-950 px-5 pt-16 pb-8 lg:px-8 font-[Vazirmatn,sans-serif] text-slate-300"
+      className="bg-slate-950 px-5 pt-16 pb-8 lg:px-8 font-[Vazirmatn,sans-serif] text-slate-200 border-t border-slate-800/80"
     >
       <div className="mx-auto max-w-7xl">
         {/* ── Main Links Grid ── */}
@@ -89,7 +91,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="flex h-8 w-8 items-center justify-center rounded-lg bg-slate-800 text-slate-400 transition-colors hover:bg-emerald-600 hover:text-white"
+                  className="flex h-8 w-8 items-center justify-center rounded-lg bg-white/5 border border-white/10 text-white/80 transition-all hover:bg-emerald-600 hover:border-emerald-500 hover:text-white"
                 >
                   <Icon size={14} />
                 </a>

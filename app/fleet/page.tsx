@@ -49,6 +49,16 @@ export default function FleetPage() {
           href: '/fleet/smart-mobile-sofas',
           desc: 'مبلمان برقی متحرک برای اماکن لوکس و نمایشگاه‌ها',
         },
+        {
+          label: 'سیستم‌های کنترل و جویستیک توانبخشی',
+          href: '/fleet/wheelchair-controllers',
+          desc: 'کنترلر ارگونومیک، ماژول توانبخشی و جوی‌استیک هوشمند',
+        },
+        {
+          label: 'سیستم‌های کنترل و ناوبری رباتیک',
+          href: '/fleet/robotic-navigation-systems',
+          desc: 'واحدهای ناوبری خودران، سنسور فیوژن و کنترل حرکت',
+        },
       ]}
     />
   );

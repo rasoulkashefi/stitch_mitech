@@ -53,11 +53,11 @@ export default function ComingSoonTemplate({
       {/* ── Breadcrumb ── */}
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <nav className="flex items-center gap-2 text-xs text-slate-500 font-medium py-3">
-          <Link href="/" className="hover:text-blue-900 transition-colors">
+          <Link href="/" className="hover:text-emerald-600 transition-colors">
             صفحه اصلی
           </Link>
           <ChevronLeft size={14} className="text-slate-400" />
-          <Link href={categoryHref} className="hover:text-blue-900 transition-colors">
+          <Link href={categoryHref} className="hover:text-emerald-600 transition-colors">
             {category}
           </Link>
           <ChevronLeft size={14} className="text-slate-400" />
@@ -67,10 +67,10 @@ export default function ComingSoonTemplate({
 
       {/* ── Hero Banner ── */}
       <section className="mx-auto max-w-7xl px-5 pt-8 lg:px-8">
-        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-blue-950 via-slate-900 to-blue-900 p-8 sm:p-12 lg:p-16 text-white shadow-xl">
+        <div className="relative overflow-hidden rounded-3xl bg-slate-950 border border-slate-800 p-8 sm:p-12 lg:p-16 text-white shadow-xl">
           {/* Subtle Background Glows */}
           <div className="pointer-events-none absolute -left-20 -top-20 h-80 w-80 rounded-full bg-emerald-500/15 blur-3xl" />
-          <div className="pointer-events-none absolute -right-20 -bottom-20 h-80 w-80 rounded-full bg-blue-500/20 blur-3xl" />
+          <div className="pointer-events-none absolute -right-20 -bottom-20 h-80 w-80 rounded-full bg-slate-800/40 blur-3xl" />
           
           <div className="relative z-10 max-w-3xl">
             {/* Category + Status Badges */}
@@ -91,7 +91,7 @@ export default function ComingSoonTemplate({
             </h1>
 
             {englishTitle && (
-              <p className="mt-2 text-sm font-semibold tracking-wider text-slate-400 font-mono uppercase" dir="ltr">
+              <p className="mt-2 text-sm font-semibold tracking-wider text-slate-400 uppercase" dir="ltr">
                 {englishTitle}
               </p>
             )}
@@ -125,15 +125,17 @@ export default function ComingSoonTemplate({
       {/* ── Highlights / Features Preview ── */}
       {highlights.length > 0 && (
         <section className="mx-auto max-w-7xl px-5 pt-14 lg:px-8">
-          <div className="mb-6 flex items-center gap-2">
-            <Cpu size={20} className="text-emerald-600" />
+          <div className="mb-8">
+            <p className="text-xs font-bold uppercase tracking-wider text-emerald-600 mb-1">
+              ویژگی‌های کلیدی و معماری
+            </p>
             <h2 className="text-xl font-bold text-slate-900">محورها و مشخصات در دست پیاده‌سازی</h2>
           </div>
           <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
             {highlights.map((item, idx) => (
               <div
                 key={idx}
-                className="group rounded-2xl border border-slate-200/80 bg-white p-6 shadow-sm transition-all hover:-translate-y-1 hover:border-blue-200 hover:shadow-md"
+                className="group rounded-2xl border border-slate-200/80 bg-white p-6 shadow-sm transition-all hover:-translate-y-1 hover:border-slate-300 hover:shadow-md"
               >
                 <div className="mb-4 flex items-center gap-3">
                   <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-emerald-50 text-emerald-600 font-bold text-sm">
@@ -153,12 +155,12 @@ export default function ComingSoonTemplate({
         <section className="mx-auto max-w-7xl px-5 pt-14 lg:px-8">
           <div className="mb-6 flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <Boxes size={20} className="text-blue-900" />
+              <Boxes size={20} className="text-emerald-600" />
               <h2 className="text-xl font-bold text-slate-900">سایر بخش‌های مرتبط در {category}</h2>
             </div>
             <Link
               href={categoryHref}
-              className="text-xs font-bold text-blue-900 hover:underline flex items-center gap-1"
+              className="text-xs font-bold text-slate-600 hover:text-emerald-600 flex items-center gap-1"
             >
               مشاهده منوی جامع
               <ChevronLeft size={14} />
@@ -199,7 +201,7 @@ export default function ComingSoonTemplate({
               <CheckCircle2 size={16} />
               پایلوت آزمایشی و مشاوره مهندسی
             </div>
-            <h3 className="text-2xl font-bold text-blue-950">
+            <h3 className="text-2xl font-bold text-slate-900">
               نیاز به پیاده‌سازی اختصاصی یا مشاوره فنی دارید؟
             </h3>
             <p className="mt-2 text-sm text-slate-600 leading-relaxed">
@@ -212,12 +214,12 @@ export default function ComingSoonTemplate({
               href="/contact/sales"
               className="inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-slate-50 px-5 py-3 text-sm font-bold text-slate-700 hover:bg-slate-100 transition-colors"
             >
-              <PhoneCall size={16} className="text-blue-900" />
+              <PhoneCall size={16} className="text-slate-700" />
               تماس با واحد فروش
             </Link>
             <Link
               href="/contact/request-demo"
-              className="inline-flex items-center gap-2 rounded-xl bg-blue-900 px-6 py-3 text-sm font-bold text-white hover:bg-blue-800 transition-colors shadow-md shadow-blue-900/10"
+              className="inline-flex items-center gap-2 rounded-xl bg-slate-900 px-6 py-3 text-sm font-bold text-white hover:bg-emerald-600 transition-colors shadow-xs"
             >
               <Send size={16} />
               ثبت درخواست دمو

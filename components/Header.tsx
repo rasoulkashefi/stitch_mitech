@@ -17,6 +17,8 @@ import {
   Baby,
   Cpu,
   Armchair,
+  Sliders,
+  Navigation,
   Compass,
   Zap,
   Boxes,
@@ -102,6 +104,18 @@ const navItems: NavItem[] = [
         href: '/fleet/smart-mobile-sofas',
         desc: 'تجربه لوکس و متحرک در فضاهای مدرن',
         icon: Armchair,
+      },
+      {
+        label: 'سیستم‌های کنترل و جویستیک توانبخشی',
+        href: '/fleet/wheelchair-controllers',
+        desc: 'کنترلر ارگونومیک، ماژول توانبخشی و جوی‌استیک هوشمند',
+        icon: Sliders,
+      },
+      {
+        label: 'سیستم‌های کنترل و ناوبری رباتیک',
+        href: '/fleet/robotic-navigation-systems',
+        desc: 'واحدهای ناوبری خودران، سنسور فیوژن و کنترل حرکت',
+        icon: Navigation,
       },
     ],
   },
@@ -286,8 +300,8 @@ export default function Header() {
                   href={item.href}
                   className={`inline-flex items-center gap-1 rounded-xl px-3.5 py-2 text-sm font-semibold transition-colors duration-150 ${
                     isActive
-                      ? 'text-blue-900 bg-blue-50/70'
-                      : 'text-slate-700 hover:text-blue-900 hover:bg-slate-50'
+                      ? 'text-emerald-700 bg-emerald-50/80 font-bold'
+                      : 'text-slate-700 hover:text-emerald-600 hover:bg-slate-50'
                   }`}
                 >
                   {item.label}
@@ -295,7 +309,7 @@ export default function Header() {
                     <ChevronDown
                       size={14}
                       className={`text-slate-400 transition-transform duration-200 ${
-                        isMenuOpen ? 'rotate-180 text-blue-900' : ''
+                        isMenuOpen ? 'rotate-180 text-emerald-600' : ''
                       }`}
                     />
                   )}
@@ -310,7 +324,7 @@ export default function Header() {
                       <div className="mb-1.5 px-3 py-1.5 border-b border-slate-100 flex items-center justify-between">
                         <Link
                           href={item.href}
-                          className="text-xs font-bold text-slate-500 hover:text-blue-900 transition-colors flex items-center gap-1"
+                          className="text-xs font-bold text-slate-500 hover:text-emerald-600 transition-colors flex items-center gap-1"
                         >
                           مشاهده بخش {item.label}
                           <ArrowLeft size={12} />
@@ -328,27 +342,27 @@ export default function Header() {
                               href={sub.href}
                               className={`group flex items-start gap-3 rounded-xl p-2.5 text-xs transition-all ${
                                 isSubActive
-                                  ? 'bg-blue-50 text-blue-900 font-bold'
-                                  : 'text-slate-700 hover:bg-slate-50 hover:text-blue-900'
+                                  ? 'bg-emerald-50 text-emerald-700 font-bold'
+                                  : 'text-slate-700 hover:bg-slate-50 hover:text-emerald-600'
                               }`}
                             >
                               {IconComponent && (
                                 <span
                                   className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg ${
                                     isSubActive
-                                      ? 'bg-blue-900 text-white'
-                                      : 'bg-slate-100 text-slate-600 group-hover:bg-blue-100 group-hover:text-blue-900'
+                                      ? 'bg-emerald-600 text-white'
+                                      : 'bg-slate-100 text-slate-700 group-hover:bg-slate-200'
                                   } transition-colors`}
                                 >
                                   <IconComponent size={15} />
                                 </span>
                               )}
                               <div className="flex-1">
-                                <div className="font-bold text-slate-900 group-hover:text-blue-900 transition-colors">
+                                <div className="font-bold text-slate-900 group-hover:text-emerald-600 transition-colors">
                                   {sub.label}
                                 </div>
                                 {sub.desc && (
-                                  <div className="text-[11px] leading-4 text-slate-400 mt-0.5 font-normal">
+                                  <div className="text-xs leading-4 text-slate-400 mt-0.5 font-normal">
                                     {sub.desc}
                                   </div>
                                 )}
@@ -369,7 +383,7 @@ export default function Header() {
         <div className="flex items-center gap-3">
           <Link
             href="/contact/request-demo"
-            className="hidden items-center gap-2 rounded-full bg-blue-900 px-5 py-2.5 text-sm font-bold text-white shadow-sm transition-all hover:bg-blue-800 hover:shadow-md active:scale-95 sm:flex"
+            className="hidden items-center gap-2 rounded-full bg-slate-900 px-5 py-2.5 text-sm font-bold text-white shadow-xs transition-all hover:bg-emerald-600 hover:shadow-md active:scale-95 sm:flex"
           >
             درخواست دمو
             <ArrowLeft size={15} />
@@ -401,7 +415,7 @@ export default function Header() {
                       href={item.href}
                       onClick={() => setIsMobileMenuOpen(false)}
                       className={`text-sm font-bold ${
-                        isActive ? 'text-blue-900' : 'text-slate-800'
+                        isActive ? 'text-emerald-700' : 'text-slate-800'
                       }`}
                     >
                       {item.label}
@@ -416,7 +430,7 @@ export default function Header() {
                         <ChevronDown
                           size={18}
                           className={`transition-transform duration-200 ${
-                            isExpanded ? 'rotate-180 text-blue-900' : ''
+                            isExpanded ? 'rotate-180 text-emerald-600' : ''
                           }`}
                         />
                       </button>
@@ -436,12 +450,12 @@ export default function Header() {
                             className={`flex flex-col py-1.5 text-xs ${
                               isSubActive
                                 ? 'text-emerald-700 font-bold'
-                                : 'text-slate-600 hover:text-blue-900'
+                                : 'text-slate-600 hover:text-emerald-600'
                             }`}
                           >
                             <span>{sub.label}</span>
                             {sub.desc && (
-                              <span className="text-[10px] text-slate-400 mt-0.5">{sub.desc}</span>
+                              <span className="text-xs text-slate-400 mt-0.5">{sub.desc}</span>
                             )}
                           </Link>
                         );
@@ -456,7 +470,7 @@ export default function Header() {
               <Link
                 href="/contact/request-demo"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="flex items-center justify-center gap-2 rounded-xl bg-blue-900 py-3.5 text-sm font-bold text-white shadow-sm"
+                className="flex items-center justify-center gap-2 rounded-xl bg-slate-900 py-3.5 text-sm font-bold text-white shadow-xs hover:bg-emerald-600 transition-colors"
               >
                 ثبت درخواست دمو و پایلوت
                 <ArrowLeft size={16} />
