@@ -1,50 +1,32 @@
 import type { Metadata } from 'next';
-import ComingSoonTemplate from '@/components/ComingSoonTemplate';
+import TechnologyDetailView from '@/components/technology/TechnologyDetailView';
 
 export const metadata: Metadata = {
-  title: 'پلتفرم دوقلوی دیجیتال و مدیریت ناوگان | فناوری میکائیل',
-  description: 'پلتفرم ابری شبیه‌سازی و نظارت سه‌بعدی بلادرنگ بر ناوگان رباتیک، تحلیل ترافیک و نگهداری پیش‌بینانه.',
+  title: 'پلتفرم دوقلوی دیجیتال، تله‌متری زنده و مدیریت ناوگان | فناوری میکائیل',
+  description:
+    'پلتفرم ابری ارکستراسیون ناوگان رباتیک، مانیتورینگ سه‌بعدی زنده، نگهداری پیش‌بینانه (PdM) و تحلیل کلان داده‌های تردد و ترافیک.',
+  keywords: [
+    'دوقلوی دیجیتال',
+    'مدیریت ناوگان رباتیک',
+    'ارکستراسیون ناوگان',
+    'نگهداری پیش‌بینانه',
+    'تله‌متری ابری',
+    'میکائیل',
+  ],
+  openGraph: {
+    title: 'پلتفرم دوقلوی دیجیتال و مانیتورینگ ناوگان | میکائیل',
+    description:
+      'نظارت سه‌بعدی زنده بر صدها دستگاه خودران، بهینه‌سازی مسیرها با هوش مصنوعی و نگهداری پیش‌بینانه در یک کنسول متمرکز.',
+    url: 'https://mitech.ir/technology/digital-twin-platform',
+    siteName: 'فناوری هوشمند میکائیل',
+    locale: 'fa_IR',
+    type: 'website',
+  },
+  alternates: {
+    canonical: 'https://mitech.ir/technology/digital-twin-platform',
+  },
 };
 
 export default function DigitalTwinPlatformPage() {
-  return (
-    <ComingSoonTemplate
-      title="پلتفرم دوقلوی دیجیتال و مانیتورینگ ناوگان"
-      englishTitle="Digital Twin Platform & Fleet Management"
-      category="فناوری"
-      categoryHref="/technology"
-      description="پلتفرم ابری میکائیل یک کپی دیجیتال سه‌بعدی زنده از محیط و ناوگان ایجاد می‌کند که به مدیران سازمان امکان کنترل، تحلیل رفتار مشتریان و بهینه‌سازی مسیرها را در زمان واقعی می‌دهد."
-      highlights={[
-        {
-          title: 'داشبورد تله‌متری سه‌بعدی زنده',
-          desc: 'مشاهده مکان زنده هر وسیله، درصد باتری، سرعت، مسیر پیموده شده و وضعیت مسافر روی نقشه سه‌بعدی.',
-        },
-        {
-          title: 'نگهداری پیش‌بینانه مبتنی بر هوش مصنوعی (PdM)',
-          desc: 'تشخیص زودهنگام استهلاک قطعات مکانیکی و سلول‌های باتری پیش از وقوع خرابی فیزیکی.',
-        },
-        {
-          title: 'هیت‌مپ تردد و تحلیل رفتار مشتریان',
-          desc: 'گزارش‌گیری از مسیرهای پرترافیک و نقاط توقف محبوب برای افزایش راندمان تجاری مال‌ها.',
-        },
-      ]}
-      siblingLinks={[
-        {
-          label: 'ناوبری مستقل از GPS',
-          href: '/technology/gps-independent-navigation',
-          desc: 'زیرساخت موقعیت‌یابی ناوگان',
-        },
-        {
-          label: 'جابجایی خودران به عنوان سرویس (AMaaS)',
-          href: '/business-model/amaas',
-          desc: 'بهره‌برداری از پلتفرم در مدل خدماتی',
-        },
-        {
-          label: 'ربات‌های باربر تعقیب‌کننده',
-          href: '/fleet/following-amrs',
-          desc: 'کنترل و فراخوانی ربات‌های AMR',
-        },
-      ]}
-    />
-  );
+  return <TechnologyDetailView slug="digital-twin-platform" />;
 }

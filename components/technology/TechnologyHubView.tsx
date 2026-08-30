@@ -1,0 +1,353 @@
+'use client';
+
+import React from 'react';
+import Link from 'next/link';
+import {
+  ArrowLeft,
+  ArrowUpLeft,
+  Radar,
+  Gauge,
+  Boxes,
+  Cpu,
+  ShieldCheck,
+  Zap,
+  Network,
+  BrainCircuit,
+  Radio,
+  Sparkles,
+  ChevronLeft,
+  CheckCircle2,
+} from 'lucide-react';
+import TechSubNav from './TechSubNav';
+import TechnicalDiagram from './TechnicalDiagram';
+import { techHubOverviewData } from './tech-data';
+
+export default function TechnologyHubView() {
+  const {
+    eyebrow,
+    title,
+    highlight,
+    subtitle,
+    heroMetrics,
+    pillars,
+    systemArchitecture,
+    keyCapabilities,
+  } = techHubOverviewData;
+
+  return (
+    <div className="w-full bg-white pb-24" dir="rtl">
+      
+      {/* ── Sub Navigation ── */}
+      <TechSubNav />
+
+      {/* ── Hero Section ── */}
+      <section className="mx-auto max-w-7xl px-5 pt-10 pb-16 lg:px-8 lg:pt-14 lg:pb-24">
+        <div className="grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
+          
+          {/* Left / Text Side */}
+          <div className="relative z-10">
+            {/* Status Eyebrow matching Hero.tsx */}
+            <div className="mb-6 inline-flex items-center gap-2.5 rounded-full border border-emerald-500/20 bg-emerald-50 px-4 py-1.5 text-xs font-semibold text-emerald-700 shadow-xs">
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-600" />
+              </span>
+              <span>{eyebrow}</span>
+            </div>
+
+            {/* H1 Headline */}
+            <h1 className="text-balance text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.2] text-slate-900 tracking-tight">
+              {title}
+              <br />
+              <span className="text-emerald-600">{highlight}</span>
+            </h1>
+
+            {/* Subtitle */}
+            <p className="mt-6 max-w-xl text-pretty text-base sm:text-lg leading-8 text-slate-600">
+              {subtitle}
+            </p>
+
+            {/* Action Buttons */}
+            <div className="mt-8 flex flex-wrap items-center gap-4">
+              <a
+                href="#pillars"
+                className="group flex items-center gap-2.5 rounded-full bg-emerald-600 px-7 py-3.5 text-sm font-bold text-white shadow-lg shadow-emerald-950/20 hover:bg-emerald-500 hover:shadow-emerald-900/30 active:scale-[0.98] transition-all duration-200"
+              >
+                بررسی ۳ ستون فناوری
+                <ArrowLeft size={16} className="transition-transform duration-200 group-hover:-translate-x-1" />
+              </a>
+              <Link
+                href="/contact/request-demo"
+                className="flex items-center gap-2 rounded-full border border-slate-200 bg-white px-6 py-3.5 text-sm font-bold text-slate-700 shadow-xs hover:border-slate-300 hover:bg-slate-50 active:scale-[0.98] transition-all duration-200"
+              >
+                درخواست دمو و پایلوت فنی
+              </Link>
+            </div>
+
+            {/* Live Metrics Row matching StatsBar.tsx */}
+            <div className="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 border-t border-slate-200/80 pt-6">
+              {heroMetrics.map((m) => (
+                <div
+                  key={m.label}
+                  className="flex flex-col gap-1 rounded-2xl border border-slate-200/70 bg-slate-50/70 p-4 text-center transition-colors hover:bg-white hover:shadow-xs"
+                >
+                  <span className="text-2xl lg:text-3xl font-extrabold text-slate-900 tracking-tight">
+                    {m.value}
+                  </span>
+                  <p className="text-xs font-bold text-slate-700 leading-5">
+                    {m.label}
+                  </p>
+                  {m.subLabel && (
+                    <p className="text-[11px] text-slate-500">{m.subLabel}</p>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Right / Hero Diagram */}
+          <div>
+            <TechnicalDiagram type="navigation" systemCode="MITECH-AUTONOMY-CORE-v2.8" />
+          </div>
+
+        </div>
+      </section>
+
+      {/* ── Engineering Philosophy Banner ── */}
+      <section className="border-y border-slate-200/80 bg-slate-950 text-white py-14 px-5 lg:px-8">
+        <div className="mx-auto max-w-7xl grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
+          <div>
+            <p className="mb-2 text-xs font-bold uppercase tracking-wider text-emerald-400">
+              فلسفه مهندسی میکائیل
+            </p>
+            <h2 className="text-3xl sm:text-4xl font-extrabold leading-tight text-white tracking-tight">
+              فناوری، وقتی معنا دارد
+              <br />
+              که <span className="text-emerald-400">تغییر واقعی</span> بسازد.
+            </h2>
+          </div>
+          <div>
+            <p className="text-base sm:text-lg leading-8 text-slate-300">
+              ما در میکائیل پیچیده‌ترین مسائل مهندسی رباتیک، بینایی ماشین و کنترل توان را به ابزارهایی ساده، قابل اتکا و ایمن تبدیل می‌کنیم؛ از بازگرداندن استقلال کامل حرکتی به یک فرد توان‌یاب تا مدیریت هوشمند ناوگان‌های صدتایی در بزرگترین فرودگاه‌ها و مراکز تجاری خاورمیانه.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ── 3 Core Pillars Section ── */}
+      <section id="pillars" className="mx-auto max-w-7xl px-5 py-20 lg:px-8 lg:py-28">
+        <div className="mb-14 flex flex-wrap items-end justify-between gap-6">
+          <div>
+            <p className="mb-3 text-xs font-bold uppercase tracking-wider text-emerald-600">
+              ستون‌های اصلی پلتفرم
+            </p>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+              سه ستون بنیادین فناوری میکائیل
+            </h2>
+          </div>
+          <p className="max-w-md text-sm sm:text-base leading-7 text-slate-600">
+            معماری همگن از سخت‌افزار تا الگوریتم و ابر، بدون وابستگی به قطعات سیاه و ناشناخته.
+          </p>
+        </div>
+
+        {/* Cards Grid */}
+        <div className="grid gap-6 md:grid-cols-3">
+          {pillars.map((pillar, index) => {
+            const Icon = pillar.icon;
+            return (
+              <Link
+                key={pillar.slug}
+                href={`/technology/${pillar.slug}`}
+                className="group relative flex flex-col justify-between rounded-3xl border border-slate-200/90 bg-slate-50/50 p-8 shadow-xs transition-all duration-300 hover:-translate-y-1.5 hover:border-emerald-500/50 hover:bg-white hover:shadow-xl hover:shadow-slate-900/5"
+              >
+                <div>
+                  {/* Top Bar */}
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs font-bold text-slate-400">
+                      بخش ۰{index + 1}
+                    </span>
+                    <div className="flex size-12 items-center justify-center rounded-2xl bg-emerald-600 text-white shadow-md shadow-emerald-950/20 group-hover:bg-emerald-500 transition-colors">
+                      <Icon size={22} />
+                    </div>
+                  </div>
+
+                  {/* Badge matching homepage style */}
+                  <div className="mt-8 inline-block rounded-full bg-emerald-50 border border-emerald-500/20 px-3.5 py-1 text-xs font-bold text-emerald-700">
+                    {pillar.badge}
+                  </div>
+
+                  {/* Title & English Subtitle */}
+                  <h3 className="mt-4 text-2xl font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">
+                    {pillar.title}
+                  </h3>
+                  <p className="text-xs text-slate-400 font-medium tracking-wide mt-1">
+                    {pillar.englishTitle}
+                  </p>
+
+                  {/* Description */}
+                  <p className="mt-4 text-sm leading-7 text-slate-600">
+                    {pillar.desc}
+                  </p>
+                </div>
+
+                {/* Bottom Stats & Link */}
+                <div className="mt-8 border-t border-slate-200/80 pt-5">
+                  <div className="flex items-center justify-between text-xs text-slate-500 font-medium">
+                    <span className="font-semibold text-slate-700">{pillar.stats}</span>
+                    <span className="inline-flex items-center gap-1.5 font-bold text-emerald-700 group-hover:text-emerald-600">
+                      مشاهده جزئیات
+                      <ArrowLeft size={14} className="transition-transform duration-200 group-hover:-translate-x-1" />
+                    </span>
+                  </div>
+                </div>
+              </Link>
+            );
+          })}
+        </div>
+      </section>
+
+      {/* ── 4-Tier System Architecture Section ── */}
+      <section className="border-y border-slate-200/80 bg-slate-50/70 py-20 px-5 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+            
+            <div>
+              <p className="mb-2 text-xs font-bold uppercase tracking-wider text-emerald-600">
+                معماری یکپارچه
+              </p>
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 leading-tight tracking-tight">
+                معماری لایه‌ای سیستم؛
+                <br />
+                <span className="text-emerald-600">از سیلیکون تا ابر</span>
+              </h2>
+              <p className="mt-5 text-base leading-8 text-slate-600">
+                سیستم‌های میکائیل به صورت ماژولار و لایه‌ای مهندسی شده‌اند. هر لایه وظیفه مشخصی دارد و از طریق رابط‌های استاندارد و امن به لایه بعدی متصل می‌شود؛ به این ترتیب ارتقا یا سفارشی‌سازی هر بخش بدون اختلال در کل سیستم صورت می‌گیرد.
+              </p>
+
+              <div className="mt-8 space-y-3">
+                <div className="flex items-center gap-3 text-sm text-slate-700 font-medium">
+                  <CheckCircle2 size={18} className="text-emerald-600 shrink-0" />
+                  <span>انطباق کامل با پروتکل‌های صنعتی CAN Bus و ROS2</span>
+                </div>
+                <div className="flex items-center gap-3 text-sm text-slate-700 font-medium">
+                  <CheckCircle2 size={18} className="text-emerald-600 shrink-0" />
+                  <span>جداسازی فیزیکی لایه ایمنی از پردازش‌های سطح بالا</span>
+                </div>
+                <div className="flex items-center gap-3 text-sm text-slate-700 font-medium">
+                  <CheckCircle2 size={18} className="text-emerald-600 shrink-0" />
+                  <span>رمزنگاری دوطرفه ارتباطات با سرور مرکزی TLS 1.3</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Architecture 4 Tiers */}
+            <div className="space-y-3.5">
+              {systemArchitecture.tiers.map((tier) => {
+                const Icon = tier.icon;
+                return (
+                  <div
+                    key={tier.number}
+                    className="flex items-start gap-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-xs hover:border-emerald-300 hover:shadow-md transition-all duration-200"
+                  >
+                    <div className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-slate-900 text-emerald-400 text-sm font-extrabold">
+                      {tier.number}
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex items-center gap-2">
+                        <Icon size={16} className="text-emerald-600" />
+                        <h3 className="font-bold text-slate-900 text-base">{tier.name}</h3>
+                      </div>
+                      <p className="mt-1.5 text-xs sm:text-sm leading-6 text-slate-600">
+                        {tier.summary}
+                      </p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* ── Key Engineering Capabilities Matrix ── */}
+      <section className="mx-auto max-w-7xl px-5 py-20 lg:px-8 lg:py-24">
+        <div className="mb-14 text-center max-w-2xl mx-auto">
+          <p className="mb-3 text-xs font-bold uppercase tracking-wider text-emerald-600">
+            مزیت‌های تمایزبخش مهندسی
+          </p>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+            چرا فناوری بومی میکائیل؟
+          </h2>
+          <p className="mt-3 text-slate-600 text-sm sm:text-base">
+            چرا فناوری بومی ما ضامن بالاترین ضریب اطمینان و استقلال در کاربری‌های حساس است؟
+          </p>
+        </div>
+
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {keyCapabilities.map((cap) => {
+            const Icon = cap.icon;
+            return (
+              <div
+                key={cap.title}
+                className="rounded-2xl border border-slate-200/90 bg-white p-6 shadow-xs hover:shadow-lg hover:border-emerald-400/60 transition-all duration-200"
+              >
+                <div className="flex size-12 items-center justify-center rounded-xl bg-slate-900 text-emerald-400 shadow-sm">
+                  <Icon size={22} />
+                </div>
+                <h3 className="mt-5 text-lg font-bold text-slate-900">{cap.title}</h3>
+                <p className="mt-2 text-xs sm:text-sm leading-6 text-slate-600">{cap.desc}</p>
+              </div>
+            );
+          })}
+        </div>
+      </section>
+
+      {/* ── Collaboration & R&D CTA ── */}
+      <section className="mx-auto max-w-7xl px-5 lg:px-8">
+        <div className="relative overflow-hidden rounded-3xl bg-slate-950 px-8 py-14 text-white shadow-xl sm:px-12 sm:py-16 border border-slate-800">
+          <div
+            className="absolute inset-0 opacity-15"
+            style={{
+              backgroundImage:
+                'radial-gradient(circle at 80% 20%, #059669 0%, transparent 50%)',
+            }}
+          />
+
+          <div className="relative z-10 flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
+            <div className="max-w-2xl">
+              <p className="mb-2 text-xs font-bold uppercase tracking-wider text-emerald-400">
+                همکاری و توسعه مشترک
+              </p>
+              <h2 className="text-3xl sm:text-4xl font-extrabold leading-tight text-white tracking-tight">
+                یک ایده یا چالش سازمانی دارید؟
+                <br />
+                <span className="text-emerald-400">با زیرساخت هوشمند ما بسازیدش.</span>
+              </h2>
+              <p className="mt-4 text-sm sm:text-base leading-7 text-slate-300">
+                تیم R&D میکائیل آماده همکاری برای توسعه راهکارهای اختصاصی ناوبری، پیشران‌های سفارشی و اتصال ناوگان سازمان شما به پلتفرم دوقلوی دیجیتال است.
+              </p>
+            </div>
+
+            <div className="flex flex-wrap items-center gap-4 shrink-0">
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2.5 rounded-full bg-emerald-600 px-7 py-3.5 text-sm font-bold text-white shadow-lg shadow-emerald-950/40 hover:bg-emerald-500 active:scale-[0.98] transition-all"
+              >
+                گفت‌وگو با تیم فنی
+                <ArrowLeft size={16} />
+              </Link>
+              <Link
+                href="/fleet"
+                className="inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-900 px-6 py-3.5 text-sm font-bold text-white hover:bg-slate-800 transition-colors"
+              >
+                مشاهده محصولات ناوگان
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  );
+}

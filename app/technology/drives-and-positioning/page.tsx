@@ -1,50 +1,32 @@
 import type { Metadata } from 'next';
-import ComingSoonTemplate from '@/components/ComingSoonTemplate';
+import TechnologyDetailView from '@/components/technology/TechnologyDetailView';
 
 export const metadata: Metadata = {
-  title: 'سیستم‌های پیشران و موقعیت‌یابی دقیق | فناوری میکائیل',
-  description: 'درایورهای موتور براشلس (BLDC)، انکودرهای با رزولوشن بالا و سیستم‌های کنترل حرکت بهینه‌سازی‌شده برای رباتیک توانبخشی.',
+  title: 'سیستم‌های پیشران، درایورهای FOC و موقعیت‌یابی دقیق | فناوری میکائیل',
+  description:
+    'درایورهای موتور براشلس (BLDC) با کنترل برداری FOC، انکودرهای تفکیک‌پذیری بالا، بازیابی انرژی ترمز (KERS) و سیستم‌های کنترل حرکت چندمحوره.',
+  keywords: [
+    'درایور FOC',
+    'موتور هاب BLDC',
+    'کنترل حرکت دقیق',
+    'بازیابی انرژی KERS',
+    'پیشران الکتریکی',
+    'میکائیل',
+  ],
+  openGraph: {
+    title: 'سیستم‌های پیشران و موقعیت‌یابی دقیق | میکائیل',
+    description:
+      'گشتاور بالا، حرکت بی‌صدا و بدون لرزش با کنترل برداری پیشرفته FOC و مدیریت هوشمند توان الکتریکی.',
+    url: 'https://mitech.ir/technology/drives-and-positioning',
+    siteName: 'فناوری هوشمند میکائیل',
+    locale: 'fa_IR',
+    type: 'website',
+  },
+  alternates: {
+    canonical: 'https://mitech.ir/technology/drives-and-positioning',
+  },
 };
 
 export default function DrivesAndPositioningPage() {
-  return (
-    <ComingSoonTemplate
-      title="سیستم‌های پیشران و موقعیت‌یابی دقیق"
-      englishTitle="Drives, Actuators & Precision Positioning"
-      category="فناوری"
-      categoryHref="/technology"
-      description="میکائیل طراح و تولیدکننده سخت‌افزارهای پیشران الکتریکی با گشتاور بالا، درایورهای موتور میکروپروسسوری و سنسورهای زاویه‌ای دقیق با بالاترین راندمان مصرف انرژی است."
-      highlights={[
-        {
-          title: 'کنترل FOC (Field-Oriented Control)',
-          desc: 'کنترل برداری شار مغناطیسی موتورها برای عملکرد کاملا بی‌صدا و حرکات فوق‌العاده نرم.',
-        },
-        {
-          title: 'مدیریت هوشمند مصرف توان و بازیابی انرژی (KERS)',
-          desc: 'بازیابی انرژی در هنگام ترمزگیری و افزایش پیمایش باتری تا ۱۸ درصد در هر سیکل شارژ.',
-        },
-        {
-          title: 'طراحی مقاوم و عایق‌بندی صنعتی',
-          desc: 'استاندارد مقاومت در برابر پاشش آب و گردوغبار و سازگاری با شرایط آب‌وهوایی متنوع.',
-        },
-      ]}
-      siblingLinks={[
-        {
-          label: 'ناوبری مستقل از GPS',
-          href: '/technology/gps-independent-navigation',
-          desc: 'الگوریتم‌های موقعیت‌یابی درون‌ساختمانی',
-        },
-        {
-          label: 'پلتفرم دوقلوی دیجیتال',
-          href: '/technology/digital-twin-platform',
-          desc: 'تحلیل داده‌های حرکتی و عیب‌یابی آنلاین',
-        },
-        {
-          label: 'ویلچرهای خودران',
-          href: '/fleet/autonomous-wheelchairs',
-          desc: 'کاربرد پیشران‌های هوشمند در ویلچرها',
-        },
-      ]}
-    />
-  );
+  return <TechnologyDetailView slug="drives-and-positioning" />;
 }

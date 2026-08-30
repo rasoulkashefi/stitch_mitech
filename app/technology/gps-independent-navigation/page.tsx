@@ -1,50 +1,33 @@
 import type { Metadata } from 'next';
-import ComingSoonTemplate from '@/components/ComingSoonTemplate';
+import TechnologyDetailView from '@/components/technology/TechnologyDetailView';
 
 export const metadata: Metadata = {
-  title: 'ناوبری مستقل از GPS | فناوری میکائیل',
-  description: 'فناوری‌های پیشرفته Visual SLAM و LiDAR SLAM برای موقعیت‌یابی و مسیریابی دقیق در محیط‌های سرپوشیده و فاقد سیگنال ماهواره‌ای.',
+  title: 'ناوبری ۳۶۰ درجه و موقعیت‌یابی مستقل از GPS | فناوری میکائیل',
+  description:
+    'فناوری‌های پیشرفته 3D LiDAR SLAM، بینایی ماشین و سنسور فیوژن برای موقعیت‌یابی و مسیریابی زیر ۲ سانتی‌متر در محیط‌های سرپوشیده و فاقد سیگنال ماهواره‌ای.',
+  keywords: [
+    'ناوبری مستقل از GPS',
+    'LiDAR SLAM',
+    'سنسور فیوژن',
+    'موقعیت‌یابی درون‌ساختمانی',
+    'بینایی ماشین',
+    'ناوبری رباتیک',
+    'میکائیل',
+  ],
+  openGraph: {
+    title: 'ناوبری ۳۶۰ درجه و موقعیت‌یابی مستقل از GPS | میکائیل',
+    description:
+      'موقعیت‌یابی زیر ۲ سانتی‌متر در فرودگاه‌ها، مراکز درمانی و مال‌ها با الگوریتم‌های بلادرنگ SLAM و پردازش در لبه.',
+    url: 'https://mitech.ir/technology/gps-independent-navigation',
+    siteName: 'فناوری هوشمند میکائیل',
+    locale: 'fa_IR',
+    type: 'website',
+  },
+  alternates: {
+    canonical: 'https://mitech.ir/technology/gps-independent-navigation',
+  },
 };
 
 export default function GpsIndependentNavigationPage() {
-  return (
-    <ComingSoonTemplate
-      title="ناوبری مستقل از GPS"
-      englishTitle="GPS-Independent & Indoor Navigation"
-      category="فناوری"
-      categoryHref="/technology"
-      description="در محیط‌های بسته مانند فرودگاه‌ها، مراکز تجاری و بیمارستان‌ها، سیگنال GPS غیرقابل اتکاست. فناوری ناوبری اختصاصی میکائیل با ترکیب بینایی ماشین، لایدار و اودومتری، موقعیت‌یابی زیر ۵ سانتی‌متر را امکان‌پذیر می‌سازد."
-      highlights={[
-        {
-          title: 'الگوریتم‌های تطبیقی SLAM سه‌بعدی',
-          desc: 'ساخت نقشه دقیق از محیط در اولین تردد و به‌روزرسانی مستمر نقشه با تغییر چیدمان محیط.',
-        },
-        {
-          title: 'تشخیص دینامیک موانع متحرک',
-          desc: 'تفکیک انسان‌ها، چرخ‌دستی‌ها و موانع متحرک از موانع ثابت و پیش‌بینی مسیر حرکت آن‌ها.',
-        },
-        {
-          title: 'قابلیت کار در شرایط نوری مختلف',
-          desc: 'ترکیب دوربین‌های سنجش عمق با لایدار برای کارکرد بدون افت در تاریکی مطلق یا نور مستقیم خورشید.',
-        },
-      ]}
-      siblingLinks={[
-        {
-          label: 'سیستم‌های پیشران و موقعیت‌یابی',
-          href: '/technology/drives-and-positioning',
-          desc: 'کنترلرهای حرکت و درایورهای موتور',
-        },
-        {
-          label: 'پلتفرم دوقلوی دیجیتال',
-          href: '/technology/digital-twin-platform',
-          desc: 'نمایش سه‌بعدی موقعیت ناوگان بر بستر نقشه',
-        },
-        {
-          label: 'فرودگاه‌ها و پایانه‌ها',
-          href: '/solutions/airports',
-          desc: 'پیاده‌سازی ناوبری در ابعاد بزرگ فرودگاهی',
-        },
-      ]}
-    />
-  );
+  return <TechnologyDetailView slug="gps-independent-navigation" />;
 }
