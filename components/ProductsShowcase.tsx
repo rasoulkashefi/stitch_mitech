@@ -79,7 +79,7 @@ export default function ProductsShowcase() {
   return (
     <section
       id="products"
-      className="bg-slate-50/50 py-24 border-t border-slate-100 font-[Vazirmatn,sans-serif]"
+      className="bg-slate-50 py-24 border-t border-slate-100 font-[Vazirmatn,sans-serif]"
       dir="rtl"
     >
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
@@ -90,7 +90,7 @@ export default function ProductsShowcase() {
             <p className="mb-2 text-xs font-bold uppercase tracking-wider text-emerald-600">
               محصولات و تجهیزات هوشمند
             </p>
-            <h2 className="text-3xl font-extrabold text-slate-900 lg:text-5xl leading-tight tracking-tight">
+            <h2 className="text-3xl font-extrabold text-blue-950 lg:text-5xl leading-tight tracking-tight">
               برای هر مسیر،
               <br />
               <span className="text-slate-400">یک راهکار مهندسی‌شده.</span>
@@ -172,7 +172,7 @@ export default function ProductsShowcase() {
           <button
             onClick={() => scroll('prev')}
             aria-label="محصول قبلی"
-            className="absolute -right-4 top-1/2 -translate-y-1/2 z-20 hidden md:grid size-11 place-items-center rounded-full border border-slate-200/90 bg-white/95 text-slate-700 shadow-md backdrop-blur-sm hover:border-slate-300 hover:bg-white hover:text-emerald-600 active:scale-95 transition-all cursor-pointer"
+            className="absolute -right-4 top-1/2 -translate-y-1/2 z-20 hidden md:grid size-11 place-items-center rounded-full border border-slate-200/50 bg-white/95 text-slate-700 shadow-md backdrop-blur-sm hover:border-slate-300 hover:bg-white hover:text-emerald-600 active:scale-95 transition-all cursor-pointer"
           >
             <ChevronRight size={20} />
           </button>
@@ -180,7 +180,7 @@ export default function ProductsShowcase() {
           <button
             onClick={() => scroll('next')}
             aria-label="محصول بعدی"
-            className="absolute -left-4 top-1/2 -translate-y-1/2 z-20 hidden md:grid size-11 place-items-center rounded-full border border-slate-200/90 bg-white/95 text-slate-700 shadow-md backdrop-blur-sm hover:border-slate-300 hover:bg-white hover:text-emerald-600 active:scale-95 transition-all cursor-pointer"
+            className="absolute -left-4 top-1/2 -translate-y-1/2 z-20 hidden md:grid size-11 place-items-center rounded-full border border-slate-200/50 bg-white/95 text-slate-700 shadow-md backdrop-blur-sm hover:border-slate-300 hover:bg-white hover:text-emerald-600 active:scale-95 transition-all cursor-pointer"
           >
             <ChevronLeft size={20} />
           </button>
@@ -197,7 +197,7 @@ export default function ProductsShowcase() {
                 ref={(el) => {
                   itemRefs.current[index] = el;
                 }}
-                className="product-card group flex w-[300px] sm:w-[340px] md:w-[360px] shrink-0 snap-start flex-col justify-between overflow-hidden rounded-2xl border border-slate-200/70 bg-white p-4 shadow-xs hover:-translate-y-1 hover:border-slate-300 hover:shadow-xl transition-all duration-300"
+                className="product-card group flex w-[300px] sm:w-[340px] md:w-[360px] shrink-0 snap-start flex-col justify-between overflow-hidden rounded-2xl border border-slate-200/50 bg-white p-4 shadow-xs hover:-translate-y-1 hover:border-slate-300 hover:shadow-lg transition-all duration-300"
               >
                 <div>
                   {/* Visual Graphic */}
@@ -214,7 +214,7 @@ export default function ProductsShowcase() {
                       </span>
                     </div>
 
-                    <h3 className="text-lg font-bold text-slate-900 group-hover:text-emerald-600 transition-colors">
+                    <h3 className="text-lg font-bold text-blue-950 group-hover:text-emerald-600 transition-colors">
                       {product.title}
                     </h3>
                     <p className="font-mono text-xs text-slate-400 mt-0.5">

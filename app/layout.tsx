@@ -21,8 +21,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="fa" dir="rtl">
-      <body className="antialiased font-sans bg-slate-50 text-slate-900 flex flex-col min-h-screen">
+    <html lang="fa" dir="rtl" suppressHydrationWarning>
+      <body
+        className="antialiased font-sans bg-slate-50 text-slate-600 leading-relaxed flex flex-col min-h-screen"
+        suppressHydrationWarning
+      >
         <Header />
         <div className="flex-1">{children}</div>
         <Footer />

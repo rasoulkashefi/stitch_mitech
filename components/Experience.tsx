@@ -9,7 +9,7 @@ export default function Experience() {
 
           {/* ── Image Column (right in RTL) ── */}
           <div className="order-1">
-            <div className="relative overflow-hidden rounded-3xl border border-slate-100 shadow-xl">
+            <div className="relative overflow-hidden rounded-2xl border border-slate-100 shadow-lg">
               <img
                 src="/images/sections/experience.jpg"
                 alt="فلسفه طراحی انسان‌محور ام. آی. تک."
@@ -25,7 +25,7 @@ export default function Experience() {
               <p className="mb-2 text-xs font-bold uppercase tracking-wider text-emerald-600">
                 فلسفه طراحی و کیفیت ساخت
               </p>
-              <h2 className="text-3xl font-extrabold leading-tight text-slate-900 lg:text-5xl tracking-tight">
+              <h2 className="text-3xl font-extrabold leading-tight text-blue-950 lg:text-5xl tracking-tight">
                 طراحی شده برای استقلال،
                 <br />
                 <span className="text-slate-400">مهندسی شده برای اطمینان.</span>
@@ -38,16 +38,16 @@ export default function Experience() {
 
             {/* Mini Cards */}
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-              <div className="group rounded-2xl border border-slate-200/70 bg-slate-50/70 p-5 transition-all duration-300 hover:border-emerald-200 hover:bg-white hover:shadow-md">
+              <div className="group rounded-2xl border border-slate-200/50 bg-slate-50 p-5 transition-all duration-300 hover:-translate-y-1 hover:border-emerald-200 hover:bg-white hover:shadow-lg">
                 <HeartHandshake className="h-7 w-7 text-emerald-600" />
-                <h3 className="mt-3 font-bold text-slate-900 text-base">ارگونومی انسان‌محور</h3>
+                <h3 className="mt-3 font-bold text-blue-950 text-base">ارگونومی انسان‌محور</h3>
                 <p className="mt-1.5 text-xs leading-6 text-slate-600">
                   سازگاری کامل با فرم بدنی و استفاده بدون خستگی در طول روز.
                 </p>
               </div>
-              <div className="group rounded-2xl border border-slate-200/70 bg-slate-50/70 p-5 transition-all duration-300 hover:border-emerald-200 hover:bg-white hover:shadow-md">
+              <div className="group rounded-2xl border border-slate-200/50 bg-slate-50 p-5 transition-all duration-300 hover:-translate-y-1 hover:border-emerald-200 hover:bg-white hover:shadow-lg">
                 <ShieldCheck className="h-7 w-7 text-emerald-600" />
-                <h3 className="mt-3 font-bold text-slate-900 text-base">استانداردهای مهندسی</h3>
+                <h3 className="mt-3 font-bold text-blue-950 text-base">استانداردهای مهندسی</h3>
                 <p className="mt-1.5 text-xs leading-6 text-slate-600">
                   پایداری شاسی، تست‌های مکرر حرکتی و ایمنی بدون افت کارایی در شرایط مختلف.
                 </p>

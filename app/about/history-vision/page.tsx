@@ -2,12 +2,57 @@ import type { Metadata } from 'next';
 import ComingSoonTemplate from '@/components/ComingSoonTemplate';
 
 export const metadata: Metadata = {
-  title: 'تاریخچه و چشم‌انداز | فناوری هوشمند میکائیل',
+  title: 'تاریخچه و چشم‌انداز | ام. آی. تک. (Mitech)',
   description: 'مسیر شکل‌گیری میکائیل از آزمایشگاه‌های پژوهشی تا تجاری‌سازی صنعتی و چشم‌انداز آینده حمل‌ونقل هوشمند.',
+  keywords: [
+    'تاریخچه شرکت',
+    'چشم انداز میکائیل',
+    'تحول دیجیتال',
+    'رباتیک ایران',
+    'میکائیل',
+    'Mitech'
+  ],
+  openGraph: {
+    title: 'تاریخچه و چشم‌انداز | ام. آی. تک.',
+    description: 'مسیر شکل‌گیری میکائیل از آزمایشگاه‌های پژوهشی تا تجاری‌سازی صنعتی.',
+    url: 'https://mitech.ir/about/history-vision',
+    siteName: 'ام. آی. تک. (Mitech)',
+    locale: 'fa_IR',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'تاریخچه و چشم‌انداز میکائیل',
+    description: 'مسیر شکل‌گیری میکائیل از آزمایشگاه‌های پژوهشی تا تجاری‌سازی صنعتی.',
+  },
+  alternates: {
+    canonical: 'https://mitech.ir/about/history-vision',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    'max-image-preview': 'large',
+  },
 };
 
 export default function HistoryVisionPage() {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'AboutPage',
+    name: 'تاریخچه و چشم‌انداز میکائیل',
+    description: 'مسیر شکل‌گیری میکائیل از آزمایشگاه‌های پژوهشی تا تجاری‌سازی صنعتی و چشم‌انداز آینده.',
+    publisher: {
+      '@type': 'Organization',
+      name: 'Mitech'
+    }
+  };
+
   return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
     <ComingSoonTemplate
       title="تاریخچه و چشم‌انداز"
       englishTitle="Company History & Strategic Vision"
@@ -46,5 +91,6 @@ export default function HistoryVisionPage() {
         },
       ]}
     />
+    </>
   );
 }

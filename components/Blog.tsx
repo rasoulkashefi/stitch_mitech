@@ -50,14 +50,14 @@ export default function Blog() {
           <p className="mb-2 text-xs font-bold uppercase tracking-wider text-emerald-600">
             مجله تخصصی و مقالات
           </p>
-          <h2 className="text-3xl font-extrabold text-slate-900 lg:text-4xl tracking-tight">
+          <h2 className="text-3xl font-extrabold text-blue-950 lg:text-4xl tracking-tight">
             ایده‌ها و نوآوری‌های دنیای رباتیک
           </h2>
         </div>
 
         <Link
           href="/blog"
-          className="group inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-5 py-2.5 text-xs font-bold text-slate-800 shadow-xs transition-all hover:border-slate-300 hover:shadow-md hover:text-emerald-600"
+          className="group inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-5 py-2.5 text-xs font-bold text-blue-950 shadow-xs transition-all hover:border-slate-300 hover:shadow-md hover:text-emerald-600"
         >
           مشاهده همه مقالات
           <ArrowLeft
@@ -72,7 +72,7 @@ export default function Blog() {
         {posts.map((post, i) => (
           <article
             key={i}
-            className="group flex flex-col justify-between overflow-hidden rounded-2xl border border-slate-200/70 bg-white shadow-xs transition-all duration-300 hover:border-slate-300 hover:shadow-xl hover:-translate-y-1"
+            className="group flex flex-col justify-between overflow-hidden rounded-2xl border border-slate-200/50 bg-white shadow-xs transition-all duration-300 hover:border-slate-300 hover:shadow-lg hover:-translate-y-1"
           >
             {/* Image */}
             <div className="h-48 overflow-hidden bg-slate-50">
@@ -95,7 +95,7 @@ export default function Blog() {
                 </div>
 
                 {/* Title */}
-                <h3 className="mt-3 text-base font-bold leading-7 text-slate-900 transition-colors group-hover:text-emerald-600">
+                <h3 className="mt-3 text-base font-bold leading-7 text-blue-950 transition-colors group-hover:text-emerald-600">
                   <Link href={post.categoryHref}>
                     {post.title}
                   </Link>

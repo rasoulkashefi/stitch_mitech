@@ -262,8 +262,8 @@ export default function Header() {
     <header
       className={`sticky top-0 z-50 transition-all duration-300 font-[Vazirmatn,sans-serif] ${
         isScrolled
-          ? 'bg-white/95 backdrop-blur-xl shadow-sm border-b border-slate-200/90'
-          : 'bg-white/90 backdrop-blur-xl border-b border-slate-200/60'
+          ? 'bg-white/95 backdrop-blur-xl shadow-sm border-b border-slate-200/50'
+          : 'bg-white/90 backdrop-blur-xl border-b border-slate-200/30'
       }`}
       dir="rtl"
     >
@@ -320,7 +320,7 @@ export default function Header() {
                   <div
                     className="absolute right-0 top-full pt-2 z-50 w-72 origin-top-right animate-in fade-in slide-in-from-top-1 duration-150"
                   >
-                    <div className="overflow-hidden rounded-2xl border border-slate-200/90 bg-white/95 p-2 shadow-2xl backdrop-blur-xl">
+                    <div className="overflow-hidden rounded-2xl border border-slate-200/50 bg-white/95 p-2 shadow-md backdrop-blur-xl">
                       <div className="mb-1.5 px-3 py-1.5 border-b border-slate-100 flex items-center justify-between">
                         <Link
                           href={item.href}

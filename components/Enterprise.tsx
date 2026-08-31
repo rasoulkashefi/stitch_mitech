@@ -48,7 +48,7 @@ export default function Enterprise() {
         </div>
 
         {/* ── Hero Image ── */}
-        <div className="relative mb-14 h-80 w-full overflow-hidden rounded-3xl border border-slate-800 shadow-2xl md:h-[440px]">
+        <div className="relative mb-14 h-80 w-full overflow-hidden rounded-2xl border border-slate-800 shadow-xl md:h-[440px]">
           <img
             src="/images/sections/enterprise.jpg"
             alt="ناوگان خودران سازمانی ام. آی. تک."

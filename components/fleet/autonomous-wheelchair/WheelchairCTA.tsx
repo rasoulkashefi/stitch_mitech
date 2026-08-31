@@ -19,7 +19,7 @@ const contactItems = [
 ];
 
 const inputBase =
-  'w-full rounded-xl border border-slate-200 bg-white p-3.5 text-sm text-slate-900 outline-none transition-all placeholder:text-slate-400 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500';
+  'w-full rounded-xl border border-slate-200/50 bg-slate-50 p-3.5 text-sm text-slate-800 outline-none transition-all placeholder:text-slate-400 focus:border-emerald-500 focus:bg-white focus:ring-2 focus:ring-emerald-500/20';
 
 export default function WheelchairCTA() {
   const [sent, setSent] = useState(false);
@@ -38,7 +38,7 @@ export default function WheelchairCTA() {
             استقرار سازمانی • Pilot Program
           </p>
 
-          <h2 className="text-3xl font-extrabold leading-tight text-slate-900 lg:text-5xl tracking-tight mb-6">
+          <h2 className="text-3xl font-extrabold leading-tight text-blue-950 lg:text-5xl tracking-tight mb-6">
             آماده تجهیز و هوشمندسازی
             <br />
             <span className="text-emerald-600">مجموعه خود هستید؟</span>
@@ -53,7 +53,7 @@ export default function WheelchairCTA() {
             {contactItems.map((item, i) => (
               <div key={i} className="flex flex-col">
                 <span className="text-xs text-slate-400 font-medium">{item.title}</span>
-                <span className="text-sm font-bold text-slate-900 mt-0.5">{item.label}</span>
+                <span className="text-sm font-bold text-blue-950 mt-0.5">{item.label}</span>
               </div>
             ))}
           </div>
@@ -66,9 +66,9 @@ export default function WheelchairCTA() {
         </div>
 
         {/* ── Left Column: Contact Form Card (7 cols) ── */}
-        <div className="lg:col-span-7 rounded-2xl border border-slate-200 bg-slate-50/50 p-8 sm:p-10 text-right">
+        <div className="lg:col-span-7 rounded-2xl border border-slate-200/50 bg-slate-50 p-8 sm:p-10 text-right shadow-lg">
           <div className="mb-6 pb-4 border-b border-slate-200">
-            <h3 className="text-xl font-bold text-slate-900">
+            <h3 className="text-xl font-bold text-blue-950">
               فرم ثبت درخواست پایلوت سازمانی
             </h3>
             <p className="text-xs text-slate-500 mt-1">
@@ -156,7 +156,7 @@ export default function WheelchairCTA() {
             {/* Submit Button */}
             <button
               type="submit"
-              className={`mt-2 flex w-full items-center justify-center gap-2 rounded-full py-4 text-sm font-bold text-white transition-all duration-150 active:scale-[0.98] ${
+              className={`mt-2 flex w-full items-center justify-center gap-2 rounded-full py-4 text-sm font-bold text-white transition-all duration-300 active:scale-[0.98] ${
                 sent
                   ? 'bg-emerald-600'
                   : 'bg-slate-900 hover:bg-emerald-600'

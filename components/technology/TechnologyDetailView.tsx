@@ -26,7 +26,7 @@ export default function TechnologyDetailView({ slug }: TechnologyDetailViewProps
   if (!data) {
     return (
       <div className="py-20 text-center" dir="rtl">
-        <h1 className="text-2xl font-bold text-slate-900">صفحه مورد نظر یافت نشد.</h1>
+        <h1 className="text-2xl font-bold text-blue-950">صفحه مورد نظر یافت نشد.</h1>
         <Link href="/technology" className="mt-4 inline-block text-emerald-600 font-bold">
           بازگشت به مرکز فناوری
         </Link>
@@ -82,7 +82,7 @@ export default function TechnologyDetailView({ slug }: TechnologyDetailViewProps
             </p>
 
             {/* H1 Headline */}
-            <h1 className="text-balance text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-[1.25] text-slate-900 tracking-tight">
+            <h1 className="text-balance text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-[1.25] text-blue-950 tracking-tight">
               {title}
             </h1>
 
@@ -111,7 +111,7 @@ export default function TechnologyDetailView({ slug }: TechnologyDetailViewProps
             <div className="mt-8 flex flex-wrap items-center gap-4">
               <Link
                 href="/contact/request-demo"
-                className="group flex items-center gap-2.5 rounded-full bg-emerald-600 px-7 py-3.5 text-sm font-bold text-white shadow-lg shadow-emerald-950/20 hover:bg-emerald-500 hover:shadow-emerald-900/30 active:scale-[0.98] transition-all duration-200"
+                className="group flex items-center gap-2.5 rounded-full bg-slate-900 px-7 py-3.5 text-sm font-bold text-white shadow-lg shadow-slate-950/15 hover:bg-slate-800 active:scale-[0.98] transition-all duration-200"
               >
                 درخواست مشاوره فنی و تست آزمایشگاهی
                 <ArrowLeft size={16} className="transition-transform duration-200 group-hover:-translate-x-1" />
@@ -140,7 +140,7 @@ export default function TechnologyDetailView({ slug }: TechnologyDetailViewProps
             {metrics.map((metric) => (
               <div
                 key={metric.label}
-                className="flex flex-col gap-1.5 rounded-2xl border border-slate-800/80 bg-slate-900/60 p-6 text-center shadow-xs transition-colors hover:bg-slate-900 hover:border-emerald-500/40"
+                className="flex flex-col gap-1.5 rounded-2xl border border-slate-800/80 bg-slate-900/60 p-6 text-center shadow-xs transition-all duration-300 hover:bg-slate-900 hover:border-emerald-500/40"
               >
                 <span className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-emerald-400 tracking-tight">
                   {metric.value}
@@ -164,7 +164,7 @@ export default function TechnologyDetailView({ slug }: TechnologyDetailViewProps
             <p className="mb-3 text-xs font-bold uppercase tracking-wider text-emerald-600">
               قابلیت‌های کلیدی
             </p>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-blue-950 tracking-tight">
               ویژگی‌های الگوریتمی و سخت‌افزاری
             </h2>
           </div>
@@ -180,7 +180,7 @@ export default function TechnologyDetailView({ slug }: TechnologyDetailViewProps
             return (
               <div
                 key={feature.title}
-                className="group relative flex flex-col justify-between rounded-3xl border border-slate-200 bg-slate-50/40 p-7 shadow-xs hover:border-emerald-400 hover:bg-white hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+                className="group relative flex flex-col justify-between rounded-2xl border border-slate-200/50 bg-slate-50 p-7 shadow-xs hover:border-emerald-400 hover:bg-white hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
               >
                 <div>
                   <div className="flex items-center justify-between">
@@ -194,7 +194,7 @@ export default function TechnologyDetailView({ slug }: TechnologyDetailViewProps
                     )}
                   </div>
 
-                  <h3 className="mt-6 text-xl font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">
+                  <h3 className="mt-6 text-xl font-bold text-blue-950 group-hover:text-emerald-700 transition-colors">
                     {feature.title}
                   </h3>
 
@@ -209,13 +209,13 @@ export default function TechnologyDetailView({ slug }: TechnologyDetailViewProps
       </section>
 
       {/* ── System Architecture & Data Flow Pipeline ── */}
-      <section className="border-y border-slate-200/80 bg-slate-50/70 py-20 px-5 lg:px-8">
+      <section className="border-y border-slate-200/50 bg-slate-50 py-20 px-5 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="mb-14 text-center max-w-2xl mx-auto">
             <p className="mb-3 text-xs font-bold uppercase tracking-wider text-emerald-600">
               خط لوله پردازش داده
             </p>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-blue-950 tracking-tight">
               {architectureTitle}
             </h2>
             <p className="mt-3 text-slate-600 text-sm sm:text-base">
@@ -228,7 +228,7 @@ export default function TechnologyDetailView({ slug }: TechnologyDetailViewProps
             {layers.map((layer, index) => (
               <div
                 key={layer.step}
-                className="relative rounded-2xl border border-slate-200 bg-white p-6 shadow-xs flex flex-col justify-between hover:shadow-md hover:border-emerald-300 transition-all"
+                className="relative rounded-2xl border border-slate-200/50 bg-white p-6 shadow-xs flex flex-col justify-between hover:shadow-lg hover:-translate-y-1 hover:border-emerald-300 transition-all duration-300"
               >
                 <div>
                   <div className="flex items-center justify-between">
@@ -242,7 +242,7 @@ export default function TechnologyDetailView({ slug }: TechnologyDetailViewProps
                     )}
                   </div>
 
-                  <h3 className="mt-5 text-base font-bold text-slate-900">{layer.title}</h3>
+                  <h3 className="mt-5 text-base font-bold text-blue-950">{layer.title}</h3>
                   <p className="text-xs text-emerald-700 font-bold mt-1">
                     {layer.sub}
                   </p>
@@ -274,7 +274,7 @@ export default function TechnologyDetailView({ slug }: TechnologyDetailViewProps
           <p className="mb-3 text-xs font-bold uppercase tracking-wider text-emerald-600">
             کاربردهای عملیاتی
           </p>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-blue-950 tracking-tight">
             {useCasesTitle}
           </h2>
           <p className="mt-3 text-slate-600 text-sm sm:text-base">
@@ -286,13 +286,13 @@ export default function TechnologyDetailView({ slug }: TechnologyDetailViewProps
           {useCases.map((useCase) => (
             <div
               key={useCase.title}
-              className="flex flex-col justify-between rounded-3xl border border-slate-200 bg-white p-7 shadow-xs hover:border-emerald-300 hover:shadow-lg transition-all"
+              className="flex flex-col justify-between rounded-2xl border border-slate-200/50 bg-white p-7 shadow-xs hover:border-emerald-300 hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
             >
               <div>
                 <span className="inline-block rounded-full bg-emerald-50 border border-emerald-500/20 px-3.5 py-1 text-xs font-semibold text-emerald-700">
                   {useCase.tag}
                 </span>
-                <h3 className="mt-4 text-xl font-bold text-slate-900">{useCase.title}</h3>
+                <h3 className="mt-4 text-xl font-bold text-blue-950">{useCase.title}</h3>
                 <p className="mt-3 text-sm leading-7 text-slate-600">{useCase.desc}</p>
               </div>
 
@@ -306,13 +306,13 @@ export default function TechnologyDetailView({ slug }: TechnologyDetailViewProps
       </section>
 
       {/* ── Technical FAQ Accordion ── */}
-      <section className="border-t border-slate-200/80 bg-slate-50/50 py-16 px-5 lg:px-8">
+      <section className="border-t border-slate-200/50 bg-slate-50 py-16 px-5 lg:px-8">
         <div className="mx-auto max-w-4xl">
           <div className="mb-10 text-center">
             <p className="mb-2 text-xs font-bold uppercase tracking-wider text-emerald-600">
               پرسش و پاسخ فنی
             </p>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-blue-950 tracking-tight">
               پرسش‌های متداول مهندسی
             </h2>
           </div>
@@ -323,11 +323,11 @@ export default function TechnologyDetailView({ slug }: TechnologyDetailViewProps
               return (
                 <div
                   key={item.q}
-                  className="rounded-2xl border border-slate-200 bg-white overflow-hidden shadow-xs transition-colors"
+                  className="rounded-2xl border border-slate-200/50 bg-white overflow-hidden shadow-xs transition-all duration-300"
                 >
                   <button
                     onClick={() => toggleFaq(index)}
-                    className="flex w-full items-center justify-between p-5 text-right font-bold text-slate-900 hover:text-emerald-700 transition-colors"
+                    className="flex w-full items-center justify-between p-5 text-right font-bold text-blue-950 hover:text-emerald-700 transition-all duration-300"
                   >
                     <span className="text-sm sm:text-base">{item.q}</span>
                     <ChevronDown
@@ -338,7 +338,7 @@ export default function TechnologyDetailView({ slug }: TechnologyDetailViewProps
                     />
                   </button>
                   {isOpen && (
-                    <div className="border-t border-slate-100 bg-slate-50/40 p-5 text-sm leading-7 text-slate-600">
+                    <div className="border-t border-slate-100 bg-slate-50 p-5 text-sm leading-7 text-slate-600">
                       {item.a}
                     </div>
                   )}
@@ -352,7 +352,7 @@ export default function TechnologyDetailView({ slug }: TechnologyDetailViewProps
       {/* ── Related Fleet Products Cross-Links ── */}
       <section className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
         <div className="mb-8 flex items-center justify-between">
-          <h2 className="text-xl sm:text-2xl font-bold text-slate-900">
+          <h2 className="text-xl sm:text-2xl font-bold text-blue-950">
             محصولات و ناوگان مجهز به این فناوری
           </h2>
           <Link
@@ -369,10 +369,10 @@ export default function TechnologyDetailView({ slug }: TechnologyDetailViewProps
             <Link
               key={prod.title}
               href={prod.href}
-              className="group rounded-2xl border border-slate-200 bg-white p-5 shadow-xs hover:border-emerald-400 hover:shadow-md transition-all"
+              className="group rounded-2xl border border-slate-200/50 bg-white p-5 shadow-xs hover:border-emerald-400 hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
             >
               <div className="flex items-center justify-between">
-                <h3 className="font-bold text-slate-900 group-hover:text-emerald-700 transition-colors text-base">
+                <h3 className="font-bold text-blue-950 group-hover:text-emerald-700 transition-colors text-base">
                   {prod.title}
                 </h3>
                 <ArrowUpLeft size={16} className="text-slate-400 group-hover:text-emerald-600 transition-colors" />
@@ -385,7 +385,7 @@ export default function TechnologyDetailView({ slug }: TechnologyDetailViewProps
 
       {/* ── Final Enterprise CTA ── */}
       <section className="mx-auto max-w-7xl px-5 lg:px-8">
-        <div className="relative overflow-hidden rounded-3xl bg-slate-950 px-8 py-12 text-white shadow-xl sm:px-12 border border-slate-800">
+        <div className="relative overflow-hidden rounded-2xl bg-slate-950 px-8 py-12 text-white shadow-xl sm:px-12 border border-slate-800">
           <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
             <div>
               <p className="text-xs font-bold uppercase tracking-wider text-emerald-400">

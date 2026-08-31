@@ -2,13 +2,58 @@ import type { Metadata } from 'next';
 import ComingSoonTemplate from '@/components/ComingSoonTemplate';
 
 export const metadata: Metadata = {
-  title: 'اخبار و رویدادهای شرکت (Company News) | میکائیل',
+  title: 'اخبار و رویدادهای شرکت (Company News) | ام. آی. تک. (Mitech)',
   description: 'آخرین اخبار، رونمایی محصولات جدید، تفاهم‌نامه‌ها و اطلاعیه‌های رسمی شرکت فناوری هوشمند میکائیل.',
+  keywords: [
+    'اخبار میکائیل',
+    'رویدادهای شرکت',
+    'رونمایی محصولات',
+    'Company News',
+    'میکائیل',
+    'Mitech'
+  ],
+  openGraph: {
+    title: 'اخبار و رویدادهای شرکت (Company News) | میکائیل',
+    description: 'آخرین اخبار، رونمایی محصولات جدید، تفاهم‌نامه‌ها و اطلاعیه‌های رسمی شرکت.',
+    url: 'https://mitech.ir/blog/category/company-news',
+    siteName: 'ام. آی. تک. (Mitech)',
+    locale: 'fa_IR',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'اخبار و رویدادهای شرکت (Company News)',
+    description: 'آخرین اخبار، رونمایی محصولات جدید، تفاهم‌نامه‌ها و اطلاعیه‌های رسمی.',
+  },
+  alternates: {
+    canonical: 'https://mitech.ir/blog/category/company-news',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    'max-image-preview': 'large',
+  },
 };
 
 export default function CompanyNewsPage() {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: 'اخبار و رویدادهای شرکت (Company News)',
+    description: 'آخرین اخبار، رونمایی محصولات جدید، تفاهم‌نامه‌ها و اطلاعیه‌های رسمی شرکت.',
+    publisher: {
+      '@type': 'Organization',
+      name: 'Mitech'
+    }
+  };
+
   return (
-    <ComingSoonTemplate
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <ComingSoonTemplate
       title="اخبار و رویدادهای شرکت"
       englishTitle="Company News & Press Releases"
       category="مجله و مقالات"
@@ -46,5 +91,6 @@ export default function CompanyNewsPage() {
         },
       ]}
     />
+    </>
   );
 }

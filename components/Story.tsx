@@ -19,7 +19,7 @@ export default function Story() {
             داستان شکل‌گیری میکائیل
           </p>
 
-          <h2 className="text-3xl font-extrabold leading-snug text-slate-900 lg:text-4xl tracking-tight">
+          <h2 className="text-3xl font-extrabold leading-snug text-blue-950 lg:text-4xl tracking-tight">
             نوآوری مهندسی، زمانی معنا دارد
             <br />
             که <span className="text-emerald-600">محدودیت‌ها</span> را بشکند.
@@ -32,7 +32,7 @@ export default function Story() {
           <div>
             <a
               href="#about"
-              className="group inline-flex items-center gap-2 text-sm font-bold text-slate-900 transition-colors hover:text-emerald-600"
+              className="group inline-flex items-center gap-2 text-sm font-bold text-blue-950 transition-colors hover:text-emerald-600"
             >
               بیشتر درباره مسیر نوآوری ما بخوانید
               <ArrowLeft
@@ -48,9 +48,9 @@ export default function Story() {
           {stats.map((stat, i) => (
             <div
               key={i}
-              className="group flex flex-col gap-2 rounded-2xl border border-slate-200/70 bg-white p-6 shadow-xs transition-all hover:border-slate-300 hover:shadow-md hover:-translate-y-0.5"
+              className="group flex flex-col gap-2 rounded-2xl border border-slate-200/50 bg-white p-6 shadow-xs transition-all hover:border-slate-300 hover:shadow-lg hover:-translate-y-1"
             >
-              <span className="text-2xl font-extrabold text-slate-900 tracking-tight">
+              <span className="text-2xl font-extrabold text-blue-950 tracking-tight">
                 {stat.value}
               </span>
               <span className="text-xs text-slate-500">{stat.label}</span>

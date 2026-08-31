@@ -68,7 +68,7 @@ export default function WheelchairHero() {
           <div className="mt-10 flex flex-wrap items-center gap-4">
             <a
               href="#demo-request"
-              className="inline-flex items-center gap-2 rounded-full bg-emerald-600 px-8 py-3.5 text-sm font-bold text-white shadow-sm hover:bg-emerald-500 active:scale-[0.98] transition-all duration-150"
+              className="inline-flex items-center gap-2 rounded-full bg-emerald-600 px-8 py-3.5 text-sm font-bold text-white shadow-sm hover:bg-emerald-500 active:scale-[0.98] transition-all duration-300"
             >
               <span>درخواست دمو و پایلوت سازمانی</span>
               <ArrowLeft size={16} />
@@ -76,7 +76,7 @@ export default function WheelchairHero() {
 
             <a
               href="#tech-specs"
-              className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-8 py-3.5 text-sm font-semibold text-white backdrop-blur-sm hover:bg-white/10 active:scale-[0.98] transition-all duration-150"
+              className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-8 py-3.5 text-sm font-semibold text-white backdrop-blur-sm hover:bg-white/10 active:scale-[0.98] transition-all duration-300"
             >
               <span>مشخصات فنی دستگاه</span>
               <ChevronDown size={16} className="text-slate-400" />

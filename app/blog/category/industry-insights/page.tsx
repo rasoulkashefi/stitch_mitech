@@ -2,13 +2,58 @@ import type { Metadata } from 'next';
 import ComingSoonTemplate from '@/components/ComingSoonTemplate';
 
 export const metadata: Metadata = {
-  title: 'دیدگاه‌های صنعت (Industry Insights) | مجله میکائیل',
+  title: 'دیدگاه‌های صنعت (Industry Insights) | ام. آی. تک. (Mitech)',
   description: 'تحلیل‌ها و مقالات تخصصی پیرامون آینده رباتیک خدماتی، بینایی ماشین و هوشمندسازی فضاهای عمومی.',
+  keywords: [
+    'مقالات تخصصی رباتیک',
+    'آینده فناوری خودران',
+    'Industry Insights',
+    'هوشمندسازی فضاها',
+    'میکائیل',
+    'Mitech'
+  ],
+  openGraph: {
+    title: 'دیدگاه‌های صنعت (Industry Insights) | میکائیل',
+    description: 'تحلیل‌ها و مقالات تخصصی پیرامون آینده رباتیک خدماتی و هوشمندسازی فضاهای عمومی.',
+    url: 'https://mitech.ir/blog/category/industry-insights',
+    siteName: 'ام. آی. تک. (Mitech)',
+    locale: 'fa_IR',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'دیدگاه‌های صنعت (Industry Insights)',
+    description: 'تحلیل‌ها و مقالات تخصصی پیرامون آینده رباتیک خدماتی و هوشمندسازی فضاهای عمومی.',
+  },
+  alternates: {
+    canonical: 'https://mitech.ir/blog/category/industry-insights',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    'max-image-preview': 'large',
+  },
 };
 
 export default function IndustryInsightsPage() {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: 'دیدگاه‌های صنعت (Industry Insights)',
+    description: 'تحلیل‌ها و مقالات تخصصی پیرامون آینده رباتیک خدماتی، بینایی ماشین و هوشمندسازی فضاهای عمومی.',
+    publisher: {
+      '@type': 'Organization',
+      name: 'Mitech'
+    }
+  };
+
   return (
-    <ComingSoonTemplate
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <ComingSoonTemplate
       title="دیدگاه‌های صنعت"
       englishTitle="Industry Insights & Future Tech"
       category="مجله و مقالات"
@@ -46,5 +91,6 @@ export default function IndustryInsightsPage() {
         },
       ]}
     />
+    </>
   );
 }

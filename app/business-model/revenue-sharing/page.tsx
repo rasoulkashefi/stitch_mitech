@@ -1,50 +1,71 @@
 import type { Metadata } from 'next';
-import ComingSoonTemplate from '@/components/ComingSoonTemplate';
+import BusinessDetailView from '@/components/business-model/BusinessDetailView';
 
 export const metadata: Metadata = {
-  title: 'اشتراک درآمد و سرمایه‌گذاری مشترک | میکائیل',
-  description: 'مدل همکاری برد-برد جهت راه‌اندازی ناوگان خودران در مراکز تجاری، گردشگری و رفاهی بر پایه تقسیم عواید.',
+  title: 'اشتراک درآمد و سرمایه‌گذاری مشترک | ام. آی. تک. (Mitech)',
+  description:
+    'مدل همکاری برد-برد جهت راه‌اندازی ناوگان خودران در مراکز تجاری، گردشگری و رفاهی بر پایه تقسیم عواید کرایه و تبلیغات هوشمند دیجیتال بدون سرمایه‌گذاری اولیه.',
+  keywords: [
+    'اشتراک درآمد',
+    'Revenue Sharing',
+    'سرمایه گذاری مشترک',
+    'تسهیم درآمد',
+    'مدل همکاری',
+    'تبلیغات هوشمند',
+    'میکائیل',
+    'Mitech'
+  ],
+  openGraph: {
+    title: 'اشتراک درآمد و سرمایه‌گذاری مشترک | ام. آی. تک.',
+    description: 'مدل همکاری برد-برد جهت راه‌اندازی ناوگان خودران بر پایه تقسیم عواید بدون سرمایه‌گذاری اولیه.',
+    url: 'https://mitech.ir/business-model/revenue-sharing',
+    siteName: 'ام. آی. تک. (Mitech)',
+    images: [
+      {
+        url: '/logo/logo.png',
+        width: 1200,
+        height: 630,
+        alt: 'اشتراک درآمد و سرمایه‌گذاری مشترک',
+      },
+    ],
+    locale: 'fa_IR',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'اشتراک درآمد و سرمایه‌گذاری مشترک',
+    description: 'مدل همکاری برد-برد جهت راه‌اندازی ناوگان خودران بدون سرمایه‌گذاری اولیه.',
+    images: ['/logo/logo.png'],
+  },
+  alternates: {
+    canonical: 'https://mitech.ir/business-model/revenue-sharing',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    'max-image-preview': 'large',
+  },
 };
 
 export default function RevenueSharingPage() {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'اشتراک درآمد و سرمایه‌گذاری مشترک',
+    provider: {
+      '@type': 'Organization',
+      name: 'Mitech'
+    },
+    description: 'مدل همکاری برد-برد جهت راه‌اندازی ناوگان خودران در مراکز تجاری و گردشگری بر پایه تقسیم عواید.'
+  };
+
   return (
-    <ComingSoonTemplate
-      title="اشتراک درآمد و سرمایه‌گذاری مشترک"
-      englishTitle="Revenue Sharing & Joint Ventures"
-      category="مدل‌های کسب‌وکار"
-      categoryHref="/business-model"
-      description="مالکان و بهره‌برداران فضاهای پرتردد تجاری و تفریحی می‌توانند بدون هزینه سرمایه‌گذاری، میزبان ناوگان میکائیل شده و از درآمدهای اجاره، تبلیغات مانیتورینگ و بسته‌های اشتراکی مسافران سود مستقیم ببرند."
-      highlights={[
-        {
-          title: 'درآمد پایدار و مستمر از فضای موجود',
-          desc: 'تبدیل راهروها و فضاهای لابی به منبع درآمد جدید بدون تغییر در کاربری معماری مجموعه.',
-        },
-        {
-          title: 'تسهیم خودکار و شفاف تراکنش‌ها',
-          desc: 'داشبورد مالی اختصاصی با گزارش‌گیری زنده از مبالغ پرداخت‌شده توسط مسافران و سهم طرفین.',
-        },
-        {
-          title: 'تبلیغات مکان‌محور هوشمند (In-Transit Ads)',
-          desc: 'نمایش آگهی برندهای مستقر در مال روی تبلت‌های ناوگان در حین تردد و کسب سود مضاعف تبلیغاتی.',
-        },
-      ]}
-      siblingLinks={[
-        {
-          label: 'جابجایی خودران به عنوان سرویس (AMaaS)',
-          href: '/business-model/amaas',
-          desc: 'طرح‌های اشتراکی سازمانی ناوگان',
-        },
-        {
-          label: 'مجتمع‌های تجاری و مال‌ها',
-          href: '/solutions/malls',
-          desc: 'بررسی پتانسیل درآمدی در مراکز خرید',
-        },
-        {
-          label: 'تماس با واحد توسعه تجاری',
-          href: '/contact/sales',
-          desc: 'دریافت پروپوزال و جلسه ارزیابی مالی پروژه',
-        },
-      ]}
-    />
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <BusinessDetailView slug="revenue-sharing" />
+    </>
   );
 }

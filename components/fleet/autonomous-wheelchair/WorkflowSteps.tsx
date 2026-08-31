@@ -41,7 +41,7 @@ export default function WorkflowSteps() {
           <p className="mb-3 text-xs font-bold uppercase tracking-wider text-emerald-600">
             چرخه سفر هوشمند • Journey Flow
           </p>
-          <h2 className="text-3xl font-extrabold text-slate-900 lg:text-5xl leading-tight tracking-tight">
+          <h2 className="text-3xl font-extrabold text-blue-950 lg:text-5xl leading-tight tracking-tight">
             سفر خودران،
             <br />
             <span className="text-slate-400">در ۴ گام بدون اصطکاک.</span>
@@ -53,7 +53,7 @@ export default function WorkflowSteps() {
           {steps.map((step) => (
             <div
               key={step.stepNumber}
-              className="border-t-2 border-slate-900 pt-8 flex flex-col justify-between text-right"
+              className="border-t-2 border-blue-950 pt-8 flex flex-col justify-between text-right"
             >
               <div>
                 <span className="text-3xl font-extrabold text-slate-300 block mb-6">
@@ -64,7 +64,7 @@ export default function WorkflowSteps() {
                   {step.subtitle}
                 </span>
 
-                <h3 className="text-lg font-bold text-slate-900 mb-3 tracking-tight">
+                <h3 className="text-lg font-bold text-blue-950 mb-3 tracking-tight">
                   {step.title}
                 </h3>
 

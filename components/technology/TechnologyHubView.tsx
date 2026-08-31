@@ -28,7 +28,6 @@ export default function TechnologyHubView() {
     title,
     highlight,
     subtitle,
-    heroMetrics,
     pillars,
     systemArchitecture,
     keyCapabilities,
@@ -41,7 +40,7 @@ export default function TechnologyHubView() {
       <TechSubNav />
 
       {/* ── Hero Section ── */}
-      <section className="mx-auto max-w-7xl px-5 pt-10 pb-16 lg:px-8 lg:pt-14 lg:pb-24">
+      <section className="mx-auto max-w-7xl px-5 pt-8 pb-14 lg:px-8 lg:pt-12 lg:pb-20">
         <div className="grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
           
           {/* Left / Text Side */}
@@ -56,7 +55,7 @@ export default function TechnologyHubView() {
             </div>
 
             {/* H1 Headline */}
-            <h1 className="text-balance text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.2] text-slate-900 tracking-tight">
+            <h1 className="text-balance text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.2] text-blue-950 tracking-tight">
               {title}
               <br />
               <span className="text-emerald-600">{highlight}</span>
@@ -71,7 +70,7 @@ export default function TechnologyHubView() {
             <div className="mt-8 flex flex-wrap items-center gap-4">
               <a
                 href="#pillars"
-                className="group flex items-center gap-2.5 rounded-full bg-emerald-600 px-7 py-3.5 text-sm font-bold text-white shadow-lg shadow-emerald-950/20 hover:bg-emerald-500 hover:shadow-emerald-900/30 active:scale-[0.98] transition-all duration-200"
+                className="group flex items-center gap-2.5 rounded-full bg-slate-900 px-7 py-3.5 text-sm font-bold text-white shadow-lg shadow-slate-950/15 hover:bg-slate-800 active:scale-[0.98] transition-all duration-200"
               >
                 بررسی ۳ ستون فناوری
                 <ArrowLeft size={16} className="transition-transform duration-200 group-hover:-translate-x-1" />
@@ -82,26 +81,6 @@ export default function TechnologyHubView() {
               >
                 درخواست دمو و پایلوت فنی
               </Link>
-            </div>
-
-            {/* Live Metrics Row matching StatsBar.tsx */}
-            <div className="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 border-t border-slate-200/80 pt-6">
-              {heroMetrics.map((m) => (
-                <div
-                  key={m.label}
-                  className="flex flex-col gap-1 rounded-2xl border border-slate-200/70 bg-slate-50/70 p-4 text-center transition-colors hover:bg-white hover:shadow-xs"
-                >
-                  <span className="text-2xl lg:text-3xl font-extrabold text-slate-900 tracking-tight">
-                    {m.value}
-                  </span>
-                  <p className="text-xs font-bold text-slate-700 leading-5">
-                    {m.label}
-                  </p>
-                  {m.subLabel && (
-                    <p className="text-[11px] text-slate-500">{m.subLabel}</p>
-                  )}
-                </div>
-              ))}
             </div>
           </div>
 
@@ -141,7 +120,7 @@ export default function TechnologyHubView() {
             <p className="mb-3 text-xs font-bold uppercase tracking-wider text-emerald-600">
               ستون‌های اصلی پلتفرم
             </p>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-blue-950 tracking-tight">
               سه ستون بنیادین فناوری میکائیل
             </h2>
           </div>
@@ -158,7 +137,7 @@ export default function TechnologyHubView() {
               <Link
                 key={pillar.slug}
                 href={`/technology/${pillar.slug}`}
-                className="group relative flex flex-col justify-between rounded-3xl border border-slate-200/90 bg-slate-50/50 p-8 shadow-xs transition-all duration-300 hover:-translate-y-1.5 hover:border-emerald-500/50 hover:bg-white hover:shadow-xl hover:shadow-slate-900/5"
+                className="group relative flex flex-col justify-between rounded-2xl border border-slate-200/50 bg-slate-50 p-8 shadow-xs transition-all duration-300 hover:-translate-y-1 hover:border-emerald-500/50 hover:bg-white hover:shadow-lg"
               >
                 <div>
                   {/* Top Bar */}
@@ -177,7 +156,7 @@ export default function TechnologyHubView() {
                   </div>
 
                   {/* Title & English Subtitle */}
-                  <h3 className="mt-4 text-2xl font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">
+                  <h3 className="mt-4 text-2xl font-bold text-blue-950 group-hover:text-emerald-700 transition-colors">
                     {pillar.title}
                   </h3>
                   <p className="text-xs text-slate-400 font-medium tracking-wide mt-1">
@@ -207,7 +186,7 @@ export default function TechnologyHubView() {
       </section>
 
       {/* ── 4-Tier System Architecture Section ── */}
-      <section className="border-y border-slate-200/80 bg-slate-50/70 py-20 px-5 lg:px-8">
+      <section className="border-y border-slate-200/50 bg-slate-50 py-20 px-5 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
             
@@ -215,7 +194,7 @@ export default function TechnologyHubView() {
               <p className="mb-2 text-xs font-bold uppercase tracking-wider text-emerald-600">
                 معماری یکپارچه
               </p>
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 leading-tight tracking-tight">
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-blue-950 leading-tight tracking-tight">
                 معماری لایه‌ای سیستم؛
                 <br />
                 <span className="text-emerald-600">از سیلیکون تا ابر</span>
@@ -247,7 +226,7 @@ export default function TechnologyHubView() {
                 return (
                   <div
                     key={tier.number}
-                    className="flex items-start gap-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-xs hover:border-emerald-300 hover:shadow-md transition-all duration-200"
+                    className="flex items-start gap-4 rounded-2xl border border-slate-200/50 bg-white p-5 shadow-xs hover:border-emerald-300 hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
                   >
                     <div className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-slate-900 text-emerald-400 text-sm font-extrabold">
                       {tier.number}
@@ -255,7 +234,7 @@ export default function TechnologyHubView() {
                     <div className="flex-1">
                       <div className="flex items-center gap-2">
                         <Icon size={16} className="text-emerald-600" />
-                        <h3 className="font-bold text-slate-900 text-base">{tier.name}</h3>
+                        <h3 className="font-bold text-blue-950 text-base">{tier.name}</h3>
                       </div>
                       <p className="mt-1.5 text-xs sm:text-sm leading-6 text-slate-600">
                         {tier.summary}
@@ -276,7 +255,7 @@ export default function TechnologyHubView() {
           <p className="mb-3 text-xs font-bold uppercase tracking-wider text-emerald-600">
             مزیت‌های تمایزبخش مهندسی
           </p>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-blue-950 tracking-tight">
             چرا فناوری بومی میکائیل؟
           </h2>
           <p className="mt-3 text-slate-600 text-sm sm:text-base">
@@ -290,12 +269,12 @@ export default function TechnologyHubView() {
             return (
               <div
                 key={cap.title}
-                className="rounded-2xl border border-slate-200/90 bg-white p-6 shadow-xs hover:shadow-lg hover:border-emerald-400/60 transition-all duration-200"
+                className="rounded-2xl border border-slate-200/50 bg-white p-6 shadow-xs hover:shadow-lg hover:-translate-y-1 hover:border-emerald-400/60 transition-all duration-300"
               >
                 <div className="flex size-12 items-center justify-center rounded-xl bg-slate-900 text-emerald-400 shadow-sm">
                   <Icon size={22} />
                 </div>
-                <h3 className="mt-5 text-lg font-bold text-slate-900">{cap.title}</h3>
+                <h3 className="mt-5 text-lg font-bold text-blue-950">{cap.title}</h3>
                 <p className="mt-2 text-xs sm:text-sm leading-6 text-slate-600">{cap.desc}</p>
               </div>
             );
@@ -305,7 +284,7 @@ export default function TechnologyHubView() {
 
       {/* ── Collaboration & R&D CTA ── */}
       <section className="mx-auto max-w-7xl px-5 lg:px-8">
-        <div className="relative overflow-hidden rounded-3xl bg-slate-950 px-8 py-14 text-white shadow-xl sm:px-12 sm:py-16 border border-slate-800">
+        <div className="relative overflow-hidden rounded-2xl bg-slate-950 px-8 py-14 text-white shadow-xl sm:px-12 sm:py-16 border border-slate-800">
           <div
             className="absolute inset-0 opacity-15"
             style={{

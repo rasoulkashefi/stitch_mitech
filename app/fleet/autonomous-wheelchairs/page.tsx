@@ -36,14 +36,46 @@ export const metadata: Metadata = {
     locale: 'fa_IR',
     type: 'website',
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'ویلچر برقی خودران ام. آی. تک. | آزادی در حرکت با ناوبری هوشمند',
+    description: 'استقلال کامل حرکتی در فضاهای پرتردد با ناوبری خودکار، سنسورهای ۳۶۰ درجه.',
+    images: ['/images/fleet/autonomous-wheelchair-og.jpg'],
+  },
   alternates: {
     canonical: 'https://mitech.ir/fleet/autonomous-wheelchairs',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    'max-image-preview': 'large',
   },
 };
 
 export default function AutonomousWheelchairsPage() {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: 'ویلچر برقی خودران ام. آی. تک.',
+    image: 'https://mitech.ir/images/fleet/autonomous-wheelchair-og.jpg',
+    description: 'نسل جدید سکوهای حمل‌ونقل انفرادی خودران مجهز به هوش مصنوعی و بینایی ماشین؛ مناسب برای فرودگاه‌ها، مراکز درمانی، نمایشگاه‌ها و مجتمع‌های تجاری.',
+    brand: {
+      '@type': 'Brand',
+      name: 'Mitech'
+    },
+    offers: {
+      '@type': 'AggregateOffer',
+      priceCurrency: 'IRR',
+      availability: 'https://schema.org/PreOrder'
+    }
+  };
+
   return (
     <main className="w-full overflow-hidden" dir="rtl">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Module 1: Hero Section */}
       <WheelchairHero />
 

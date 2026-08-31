@@ -87,7 +87,7 @@ export default function OurExpertise() {
             <span>معماری محصولات و دامنه‌های مهندسی</span>
           </div>
 
-          <h2 className="text-3xl font-extrabold leading-snug text-slate-900 sm:text-4xl lg:text-5xl tracking-tight">
+          <h2 className="text-3xl font-extrabold leading-snug text-blue-950 sm:text-4xl lg:text-5xl tracking-tight">
             تنوع در نوآوری، <span className="text-emerald-600">یکپارچگی در کیفیت</span>
           </h2>
 
@@ -100,7 +100,7 @@ export default function OurExpertise() {
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-12 items-stretch">
           
           {/* Bento Card 1: Industry & Logistics (6 Cols) */}
-          <div className="lg:col-span-6 flex flex-col justify-between rounded-3xl border border-slate-200/90 bg-white p-7 lg:p-9 shadow-sm hover:border-slate-300 hover:shadow-md transition-all duration-300">
+          <div className="lg:col-span-6 flex flex-col justify-between rounded-2xl border border-slate-200/50 bg-white p-7 lg:p-9 shadow-sm hover:border-emerald-400 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
             <div>
               {/* Header */}
               <div className="flex items-center justify-between border-b border-slate-100 pb-6 mb-6">
@@ -109,7 +109,7 @@ export default function OurExpertise() {
                     <Factory size={22} />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-slate-900">
+                    <h3 className="text-xl font-bold text-blue-950">
                       صنعت و لجستیک خودران
                     </h3>
                     <p className="text-xs font-medium text-slate-500">
@@ -133,7 +133,7 @@ export default function OurExpertise() {
                   return (
                     <div
                       key={idx}
-                      className="group rounded-2xl border border-slate-100 bg-slate-50/60 p-5 transition-all duration-200 hover:border-emerald-200 hover:bg-white hover:shadow-xs"
+                      className="group rounded-2xl border border-slate-200/50 bg-slate-50 p-5 transition-all duration-300 hover:border-emerald-300 hover:bg-white hover:-translate-y-1 hover:shadow-lg"
                     >
                       <div className="flex items-start gap-3.5">
                         <div className="grid size-10 shrink-0 place-items-center rounded-xl bg-white text-emerald-600 border border-slate-200/70 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
@@ -141,7 +141,7 @@ export default function OurExpertise() {
                         </div>
                         <div className="flex-1">
                           <div className="flex flex-wrap items-baseline justify-between gap-1">
-                            <h4 className="text-base font-bold text-slate-900">
+                            <h4 className="text-base font-bold text-blue-950">
                               {prod.title}
                             </h4>
                             <span className="text-[11px] font-mono text-slate-400">
@@ -183,7 +183,7 @@ export default function OurExpertise() {
           </div>
 
           {/* Bento Card 2: Human Mobility & Assistive Tech (6 Cols) */}
-          <div className="lg:col-span-6 flex flex-col justify-between rounded-3xl border border-slate-200/90 bg-white p-7 lg:p-9 shadow-sm hover:border-slate-300 hover:shadow-md transition-all duration-300">
+          <div className="lg:col-span-6 flex flex-col justify-between rounded-2xl border border-slate-200/50 bg-white p-7 lg:p-9 shadow-sm hover:border-emerald-400 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
             <div>
               {/* Header */}
               <div className="flex items-center justify-between border-b border-slate-100 pb-6 mb-6">
@@ -192,7 +192,7 @@ export default function OurExpertise() {
                     <HeartHandshake size={22} />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-slate-900">
+                    <h3 className="text-xl font-bold text-blue-950">
                       توانبخشی و تحرک فردی
                     </h3>
                     <p className="text-xs font-medium text-slate-500">
@@ -216,7 +216,7 @@ export default function OurExpertise() {
                   return (
                     <div
                       key={idx}
-                      className="group rounded-2xl border border-slate-100 bg-slate-50/60 p-4 transition-all duration-200 hover:border-emerald-200 hover:bg-white hover:shadow-xs"
+                      className="group rounded-2xl border border-slate-200/50 bg-slate-50 p-4 transition-all duration-300 hover:border-emerald-300 hover:bg-white hover:-translate-y-1 hover:shadow-lg"
                     >
                       <div className="flex items-start gap-3.5">
                         <div className="grid size-9 shrink-0 place-items-center rounded-xl bg-white text-emerald-600 border border-slate-200/70 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
@@ -224,7 +224,7 @@ export default function OurExpertise() {
                         </div>
                         <div className="flex-1">
                           <div className="flex flex-wrap items-baseline justify-between gap-1">
-                            <h4 className="text-sm font-bold text-slate-900">
+                            <h4 className="text-sm font-bold text-blue-950">
                               {prod.title}
                             </h4>
                             <span className="text-[10px] font-mono text-slate-400">
@@ -266,7 +266,7 @@ export default function OurExpertise() {
           </div>
 
           {/* Bento Spanning Footer Card: The Unified Core (12 Cols) */}
-          <div className="lg:col-span-12 rounded-3xl border border-slate-200/90 bg-white p-7 lg:p-8 shadow-xs">
+          <div className="lg:col-span-12 rounded-2xl border border-slate-200/50 bg-white p-7 lg:p-8 shadow-xs">
             <div className="grid grid-cols-1 gap-6 md:grid-cols-12 md:items-center">
               
               <div className="md:col-span-8 flex flex-col gap-2">
@@ -274,7 +274,7 @@ export default function OurExpertise() {
                   <Cpu size={15} />
                   <span>معماری فنی یکپارچه (Unified Drive & Navigation Stack)</span>
                 </div>
-                <h4 className="text-lg font-bold text-slate-900">
+                <h4 className="text-lg font-bold text-blue-950">
                   پیوند عمیق درایوهای الکتریکی پرقدرت و هوش مصنوعی ناوبری خودران
                 </h4>
                 <p className="text-sm leading-7 text-slate-600">
@@ -285,12 +285,12 @@ export default function OurExpertise() {
               <div className="md:col-span-4 flex md:justify-end">
                 <a
                   href="/contact"
-                  className="group inline-flex items-center gap-2 rounded-2xl bg-slate-900 px-6 py-3.5 text-sm font-bold text-white shadow-xs hover:bg-emerald-600 active:scale-[0.98] transition-all duration-200"
+                  className="group inline-flex items-center gap-2 rounded-2xl bg-slate-900 px-6 py-3.5 text-sm font-bold text-white shadow-xs hover:bg-emerald-600 active:scale-[0.98] transition-all duration-300"
                 >
                   <span>درخواست کاتالوگ و مشاوره فنی</span>
                   <ArrowLeft
                     size={16}
-                    className="transition-transform duration-200 group-hover:-translate-x-1"
+                    className="transition-transform duration-300 group-hover:-translate-x-1"
                   />
                 </a>
               </div>

@@ -20,15 +20,69 @@ export const metadata: Metadata = {
     description:
       'معماری چهارلایه سیستم‌های هوشمند میکائیل از ادراک حسگرها تا پردازش در لبه و پلتفرم ابری ارکستراسیون ناوگان.',
     url: 'https://mitech.ir/technology',
-    siteName: 'فناوری هوشمند میکائیل',
+    siteName: 'ام. آی. تک. (Mitech)',
     locale: 'fa_IR',
     type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'فناوری و پلتفرم‌های مهندسی میکائیل',
+    description: 'معماری چهارلایه سیستم‌های هوشمند میکائیل از ادراک حسگرها تا پردازش در لبه.',
   },
   alternates: {
     canonical: 'https://mitech.ir/technology',
   },
+  robots: {
+    index: true,
+    follow: true,
+    'max-image-preview': 'large',
+  },
 };
 
 export default function TechnologyPage() {
-  return <TechnologyHubView />;
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'فناوری‌های کلیدی ام. آی. تک.',
+    description: 'معماری یکپارچه فناوری‌های بنیادین میکائیل',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        item: {
+          '@type': 'SoftwareApplication',
+          name: 'پلتفرم دوقلوی دیجیتال',
+          url: 'https://mitech.ir/technology/digital-twin-platform'
+        }
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        item: {
+          '@type': 'Product',
+          name: 'سیستم‌های پیشران و موقعیت‌یابی',
+          url: 'https://mitech.ir/technology/drives-and-positioning'
+        }
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        item: {
+          '@type': 'Product',
+          name: 'ناوبری مستقل از GPS',
+          url: 'https://mitech.ir/technology/gps-independent-navigation'
+        }
+      }
+    ]
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <TechnologyHubView />
+    </>
+  );
 }

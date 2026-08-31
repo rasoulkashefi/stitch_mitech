@@ -4,13 +4,64 @@ import Contact from '@/components/Contact';
 import { Sparkles, Phone, Mail, MapPin, Send, HelpCircle } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'تماس با ما و مشاوره | میکائیل',
+  title: 'تماس با ما و مشاوره | ام. آی. تک. (Mitech)',
   description: 'راه‌های ارتباطی با شرکت دانش‌بنیان فناوری هوشمند میکائیل، مشاوره خرید محصولات و همکاری‌های تجاری.',
+  keywords: [
+    'تماس با میکائیل',
+    'پشتیبانی ام آی تک',
+    'شماره تماس Mitech',
+    'آدرس شرکت میکائیل',
+    'مشاوره خرید رباتیک',
+    'Mitech',
+  ],
+  openGraph: {
+    title: 'تماس با ما و مشاوره | ام. آی. تک.',
+    description: 'راه‌های ارتباطی با شرکت دانش‌بنیان فناوری هوشمند میکائیل و مشاوره خرید.',
+    url: 'https://mitech.ir/contact',
+    siteName: 'ام. آی. تک. (Mitech)',
+    locale: 'fa_IR',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'تماس با ما و مشاوره',
+    description: 'راه‌های ارتباطی با شرکت دانش‌بنیان فناوری هوشمند میکائیل و مشاوره خرید.',
+  },
+  alternates: {
+    canonical: 'https://mitech.ir/contact',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    'max-image-preview': 'large',
+  },
 };
 
 export default function ContactPage() {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'ContactPage',
+    name: 'تماس با ام. آی. تک. (Mitech)',
+    description: 'راه‌های ارتباطی با شرکت دانش‌بنیان فناوری هوشمند میکائیل.',
+    mainEntity: {
+      '@type': 'Organization',
+      name: 'Mitech',
+      contactPoint: {
+        '@type': 'ContactPoint',
+        telephone: '+98-21-88774411',
+        contactType: 'customer service',
+        email: 'info@mitech.ir',
+        availableLanguage: ['Persian', 'English']
+      }
+    }
+  };
+
   return (
     <div className="min-h-screen bg-slate-50/50 pb-16 font-[Vazirmatn,sans-serif]" dir="rtl">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* ── Top Header ── */}
       <div className="bg-gradient-to-b from-blue-950 to-slate-900 text-white py-16 px-5 lg:px-8">
         <div className="mx-auto max-w-7xl">

@@ -1,50 +1,62 @@
 import type { Metadata } from 'next';
-import ComingSoonTemplate from '@/components/ComingSoonTemplate';
+import SolutionDetailView from '@/components/solutions/SolutionDetailView';
 
 export const metadata: Metadata = {
-  title: 'راهکار مراکز گردشگری و هتل‌ها | میکائیل',
-  description: 'تورهای خودران و وسایل نقلیه هوشمند تفریحی در هتل‌های ریزورت، موزه‌ها و جاذبه‌های گردشگری.',
+  title: 'راهکار گردشگری، موزه‌ها و مراکز تفریحی | تورهای هوشمند | ام. آی. تک.',
+  description:
+    'استقرار مبل‌های متحرک و ناوگان تفریحی با توقفگاه‌های برنامه‌ریزی‌شده و راهنمای صوتی چندزبانه تعاملی جهت دسترسی‌پذیری کامل برای تمام نسل‌ها.',
+  keywords: [
+    'مبل متحرک موزه',
+    'تور هوشمند خودران',
+    'گردشگری فراگیر',
+    'راهنمای صوتی تعاملی',
+    'هوشمندسازی مراکز تفریحی',
+    'خدمات VIP موزه',
+    'میکائیل',
+  ],
+  openGraph: {
+    title: 'راهکار گردشگری، موزه‌ها و مراکز تفریحی | تحرک بدون مرز | میکائیل',
+    description:
+      'دسترسی‌پذیری کامل برای تمام نسل‌ها، تورهای خودکار با توقفگاه‌های برنامه‌ریزی‌شده و تمایز چشمگیر مرکز تفریحی شما با ناوگان مایتک.',
+    url: 'https://mitech.ir/solutions/tourism',
+    siteName: 'ام. آی. تک. (Mitech)',
+    locale: 'fa_IR',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'راهکار گردشگری، موزه‌ها و مراکز تفریحی',
+    description: 'دسترسی‌پذیری کامل برای تمام نسل‌ها، تورهای خودکار با توقفگاه‌های برنامه‌ریزی‌شده.',
+  },
+  alternates: {
+    canonical: 'https://mitech.ir/solutions/tourism',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    'max-image-preview': 'large',
+  },
 };
 
 export default function TourismSolutionPage() {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'راهکار گردشگری، موزه‌ها و مراکز تفریحی (تورهای خودران هوشمند)',
+    provider: {
+      '@type': 'Organization',
+      name: 'Mitech'
+    },
+    description: 'استقرار مبل‌های متحرک و ناوگان تفریحی با توقفگاه‌های برنامه‌ریزی‌شده و راهنمای صوتی چندزبانه تعاملی.'
+  };
+
   return (
-    <ComingSoonTemplate
-      title="مراکز گردشگری و هتل‌ها"
-      englishTitle="Tourism Destinations & Hospitality"
-      category="راهکارها"
-      categoryHref="/solutions"
-      description="تجربه‌ای لوکس و نوآورانه برای مهمانان در موزه‌ها، باغ‌موزه‌ها، دهکده‌های گردشگری و ریزورت‌های تفریحی با راهنمای صوتی چندزبانه و ناوبری خودکار."
-      highlights={[
-        {
-          title: 'تورهای هوشمند با محتوای چندرسانه‌ای',
-          desc: 'پخش خودکار توضیحات تاریخی و گردشگری به زبان‌های مختلف هنگام رسیدن به نقاط دیدنی.',
-        },
-        {
-          title: 'خدمات ویژه میزبانی و ترانسفر داخلی',
-          desc: 'حمل بار و مسافر در محوطه‌های بزرگ اقامتی و هتل‌ها بدون آلایندگی صوتی و زیست‌محیطی.',
-        },
-        {
-          title: 'مبل‌های متحرک برای تورهای گروهی',
-          desc: 'تجربه حرکت هماهنگ گروهی در فضاهای نمایشگاهی با کنترل نرم‌افزاری متمرکز.',
-        },
-      ]}
-      siblingLinks={[
-        {
-          label: 'مبل‌های هوشمند متحرک',
-          href: '/fleet/smart-mobile-sofas',
-          desc: 'مشاهده ناوگان مبلمان متحرک هوشمند',
-        },
-        {
-          label: 'کالسکه‌های هوشمند خانواده',
-          href: '/fleet/smart-family-carts',
-          desc: 'خدمات خانواده در مجموعه‌های تفریحی',
-        },
-        {
-          label: 'مدل اشتراک درآمد (Revenue Sharing)',
-          href: '/business-model/revenue-sharing',
-          desc: 'فرصت‌های سرمایه‌گذاری مشترک در سایت‌های گردشگری',
-        },
-      ]}
-    />
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <SolutionDetailView slug="tourism" />
+    </>
   );
 }

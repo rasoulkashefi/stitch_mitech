@@ -1,55 +1,63 @@
 import type { Metadata } from 'next';
-import ComingSoonTemplate from '@/components/ComingSoonTemplate';
+import SolutionDetailView from '@/components/solutions/SolutionDetailView';
 
 export const metadata: Metadata = {
-  title: 'راهکار فرودگاه‌ها و پایانه‌ها | میکائیل',
-  description: 'سیستم‌های ترابری خودران مسافران CIP، توان‌خواهان و سالمندان در پایانه‌های فرودگاهی و راه‌آهن.',
+  title: 'راهکار فرودگاه‌ها و پایانه‌ها | مدیریت خودران مسافران | ام. آی. تک.',
+  description:
+    'استقرار ناوگان ویلچرهای خودران متصل به دیتابیس پرواز (FIDS) با قابلیت بازگشت خودکار به داک و ربات‌های باربر تعقیب‌کننده جهت کاهش ۵۰٪ هزینه‌های فرودگاهی.',
+  keywords: [
+    'ویلچر خودران فرودگاهی',
+    'مدیریت مسافران PRM',
+    'هوشمندسازی فرودگاه',
+    'اتصال به FIDS',
+    'Auto Docking ویلچر',
+    'ربات حمل چمدان',
+    'کاهش هزینه فرودگاه',
+    'میکائیل',
+  ],
+  openGraph: {
+    title: 'راهکار فرودگاه‌ها و پایانه‌ها | ناوبری هوشمند PRM | میکائیل',
+    description:
+      'ترانزیت زمان‌بندی‌شده و دقیق مسافر توان‌یاب تا گیت پرواز، حذف ویلچرهای رهاشده با بازگشت خودکار به داک و کاهش ۵۰٪ هزینه‌های پرسنلی.',
+    url: 'https://mitech.ir/solutions/airports',
+    siteName: 'ام. آی. تک. (Mitech)',
+    locale: 'fa_IR',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'راهکار فرودگاه‌ها و پایانه‌ها | مدیریت خودران مسافران',
+    description: 'ترانزیت زمان‌بندی‌شده مسافر توان‌یاب تا گیت پرواز و بازگشت خودکار به داک.',
+  },
+  alternates: {
+    canonical: 'https://mitech.ir/solutions/airports',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    'max-image-preview': 'large',
+  },
 };
 
 export default function AirportsSolutionPage() {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'راهکار فرودگاه‌ها و پایانه‌ها (مدیریت خودران مسافران توان‌یاب)',
+    provider: {
+      '@type': 'Organization',
+      name: 'Mitech'
+    },
+    description: 'استقرار ناوگان ویلچرهای خودران متصل به دیتابیس پرواز (FIDS) و ربات‌های باربر تعقیب‌کننده جهت کاهش ۵۰٪ هزینه‌های فرودگاهی.'
+  };
+
   return (
-    <ComingSoonTemplate
-      title="فرودگاه‌ها و پایانه‌های مسافربری"
-      englishTitle="Airports & Transportation Terminals"
-      category="راهکارها"
-      categoryHref="/solutions"
-      description="پایانه‌های فرودگاهی به دلیل مسافت‌های طولانی میان گیت‌ها نیازمند ترابری روان هستند. میکائیل راهکار ناوگان خودران هدایت مستقیم به گیت پرواز با هماهنگی اطلاعات پروازی را فراهم می‌کند."
-      highlights={[
-        {
-          title: 'اتصال به سیستم اطلاعات پرواز (FIDS)',
-          desc: 'هدایت هوشمند مسافر مستقیم به گیت خروجی با محاسبه دقیق زمان و هشدار تغییر گیت.',
-        },
-        {
-          title: 'خدمات ویژه توان‌خواهان (PRM Service)',
-          desc: 'کاهش وابستگی به پرسنل اسکورت فرودگاهی و ارتقای چشمگیر کرامت و استقلال مسافر.',
-        },
-        {
-          title: 'بازگشت خودران به دپو (Auto-Docking)',
-          desc: 'پس از پیاده‌شدن مسافر در گیت، دستگاه به طور خودکار به نزدیک‌ترین داک شارژ بازمی‌گردد.',
-        },
-      ]}
-      siblingLinks={[
-        {
-          label: 'مجتمع‌های تجاری و مال‌ها',
-          href: '/solutions/malls',
-          desc: 'راهکار حمل مراجعین در مجتمع‌های تجاری',
-        },
-        {
-          label: 'مراکز درمانی و بیمارستان‌ها',
-          href: '/solutions/healthcare',
-          desc: 'جابجایی ایمن در محوطه درمانی و بیمارستانی',
-        },
-        {
-          label: 'ویلچرهای هوشمند خودران',
-          href: '/fleet/autonomous-wheelchairs',
-          desc: 'مشاهده ناوگان ویلچرهای خودران فرودگاهی',
-        },
-        {
-          label: 'ناوبری مستقل از GPS',
-          href: '/technology/gps-independent-navigation',
-          desc: 'تکنولوژی نقشه‌برداری و ناوبری سالن‌های سرپوشیده',
-        },
-      ]}
-    />
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <SolutionDetailView slug="airports" />
+    </>
   );
 }

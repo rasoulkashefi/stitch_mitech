@@ -73,7 +73,7 @@ export default function AboutHero() {
             </div>
 
             {/* Main H1 Headline */}
-            <h1 className="text-3xl font-extrabold leading-[1.3] text-slate-900 sm:text-4xl lg:text-5xl tracking-tight">
+            <h1 className="text-3xl font-extrabold leading-[1.3] text-blue-950 sm:text-4xl lg:text-5xl tracking-tight">
               بیش از یک دهه مهندسی؛
               <br />
               <span className="text-emerald-600">برای فردایی که خودش مسیر را می‌شناسد.</span>
@@ -82,10 +82,10 @@ export default function AboutHero() {
             {/* Story Paragraph */}
             <div className="space-y-4 text-base sm:text-lg leading-8 sm:leading-9 text-slate-600 font-normal">
               <p>
-                شرکت توسعه ام. آی. تک. (MITech) در سال ۱۳۸۹ (۲۰۱۰) تأسیس شد. ما کارمان را از قلب تپنده وسایل نقلیه، یعنی <strong className="font-bold text-slate-900">«فناوری درایوهای الکتریکی»</strong> آغاز کردیم.
+                شرکت توسعه ام. آی. تک. (MITech) در سال ۱۳۸۹ (۲۰۱۰) تأسیس شد. ما کارمان را از قلب تپنده وسایل نقلیه، یعنی <strong className="font-bold text-blue-950">«فناوری درایوهای الکتریکی»</strong> آغاز کردیم.
               </p>
               <p>
-                با گذشت بیش از یک دهه و تسلط بر این هسته بنیادین، امروز به یکی از پیشگامان <strong className="font-bold text-slate-900">فناوری ناوبری خودران (Autonomous Drives)</strong> در کاربردهای متنوع تحرک هوشمند تبدیل شده‌ایم. هدف ما ارائه راهکارهای پیشرفته، ایمن و کارآمد منطبق بر استانداردهای جهانی است.
+                با گذشت بیش از یک دهه و تسلط بر این هسته بنیادین، امروز به یکی از پیشگامان <strong className="font-bold text-blue-950">فناوری ناوبری خودران (Autonomous Drives)</strong> در کاربردهای متنوع تحرک هوشمند تبدیل شده‌ایم. هدف ما ارائه راهکارهای پیشرفته، ایمن و کارآمد منطبق بر استانداردهای جهانی است.
               </p>
             </div>
 
@@ -93,18 +93,18 @@ export default function AboutHero() {
             <div className="pt-2 flex flex-wrap items-center gap-4">
               <a
                 href="#expertise"
-                className="group inline-flex items-center gap-2 rounded-full bg-emerald-600 px-7 py-3.5 text-sm font-bold text-white shadow-sm hover:bg-emerald-500 active:scale-[0.98] transition-all duration-200"
+                className="group inline-flex items-center gap-2 rounded-full bg-emerald-600 px-7 py-3.5 text-sm font-bold text-white shadow-sm hover:bg-emerald-500 active:scale-[0.98] transition-all duration-300"
               >
                 <span>مشاهده وسعت تخصص و محصولات</span>
                 <ArrowLeft
                   size={16}
-                  className="transition-transform duration-200 group-hover:-translate-x-1"
+                  className="transition-transform duration-300 group-hover:-translate-x-1"
                 />
               </a>
 
               <a
                 href="#ctsc-vision"
-                className="inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-7 py-3.5 text-sm font-bold text-slate-800 shadow-2xs hover:bg-slate-50 hover:border-slate-400 active:scale-[0.98] transition-all duration-200"
+                className="inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-7 py-3.5 text-sm font-bold text-slate-800 shadow-2xs hover:bg-slate-50 hover:border-slate-400 active:scale-[0.98] transition-all duration-300"
               >
                 <span>چشم‌انداز منطقه و مرکز CTSC</span>
                 <ChevronDown size={16} className="text-slate-500" />
@@ -115,7 +115,7 @@ export default function AboutHero() {
 
           {/* Highlights & Milestone Cards Grid */}
           <div className="lg:col-span-5">
-            <div className="relative rounded-3xl border border-slate-200/90 bg-gradient-to-b from-slate-50/90 to-white p-6 sm:p-8 shadow-sm">
+            <div className="relative rounded-2xl border border-slate-200/50 bg-gradient-to-b from-slate-50 to-white p-6 sm:p-8 shadow-sm">
               
               {/* Header Badge */}
               <div className="mb-6 flex items-center justify-between border-b border-slate-200/80 pb-4">
@@ -124,7 +124,7 @@ export default function AboutHero() {
                     <Layers size={18} />
                   </div>
                   <div>
-                    <h2 className="text-sm font-bold text-slate-900">ستون‌های بنیادین توسعه</h2>
+                    <h2 className="text-sm font-bold text-blue-950">ستون‌های بنیادین توسعه</h2>
                     <p className="text-xs text-slate-500">مسیر بلوغ مهندسی ام. آی. تک.</p>
                   </div>
                 </div>
@@ -140,13 +140,13 @@ export default function AboutHero() {
                   return (
                     <div
                       key={index}
-                      className="group flex items-start gap-4 rounded-2xl border border-slate-200/70 bg-white p-4 shadow-2xs transition-all duration-200 hover:border-slate-300 hover:shadow-xs"
+                      className="group flex items-start gap-4 rounded-2xl border border-slate-200/50 bg-white p-4 shadow-2xs transition-all duration-300 hover:border-slate-300 hover:shadow-lg hover:-translate-y-1"
                     >
                       <div className="grid size-10 shrink-0 place-items-center rounded-xl bg-slate-50 text-emerald-600 border border-slate-100 group-hover:bg-emerald-50 group-hover:border-emerald-200 transition-colors">
                         <Icon size={20} />
                       </div>
                       <div className="flex flex-col gap-1">
-                        <h3 className="text-sm font-bold text-slate-900 leading-snug">
+                        <h3 className="text-sm font-bold text-blue-950 leading-snug">
                           {item.title}
                         </h3>
                         <p className="text-xs leading-5 text-slate-500 font-normal">

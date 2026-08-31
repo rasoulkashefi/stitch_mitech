@@ -41,7 +41,7 @@ const facilityBenefits = [
 
 export default function ValueProposition() {
   return (
-    <section className="bg-slate-50/60 px-6 py-28 lg:py-32 border-t border-slate-100">
+    <section className="bg-slate-50 px-6 py-28 lg:py-32 border-t border-slate-100">
       <div className="mx-auto max-w-7xl">
         
         {/* Editorial Section Header */}
@@ -49,7 +49,7 @@ export default function ValueProposition() {
           <p className="mb-3 text-xs font-bold uppercase tracking-wider text-emerald-600">
             ارزش پیشنهادی دوگانه • Dual Impact
           </p>
-          <h2 className="text-3xl font-extrabold text-slate-900 lg:text-5xl leading-tight tracking-tight">
+          <h2 className="text-3xl font-extrabold text-blue-950 lg:text-5xl leading-tight tracking-tight">
             استقلال برای سرنشین،
             <br />
             <span className="text-slate-400">بهره‌وری برای سازمان.</span>
@@ -60,7 +60,7 @@ export default function ValueProposition() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
           
           {/* Column 1: For Passengers (B2C) - Crisp White Card */}
-          <div className="flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-8 sm:p-10 shadow-xs text-right">
+          <div className="flex flex-col justify-between rounded-2xl border border-slate-200/50 bg-white p-8 sm:p-10 shadow-lg text-right">
             <div>
               <div className="flex items-center justify-between pb-6 border-b border-slate-100 mb-6">
                 <span className="text-xs font-bold uppercase tracking-widest text-slate-400">
@@ -71,7 +71,7 @@ export default function ValueProposition() {
                 </span>
               </div>
 
-              <h3 className="text-2xl font-bold text-slate-900 mb-4 tracking-tight">
+              <h3 className="text-2xl font-bold text-blue-950 mb-4 tracking-tight">
                 استقلال، کرامت و راحتی سرنشین
               </h3>
               <p className="text-sm leading-7 text-slate-600 mb-8">
@@ -86,7 +86,7 @@ export default function ValueProposition() {
                       <Check className="w-3 h-3" strokeWidth={3} />
                     </div>
                     <div>
-                      <h4 className="text-sm font-bold text-slate-900">{item.title}</h4>
+                      <h4 className="text-sm font-bold text-blue-950">{item.title}</h4>
                       <p className="text-xs sm:text-sm text-slate-500 leading-6 mt-0.5">{item.desc}</p>
                     </div>
                   </div>

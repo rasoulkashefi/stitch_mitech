@@ -22,7 +22,7 @@ const contactItems = [
 ];
 
 const inputBase =
-  'w-full rounded-xl border border-slate-200/90 bg-slate-50/70 p-3.5 text-sm text-slate-900 outline-none transition-all placeholder:text-slate-400 focus:border-emerald-500 focus:bg-white focus:ring-2 focus:ring-emerald-500/20';
+  'w-full rounded-xl border border-slate-200/50 bg-slate-50 p-3.5 text-sm text-slate-800 outline-none transition-all placeholder:text-slate-400 focus:border-emerald-500 focus:bg-white focus:ring-2 focus:ring-emerald-500/20';
 
 export default function Contact() {
   const [sent, setSent] = useState(false);
@@ -31,7 +31,7 @@ export default function Contact() {
     <section
       id="contact"
       dir="rtl"
-      className="bg-slate-50/80 px-5 py-24 lg:px-8 font-[Vazirmatn,sans-serif] border-t border-slate-100"
+      className="bg-slate-50 px-5 py-24 lg:px-8 font-[Vazirmatn,sans-serif] border-t border-slate-100"
     >
       <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-2">
 
@@ -41,7 +41,7 @@ export default function Contact() {
             ارتباط مستقیم و دریافت مشاوره
           </p>
 
-          <h2 className="text-3xl font-extrabold leading-tight text-slate-900 lg:text-4xl tracking-tight mb-4">
+          <h2 className="text-3xl font-extrabold leading-tight text-blue-950 lg:text-4xl tracking-tight mb-4">
             آماده شروع یک مسیر هوشمند هستید؟
           </h2>
 
@@ -66,8 +66,8 @@ export default function Contact() {
         </div>
 
         {/* ── Left Column: Contact Form Card ── */}
-        <div className="rounded-3xl border border-slate-200/80 bg-white p-8 shadow-xl">
-          <h3 className="mb-6 text-lg font-bold text-slate-900">
+        <div className="rounded-2xl border border-slate-200/50 bg-white p-8 shadow-lg">
+          <h3 className="mb-6 text-lg font-bold text-blue-950">
             فرم درخواست مشاوره و همکاری
           </h3>
 

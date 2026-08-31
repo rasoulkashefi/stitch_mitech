@@ -48,7 +48,7 @@ export default function FleetHubView() {
 
       {/* ── Hero Section ── */}
       <section className="mx-auto max-w-7xl px-5 pt-12 pb-16 lg:px-8 lg:pt-16 lg:pb-20">
-        <div className="relative overflow-hidden rounded-3xl border border-slate-200/80 bg-gradient-to-b from-slate-50/90 via-white to-slate-50/60 p-8 text-center shadow-xs sm:p-12 md:p-16">
+        <div className="relative overflow-hidden rounded-2xl border border-slate-200/50 bg-gradient-to-b from-slate-50 via-white to-slate-50 p-8 text-center shadow-xs sm:p-12 md:p-16">
           <div className="mx-auto max-w-3xl">
             
             {/* Status Badge */}
@@ -61,7 +61,7 @@ export default function FleetHubView() {
             </div>
 
             {/* H1 Headline */}
-            <h1 className="text-balance text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.25] text-slate-900 tracking-tight">
+            <h1 className="text-balance text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.25] text-blue-950 tracking-tight">
               آزادی در حرکت،
               <br />
               <span className="text-emerald-600">قدرت در کنترل</span>
@@ -76,7 +76,7 @@ export default function FleetHubView() {
             <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
               <a
                 href="#products"
-                className="group flex items-center gap-2.5 rounded-full bg-emerald-600 px-7 py-3.5 text-sm font-bold text-white shadow-lg shadow-emerald-950/20 hover:bg-emerald-500 hover:shadow-emerald-900/30 active:scale-[0.98] transition-all duration-200"
+                className="group flex items-center gap-2.5 rounded-full bg-slate-900 px-7 py-3.5 text-sm font-bold text-white shadow-lg shadow-slate-950/15 hover:bg-slate-800 active:scale-[0.98] transition-all duration-200"
               >
                 مشاهده محصولات ناوگان
                 <ArrowLeft size={16} className="transition-transform duration-200 group-hover:-translate-x-1" />
@@ -118,7 +118,7 @@ export default function FleetHubView() {
       </section>
 
       {/* ── Products & Ecosystem Section ── */}
-      <section id="products" className="bg-slate-50/60 py-20 lg:py-24 border-t border-slate-100">
+      <section id="products" className="bg-slate-50 py-20 lg:py-24 border-t border-slate-100">
         <div className="mx-auto max-w-7xl px-5 lg:px-8">
           
           {/* Section Header */}
@@ -127,7 +127,7 @@ export default function FleetHubView() {
               <p className="mb-2 text-xs font-bold uppercase tracking-wider text-emerald-600">
                 محصولات و تجهیزات ناوگان هوشمند
               </p>
-              <h2 className="text-3xl font-extrabold text-slate-900 lg:text-5xl leading-tight tracking-tight">
+              <h2 className="text-3xl font-extrabold text-blue-950 lg:text-5xl leading-tight tracking-tight">
                 اکوسیستم جامع حرکت هوشمند
               </h2>
             </div>
@@ -173,7 +173,7 @@ export default function FleetHubView() {
                 <Link
                   key={product.id}
                   href={product.href}
-                  className="product-card group flex flex-col justify-between overflow-hidden rounded-2xl border border-slate-200/70 bg-white p-4 shadow-xs hover:-translate-y-1 hover:border-slate-300 hover:shadow-xl transition-all duration-300"
+                  className="product-card group flex flex-col justify-between overflow-hidden rounded-2xl border border-slate-200/50 bg-white p-4 shadow-xs hover:-translate-y-1 hover:border-slate-300 hover:shadow-lg transition-all duration-300"
                 >
                   <div>
                     {/* Visual Graphic */}
@@ -190,7 +190,7 @@ export default function FleetHubView() {
                         </span>
                       </div>
 
-                      <h3 className="text-lg font-bold text-slate-900 group-hover:text-emerald-600 transition-colors">
+                      <h3 className="text-lg font-bold text-blue-950 group-hover:text-emerald-600 transition-colors">
                         {product.title}
                       </h3>
                       <p className="font-mono text-xs text-slate-400 mt-0.5">
@@ -294,7 +294,7 @@ export default function FleetHubView() {
         className="mx-auto max-w-7xl px-5 py-20 lg:px-8 lg:py-24"
         aria-labelledby="product-information-title"
       >
-        <div className="rounded-3xl border border-slate-200/80 bg-white p-8 md:p-12 shadow-xs">
+        <div className="rounded-2xl border border-slate-200/50 bg-white p-8 md:p-12 shadow-xs">
           
           <div className="max-w-3xl text-right">
             <p className="mb-2 text-xs font-bold uppercase tracking-wider text-emerald-600">
@@ -302,7 +302,7 @@ export default function FleetHubView() {
             </p>
             <h2
               id="product-information-title"
-              className="text-2xl font-extrabold text-slate-900 sm:text-3xl lg:text-4xl tracking-tight"
+              className="text-2xl font-extrabold text-blue-950 sm:text-3xl lg:text-4xl tracking-tight"
             >
               محصولات و ناوگان میکائیل چه نیازی را پوشش می‌دهند؟
             </h2>
@@ -315,7 +315,7 @@ export default function FleetHubView() {
             {fleetProducts.map(({ title, englishTitle, description, category, tag, href }) => (
               <article
                 key={title}
-                className="flex flex-col justify-between rounded-2xl border border-slate-200/70 bg-slate-50/50 p-6 transition-all hover:border-slate-300 hover:bg-white hover:shadow-sm"
+                className="group flex flex-col justify-between rounded-2xl border border-slate-200/50 bg-slate-50 p-6 transition-all hover:border-slate-300 hover:bg-white hover:shadow-lg hover:-translate-y-1"
                 itemScope
                 itemType="https://schema.org/Product"
               >
@@ -328,7 +328,7 @@ export default function FleetHubView() {
                     <span className="rounded-full bg-slate-200/80 px-2.5 py-0.5 text-xs font-semibold text-slate-700">{tag}</span>
                   </div>
 
-                  <h3 itemProp="name" className="text-base font-bold text-slate-900">
+                  <h3 itemProp="name" className="text-base font-bold text-blue-950">
                     <Link href={href} className="hover:text-emerald-600 transition-colors">
                       {title}
                     </Link>

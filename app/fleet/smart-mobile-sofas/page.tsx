@@ -36,14 +36,46 @@ export const metadata: Metadata = {
     locale: 'fa_IR',
     type: 'website',
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'مبل هوشمند سیار ام. آی. تک.',
+    description: 'راهکاری لوکس و راحت برای جابه‌جایی سالمندان در مجتمع‌های تجاری.',
+    images: ['/images/fleet/smart-mobile-sofa-og.jpg'],
+  },
   alternates: {
     canonical: 'https://mitech.ir/fleet/smart-mobile-sofas',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    'max-image-preview': 'large',
   },
 };
 
 export default function SmartMobileSofasPage() {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: 'مبل هوشمند سیار',
+    image: 'https://mitech.ir/images/fleet/smart-mobile-sofa-og.jpg',
+    description: 'مبل‌های هوشمند سیار؛ راهکاری لوکس و راحت برای جابه‌جایی سالمندان در مجتمع‌های تجاری.',
+    brand: {
+      '@type': 'Brand',
+      name: 'Mitech'
+    },
+    offers: {
+      '@type': 'AggregateOffer',
+      priceCurrency: 'IRR',
+      availability: 'https://schema.org/PreOrder'
+    }
+  };
+
   return (
     <main className="w-full overflow-hidden" dir="rtl">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* ماژول ۱: هیرو سکشن مبل هوشمند (SofaHero.tsx) */}
       <SofaHero />
 

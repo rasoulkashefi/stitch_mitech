@@ -91,7 +91,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="flex h-8 w-8 items-center justify-center rounded-lg bg-white/5 border border-white/10 text-white/80 transition-all hover:bg-emerald-600 hover:border-emerald-500 hover:text-white"
+                  className="flex h-8 w-8 items-center justify-center rounded-lg bg-white/5 border border-white/10 text-white/80 transition-all duration-300 hover:bg-emerald-600 hover:border-emerald-500 hover:text-white"
                 >
                   <Icon size={14} />
                 </a>
@@ -107,7 +107,7 @@ export default function Footer() {
                 <li key={href}>
                   <Link
                     href={href}
-                    className="text-xs text-slate-400 transition-colors hover:text-emerald-400"
+                    className="text-xs text-slate-400 transition-colors duration-300 hover:text-emerald-400"
                   >
                     {label}
                   </Link>
@@ -124,7 +124,7 @@ export default function Footer() {
                 <li key={href}>
                   <Link
                     href={href}
-                    className="text-xs text-slate-400 transition-colors hover:text-emerald-400"
+                    className="text-xs text-slate-400 transition-colors duration-300 hover:text-emerald-400"
                   >
                     {label}
                   </Link>
@@ -141,7 +141,7 @@ export default function Footer() {
                 <li key={href}>
                   <Link
                     href={href}
-                    className="text-xs text-slate-400 transition-colors hover:text-emerald-400"
+                    className="text-xs text-slate-400 transition-colors duration-300 hover:text-emerald-400"
                   >
                     {label}
                   </Link>
@@ -158,7 +158,7 @@ export default function Footer() {
                 <li key={href}>
                   <Link
                     href={href}
-                    className="text-xs text-slate-400 transition-colors hover:text-emerald-400"
+                    className="text-xs text-slate-400 transition-colors duration-300 hover:text-emerald-400"
                   >
                     {label}
                   </Link>
@@ -176,13 +176,13 @@ export default function Footer() {
           </p>
 
           <div className="flex gap-6">
-            <Link href="/about" className="hover:text-slate-400 transition-colors">
+            <Link href="/about" className="hover:text-slate-400 transition-colors duration-300">
               حریم خصوصی
             </Link>
-            <Link href="/about" className="hover:text-slate-400 transition-colors">
+            <Link href="/about" className="hover:text-slate-400 transition-colors duration-300">
               شرایط و ضوابط
             </Link>
-            <Link href="/contact" className="hover:text-slate-400 transition-colors">
+            <Link href="/contact" className="hover:text-slate-400 transition-colors duration-300">
               پشتیبانی
             </Link>
           </div>

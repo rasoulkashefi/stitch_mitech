@@ -37,14 +37,46 @@ export const metadata: Metadata = {
     locale: 'fa_IR',
     type: 'website',
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'ربات تعقیب‌کننده و حمل بار ام. آی. تک.',
+    description: 'جابه‌جایی هوشمند و ایمن بار تا ۱۰۰+ کیلوگرم با سیستم بینایی ماشین و فرمان‌های حرکتی.',
+    images: ['/images/fleet/following-amr-og.jpg'],
+  },
   alternates: {
     canonical: 'https://mitech.ir/fleet/following-amrs',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    'max-image-preview': 'large',
   },
 };
 
 export default function FollowingAmrsPage() {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: 'ربات هوشمند حمل بار و تعقیب کاربر (Following AMR)',
+    image: 'https://mitech.ir/images/fleet/following-amr-og.jpg',
+    description: 'ربات خودران حمل بار مجهز به هوش مصنوعی، بینایی ماشین و کنترل با فرامین اشاره‌ای.',
+    brand: {
+      '@type': 'Brand',
+      name: 'Mitech'
+    },
+    offers: {
+      '@type': 'AggregateOffer',
+      priceCurrency: 'IRR',
+      availability: 'https://schema.org/PreOrder'
+    }
+  };
+
   return (
     <main className="w-full overflow-hidden" dir="rtl">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Module 1: Hero Section */}
       <AmrHero />
 

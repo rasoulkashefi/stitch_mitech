@@ -2,13 +2,58 @@ import type { Metadata } from 'next';
 import ComingSoonTemplate from '@/components/ComingSoonTemplate';
 
 export const metadata: Metadata = {
-  title: 'مطالعات موردی و پروژه‌ها (Case Studies) | مجله میکائیل',
+  title: 'مطالعات موردی و پروژه‌ها (Case Studies) | ام. آی. تک. (Mitech)',
   description: 'گزارش‌های مستند و تحلیل بازگشت سرمایه (ROI) حاصل از استقرار ناوگان میکائیل در پروژه‌های واقعی.',
+  keywords: [
+    'مطالعات موردی رباتیک',
+    'پروژه های اجرا شده',
+    'موفقیت استقرار خودران',
+    'Case Studies',
+    'میکائیل',
+    'Mitech'
+  ],
+  openGraph: {
+    title: 'مطالعات موردی و پروژه‌ها (Case Studies) | میکائیل',
+    description: 'گزارش‌های مستند و تحلیل بازگشت سرمایه (ROI) حاصل از استقرار ناوگان میکائیل در پروژه‌های واقعی.',
+    url: 'https://mitech.ir/blog/category/case-studies',
+    siteName: 'ام. آی. تک. (Mitech)',
+    locale: 'fa_IR',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'مطالعات موردی و پروژه‌ها (Case Studies)',
+    description: 'گزارش‌های مستند و تحلیل بازگشت سرمایه (ROI) حاصل از استقرار ناوگان میکائیل.',
+  },
+  alternates: {
+    canonical: 'https://mitech.ir/blog/category/case-studies',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    'max-image-preview': 'large',
+  },
 };
 
 export default function CaseStudiesPage() {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: 'مطالعات موردی و پروژه‌ها (Case Studies)',
+    description: 'گزارش‌های مستند و تحلیل بازگشت سرمایه (ROI) حاصل از استقرار ناوگان میکائیل.',
+    publisher: {
+      '@type': 'Organization',
+      name: 'Mitech'
+    }
+  };
+
   return (
-    <ComingSoonTemplate
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <ComingSoonTemplate
       title="مطالعات موردی و پروژه‌های عملیاتی"
       englishTitle="Case Studies & Real-World Deployments"
       category="مجله و مقالات"
@@ -46,5 +91,6 @@ export default function CaseStudiesPage() {
         },
       ]}
     />
+    </>
   );
 }

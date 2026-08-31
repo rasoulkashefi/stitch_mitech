@@ -65,7 +65,7 @@ function StarRating({ featured }: { featured?: boolean }) {
 
 export default function Testimonials() {
   return (
-    <section dir="rtl" className="bg-slate-50/70 px-5 py-24 lg:px-8 font-[Vazirmatn,sans-serif] border-t border-slate-100">
+    <section dir="rtl" className="bg-slate-50 px-5 py-24 lg:px-8 font-[Vazirmatn,sans-serif] border-t border-slate-100">
       <div className="mx-auto max-w-7xl">
 
         {/* Section Header */}
@@ -73,7 +73,7 @@ export default function Testimonials() {
           <p className="mb-2 text-xs font-bold uppercase tracking-wider text-emerald-600">
             نظرات و تجربیات همراهان
           </p>
-          <h2 className="text-3xl font-extrabold text-slate-900 lg:text-4xl tracking-tight">
+          <h2 className="text-3xl font-extrabold text-blue-950 lg:text-4xl tracking-tight">
             تجربه واقعی استقلال و تحول سازمانی
           </h2>
         </div>
@@ -83,10 +83,10 @@ export default function Testimonials() {
           {testimonials.map((t, i) => (
             <div
               key={i}
-              className={`relative flex flex-col justify-between overflow-hidden rounded-3xl border p-8 shadow-xs transition-all duration-300 hover:shadow-xl hover:-translate-y-1 ${
+              className={`relative flex flex-col justify-between overflow-hidden rounded-2xl border p-8 shadow-xs transition-all duration-300 hover:shadow-lg hover:-translate-y-1 ${
                 t.featured
                   ? 'border-slate-800 bg-slate-950 text-white'
-                  : 'border-slate-200/80 bg-white text-slate-900'
+                  : 'border-slate-200/50 bg-white text-slate-900'
               }`}
             >
               {/* Background Quote Icon */}
@@ -131,7 +131,7 @@ export default function Testimonials() {
 
                 {/* Name & Role */}
                 <div>
-                  <p className={`font-bold text-sm ${t.featured ? 'text-white' : 'text-slate-900'}`}>
+                  <p className={`font-bold text-sm ${t.featured ? 'text-white' : 'text-blue-950'}`}>
                     {t.name}
                   </p>
                   <p className={`text-xs mt-0.5 ${t.featured ? 'text-emerald-400' : 'text-slate-500'}`}>

@@ -43,7 +43,7 @@ export default function FAQ() {
   return (
     <section
       dir="rtl"
-      className="bg-slate-50/70 px-5 py-24 lg:px-8 font-[Vazirmatn,sans-serif] border-t border-slate-100"
+      className="bg-slate-50 px-5 py-24 lg:px-8 font-[Vazirmatn,sans-serif] border-t border-slate-100"
     >
       <div className="mx-auto max-w-4xl">
         {/* ── Section Header ── */}
@@ -51,13 +51,13 @@ export default function FAQ() {
           <p className="mb-2 text-xs font-bold uppercase tracking-wider text-emerald-600">
             پرسش‌های متداول
           </p>
-          <h2 className="text-3xl font-extrabold text-slate-900 lg:text-4xl tracking-tight">
+          <h2 className="text-3xl font-extrabold text-blue-950 lg:text-4xl tracking-tight">
             پاسخ به سوالات پرتکرار
           </h2>
         </div>
 
         {/* ── Accordion Container ── */}
-        <div className="overflow-hidden rounded-3xl border border-slate-200/80 bg-white shadow-xs">
+        <div className="overflow-hidden rounded-2xl border border-slate-200/50 bg-white shadow-xs">
           {faqs.map((faq, index) => {
             const isOpen = openIndex === index;
             const isLast = index === faqs.length - 1;
@@ -75,7 +75,7 @@ export default function FAQ() {
                 >
                   <span
                     className={`text-base sm:text-lg font-bold leading-7 transition-colors ${
-                      isOpen ? 'text-slate-900' : 'text-slate-800'
+                      isOpen ? 'text-emerald-700' : 'text-blue-950'
                     }`}
                   >
                     {faq.question}
