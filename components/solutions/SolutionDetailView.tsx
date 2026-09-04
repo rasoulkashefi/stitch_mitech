@@ -157,7 +157,7 @@ export default function SolutionDetailView({ slug }: SolutionDetailViewProps) {
               از چالش عملیاتی تا ارزش قابل اندازه‌گیری
             </p>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-blue-950 tracking-tight">
-              مقایسه رویکرد سنتی با راهکار هوشمند مایتک
+              مقایسه رویکرد سنتی با راهکار هوشمند ام‌آی‌تک
             </h2>
             <p className="mt-4 text-slate-600 text-sm sm:text-base leading-7">
               بررسی دقیق مشکلات متداول مدیران در این حوزه و نحوه رفع اساسی آن‌ها با فناوری‌های خودران و مدل اقتصادی پایدار.
@@ -506,7 +506,7 @@ export default function SolutionDetailView({ slug }: SolutionDetailViewProps) {
           
           {/* Sibling Solutions */}
           <div className="rounded-2xl border border-slate-200/50 bg-white p-7 shadow-xs">
-            <h3 className="text-lg font-bold text-blue-950 mb-4">سایر راهکارهای سازمانی مایتک</h3>
+            <h3 className="text-lg font-bold text-blue-950 mb-4">سایر راهکارهای سازمانی ام‌آی‌تک</h3>
             <div className="space-y-3">
               {siblingSolutions.map((sib) => {
                 const SibIcon = sib.icon;
@@ -570,7 +570,7 @@ export default function SolutionDetailView({ slug }: SolutionDetailViewProps) {
               اجرای پایلوت این راهکار در مجموعه شما
             </h2>
             <p className="mt-3 text-sm text-slate-300 leading-7">
-              همین امروز با کارشناسان سازمانی مایتک تماس بگیرید تا ظرف ۴۸ ساعت طرح اولیه استقرار و تحلیل درآمدی مجموعه شما آماده شود.
+              همین امروز با کارشناسان سازمانی ام‌آی‌تک تماس بگیرید تا ظرف ۴۸ ساعت طرح اولیه استقرار و تحلیل درآمدی مجموعه شما آماده شود.
             </p>
           </div>
 

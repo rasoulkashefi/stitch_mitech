@@ -1,29 +1,42 @@
 import type { Metadata } from 'next';
-import ComingSoonTemplate from '@/components/ComingSoonTemplate';
+import ControllersHero from '@/components/fleet/wheelchair-controllers/ControllersHero';
+import RoboticsNavigationSection from '@/components/fleet/wheelchair-controllers/RoboticsNavigationSection';
+import CorePlatformFeatures from '@/components/fleet/wheelchair-controllers/CorePlatformFeatures';
+import ProductFamilySection from '@/components/fleet/wheelchair-controllers/ProductFamilySection';
+import SpecsComparisonTable from '@/components/fleet/wheelchair-controllers/SpecsComparisonTable';
+import GoldenWarrantyCTA from '@/components/fleet/wheelchair-controllers/GoldenWarrantyCTA';
 
 export const metadata: Metadata = {
-  title: 'سیستم‌های کنترل و جویستیک توانبخشی | ام. آی. تک. (Mitech)',
-  description: 'جویستیک و کنترلر فرمان انواع ویلچر برقی، ماژول‌های کمکی توانبخشی و درایورهای هوشمند حرکتی شرکت ام. آی. تک.',
+  title: 'خانواده کنترلرهای ویلچر برقی و درایورهای موتور DC | شرکت فناوری هوشمند میکائیل',
+  description:
+    'شرکت فناوری هوشمند میکائیل، مرجع تخصصی طراحی و تولید زیرسیستم‌های ناوبری، درایورهای موتور DC و خانواده کنترلرهای ویلچر برقی (مینی، پرو و ایکسپرو) با ۳۰ ماه گارانتی طلایی.',
   keywords: [
-    'جویستیک توانبخشی',
     'کنترلر ویلچر برقی',
-    'درایور هوشمند',
-    'ماژول کمکی حرکت',
+    'جویستیک ویلچر برقی',
+    'درایور موتور DC',
+    'ناوبری رباتیک',
+    'میکائیل مینی',
+    'میکائیل پرو',
+    'میکائیل ایکسپرو',
+    'تجهیزات توانبخشی',
+    'UGV',
+    'AGV',
+    'AUV',
     'میکائیل',
     'Mitech',
-    'ام آی تک'
   ],
   openGraph: {
-    title: 'سیستم‌های کنترل و جویستیک توانبخشی | ام. آی. تک.',
-    description: 'تولید تخصصی انواع جوی‌استیک‌های ارگونومیک و کنترلرهای فرمان ویلچر برقی.',
+    title: 'خانواده کنترلرهای ویلچر برقی و درایورهای ناوبری | شرکت فناوری هوشمند میکائیل',
+    description:
+      'طراحی و تولید انواع زیرسیستم‌های ناوبری، درایورهای موتور DC و خانواده کنترلرهای ویلچر برقی با الگوریتم‌های پردازش هوشمند و ۳۰ ماه گارانتی طلایی.',
     url: 'https://mitech.ir/fleet/wheelchair-controllers',
-    siteName: 'ام. آی. تک. (Mitech)',
+    siteName: 'فناوری هوشمند میکائیل (Mitech)',
     images: [
       {
-        url: '/logo/logo.png',
+        url: '/images/fleet/controllers/hero.jpg',
         width: 1200,
-        height: 630,
-        alt: 'سیستم‌های کنترل و جویستیک توانبخشی',
+        height: 675,
+        alt: 'خانواده کنترلرها و درایورهای ویلچر برقی میکائیل',
       },
     ],
     locale: 'fa_IR',
@@ -31,9 +44,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'سیستم‌های کنترل و جویستیک توانبخشی',
-    description: 'جویستیک و کنترلر فرمان انواع ویلچر برقی و درایورهای هوشمند.',
-    images: ['/logo/logo.png'],
+    title: 'خانواده کنترلرهای ویلچر برقی و درایورهای ناوبری میکائیل',
+    description: 'درایورهای موتور DC، ناوبری UGV/AGV و کنترلرهای ویلچر برقی مینی، پرو و ایکسپرو.',
+    images: ['/images/fleet/controllers/hero.jpg'],
   },
   alternates: {
     canonical: 'https://mitech.ir/fleet/wheelchair-controllers',
@@ -49,64 +62,65 @@ export default function WheelchairControllersPage() {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Product',
-    name: 'سیستم‌های کنترل و جویستیک توانبخشی',
-    image: 'https://mitech.ir/logo/logo.png',
-    description: 'تولید تخصصی انواع جوی‌استیک‌های ارگونومیک، کنترلرهای فرمان ویلچر برقی.',
+    name: 'خانواده کنترلرهای ویلچر برقی و درایورهای موتور DC میکائیل',
+    image: 'https://mitech.ir/images/fleet/controllers/hero.jpg',
+    description:
+      'مرجع تخصصی طراحی و تولید زیرسیستم‌های ناوبری، درایورهای موتور DC و خانواده کنترلرهای ویلچر برقی با معماری دو بخشی و ۳۰ ماه گارانتی طلایی.',
     brand: {
       '@type': 'Brand',
-      name: 'Mitech'
+      name: 'میکائیل (Mikaeel - Mitech)',
     },
     offers: {
       '@type': 'AggregateOffer',
       priceCurrency: 'IRR',
-      availability: 'https://schema.org/PreOrder'
-    }
+      availability: 'https://schema.org/InStock',
+    },
+    hasVariant: [
+      {
+        '@type': 'Product',
+        name: 'میکائیل مینی (Mikaeel Mini)',
+        description: 'مدل مینیمال با نمایشگر LED برای بالاترین سطح مانورپذیری در فضاهای بسته و محدود.',
+        image: 'https://mitech.ir/images/fleet/controllers/mini.jpg',
+      },
+      {
+        '@type': 'Product',
+        name: 'میکائیل پرو (Mikaeel Pro)',
+        description: 'مجهز به نمایشگر LCD گرافیکی، کد فعال‌سازی Programmable @Home و جک ایستا.',
+        image: 'https://mitech.ir/images/fleet/controllers/pro.jpg',
+      },
+      {
+        '@type': 'Product',
+        name: 'میکائیل ایکسپرو (Mikaeel X-Pro)',
+        description: 'پرچمدار هوشمند با استاندارد روشنایی اروپایی StVZO و پشتیبانی تا ۵ جک iSeating.',
+        image: 'https://mitech.ir/images/fleet/controllers/xpro.jpg',
+      },
+    ],
   };
 
   return (
-    <>
+    <main className="w-full overflow-hidden" dir="rtl">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <ComingSoonTemplate
-        title="سیستم‌های کنترل و جویستیک توانبخشی"
-        englishTitle="Wheelchair & Mobility Controllers"
-        category="محصولات و ناوگان"
-        categoryHref="/fleet"
-        description="تولید تخصصی انواع جوی‌استیک‌های ارگونومیک، کنترلرهای فرمان ویلچر برقی، درایورهای میکروکنترلری پیشرفته و سیستم‌های کمکی حرکت برای توان‌یابان و مراکز درمانی."
-        highlights={[
-          {
-            title: 'جوی‌استیک ارگونومیک ۳۶۰ درجه با فیدبک هپتیک',
-            desc: 'کنترل دقیق و بدون لغزش با رزولوشن بالا، قابلیت تنظیم ناحیه مرده (Deadband) و پاسخ‌دهی خطی متناسب با توانایی دست توان‌یاب.',
-          },
-          {
-            title: 'درایور هوشمند موتورهای DC و براشلس (BLDC)',
-            desc: 'کنترل نرم شتاب‌گیری و ترمز هوشمند ضدلغزش در سراشیبی‌ها با محافظت کامل در برابر جریان اضافه و داغ شدن موتور.',
-          },
-          {
-            title: 'قابلیت شخصی‌سازی پروفایل‌های حرکتی و اتصال ابری',
-            desc: 'امکان تعریف چند پروفایل رانندگی (داخل منزل، فضای باز، سرعت آهسته) و ارسال داده‌های سلامت سیستم به اپلیکیشن همراه.',
-          },
-        ]}
-        siblingLinks={[
-          {
-            label: 'ویلچرهای برقی و خودران',
-            href: '/fleet/autonomous-wheelchairs',
-            desc: 'ویلچرهای نسل جدید مجهز به ناوبری هوشمند',
-          },
-          {
-            label: 'سیستم‌های کنترل و ناوبری رباتیک',
-            href: '/fleet/robotic-navigation-systems',
-            desc: 'کنترلرها و ماژول‌های ناوبری خودران',
-          },
-          {
-            label: 'سیستم‌های پیشران و موقعیت‌یابی',
-            href: '/technology/drives-and-positioning',
-            desc: 'درایورهای صنعتی و موتورهای توان بالا',
-          },
-        ]}
-      />
-    </>
+
+      {/* ۱. بخش هیرو معرفی شرکت میکائیل و شاخص‌های کلیدی */}
+      <ControllersHero />
+
+      {/* ۲. معماری درایورهای موتور DC و ناوبری موبایل‌ربات‌ها (UGV/AGV و AUV/RCV) */}
+      <RoboticsNavigationSection />
+
+      {/* ۳. ویژگی‌های مشترک سیستم‌های کنترل توانبخشی میکائیل (معماری دوبخشی، ایمنی، باتری و...) */}
+      <CorePlatformFeatures />
+
+      {/* ۴. خانواده کنترلرهای ویلچر برقی (مینی، پرو، ایکسپرو) با پالت #F1F5F9 و #0F172A */}
+      <ProductFamilySection />
+
+      {/* ۵. ماتریس مقایسه فنی کامل ماژول‌ها (جدول ریسپانسیو و موبایل‌فرست) */}
+      <SpecsComparisonTable />
+
+      {/* ۶. بخش گارانتی طلایی ۳۰ ماهه میکائیل، خدمات و مشاوره فنی */}
+      <GoldenWarrantyCTA />
+    </main>
   );
 }

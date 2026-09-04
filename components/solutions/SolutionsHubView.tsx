@@ -136,7 +136,7 @@ export default function SolutionsHubView() {
               </h2>
             </div>
             <p className="max-w-md text-sm sm:text-base leading-7 text-slate-600">
-              هر صنعت با چالش‌های حرکتی و لجستیکی متفاوتی روبروست. مایتک پکیج اختصاصی هر محیط را همراه با ناوگان و سناریوی عملیاتی آماده استقرار ارائه می‌دهد.
+              هر صنعت با چالش‌های حرکتی و لجستیکی متفاوتی روبروست. ام‌آی‌تک پکیج اختصاصی هر محیط را همراه با ناوگان و سناریوی عملیاتی آماده استقرار ارائه می‌دهد.
             </p>
           </div>
 
@@ -186,7 +186,7 @@ export default function SolutionsHubView() {
                       </div>
                       <div className="flex items-start gap-2 text-emerald-800">
                         <CheckCircle2 size={13} className="mt-0.5 shrink-0 text-emerald-600" />
-                        <p><strong className="font-bold">راهکار مایتک: </strong>{ind.mitechSolutionSummary}</p>
+                        <p><strong className="font-bold">راهکار ام‌آی‌تک: </strong>{ind.mitechSolutionSummary}</p>
                       </div>
                     </div>
 
@@ -310,7 +310,7 @@ export default function SolutionsHubView() {
                     آماده تعریف پایلوت اختصاصی برای سازمان خود هستید؟
                   </h4>
                   <p className="text-xs text-slate-300 mt-0.5">
-                    تیم مهندسی و مالی مایتک طرح توجیهی و تحلیل ترافیک مجموعه شما را به رایگان تدوین می‌کند.
+                    تیم مهندسی و مالی ام‌آی‌تک طرح توجیهی و تحلیل ترافیک مجموعه شما را به رایگان تدوین می‌کند.
                   </p>
                 </div>
               </div>
@@ -424,7 +424,7 @@ export default function SolutionsHubView() {
               همین امروز زیرساخت مجموعه خود را هوشمند کنید
             </h2>
             <p className="mt-3 text-sm text-slate-300 leading-7">
-              یک جلسه کوتاه با تیم مهندسی و توسعه کسب‌وکار مایتک جهت بررسی پلان فضا، طراحی ناوگان بهینه و تعریف پایلوت میدانی بدون هزینه اولیه.
+              یک جلسه کوتاه با تیم مهندسی و توسعه کسب‌وکار ام‌آی‌تک جهت بررسی پلان فضا، طراحی ناوگان بهینه و تعریف پایلوت میدانی بدون هزینه اولیه.
             </p>
           </div>
 

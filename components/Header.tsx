@@ -31,6 +31,9 @@ import {
   BookOpen,
   Newspaper,
   Sparkles,
+  Wrench,
+  Cog,
+  PackageCheck,
 } from 'lucide-react';
 
 interface SubMenuItem {
@@ -140,6 +143,30 @@ const navItems: NavItem[] = [
         href: '/technology/digital-twin-platform',
         desc: 'داشبورد ابری و مانیتورینگ سه‌بعدی زنده',
         icon: Boxes,
+      },
+    ],
+  },
+  {
+    label: 'خدمات',
+    href: '/services',
+    children: [
+      {
+        label: 'تعمیرات تخصصی',
+        href: '/services/specialist-repairs',
+        desc: 'تعمیرات تخصصی تجهیزات حرکتی و هوشمند ام‌آی‌تک',
+        icon: Wrench,
+      },
+      {
+        label: 'نگهداری ناوگان',
+        href: '/services/fleet-maintenance',
+        desc: 'نگهداری پیشگیرانه ناوگان برای فرودگاه‌ها و مال‌ها',
+        icon: Cog,
+      },
+      {
+        label: 'قطعات یدکی',
+        href: '/services/spare-parts',
+        desc: 'تأمین قطعات یدکی اصیل و سازگار با ناوگان شما',
+        icon: PackageCheck,
       },
     ],
   },
