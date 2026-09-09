@@ -34,13 +34,15 @@ import {
   Wrench,
   Cog,
   PackageCheck,
+  Globe,
+  type LucideIcon,
 } from 'lucide-react';
 
 interface SubMenuItem {
   label: string;
   href: string;
   desc?: string;
-  icon?: any;
+  icon?: LucideIcon;
 }
 
 interface NavItem {
@@ -85,10 +87,22 @@ const navItems: NavItem[] = [
     href: '/fleet',
     children: [
       {
+        label: 'کاتالوگ جامع محصولات',
+        href: '/products',
+        desc: 'مشاهده و مقایسه تمام محصولات فعال ام‌آی‌تک',
+        icon: Sparkles,
+      },
+      {
         label: 'ویلچرهای خودران و هوشمند',
         href: '/fleet/autonomous-wheelchairs',
         desc: 'آزادی حرکت و استقلال با هوش مصنوعی',
         icon: Bot,
+      },
+      {
+        label: 'پله‌پیما و بالابر هوشمند',
+        href: '/fleet/stair-climbers',
+        desc: 'تردد امن میان طبقات بدون نیاز به ریل‌کشی',
+        icon: Sparkles,
       },
       {
         label: 'کالسکه‌های هوشمند خانواده',
@@ -152,7 +166,7 @@ const navItems: NavItem[] = [
     children: [
       {
         label: 'تعمیرات تخصصی',
-        href: '/services/specialist-repairs',
+        href: '/services/repairs',
         desc: 'تعمیرات تخصصی تجهیزات حرکتی و هوشمند ام‌آی‌تک',
         icon: Wrench,
       },
@@ -203,6 +217,18 @@ const navItems: NavItem[] = [
         href: '/about/history-vision',
         desc: 'مسیر نوآوری و برنامه‌های راهبردی',
         icon: History,
+      },
+      {
+        label: 'سوالات متداول (FAQ)',
+        href: '/faq',
+        desc: 'پاسخ به سوالات ناوگان خودران، خدمات و مدل‌های تجاری',
+        icon: Info,
+      },
+      {
+        label: 'دفتر بین‌المللی عمان (GCC)',
+        href: '/about/oman',
+        desc: 'توسعه منطقه‌ای و پروژه‌های مسقط و خلیج فارس',
+        icon: Globe,
       },
     ],
   },
@@ -265,10 +291,12 @@ export default function Header() {
   }, []);
 
   // Close mobile menu on route change
-  useEffect(() => {
+  const [prevPathname, setPrevPathname] = useState(pathname);
+  if (prevPathname !== pathname) {
+    setPrevPathname(pathname);
     setIsMobileMenuOpen(false);
     setOpenDropdown(null);
-  }, [pathname]);
+  }
 
   const handleMouseEnter = (label: string) => {
     if (dropdownTimeoutRef.current) clearTimeout(dropdownTimeoutRef.current);

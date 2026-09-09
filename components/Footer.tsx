@@ -12,7 +12,9 @@ const solutionLinks = [
 ];
 
 const fleetLinks = [
+  { label: 'کاتالوگ جامع محصولات', href: '/products' },
   { label: 'ویلچرهای خودران و هوشمند', href: '/fleet/autonomous-wheelchairs' },
+  { label: 'پله‌پیما و بالابر هوشمند', href: '/fleet/stair-climbers' },
   { label: 'کالسکه‌های هوشمند خانواده', href: '/fleet/smart-family-carts' },
   { label: 'ربات‌های باربر تعقیب‌کننده (AMR)', href: '/fleet/following-amrs' },
   { label: 'مبل‌های هوشمند متحرک', href: '/fleet/smart-mobile-sofas' },
@@ -31,7 +33,9 @@ const techAndBizLinks = [
 
 const companyAndBlogLinks = [
   { label: 'درباره ما و اهداف شرکت', href: '/about' },
+  { label: 'دفتر بین‌المللی عمان (GCC)', href: '/about/oman' },
   { label: 'تاریخچه و چشم‌انداز', href: '/about/history-vision' },
+  { label: 'سوالات متداول (FAQ)', href: '/faq' },
   { label: 'دیدگاه‌های صنعت در وبلاگ', href: '/blog/category/industry-insights' },
   { label: 'مطالعات موردی و پروژه‌ها', href: '/blog/category/case-studies' },
   { label: 'اخبار رسمی و رویدادها', href: '/blog/category/company-news' },

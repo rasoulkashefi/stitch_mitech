@@ -4,18 +4,19 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { ArrowLeft, ArrowUpLeft, Check, ChevronLeft, CircleCheck, Cog, FileText, PackageCheck, ShieldCheck, Truck, Wrench, type LucideIcon } from 'lucide-react'
 
-export type ServiceSlug = 'specialist-repairs' | 'fleet-maintenance' | 'spare-parts'
+export type ServiceSlug = 'repairs' | 'specialist-repairs' | 'fleet-maintenance' | 'spare-parts'
 
 type Service = { slug: ServiceSlug; label: string; eyebrow: string; title: string; description: string; icon: LucideIcon; points: string[]; metric: string; metricLabel: string }
 
 export const services: Service[] = [
-  { slug: 'specialist-repairs', label: 'تعمیرات تخصصی', eyebrow: 'SPECIALIST REPAIRS', title: 'تعمیرات تخصصی تجهیزات حرکتی و هوشمند ام‌آی‌تک', description: 'مرجع تخصصی عیب‌یابی، تعمیر و بازسازی تجهیزات جابه‌جایی هوشمند؛ با دانش فنی مهندسان ام‌آی‌تک، قطعات اصیل و گزارش شفاف از وضعیت دستگاه.', icon: Wrench, points: ['عیب‌یابی دقیق مکانیک، الکترونیک و نرم‌افزار', 'تعمیر انواع ویلچر برقی، مبل هوشمند و تجهیزات حرکتی', 'استفاده از قطعات اصلی و تست عملکرد پیش از تحویل'], metric: '۳ مرحله', metricLabel: 'تشخیص، تعمیر، تست' },
+  { slug: 'repairs', label: 'تعمیرات تخصصی', eyebrow: 'SPECIALIST REPAIRS', title: 'تعمیرات تخصصی تجهیزات حرکتی و هوشمند ام‌آی‌تک', description: 'مرجع تخصصی عیب‌یابی، تعمیر و بازسازی تجهیزات جابه‌جایی هوشمند؛ با دانش فنی مهندسان ام‌آی‌تک، قطعات اصیل و گزارش شفاف از وضعیت دستگاه.', icon: Wrench, points: ['عیب‌یابی دقیق مکانیک، الکترونیک و نرم‌افزار', 'تعمیر انواع ویلچر برقی، مبل هوشمند و تجهیزات حرکتی', 'استفاده از قطعات اصلی و تست عملکرد پیش از تحویل'], metric: '۳ مرحله', metricLabel: 'تشخیص، تعمیر، تست' },
   { slug: 'fleet-maintenance', label: 'نگهداری ناوگان', eyebrow: 'FLEET MAINTENANCE', title: 'نگهداری پیشگیرانه ناوگان برای فرودگاه‌ها و مال‌ها', description: 'سرویس مستمر و SLAمحور برای ناوگان‌های سازمانی؛ با پایش سلامت، برنامه‌ریزی تعمیرات و گزارش مدیریتی قابل اندازه‌گیری.', icon: Cog, points: ['قراردادهای دوره‌ای و پاسخ‌گویی اولویت‌دار', 'بازدید پیشگیرانه، کالیبراسیون و تست ایمنی', 'داشبورد گزارش خرابی، زمان خواب و هزینه نگهداری'], metric: 'SLA', metricLabel: 'پشتیبانی سازمانی' },
   { slug: 'spare-parts', label: 'قطعات یدکی', eyebrow: 'OEM SPARE PARTS', title: 'تأمین قطعات یدکی اصیل و سازگار با ناوگان شما', description: 'زنجیره تأمین قطعات مصرفی و تخصصی تجهیزات ام‌آی‌تک با شناسایی دقیق مدل، اصالت‌سنجی و پشتیبانی فنی پیش از خرید.', icon: PackageCheck, points: ['استعلام بر اساس مدل، سریال و کاربرد دستگاه', 'قطعات اصیل، مصرفی و کیت‌های سرویس دوره‌ای', 'راهنمای نصب و پشتیبانی فنی برای تیم نگهداری'], metric: 'OEM', metricLabel: 'تأمین مطمئن' },
 ]
 
 export function Shell({ children, active }: { children: React.ReactNode; active?: ServiceSlug }) {
   const pathname = usePathname()
+  const isRepairsActive = active === 'repairs' || active === 'specialist-repairs'
   return (
     <main dir="rtl" className="min-h-screen w-full bg-white font-[Vazirmatn,sans-serif]">
       <header className="sticky top-0 z-30 border-b border-slate-200/80 bg-white/90 backdrop-blur-xl">
@@ -30,15 +31,18 @@ export function Shell({ children, active }: { children: React.ReactNode; active?
             >
               مرکز خدمات
             </Link>
-            {services.map((item) => (
-              <Link 
-                key={item.slug} 
-                href={`/services/${item.slug}`} 
-                className={`rounded-full px-3 py-2 text-xs transition-colors ${active === item.slug ? 'bg-emerald-50 font-bold text-emerald-700' : 'text-slate-500 hover:bg-slate-100 hover:text-slate-900'}`}
-              >
-                {item.label}
-              </Link>
-            ))}
+            {services.map((item) => {
+              const isCurrent = active === item.slug || (item.slug === 'repairs' && isRepairsActive)
+              return (
+                <Link 
+                  key={item.slug} 
+                  href={`/services/${item.slug}`} 
+                  className={`rounded-full px-3 py-2 text-xs transition-colors ${isCurrent ? 'bg-emerald-50 font-bold text-emerald-700' : 'text-slate-500 hover:bg-slate-100 hover:text-slate-900'}`}
+                >
+                  {item.label}
+                </Link>
+              )
+            })}
           </nav>
           <span className="hidden font-mono text-[10px] tracking-widest text-slate-400 sm:block">MIKAIL SMART TECHNOLOGY</span>
         </div>
@@ -50,7 +54,9 @@ export function Shell({ children, active }: { children: React.ReactNode; active?
           {active && (
             <>
               <ChevronLeft className="size-3" />
-              <span className="font-semibold text-slate-900">{services.find((x) => x.slug === active)?.label}</span>
+              <span className="font-semibold text-slate-900">
+                {services.find((x) => x.slug === active || (x.slug === 'repairs' && isRepairsActive))?.label}
+              </span>
             </>
           )}
         </div>
