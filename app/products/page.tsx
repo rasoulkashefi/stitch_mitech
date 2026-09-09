@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import ProductsCatalog, { officialProducts } from '@/components/products/ProductsCatalog';
+import ProductsCatalog from '@/components/products/ProductsCatalog';
+import { officialProducts } from '@/components/products/products-data';
 import { ChevronLeft, Sparkles } from 'lucide-react';
 
 export const metadata: Metadata = {

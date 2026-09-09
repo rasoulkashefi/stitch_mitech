@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import FaqExplorer, { allFaqs } from '@/components/faq/FaqExplorer';
+import FaqExplorer from '@/components/faq/FaqExplorer';
+import { allFaqs } from '@/components/faq/faq-data';
 import { Sparkles, ChevronLeft } from 'lucide-react';
 
 export const metadata: Metadata = {
