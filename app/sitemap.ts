@@ -1,6 +1,7 @@
 import type { MetadataRoute } from 'next';
 import { client } from '@/sanity/lib/client';
-import { postPathsQuery } from '@/sanity/lib/queries';
+import { sitemapPostsQuery } from '@/sanity/lib/queries';
+import { SitemapPost } from '@/sanity/types';
 
 const BASE_URL = 'https://mitech.ir';
 
@@ -42,19 +43,30 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${BASE_URL}/blog`, lastModified: now, changeFrequency: 'daily', priority: 0.8 },
   ];
 
-  // واکشی داینامیک مقالات از Sanity (مطالب بلاگ که کاربر در استودیو اضافه میکند)
+  // واکشی داینامیک مقالات منتشرشده از Sanity با کوئری GROQ به همراه _updatedAt دقیق
   let blogRoutes: MetadataRoute.Sitemap = [];
   try {
-    const posts = await client.fetch<{ slug: string }[]>(postPathsQuery);
+    const posts = await client.fetch<SitemapPost[]>(sitemapPostsQuery);
     if (Array.isArray(posts)) {
       blogRoutes = posts
         .filter((post) => Boolean(post?.slug))
-        .map((post) => ({
-          url: `${BASE_URL}/blog/${post.slug}`,
-          lastModified: now,
-          changeFrequency: 'weekly',
-          priority: 0.7,
-        }));
+        .map((post) => {
+          let postDate = now;
+          if (post._updatedAt) {
+            const parsed = new Date(post._updatedAt);
+            if (!isNaN(parsed.getTime())) postDate = parsed;
+          } else if (post.publishedAt) {
+            const parsed = new Date(post.publishedAt);
+            if (!isNaN(parsed.getTime())) postDate = parsed;
+          }
+
+          return {
+            url: `${BASE_URL}/blog/${post.slug}`,
+            lastModified: postDate,
+            changeFrequency: 'weekly',
+            priority: 0.7,
+          };
+        });
     }
   } catch (error) {
     console.error('Error fetching blog posts for sitemap from Sanity:', error);

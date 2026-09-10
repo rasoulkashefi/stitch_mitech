@@ -50,6 +50,7 @@ export async function generateStaticParams() {
 const flexiblePostQuery = groq`
   *[_type == "post" && (slug.current == $slugParam || slug.current == $lastSegment || slug.current == $dashedSlug)][0] {
     _id,
+    _updatedAt,
     title,
     slug,
     author,
@@ -58,7 +59,11 @@ const flexiblePostQuery = groq`
     tags,
     publishedAt,
     excerpt,
-    body
+    body,
+    seo,
+    aiMetadata,
+    status,
+    featured
   }
 `;
 
@@ -107,19 +112,30 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   }
 
-  const title = `${post.title} | وبلاگ میکائیل`;
+  const title = post.seo?.metaTitle || `${post.title} | وبلاگ میکائیل`;
   const description =
+    post.seo?.metaDescription ||
     post.excerpt ||
     'مرجع یادداشت‌های تحلیلی و مقالات تخصصی شرکت دانش‌بنیان فناوری هوشمند میکائیل.';
-  const canonicalUrl = `https://mitech.ir/blog/${slugParam}`;
-  const imageUrl = post.mainImage
-    ? urlForImage(post.mainImage)?.width(1200)?.height(630)?.url()
-    : 'https://mitech.ir/logo/mitech-og.png';
+  const canonicalUrl = post.seo?.canonicalUrl || `https://mitech.ir/blog/${slugParam}`;
+  
+  // Dynamic Open Graph Fallback: If author did not upload an ogImage or mainImage, generate 1200x630 via /api/og
+  const ogSource = post.seo?.ogImage || post.mainImage;
+  const categoryParam = encodeURIComponent(post.categories?.[0] || 'فناوری و رباتیک خودران');
+  const authorParam = encodeURIComponent(post.author || 'تیم پژوهش و مهندسی میکائیل');
+  const titleParam = encodeURIComponent(post.title || 'مقاله تخصصی میکائیل');
+  const dynamicOgUrl = `https://mitech.ir/api/og?title=${titleParam}&category=${categoryParam}&author=${authorParam}`;
 
-  const keywordsList =
-    post.tags && post.tags.length > 0
-      ? post.tags
-      : ['رباتیک', 'فناوری خودران', 'میکائیل', 'AMaaS', 'هوش مصنوعی'];
+  const customOgUrl = ogSource ? urlForImage(ogSource)?.width(1200)?.height(630)?.url() : null;
+  const imageUrl = customOgUrl || dynamicOgUrl;
+
+  const isNoIndex = Boolean(post.seo?.noIndex);
+
+  const keywordsList = [
+    ...(post.aiMetadata?.primaryKeyword ? [post.aiMetadata.primaryKeyword] : []),
+    ...(post.tags && post.tags.length > 0 ? post.tags : ['رباتیک', 'فناوری خودران', 'میکائیل', 'AMaaS', 'هوش مصنوعی']),
+    ...(post.aiMetadata?.secondaryKeywords || []),
+  ];
 
   return {
     title,
@@ -139,20 +155,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       locale: 'fa_IR',
       type: 'article',
       publishedTime: post.publishedAt,
-      modifiedTime: post.publishedAt,
+      modifiedTime: post._updatedAt || post.publishedAt,
       authors: post.author ? [post.author] : ['Mitech'],
       tags: post.tags,
       section: post.categories?.[0] || 'فناوری و رباتیک',
-      images: imageUrl
-        ? [
-            {
-              url: imageUrl,
-              width: 1200,
-              height: 630,
-              alt: post.title,
-            },
-          ]
-        : undefined,
+      images: [
+        {
+          url: imageUrl,
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        },
+      ],
     },
     twitter: {
       card: 'summary_large_image',
@@ -161,8 +175,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       images: imageUrl ? [imageUrl] : undefined,
     },
     robots: {
-      index: true,
-      follow: true,
+      index: !isNoIndex,
+      follow: !isNoIndex,
       'max-image-preview': 'large',
       'max-snippet': -1,
       'max-video-preview': -1,
@@ -191,69 +205,101 @@ export default async function BlogPostPage({ params }: Props) {
   const headings = extractHeadings(post.body);
   const articleUrl = `https://mitech.ir/blog/${slugParam}`;
 
+  // Extract FAQs from body for Google FAQPage Rich Snippet Schema
+  const faqItems: { question: string; answer: string }[] = [];
+  if (Array.isArray(post.body)) {
+    for (const block of post.body) {
+      if (block?._type === 'faqAccordion' && Array.isArray(block?.items)) {
+        for (const item of block.items) {
+          if (item?.question && item?.answer) {
+            faqItems.push({ question: item.question, answer: item.answer });
+          }
+        }
+      }
+    }
+  }
+
   // Rich JSON-LD Graph for Google, Bing, and AI Crawlers (SearchGPT, Perplexity, Gemini)
+  const jsonLdGraph: any[] = [
+    {
+      '@type': 'TechArticle',
+      '@id': `${articleUrl}#article`,
+      headline: post.seo?.metaTitle || post.title,
+      description: post.seo?.metaDescription || post.excerpt || post.title,
+      abstract: post.aiMetadata?.aiSummary || post.excerpt,
+      datePublished: post.publishedAt,
+      dateModified: post.publishedAt,
+      inLanguage: 'fa-IR',
+      mainEntityOfPage: {
+        '@type': 'WebPage',
+        '@id': articleUrl,
+      },
+      keywords: post.tags && post.tags.length > 0 ? post.tags.join(', ') : undefined,
+      articleSection: post.categories && post.categories.length > 0 ? post.categories.join(', ') : 'فناوری و رباتیک',
+      author: {
+        '@type': 'Person',
+        name: post.author || 'تیم مهندسی و پژوهش میکائیل',
+        url: 'https://mitech.ir/about',
+      },
+      publisher: {
+        '@type': 'Organization',
+        name: 'شرکت دانش‌بنیان فناوری هوشمند میکائیل (Mitech)',
+        url: 'https://mitech.ir',
+        logo: {
+          '@type': 'ImageObject',
+          url: 'https://mitech.ir/logo/mitech-icon.png',
+        },
+      },
+      image: featuredImageUrl ? [featuredImageUrl] : undefined,
+      speakable: {
+        '@type': 'SpeakableSpecification',
+        cssSelector: ['h1', '.article-excerpt', '.article-content'],
+      },
+    },
+    {
+      '@type': 'BreadcrumbList',
+      '@id': `${articleUrl}#breadcrumb`,
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'صفحه اصلی',
+          item: 'https://mitech.ir',
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'مجله و وبلاگ',
+          item: 'https://mitech.ir/blog',
+        },
+        {
+          '@type': 'ListItem',
+          position: 3,
+          name: post.title,
+          item: articleUrl,
+        },
+      ],
+    },
+  ];
+
+  if (faqItems.length > 0) {
+    jsonLdGraph.push({
+      '@type': 'FAQPage',
+      '@id': `${articleUrl}#faq`,
+      mainEntity: faqItems.map((faq) => ({
+        '@type': 'Question',
+        name: faq.question,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: faq.answer,
+        },
+      })),
+    });
+  }
+
   const jsonLd = {
     '@context': 'https://schema.org',
-    '@graph': [
-      {
-        '@type': 'TechArticle',
-        '@id': `${articleUrl}#article`,
-        headline: post.title,
-        description: post.excerpt || post.title,
-        datePublished: post.publishedAt,
-        dateModified: post.publishedAt,
-        inLanguage: 'fa-IR',
-        mainEntityOfPage: {
-          '@type': 'WebPage',
-          '@id': articleUrl,
-        },
-        keywords: post.tags && post.tags.length > 0 ? post.tags.join(', ') : undefined,
-        articleSection: post.categories && post.categories.length > 0 ? post.categories.join(', ') : 'فناوری و رباتیک',
-        author: {
-          '@type': 'Person',
-          name: post.author || 'تیم مهندسی و پژوهش میکائیل',
-          url: 'https://mitech.ir/about',
-        },
-        publisher: {
-          '@type': 'Organization',
-          name: 'شرکت دانش‌بنیان فناوری هوشمند میکائیل (Mitech)',
-          url: 'https://mitech.ir',
-          logo: {
-            '@type': 'ImageObject',
-            url: 'https://mitech.ir/logo/mitech-icon.png',
-          },
-        },
-        image: featuredImageUrl ? [featuredImageUrl] : undefined,
-        speakable: {
-          '@type': 'SpeakableSpecification',
-          cssSelector: ['h1', '.article-excerpt', '.article-content'],
-        },
-      },
-      {
-        '@type': 'BreadcrumbList',
-        '@id': `${articleUrl}#breadcrumb`,
-        itemListElement: [
-          {
-            '@type': 'ListItem',
-            position: 1,
-            name: 'صفحه اصلی',
-            item: 'https://mitech.ir',
-          },
-          {
-            '@type': 'ListItem',
-            position: 2,
-            name: 'مجله و وبلاگ',
-            item: 'https://mitech.ir/blog',
-          },
-          {
-            '@type': 'ListItem',
-            position: 3,
-            name: post.title,
-            item: articleUrl,
-          },
-        ],
-      },
-    ],
+    '@graph': jsonLdGraph,
   };
 
   return (

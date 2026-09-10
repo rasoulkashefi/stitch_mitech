@@ -1,7 +1,26 @@
 import type { SanityImageSource } from '@sanity/image-url';
 
+export interface PostSeo {
+  metaTitle?: string;
+  metaDescription?: string;
+  canonicalUrl?: string;
+  noIndex?: boolean;
+  ogImage?: SanityImageSource & {
+    alt?: string;
+  };
+}
+
+export interface PostAiMetadata {
+  aiSummary?: string;
+  searchIntent?: 'informational' | 'commercial' | 'transactional' | 'navigational' | string;
+  primaryKeyword?: string;
+  secondaryKeywords?: string[];
+  targetQuestions?: string[];
+}
+
 export interface PostSummary {
   _id: string;
+  _updatedAt?: string;
   title: string;
   slug: {
     current: string;
@@ -9,15 +28,26 @@ export interface PostSummary {
   author?: string;
   mainImage?: SanityImageSource & {
     alt?: string;
+    caption?: string;
   };
   categories?: string[];
   tags?: string[];
   publishedAt?: string;
   excerpt?: string;
+  status?: 'draft' | 'in_review' | 'scheduled' | 'published' | 'archived';
+  featured?: boolean;
 }
 
 export interface PostDetail extends PostSummary {
   body?: any[];
+  seo?: PostSeo;
+  aiMetadata?: PostAiMetadata;
+}
+
+export interface SitemapPost {
+  slug: string;
+  _updatedAt?: string;
+  publishedAt?: string;
 }
 
 export function formatPersianDate(dateString?: string): string {
