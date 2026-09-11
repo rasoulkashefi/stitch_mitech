@@ -179,29 +179,55 @@ function CodeBlockComponent({ value }: { value: any }) {
   );
 }
 
+// Helper function to convert English digits and symbols to Persian
+function toPersianDigits(str: string | number | undefined | null): string {
+  if (str === null || str === undefined) return '';
+  const persianDigits = ['۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹'];
+  return String(str)
+    .replace(/[0-9]/g, (w) => persianDigits[parseInt(w, 10)])
+    .replace(/%/g, '٪');
+}
+
 // 3. Stat Card Component
 function StatCardComponent({ value }: { value: any }) {
   if (!value) return null;
   const { value: statValue, label, description } = value;
+  const formattedValue = toPersianDigits(statValue);
 
   return (
-    <div className="my-8 relative overflow-hidden rounded-2xl bg-linear-to-br from-slate-900 to-[#0B132B] p-6 sm:p-8 text-white border border-slate-800 shadow-md">
-      <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/10 rounded-full blur-2xl pointer-events-none" />
-      <div className="relative flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-        <div className="space-y-1">
-          <div className="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-400 uppercase tracking-wider mb-1">
-            <TrendingUp className="w-3.5 h-3.5" />
-            <span>شاخص عملکردی</span>
+    <div
+      className="my-8 relative overflow-hidden rounded-2xl bg-linear-to-br from-slate-900 via-slate-900/95 to-[#0B132B] p-6 sm:p-8 text-white border border-slate-800/80 shadow-lg text-right"
+      dir="rtl"
+    >
+      {/* Background Ambient Glows */}
+      <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-48 h-48 bg-teal-500/5 rounded-full blur-2xl pointer-events-none" />
+
+      <div className="relative flex flex-col md:flex-row md:items-center justify-start gap-6 sm:gap-8">
+        {/* Metric Value Block - Placed on the RIGHT side in RTL */}
+        <div className="shrink-0 flex flex-col items-start justify-center border-b md:border-b-0 md:border-l border-slate-800/90 pb-4 md:pb-0 md:pl-8 min-w-[180px]">
+          <div className="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-400 uppercase tracking-wider mb-2">
+            <TrendingUp className="w-4 h-4 text-emerald-400 shrink-0" />
+            <span>شاخص کلیدی</span>
           </div>
-          <h3 className="text-lg sm:text-xl font-bold text-white">{label}</h3>
+          <div
+            className="text-3xl sm:text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-linear-to-l from-emerald-400 via-teal-300 to-emerald-200 tracking-normal text-right font-vazirmatn"
+            dir="rtl"
+          >
+            {formattedValue}
+          </div>
+        </div>
+
+        {/* Label & Description */}
+        <div className="space-y-1.5 text-right flex-1">
+          <h3 className="text-lg sm:text-xl font-bold text-white leading-snug">
+            {label}
+          </h3>
           {description && (
-            <p className="text-xs sm:text-sm text-slate-400 max-w-lg leading-relaxed">
+            <p className="text-xs sm:text-sm text-slate-300 leading-relaxed max-w-2xl">
               {description}
             </p>
           )}
-        </div>
-        <div className="shrink-0 text-3xl sm:text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-linear-to-r from-emerald-400 to-teal-200 tracking-tight font-sans" dir="ltr">
-          {statValue}
         </div>
       </div>
     </div>

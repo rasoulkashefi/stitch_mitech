@@ -392,16 +392,23 @@ export default async function BlogPostPage({ params }: Props) {
         {/* Seamless Cover Image (below title & metadata, no clunky borders) */}
         {featuredImageUrl && (
           <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 my-10">
-            <div className="relative aspect-[21/9] sm:aspect-[16/9] w-full overflow-hidden rounded-2xl sm:rounded-3xl bg-slate-100 shadow-sm">
-              <Image
-                src={featuredImageUrl}
-                alt={post.title}
-                fill
-                priority
-                className="object-cover"
-                sizes="(max-width: 1280px) 100vw, 1200px"
-              />
-            </div>
+            <figure className="m-0">
+              <div className="relative aspect-[21/9] sm:aspect-[16/9] w-full overflow-hidden rounded-2xl sm:rounded-3xl bg-slate-100 shadow-sm">
+                <Image
+                  src={featuredImageUrl}
+                  alt={post.mainImage?.alt || post.title}
+                  fill
+                  priority
+                  className="object-cover"
+                  sizes="(max-width: 1280px) 100vw, 1200px"
+                />
+              </div>
+              {post.mainImage?.caption && (
+                <figcaption className="mt-2.5 text-center text-xs sm:text-sm text-slate-400 font-medium">
+                  {post.mainImage.caption}
+                </figcaption>
+              )}
+            </figure>
           </div>
         )}
 

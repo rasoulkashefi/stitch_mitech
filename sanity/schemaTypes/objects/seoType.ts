@@ -69,6 +69,20 @@ export const seoType = defineType({
       initialValue: false,
     }),
     defineField({
+      name: 'favicon',
+      title: 'فاوآیکون و نماد تب مرورگر (Favicon)',
+      type: 'image',
+      options: { hotspot: false },
+      description: 'آیکون رسمی میکائیل برای متادیتای صفحه و تب مرورگر.',
+    }),
+    defineField({
+      name: 'publisherLogo',
+      title: 'لوگوی ناشر (Publisher Logo)',
+      type: 'image',
+      options: { hotspot: true },
+      description: 'لوگوی رسمی ناشر برای داده‌های ساختاریافته و متادیتای برند.',
+    }),
+    defineField({
       name: 'ogImage',
       title: 'تصویر اختصاصی اشتراک‌گذاری اجتماعی (Open Graph / Twitter Card Image)',
       type: 'image',

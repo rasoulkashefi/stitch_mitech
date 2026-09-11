@@ -1,20 +1,28 @@
+import React from 'react';
 import type { Metadata } from 'next';
-import ComingSoonTemplate from '@/components/ComingSoonTemplate';
+import { client } from '@/sanity/lib/client';
+import { postsByCategoryQuery } from '@/sanity/lib/queries';
+import { PostSummary } from '@/sanity/types';
+import CategoryLanding from '@/components/blog/CategoryLanding';
+
+export const revalidate = 60;
 
 export const metadata: Metadata = {
   title: 'دیدگاه‌های صنعت (Industry Insights) | ام. آی. تک. (Mitech)',
-  description: 'تحلیل‌ها و مقالات تخصصی پیرامون آینده رباتیک خدماتی، بینایی ماشین و هوشمندسازی فضاهای عمومی.',
+  description:
+    'تحلیل‌ها و مقالات تخصصی پیرامون آینده رباتیک خدماتی، بینایی ماشین، مدل‌های AMaaS و هوشمندسازی فضاهای عمومی.',
   keywords: [
     'مقالات تخصصی رباتیک',
     'آینده فناوری خودران',
     'Industry Insights',
     'هوشمندسازی فضاها',
     'میکائیل',
-    'Mitech'
+    'Mitech',
   ],
   openGraph: {
-    title: 'دیدگاه‌های صنعت (Industry Insights) | میکائیل',
-    description: 'تحلیل‌ها و مقالات تخصصی پیرامون آینده رباتیک خدماتی و هوشمندسازی فضاهای عمومی.',
+    title: 'دیدگاه‌های صنعت (Industry Insights) | ام. آی. تک. (Mitech)',
+    description:
+      'تحلیل‌ها و مقالات تخصصی پیرامون آینده رباتیک خدماتی و هوشمندسازی فضاهای عمومی.',
     url: 'https://mitech.ir/blog/category/industry-insights',
     siteName: 'ام. آی. تک. (Mitech)',
     locale: 'fa_IR',
@@ -22,7 +30,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'دیدگاه‌های صنعت (Industry Insights)',
+    title: 'دیدگاه‌های صنعت (Industry Insights) | میکائیل',
     description: 'تحلیل‌ها و مقالات تخصصی پیرامون آینده رباتیک خدماتی و هوشمندسازی فضاهای عمومی.',
   },
   alternates: {
@@ -35,16 +43,52 @@ export const metadata: Metadata = {
   },
 };
 
-export default function IndustryInsightsPage() {
+async function getIndustryInsightsPosts(): Promise<PostSummary[]> {
+  try {
+    const posts = await client.fetch<PostSummary[]>(postsByCategoryQuery, {
+      categories: [
+        'دیدگاه‌های صنعت',
+        'دیدگاه‌ها و تحلیل صنعت',
+        'تحلیل صنعت',
+        'تحلیل صنعت و مدل‌های تجاری AMaaS',
+      ],
+    });
+    return posts || [];
+  } catch (error) {
+    console.error('Error fetching industry insights posts from Sanity:', error);
+    return [];
+  }
+}
+
+export default async function IndustryInsightsPage() {
+  const posts = await getIndustryInsightsPosts();
+
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
-    name: 'دیدگاه‌های صنعت (Industry Insights)',
-    description: 'تحلیل‌ها و مقالات تخصصی پیرامون آینده رباتیک خدماتی، بینایی ماشین و هوشمندسازی فضاهای عمومی.',
+    name: 'دیدگاه‌های صنعت (Industry Insights) | ام. آی. تک. (Mitech)',
+    description:
+      'تحلیل‌ها و مقالات تخصصی پیرامون آینده رباتیک خدماتی، بینایی ماشین، مدل‌های AMaaS و هوشمندسازی فضاهای عمومی.',
+    url: 'https://mitech.ir/blog/category/industry-insights',
+    inLanguage: 'fa-IR',
     publisher: {
       '@type': 'Organization',
-      name: 'Mitech'
-    }
+      name: 'Mitech',
+      url: 'https://mitech.ir',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://mitech.ir/logo/mitech-icon.png',
+      },
+    },
+    mainEntity: {
+      '@type': 'ItemList',
+      itemListElement: posts.map((post, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: post.title,
+        url: `https://mitech.ir/blog/${post.slug.current}`,
+      })),
+    },
   };
 
   return (
@@ -53,44 +97,30 @@ export default function IndustryInsightsPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <ComingSoonTemplate
-      title="دیدگاه‌های صنعت"
-      englishTitle="Industry Insights & Future Tech"
-      category="مجله و مقالات"
-      categoryHref="/blog"
-      description="یادداشت‌ها و مقالات عمیق مهندسی پیرامون مرزهای دانش رباتیک، اثرات اقتصادی جابجایی خودران (AMaaS) و فناوری‌های نسل بعد ناوبری."
-      highlights={[
-        {
-          title: 'آینده توانبخشی و استقلال معلولین با AI',
-          desc: 'چگونه یادگیری ماشین و سنسورهای بیومتریک در حال دگرگونی ویلچرهای هوشمند هستند.',
-        },
-        {
-          title: 'اقتصاد مال‌های نسل ۴ و ترابری خریداران',
-          desc: 'نقش ناوگان‌های رفاهی در رشد وفاداری مشتریان و افزایش میانگین زمان اقامت در مجتمع‌های تجاری.',
-        },
-        {
-          title: 'مقایسه الگوریتم‌های SLAM در سالن‌های وسیع',
-          desc: 'بررسی دقت، هزینه محاسباتی و پایداری روش‌های Visual در مقابل LiDAR.',
-        },
-      ]}
-      siblingLinks={[
-        {
-          label: 'مطالعات موردی',
-          href: '/blog/category/case-studies',
-          desc: 'بررسی پروژه‌های پیاده‌سازی‌شده',
-        },
-        {
-          label: 'اخبار شرکت',
-          href: '/blog/category/company-news',
-          desc: 'تازه‌های شرکت میکائیل',
-        },
-        {
-          label: 'صفحه اصلی وبلاگ',
-          href: '/blog',
-          desc: 'مشاهده همه دسته‌بندی‌ها',
-        },
-      ]}
-    />
+      <CategoryLanding
+        title="دیدگاه‌های صنعت و تحلیل فناوری"
+        englishTitle="Industry Insights & Future Tech"
+        badge="تحلیل عمیق اکوسیستم و مرزهای دانش"
+        description="یادداشت‌ها و مقالات عمیق مهندسی پیرامون مرزهای دانش رباتیک خودران، اثرات اقتصادی جابجایی خودران (AMaaS)، حسگرهای لیدار و بینایی ماشین در اتوماسیون فضاهای شهری و عمومی."
+        posts={posts}
+        siblingCategories={[
+          {
+            label: 'مطالعات موردی',
+            href: '/blog/category/case-studies',
+            desc: 'گزارش پروژه‌های پیاده‌سازی‌شده',
+          },
+          {
+            label: 'اخبار شرکت',
+            href: '/blog/category/company-news',
+            desc: 'تازه‌های شرکت میکائیل',
+          },
+          {
+            label: 'دانشنامه ویلچر برقی',
+            href: '/blog/electric-wheelchair',
+            desc: 'مرجع تخصصی ویلچرهای هوشمند',
+          },
+        ]}
+      />
     </>
   );
 }

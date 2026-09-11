@@ -19,7 +19,7 @@ const legacyRedirects = [
   { source: "/product/ویلچر-برقی-مبله-آمریکایی-imc", destination: "/blog/electric-wheelchair/buying-guide/", permanent: true },
   { source: "/shop/page/3", destination: "/products/", permanent: true },
   { source: "/product/ویلچر-برقی-تاشو-بتا-۲۵", destination: "/blog/electric-wheelchair/buying-guide/", permanent: true },
-  { source: "/product/قیمت-ویلچر-برقی-دست-دوم", destination: "/blog/electric-wheelchair/used/", permanent: true },
+  { source: "/product/قیمت-ویلچر-برقی-دست-دوم", destination: "/blog/used-electric-wheelchair", permanent: true },
   { source: "/product-category/product/medicine-_-rehabilitation", destination: "/fleet/autonomous-wheelchairs/", permanent: true },
   { source: "/product/کاور-ضد-آب-ویلچر-برقی", destination: "/blog/electric-wheelchair/accessories/", permanent: true },
   { source: "/product/کنترلر-پله-پیما-artech-lift-300", destination: "/blog/stairlift/", permanent: true },

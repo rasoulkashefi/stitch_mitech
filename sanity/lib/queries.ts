@@ -66,3 +66,40 @@ export const relatedPostsQuery = groq`
     featured
   }
 `;
+
+export const postsByCategoryQuery = groq`
+  *[_type == "post" && defined(slug.current) && (!defined(status) || status == "published") && count((categories)[@ in $categories]) > 0] | order(publishedAt desc) {
+    _id,
+    title,
+    slug,
+    author,
+    mainImage,
+    categories,
+    tags,
+    publishedAt,
+    excerpt,
+    status,
+    featured
+  }
+`;
+
+export const electricWheelchairPostsQuery = groq`
+  *[_type == "post" && defined(slug.current) && (!defined(status) || status == "published") && (
+    count((categories)[@ in ["ویلچر برقی", "دانشنامه و مقالات ویلچر برقی"]]) > 0 ||
+    count((tags)[@ match "*ویلچر*"]) > 0 ||
+    title match "*ویلچر*"
+  )] | order(publishedAt desc) {
+    _id,
+    title,
+    slug,
+    author,
+    mainImage,
+    categories,
+    tags,
+    publishedAt,
+    excerpt,
+    status,
+    featured
+  }
+`;
+

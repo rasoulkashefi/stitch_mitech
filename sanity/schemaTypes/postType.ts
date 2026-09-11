@@ -350,19 +350,20 @@ export const postType = defineType({
     }),
     defineField({
       name: 'categories',
-      title: 'دسته‌بندی‌های تخصصی (Categories)',
+      title: 'دسته‌بندی‌ها (Categories)',
       type: 'array',
       group: 'workflow',
       of: [{ type: 'string' }],
       options: {
         list: [
-          { title: 'فناوری و ناوبری خودران', value: 'فناوری و ناوبری خودران' },
-          { title: 'رباتیک سازمانی و لجستیک', value: 'رباتیک سازمانی و لجستیک' },
-          { title: 'هوش مصنوعی و بینایی ماشین', value: 'هوش مصنوعی و بینایی ماشین' },
-          { title: 'اخبار و تحولات میکائیل', value: 'اخبار و تحولات میکائیل' },
-          { title: 'تحلیل صنعت و مدل‌های تجاری AMaaS', value: 'تحلیل صنعت و مدل‌های تجاری AMaaS' },
+          { title: 'مطالعات موردی و پروژه‌ها', value: 'مطالعات موردی' },
+          { title: 'دیدگاه‌ها و تحلیل صنعت', value: 'دیدگاه‌های صنعت' },
+          { title: 'اخبار و رویدادهای شرکت', value: 'اخبار شرکت' },
+          { title: 'دانشنامه و مقالات ویلچر برقی', value: 'ویلچر برقی' },
+          { title: 'فناوری رباتیک و سیستم‌های ناوبری', value: 'فناوری رباتیک' },
         ],
       },
+      validation: (rule) => rule.required().min(1).error('حداقل یک دسته‌بندی را انتخاب کنید.'),
     }),
     defineField({
       name: 'tags',
