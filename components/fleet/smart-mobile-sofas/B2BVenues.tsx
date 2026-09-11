@@ -93,7 +93,7 @@ export default function B2BVenues() {
               key={idx}
               className="rounded-2xl border border-slate-800 bg-slate-900/60 p-7 text-right shadow-sm hover:border-slate-700 transition-colors"
             >
-              <span className="text-3xl sm:text-4xl font-extrabold text-emerald-400 block mb-2 font-mono">
+              <span className="text-3xl sm:text-4xl font-extrabold text-emerald-400 block mb-2">
                 {metric.value}
               </span>
               <h3 className="text-base font-bold text-white mb-2">

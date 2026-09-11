@@ -290,7 +290,7 @@ const macroNavItems: MacroNavItem[] = [
           },
           {
             label: 'مطالعات موردی',
-            href: '/blog/category/case-studies',
+            href: '/blog/case-studies',
             desc: 'گزارش نتایج استقرار در سازمان‌ها',
             icon: Sparkles,
           },

@@ -11,6 +11,8 @@ import Blog from '@/components/Blog';
 import FAQ from '@/components/FAQ';
 import Contact from '@/components/Contact';
 
+export const revalidate = 60;
+
 export const metadata: Metadata = {
   title: 'پلتفرم رباتیک خودران و AMaaS سازمانی | Mitech',
   description: 'ام. آی. تک. (Mitech) پیشگام در ارائه ناوگان رباتیک خودران و خدمات AMaaS (موبیلیتی به عنوان سرویس) برای سازمان‌ها، فرودگاه‌ها، بیمارستان‌ها و مجتمع‌های تجاری.',

@@ -55,7 +55,7 @@ export default function SafetyAndComfort() {
             <p className="mb-3 text-xs font-bold uppercase tracking-wider text-emerald-600">
               ویژگی‌های ایمنی فعال و آسایش فرست‌کلاس • Safety & Luxury Comfort
             </p>
-            <h2 className="text-3xl font-extrabold text-slate-900 lg:text-5xl leading-tight tracking-tight">
+            <h2 className="text-3xl font-extrabold text-blue-950 lg:text-5xl leading-tight tracking-tight">
               نهایت آرامش در نشیمن،
               <br />
               <span className="text-slate-400">نهایت اطمینان در ایمنی عابران.</span>
@@ -133,7 +133,7 @@ export default function SafetyAndComfort() {
             <div className="lg:col-span-4 grid grid-cols-2 gap-4 border-t border-slate-800 lg:border-t-0 lg:border-r lg:border-slate-800 pt-6 lg:pt-0 lg:pr-8">
               <div className="flex flex-col">
                 <span className="text-xs text-slate-400">سرعت واکنش ترمز</span>
-                <span className="text-xl sm:text-2xl font-extrabold text-emerald-400 mt-1 font-mono">
+                <span className="text-xl sm:text-2xl font-extrabold text-emerald-400 mt-1">
                   &lt; ۰.۰۸ ثانیه
                 </span>
               </div>
@@ -147,14 +147,14 @@ export default function SafetyAndComfort() {
 
               <div className="flex flex-col">
                 <span className="text-xs text-slate-400">ظرفیت وزن سرنشین</span>
-                <span className="text-xl sm:text-2xl font-extrabold text-white mt-1 font-mono">
+                <span className="text-xl sm:text-2xl font-extrabold text-white mt-1">
                   ۱۵۰ کیلوگرم
                 </span>
               </div>
 
               <div className="flex flex-col">
                 <span className="text-xs text-slate-400">مداومت کاری باتری</span>
-                <span className="text-xl sm:text-2xl font-extrabold text-emerald-400 mt-1 font-mono">
+                <span className="text-xl sm:text-2xl font-extrabold text-emerald-400 mt-1">
                   +۱۰ ساعت
                 </span>
               </div>

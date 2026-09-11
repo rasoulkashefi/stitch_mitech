@@ -41,7 +41,7 @@ export default function SofaCTA() {
             تجهیز ناوگان مجتمع تجاری • Commercial Fleet Equipment
           </p>
 
-          <h2 className="text-3xl font-extrabold leading-tight text-slate-900 lg:text-5xl tracking-tight mb-6">
+          <h2 className="text-3xl font-extrabold leading-tight text-blue-950 lg:text-5xl tracking-tight mb-6">
             مجتمع تجاری یا نمایشگاه خود را به
             <br />
             <span className="text-emerald-600">ناوگان مبلمان سیار مجهز کنید.</span>

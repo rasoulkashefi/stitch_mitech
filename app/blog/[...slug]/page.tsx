@@ -117,7 +117,7 @@ function getCategoryInfo(post: PostDetail, slugParam: string): { label: string; 
     slugParam.startsWith('case-studies/') ||
     post.categories?.some((c) => ['مطالعات موردی', 'مطالعات موردی و پروژه‌ها'].includes(c))
   ) {
-    return { label: 'مطالعات موردی', href: '/blog/category/case-studies' };
+    return { label: 'مطالعات موردی', href: '/blog/case-studies' };
   }
   if (
     post.categories?.some((c) =>
@@ -137,7 +137,7 @@ function getCategoryInfo(post: PostDetail, slugParam: string): { label: string; 
 function getCategoryHref(category: string): string {
   if (['فناوری رباتیک', 'رباتیک', 'فناوری و ناوبری خودران'].includes(category)) return '/blog/robotics';
   if (['ویلچر برقی', 'دانشنامه و مقالات ویلچر برقی'].includes(category)) return '/blog/electric-wheelchair';
-  if (['مطالعات موردی', 'مطالعات موردی و پروژه‌ها'].includes(category)) return '/blog/category/case-studies';
+  if (['مطالعات موردی', 'مطالعات موردی و پروژه‌ها'].includes(category)) return '/blog/case-studies';
   if (['دیدگاه‌های صنعت', 'دیدگاه‌ها و تحلیل صنعت', 'تحلیل صنعت', 'تحلیل صنعت و مدل‌های تجاری AMaaS'].includes(category)) return '/blog/category/industry-insights';
   if (['اخبار شرکت', 'اخبار و رویدادهای شرکت', 'اخبار و تحولات میکائیل'].includes(category)) return '/blog/category/company-news';
   return '/blog';
@@ -371,7 +371,7 @@ export default async function BlogPostPage({ params }: Props) {
       />
 
       {/* Clean, Full-width Article Canvas with generous whitespace */}
-      <article className="min-h-screen bg-white text-slate-800 pt-28 pb-28">
+      <article className="min-h-screen bg-white text-slate-800 pt-28 pb-28 font-[Vazirmatn,sans-serif]" dir="rtl">
         {/* Article Header & Title */}
         <header className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           {/* Breadcrumb & Return Link */}

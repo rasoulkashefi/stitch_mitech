@@ -133,3 +133,16 @@ export function extractHeadings(body?: any[]): TocHeading[] {
   return headings;
 }
 
+export function getCategoryHref(category?: string): string {
+  if (!category) return '/blog';
+  const trimmed = category.trim();
+  if (['فناوری رباتیک', 'رباتیک', 'فناوری و ناوبری خودران'].includes(trimmed)) return '/blog/robotics';
+  if (['ویلچر برقی', 'دانشنامه و مقالات ویلچر برقی'].includes(trimmed)) return '/blog/electric-wheelchair';
+  if (['مطالعات موردی', 'مطالعات موردی و پروژه‌ها'].includes(trimmed)) return '/blog/case-studies';
+  if (['دیدگاه‌های صنعت', 'دیدگاه‌ها و تحلیل صنعت', 'تحلیل صنعت', 'تحلیل صنعت و مدل‌های تجاری AMaaS'].includes(trimmed))
+    return '/blog/category/industry-insights';
+  if (['اخبار شرکت', 'اخبار و رویدادهای شرکت', 'اخبار و تحولات میکائیل'].includes(trimmed))
+    return '/blog/category/company-news';
+  return '/blog';
+}
+

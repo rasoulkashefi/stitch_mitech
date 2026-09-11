@@ -21,7 +21,6 @@ const features = [
     subtitle: 'حفاظت چندلایه سخت‌افزاری و نرم‌افزاری',
     description: 'پشتیبانی از موتورهای قدرتمند (تا سقف ۷۰۰ وات) با استراتژی حفاظت چندلایه سخت‌افزاری و نرم‌افزاری (محافظت باتری تا ۴۰ ولت، ولتاژ کاری ۱۸ تا ۳۱ ولت).',
     icon: Zap,
-    tone: 'border-amber-500/30 bg-amber-500/5 text-amber-600',
     highlightBadge: 'تا سقف ۷۰۰ وات • ۱۸ تا ۳۱ ولت',
   },
   {
@@ -30,7 +29,6 @@ const features = [
     subtitle: 'کنترل سرعت تطبیقی و فیلتر لرزش',
     description: 'کنترل سرعت تطبیقی برای عبور چابک از شیب‌ها، سطوح ناصاف، چارچوب درها و فرش‌های ضخیم همراه با سیستم پیشرفته کنترل لرزش دست کاربر.',
     icon: Compass,
-    tone: 'border-emerald-500/30 bg-emerald-500/5 text-emerald-600',
     highlightBadge: 'فیلتر هپتیک لرزش دست توان‌یاب',
   },
   {
@@ -39,7 +37,6 @@ const features = [
     subtitle: 'سازگاری هوشمند لیتیوم و لید-اسید',
     description: 'سازگاری کامل با باتری‌های لیتیومی و لید-اسید با قابلیت نمایش دقیق سطح شارژ در هنگام اتصال به شارژر.',
     icon: BatteryCharging,
-    tone: 'border-blue-500/30 bg-blue-500/5 text-blue-600',
     highlightBadge: 'مانیتورینگ ولتاژ در حال شارژ',
   },
   {
@@ -48,7 +45,6 @@ const features = [
     subtitle: 'اتصالات بین‌المللی و ضد نفوذ',
     description: 'بهره‌مندی از اتصالات استاندارد (Anderson، Dynamic، VR2)، کابل‌های بسیار منعطف و مقاومت در برابر رطوبت با استاندارد IPX4.',
     icon: Cable,
-    tone: 'border-cyan-500/30 bg-cyan-500/5 text-cyan-600',
     highlightBadge: 'Anderson • Dynamic • VR2 • IPX4',
   },
   {
@@ -57,17 +53,15 @@ const features = [
     subtitle: 'سامانه پایش از راه دور و ضدسرقت',
     description: 'پشتیبانی از ماژول ضدسرقت، پایش از راه دور (Remote Care) و ماژول جانبی پرستار.',
     icon: Cloud,
-    tone: 'border-purple-500/30 bg-purple-500/5 text-purple-600',
     highlightBadge: 'ماژول پرستار + Remote Care',
   },
   {
     id: 'quality-warranty',
     title: 'تضمین کیفیت و پشتیبانی',
     subtitle: 'سیستم عیب‌یابی و ۳۰ ماه ضمانت تعویض',
-    description: 'سیستم عیب‌یابی پیشرفته و اعلام تخصصی وضعیت به همراه ۳۰ ماه گارانتی طلایی.',
+    description: 'سیستم عیب‌یابی پیشرفته و اعلام تخصصی وضعیت به همراه ۳۰ ماه گارانتی معتبر.',
     icon: Award,
-    tone: 'border-rose-500/30 bg-rose-500/5 text-rose-600',
-    highlightBadge: '۳۰ ماه گارانتی طلایی معتبر',
+    highlightBadge: '۳۰ ماه گارانتی رسمی تعویض',
   },
 ];
 
@@ -114,7 +108,7 @@ export default function CorePlatformFeatures() {
 
             <div className="md:col-span-4 flex flex-col gap-3 sm:border-r sm:border-slate-800 sm:pr-8">
               <div className="flex items-center gap-3 p-3 rounded-xl bg-slate-800/80 border border-slate-700/60">
-                <Flame size={20} className="text-rose-400 shrink-0" />
+                <Flame size={20} className="text-emerald-400 shrink-0" />
                 <div className="text-xs">
                   <div className="font-bold text-slate-200">کاهش تلفات حرارتی</div>
                   <div className="text-slate-400">خنک‌کاری غیرفعال با هیت‌سینک اکسترود</div>
@@ -143,10 +137,10 @@ export default function CorePlatformFeatures() {
               >
                 <div>
                   <div className="flex items-center justify-between mb-5">
-                    <span className={`p-3 rounded-xl border ${item.tone}`}>
-                      <Icon size={24} />
+                    <span className="grid size-12 place-items-center rounded-xl bg-emerald-50 border border-emerald-100 text-emerald-600 group-hover:bg-emerald-600 group-hover:text-white transition-colors duration-300">
+                      <Icon size={22} />
                     </span>
-                    <span className="text-[11px] font-bold text-slate-500 bg-slate-100 px-3 py-1 rounded-full border border-slate-200">
+                    <span className="text-xs font-semibold text-slate-600 bg-slate-100 px-3 py-1 rounded-full border border-slate-200">
                       {item.highlightBadge}
                     </span>
                   </div>

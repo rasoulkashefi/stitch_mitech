@@ -40,7 +40,7 @@ const products: ProductCardData[] = [
     description: 'مدلی مینیمال با نمایشگر LED، طراحی شده برای ایجاد بالاترین سطح مانورپذیری در فضاهای بسته و محدود. ابعاد بسیار کوچک این ماژول، خطر برخورد جویستیک با دیواره‌ها را به صفر می‌رساند.',
     image: '/images/fleet/controllers/mini.jpg',
     displayType: 'نمایشگر LED خطی',
-    accentColor: 'border-emerald-500 text-emerald-700 bg-emerald-50',
+    accentColor: 'border-slate-300 text-slate-700 bg-white',
     highlightPill: 'حداقل ابعاد • صفر برخورد',
     features: [
       'نمایشگر خطی LED شفاف برای باتری و سرعت',
@@ -65,7 +65,7 @@ const products: ProductCardData[] = [
     description: 'مجهز به نمایشگر LCD گرافیکی قدرتمند و پشتیبانی از زیرساخت کد فعال‌سازی و درگاه‌های کمکی.',
     image: '/images/fleet/controllers/pro.jpg',
     displayType: 'Graphic LCD Display',
-    accentColor: 'border-blue-500 text-blue-700 bg-blue-50',
+    accentColor: 'border-slate-300 text-slate-700 bg-white',
     highlightPill: 'Programmable @Home',
     features: [
       'Programmable @Home: امکان شخصی‌سازی تنظیمات نرم‌افزاری در منزل بدون نیاز به مراجعه حضوری',
@@ -90,7 +90,7 @@ const products: ProductCardData[] = [
     description: 'پیشرفته‌ترین عضو خانواده که تمام قابلیت‌های نسخه Pro را به سطح بالاتری ارتقا داده است.',
     image: '/images/fleet/controllers/xpro.jpg',
     displayType: 'Full Graphic Color LCD',
-    accentColor: 'border-amber-500 text-amber-800 bg-amber-50',
+    accentColor: 'border-emerald-600 text-emerald-700 bg-emerald-50',
     highlightPill: 'iSeating تا ۵ جک • روشنایی StVZO',
     features: [
       'سیستم روشنایی بین‌المللی: پشتیبانی کامل از چراغ‌ها، پروژکتور و فلاشر با استاندارد اروپایی StVZO',
@@ -159,8 +159,10 @@ export default function ProductFamilySection() {
             return (
               <div
                 key={product.id}
-                className={`product-card group rounded-3xl bg-[#F1F5F9] border ${
-                  isFeatured ? 'border-amber-300/80 shadow-lg ring-1 ring-amber-300/50' : 'border-slate-200'
+                className={`product-card group rounded-3xl ${
+                  isFeatured
+                    ? 'bg-white border-2 border-emerald-500/50 shadow-xl ring-2 ring-emerald-500/20'
+                    : 'bg-[#F1F5F9] border border-slate-200'
                 } p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 ${
                   isSelectedOnMobile ? 'block' : 'hidden sm:flex'
                 }`}
@@ -195,7 +197,7 @@ export default function ProductFamilySection() {
                     />
                     
                     {/* Corner Tag */}
-                    <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full border border-slate-200 text-[11px] font-bold text-[#0F172A] shadow-xs">
+                    <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full border border-slate-200 text-xs font-bold text-[#0F172A] shadow-xs">
                       {product.highlightPill}
                     </div>
                   </div>
@@ -209,7 +211,7 @@ export default function ProductFamilySection() {
                   <div className="grid grid-cols-2 gap-2.5 p-3 rounded-2xl bg-white border border-slate-200/70 mb-6">
                     {product.keySpecs.map((spec, i) => (
                       <div key={i} className="text-right p-1.5">
-                        <div className="text-[11px] text-slate-400 font-medium">{spec.label}</div>
+                        <div className="text-xs text-slate-400 font-medium">{spec.label}</div>
                         <div className="text-xs font-bold text-[#0F172A] mt-0.5 truncate">{spec.value}</div>
                       </div>
                     ))}
@@ -236,7 +238,9 @@ export default function ProductFamilySection() {
                 <div className="mt-8 pt-6 border-t border-slate-200/90 flex flex-col gap-3">
                   <a
                     href="#specs-comparison"
-                    className="w-full py-3 px-4 rounded-xl text-center text-xs font-bold bg-[#0F172A] text-white hover:bg-slate-800 active:scale-[0.98] transition-all flex items-center justify-center gap-2 shadow-sm"
+                    className={`w-full py-3 px-4 rounded-xl text-center text-xs font-bold ${
+                      isFeatured ? 'bg-emerald-600 hover:bg-emerald-500 text-white' : 'bg-[#0F172A] text-white hover:bg-slate-800'
+                    } active:scale-[0.98] transition-all flex items-center justify-center gap-2 shadow-sm`}
                   >
                     <span>مقایسه دقیق در جدول فنی</span>
                     <ArrowLeft size={14} />

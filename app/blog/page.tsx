@@ -80,9 +80,9 @@ export default async function BlogPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <div className="min-h-screen bg-slate-50/60 pb-24">
+      <div className="min-h-screen bg-slate-50/60 pb-24 font-[Vazirmatn,sans-serif]" dir="rtl">
         {/* Modern Tech Hero Section (Vercel / Linear inspired, cohesive with Mitech #0F172A) */}
-        <section className="relative overflow-hidden bg-[#0A101D] text-white pt-28 pb-20 sm:pb-24 border-b border-slate-800/80">
+        <section className="relative overflow-hidden bg-[#0A101D] text-white pt-28 pb-20 sm:pb-24 border-b border-slate-800/80 font-[Vazirmatn,sans-serif]">
           {/* Subtle Ambient Glow */}
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[350px] bg-gradient-to-b from-emerald-500/15 via-sky-500/10 to-transparent blur-3xl pointer-events-none" />
 
@@ -102,7 +102,7 @@ export default async function BlogPage() {
                 <span>مرجع تخصصی فناوری خودران و رباتیک خدمات</span>
               </div>
 
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white leading-[1.2] mb-6">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.25] mb-6">
                 دیدگاه‌ها، مقالات تحلیلی و نوآوری‌های خودران
               </h1>
 

@@ -34,9 +34,9 @@ export default function CategoryLanding({
   siblingCategories,
 }: CategoryLandingProps) {
   return (
-    <div className="min-h-screen bg-slate-50/70 pb-24 font-sans text-slate-800">
+    <div className="min-h-screen bg-slate-50/70 pb-24 font-[Vazirmatn,sans-serif] text-slate-800" dir="rtl">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-[#0A101D] text-white pt-28 pb-16 border-b border-slate-800/80">
+      <section className="relative overflow-hidden bg-[#0A101D] text-white pt-28 pb-16 border-b border-slate-800/80 font-[Vazirmatn,sans-serif]">
         {/* Subtle Ambient Glow */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[850px] h-[340px] bg-gradient-to-b from-emerald-500/15 via-sky-500/10 to-transparent blur-3xl pointer-events-none" />
 
@@ -65,10 +65,10 @@ export default function CategoryLanding({
             </div>
 
             {/* Title */}
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white leading-[1.2] mb-3">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.25] mb-4">
               {title}
             </h1>
-            <p className="text-sm font-mono text-emerald-400/90 tracking-wider uppercase mb-5">
+            <p className="text-xs sm:text-sm font-semibold text-emerald-400/90 tracking-wider uppercase mb-5">
               {englishTitle}
             </p>
 

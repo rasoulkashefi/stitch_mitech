@@ -116,7 +116,7 @@ const TECHNICAL_PILLARS = [
 const SIBLING_CATEGORIES = [
   { label: 'همه مقالات', href: '/blog' },
   { label: 'دانشنامه ویلچر برقی', href: '/blog/electric-wheelchair' },
-  { label: 'مطالعات موردی', href: '/blog/category/case-studies' },
+  { label: 'مطالعات موردی', href: '/blog/case-studies' },
   { label: 'دیدگاه‌های صنعت', href: '/blog/category/industry-insights' },
   { label: 'اخبار شرکت', href: '/blog/category/company-news' },
 ];
@@ -169,9 +169,9 @@ export default async function RoboticsHubPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <div className="min-h-screen bg-slate-50/70 pb-24 font-sans text-slate-800">
+      <div className="min-h-screen bg-slate-50/70 pb-24 font-[Vazirmatn,sans-serif] text-slate-800" dir="rtl">
         {/* ۱. بخش Hero تخصصی های‌تک (Dark Slate #0A101D) */}
-        <section className="relative overflow-hidden bg-[#0A101D] text-white pt-28 pb-20 border-b border-slate-800/80">
+        <section className="relative overflow-hidden bg-[#0A101D] text-white pt-28 pb-20 border-b border-slate-800/80 font-[Vazirmatn,sans-serif]">
           {/* Subtle Ambient Glow */}
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[380px] bg-gradient-to-b from-teal-500/15 via-emerald-500/10 to-transparent blur-3xl pointer-events-none" />
 
@@ -200,7 +200,7 @@ export default async function RoboticsHubPage() {
               </div>
 
               {/* H1 Main Heading */}
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white leading-[1.25] mb-6">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.25] mb-6">
                 مرجع تخصصی فناوری رباتیک، ناوبری هوشمند و اتوماسیون خودران
               </h1>
 

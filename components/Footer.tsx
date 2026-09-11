@@ -37,7 +37,7 @@ const companyAndBlogLinks = [
   { label: 'تاریخچه و چشم‌انداز', href: '/about/history-vision' },
   { label: 'سوالات متداول (FAQ)', href: '/faq' },
   { label: 'دیدگاه‌های صنعت در وبلاگ', href: '/blog/category/industry-insights' },
-  { label: 'مطالعات موردی و پروژه‌ها', href: '/blog/category/case-studies' },
+  { label: 'مطالعات موردی و پروژه‌ها', href: '/blog/case-studies' },
   { label: 'اخبار رسمی و رویدادها', href: '/blog/category/company-news' },
 ];
 

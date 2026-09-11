@@ -120,7 +120,7 @@ export default function SpecsComparisonTable() {
         
         {/* Section Header */}
         <div className="max-w-3xl mb-12 text-right">
-          <div className="inline-flex items-center gap-2 rounded-full border border-blue-600/20 bg-blue-50 px-4 py-1 text-xs font-bold text-blue-700 mb-4">
+          <div className="inline-flex items-center gap-2 rounded-full border border-emerald-600/20 bg-emerald-50 px-4 py-1 text-xs font-bold text-emerald-700 mb-4">
             <Sparkles size={14} />
             <span>ماتریس جامع مشخصات فنی</span>
           </div>
@@ -136,38 +136,24 @@ export default function SpecsComparisonTable() {
 
         {/* Mobile Filter Pill Selector (Mobile First UX) */}
         <div className="flex md:hidden rounded-2xl bg-white p-1.5 mb-6 border border-slate-200 shadow-xs">
-          <button
-            onClick={() => setSelectedMobileColumn('all')}
-            className={`flex-1 py-2 rounded-xl text-xs font-bold transition-all ${
-              selectedMobileColumn === 'all' ? 'bg-slate-900 text-white' : 'text-slate-600'
-            }`}
-          >
-            همه ماژول‌ها
-          </button>
-          <button
-            onClick={() => setSelectedMobileColumn('mini')}
-            className={`flex-1 py-2 rounded-xl text-xs font-bold transition-all ${
-              selectedMobileColumn === 'mini' ? 'bg-emerald-600 text-white' : 'text-slate-600'
-            }`}
-          >
-            مینی (Mini)
-          </button>
-          <button
-            onClick={() => setSelectedMobileColumn('pro')}
-            className={`flex-1 py-2 rounded-xl text-xs font-bold transition-all ${
-              selectedMobileColumn === 'pro' ? 'bg-blue-600 text-white' : 'text-slate-600'
-            }`}
-          >
-            پرو (Pro)
-          </button>
-          <button
-            onClick={() => setSelectedMobileColumn('xpro')}
-            className={`flex-1 py-2 rounded-xl text-xs font-bold transition-all ${
-              selectedMobileColumn === 'xpro' ? 'bg-amber-600 text-white' : 'text-slate-600'
-            }`}
-          >
-            ایکسپرو (X-Pro)
-          </button>
+          {[
+            { id: 'all', label: 'همه ماژول‌ها' },
+            { id: 'mini', label: 'مینی (Mini)' },
+            { id: 'pro', label: 'پرو (Pro)' },
+            { id: 'xpro', label: 'ایکسپرو (X-Pro)' },
+          ].map((col) => (
+            <button
+              key={col.id}
+              onClick={() => setSelectedMobileColumn(col.id as 'all' | 'mini' | 'pro' | 'xpro')}
+              className={`flex-1 py-2 rounded-xl text-xs font-bold transition-all ${
+                selectedMobileColumn === col.id
+                  ? 'bg-slate-900 text-white shadow-xs'
+                  : 'text-slate-600 hover:text-slate-900'
+              }`}
+            >
+              {col.label}
+            </button>
+          ))}
         </div>
 
         {/* Table Container with Smooth Horizontal Scroll and Rounded Frame */}
@@ -183,35 +169,35 @@ export default function SpecsComparisonTable() {
                   selectedMobileColumn === 'all' || selectedMobileColumn === 'mini' ? 'opacity-100' : 'hidden md:table-cell'
                 }`}>
                   <div className="inline-block">
-                    <span className="text-xs font-bold text-emerald-700 bg-emerald-100 px-3 py-1 rounded-full">
+                    <span className="text-xs font-bold text-slate-700 bg-slate-200/80 px-3 py-1 rounded-full">
                       اقتصادی و فشرده
                     </span>
                     <div className="text-base sm:text-lg font-black mt-2 text-slate-900">میکائیل مینی</div>
-                    <div className="text-[11px] text-slate-500 font-medium">Mikaeel Mini</div>
+                    <div className="text-xs text-slate-500 font-medium">Mikaeel Mini</div>
                   </div>
                 </th>
 
-                <th className={`py-6 px-6 text-center w-[24%] bg-blue-50/40 border-x border-slate-200 transition-opacity ${
+                <th className={`py-6 px-6 text-center w-[24%] bg-slate-50/50 border-x border-slate-200 transition-opacity ${
                   selectedMobileColumn === 'all' || selectedMobileColumn === 'pro' ? 'opacity-100' : 'hidden md:table-cell'
                 }`}>
                   <div className="inline-block">
-                    <span className="text-xs font-bold text-blue-700 bg-blue-100 px-3 py-1 rounded-full">
+                    <span className="text-xs font-bold text-slate-700 bg-slate-200/80 px-3 py-1 rounded-full">
                       پیشرفته خانگی
                     </span>
                     <div className="text-base sm:text-lg font-black mt-2 text-slate-900">میکائیل پرو</div>
-                    <div className="text-[11px] text-slate-500 font-medium">Mikaeel Pro</div>
+                    <div className="text-xs text-slate-500 font-medium">Mikaeel Pro</div>
                   </div>
                 </th>
 
-                <th className={`py-6 px-6 text-center w-[24%] bg-amber-50/40 transition-opacity ${
+                <th className={`py-6 px-6 text-center w-[24%] bg-emerald-50/40 border-l border-slate-200 transition-opacity ${
                   selectedMobileColumn === 'all' || selectedMobileColumn === 'xpro' ? 'opacity-100' : 'hidden md:table-cell'
                 }`}>
                   <div className="inline-block">
-                    <span className="text-xs font-bold text-amber-800 bg-amber-100 px-3 py-1 rounded-full">
+                    <span className="text-xs font-bold text-emerald-800 bg-emerald-100 px-3 py-1 rounded-full border border-emerald-200/60">
                       پرچمدار هوشمند
                     </span>
                     <div className="text-base sm:text-lg font-black mt-2 text-slate-900">میکائیل ایکسپرو</div>
-                    <div className="text-[11px] text-slate-500 font-medium">Mikaeel X-Pro</div>
+                    <div className="text-xs text-slate-500 font-medium">Mikaeel X-Pro</div>
                   </div>
                 </th>
               </tr>
@@ -224,7 +210,7 @@ export default function SpecsComparisonTable() {
                   <tr 
                     key={idx} 
                     className={`hover:bg-slate-50/80 transition-colors ${
-                      row.highlight ? 'bg-amber-50/20' : idx % 2 === 0 ? 'bg-white' : 'bg-slate-50/30'
+                      row.highlight ? 'bg-emerald-50/30' : idx % 2 === 0 ? 'bg-white' : 'bg-slate-50/30'
                     }`}
                   >
                     {/* Spec Name Header Cell */}
@@ -250,7 +236,7 @@ export default function SpecsComparisonTable() {
                     </td>
 
                     {/* Pro Column */}
-                    <td className={`py-4.5 px-6 text-center font-medium bg-blue-50/20 border-x border-slate-100 transition-opacity ${
+                    <td className={`py-4.5 px-6 text-center font-medium bg-slate-50/20 border-x border-slate-100 transition-opacity ${
                       selectedMobileColumn === 'all' || selectedMobileColumn === 'pro' ? 'opacity-100' : 'hidden md:table-cell'
                     }`}>
                       {row.proStatus === false ? (
@@ -259,8 +245,8 @@ export default function SpecsComparisonTable() {
                           <span>ندارد</span>
                         </span>
                       ) : row.proStatus === true ? (
-                        <span className="inline-flex items-center gap-1.5 text-blue-900 font-bold bg-blue-100/60 px-2.5 py-1 rounded-lg text-xs">
-                          <Check size={14} className="text-blue-600" />
+                        <span className="inline-flex items-center gap-1.5 text-slate-900 font-bold bg-slate-100 px-2.5 py-1 rounded-lg text-xs">
+                          <Check size={14} className="text-emerald-600" />
                           <span>{row.pro}</span>
                         </span>
                       ) : (
@@ -269,12 +255,12 @@ export default function SpecsComparisonTable() {
                     </td>
 
                     {/* X-Pro Column */}
-                    <td className={`py-4.5 px-6 text-center font-medium bg-amber-50/20 transition-opacity ${
+                    <td className={`py-4.5 px-6 text-center font-medium bg-emerald-50/30 transition-opacity ${
                       selectedMobileColumn === 'all' || selectedMobileColumn === 'xpro' ? 'opacity-100' : 'hidden md:table-cell'
                     }`}>
                       {row.xproStatus === true ? (
-                        <span className="inline-flex items-center gap-1.5 text-amber-900 font-extrabold bg-amber-100/80 px-2.5 py-1 rounded-lg text-xs">
-                          <Check size={14} className="text-amber-700" />
+                        <span className="inline-flex items-center gap-1.5 text-emerald-900 font-extrabold bg-emerald-100/90 px-2.5 py-1 rounded-lg text-xs border border-emerald-200/50">
+                          <Check size={14} className="text-emerald-700" />
                           <span>{row.xpro}</span>
                         </span>
                       ) : (
@@ -292,7 +278,7 @@ export default function SpecsComparisonTable() {
         <div className="mt-8 flex flex-col sm:flex-row items-center justify-between gap-4 p-4 rounded-2xl bg-white border border-slate-200 text-xs text-slate-500">
           <div className="flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-emerald-500" />
-            <span>تمامی ماژول‌ها همراه با ماژول درایور مجزا، کابل‌های استاندارد و ۳۰ ماه ضمانت طلایی ارائه می‌شوند.</span>
+            <span>تمامی ماژول‌ها همراه با ماژول درایور مجزا، کابل‌های استاندارد و ۳۰ ماه ضمانت رسمی تعویض ارائه می‌شوند.</span>
           </div>
           <div className="font-bold text-slate-700">
             استاندارد تست ایمنی ISO 13482 و استاندارد مقاومت IPX4

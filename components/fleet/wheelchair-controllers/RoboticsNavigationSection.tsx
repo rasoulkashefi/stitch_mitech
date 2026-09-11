@@ -16,7 +16,7 @@ export default function RoboticsNavigationSection() {
         
         {/* Section Header */}
         <div className="max-w-3xl mb-16 text-right">
-          <div className="inline-flex items-center gap-2 rounded-full border border-teal-500/30 bg-teal-500/10 px-3.5 py-1 text-xs font-semibold text-teal-400 mb-4">
+          <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3.5 py-1 text-xs font-semibold text-emerald-400 mb-4">
             <Cpu size={14} />
             <span>معماری سخت‌افزار و ناوبری رباتیک</span>
           </div>
@@ -24,7 +24,7 @@ export default function RoboticsNavigationSection() {
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight tracking-tight">
             معماری درایورهای موتور DC
             <br />
-            <span className="text-teal-400">و ناوبری موبایل‌ربات‌ها</span>
+            <span className="text-emerald-400">و ناوبری موبایل‌ربات‌ها</span>
           </h2>
 
           <p className="mt-6 text-base sm:text-lg leading-8 text-slate-300 font-normal">
@@ -53,7 +53,7 @@ export default function RoboticsNavigationSection() {
               <div className="p-6 bg-slate-900/90 backdrop-blur-md border-t border-slate-700/50">
                 <div className="flex flex-wrap items-center justify-between gap-4">
                   <div className="flex items-center gap-3">
-                    <div className="p-2.5 rounded-xl bg-teal-500/20 border border-teal-500/30 text-teal-400">
+                    <div className="p-2.5 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400">
                       <Activity size={20} />
                     </div>
                     <div>
@@ -85,7 +85,7 @@ export default function RoboticsNavigationSection() {
                 onClick={() => setActiveTab('ugv')}
                 className={`flex-1 flex items-center justify-center gap-2.5 py-3 px-4 rounded-xl text-sm font-bold transition-all duration-300 ${
                   activeTab === 'ugv'
-                    ? 'bg-teal-600 text-white shadow-md'
+                    ? 'bg-emerald-600 text-white shadow-md'
                     : 'text-slate-400 hover:text-white hover:bg-slate-700/40'
                 }`}
               >
@@ -97,7 +97,7 @@ export default function RoboticsNavigationSection() {
                 onClick={() => setActiveTab('auv')}
                 className={`flex-1 flex items-center justify-center gap-2.5 py-3 px-4 rounded-xl text-sm font-bold transition-all duration-300 ${
                   activeTab === 'auv'
-                    ? 'bg-teal-600 text-white shadow-md'
+                    ? 'bg-emerald-600 text-white shadow-md'
                     : 'text-slate-400 hover:text-white hover:bg-slate-700/40'
                 }`}
               >
@@ -111,12 +111,12 @@ export default function RoboticsNavigationSection() {
               <div className="bg-slate-800/50 border border-slate-700/70 rounded-3xl p-6 sm:p-8 space-y-6 animate-fadeIn">
                 <div className="flex items-center justify-between border-b border-slate-700/60 pb-4">
                   <div>
-                    <span className="text-xs font-bold text-teal-400 tracking-wide uppercase">سیستم‌های زمینی و سالنی</span>
+                    <span className="text-xs font-bold text-emerald-400 tracking-wide uppercase">سیستم‌های زمینی و سالنی</span>
                     <h3 className="text-xl sm:text-2xl font-bold text-white mt-1">
                       متحرک‌های روی سطحی بدون سرنشین (UGV) و هدایت خودکار (AGV)
                     </h3>
                   </div>
-                  <span className="p-3 bg-teal-500/10 border border-teal-500/20 rounded-2xl text-teal-300">
+                  <span className="p-3 bg-emerald-500/10 border border-emerald-500/20 rounded-2xl text-emerald-300">
                     <Bot size={28} />
                   </span>
                 </div>
@@ -127,19 +127,19 @@ export default function RoboticsNavigationSection() {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
                   <div className="flex items-center gap-2.5 text-sm text-slate-200">
-                    <CheckCircle2 size={16} className="text-teal-400 shrink-0" />
+                    <CheckCircle2 size={16} className="text-emerald-400 shrink-0" />
                     <span>کنترل حرکت دیفرانسیلی و محور مستقل</span>
                   </div>
                   <div className="flex items-center gap-2.5 text-sm text-slate-200">
-                    <CheckCircle2 size={16} className="text-teal-400 shrink-0" />
+                    <CheckCircle2 size={16} className="text-emerald-400 shrink-0" />
                     <span>ادغام با ماژول SLAM برای مسیریابی خودکار</span>
                   </div>
                   <div className="flex items-center gap-2.5 text-sm text-slate-200">
-                    <CheckCircle2 size={16} className="text-teal-400 shrink-0" />
+                    <CheckCircle2 size={16} className="text-emerald-400 shrink-0" />
                     <span>ارتباطات وایرلس با پردازش هوش مصنوعی (AI)</span>
                   </div>
                   <div className="flex items-center gap-2.5 text-sm text-slate-200">
-                    <CheckCircle2 size={16} className="text-teal-400 shrink-0" />
+                    <CheckCircle2 size={16} className="text-emerald-400 shrink-0" />
                     <span>حفاظت دمایی هوشمند و جریان‌های هجومی</span>
                   </div>
                 </div>
@@ -151,12 +151,12 @@ export default function RoboticsNavigationSection() {
               <div className="bg-slate-800/50 border border-slate-700/70 rounded-3xl p-6 sm:p-8 space-y-6 animate-fadeIn">
                 <div className="flex items-center justify-between border-b border-slate-700/60 pb-4">
                   <div>
-                    <span className="text-xs font-bold text-cyan-400 tracking-wide uppercase">سیستم‌های زیرسطحی و دریایی</span>
+                    <span className="text-xs font-bold text-emerald-400 tracking-wide uppercase">سیستم‌های زیرسطحی و دریایی</span>
                     <h3 className="text-xl sm:text-2xl font-bold text-white mt-1">
                       متحرک‌های زیرآبی خودمختار (AUV) و هدایت از راه دور (RCV)
                     </h3>
                   </div>
-                  <span className="p-3 bg-cyan-500/10 border border-cyan-500/20 rounded-2xl text-cyan-300">
+                  <span className="p-3 bg-emerald-500/10 border border-emerald-500/20 rounded-2xl text-emerald-300">
                     <Anchor size={28} />
                   </span>
                 </div>
@@ -167,19 +167,19 @@ export default function RoboticsNavigationSection() {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
                   <div className="flex items-center gap-2.5 text-sm text-slate-200">
-                    <CheckCircle2 size={16} className="text-cyan-400 shrink-0" />
+                    <CheckCircle2 size={16} className="text-emerald-400 shrink-0" />
                     <span>کنترل گشتاور میکروثانیه‌ای تراسترهای پیشران</span>
                   </div>
                   <div className="flex items-center gap-2.5 text-sm text-slate-200">
-                    <CheckCircle2 size={16} className="text-cyan-400 shrink-0" />
+                    <CheckCircle2 size={16} className="text-emerald-400 shrink-0" />
                     <span>پشتیبانی از تله‌متری سیمی و بی‌سیم دوربرد</span>
                   </div>
                   <div className="flex items-center gap-2.5 text-sm text-slate-200">
-                    <CheckCircle2 size={16} className="text-cyan-400 shrink-0" />
+                    <CheckCircle2 size={16} className="text-emerald-400 shrink-0" />
                     <span>مقاومت استثنایی در برابر نوسانات بار حرارتی</span>
                   </div>
                   <div className="flex items-center gap-2.5 text-sm text-slate-200">
-                    <CheckCircle2 size={16} className="text-cyan-400 shrink-0" />
+                    <CheckCircle2 size={16} className="text-emerald-400 shrink-0" />
                     <span>پایش مداوم جریان و ولتاژ در شرایط ایزوله</span>
                   </div>
                 </div>
@@ -188,7 +188,7 @@ export default function RoboticsNavigationSection() {
 
             {/* Architecture Highlights Bar */}
             <div className="p-5 rounded-2xl bg-gradient-to-r from-slate-800 to-slate-800/70 border border-slate-700/80 flex items-center gap-4">
-              <div className="p-2.5 bg-teal-500/20 text-teal-400 rounded-xl shrink-0">
+              <div className="p-2.5 bg-emerald-500/10 text-emerald-400 rounded-xl shrink-0 border border-emerald-500/20">
                 <Radio size={22} />
               </div>
               <p className="text-xs sm:text-sm text-slate-300 leading-6">

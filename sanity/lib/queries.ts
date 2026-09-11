@@ -16,6 +16,22 @@ export const postsQuery = groq`
   }
 `;
 
+export const latestPostsQuery = groq`
+  *[_type == "post" && defined(slug.current) && (!defined(status) || status == "published")] | order(coalesce(featured, false) desc, publishedAt desc)[0...3] {
+    _id,
+    title,
+    slug,
+    author,
+    mainImage,
+    categories,
+    tags,
+    publishedAt,
+    excerpt,
+    status,
+    featured
+  }
+`;
+
 export const postPathsQuery = groq`
   *[_type == "post" && defined(slug.current) && (!defined(status) || status == "published") && (!defined(seo.noIndex) || seo.noIndex == false)][]{
     "slug": slug.current

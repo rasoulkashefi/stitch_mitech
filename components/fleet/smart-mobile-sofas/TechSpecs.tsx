@@ -80,7 +80,7 @@ export default function TechSpecs() {
             <p className="mb-3 text-xs font-bold uppercase tracking-wider text-emerald-600">
               جدول مشخصات فنی و مهندسی • Technical Specifications
             </p>
-            <h2 className="text-3xl font-extrabold text-slate-900 lg:text-5xl leading-tight tracking-tight">
+            <h2 className="text-3xl font-extrabold text-blue-950 lg:text-5xl leading-tight tracking-tight">
               مشخصات سخت‌افزار و الکترونیک،
               <br />
               <span className="text-slate-400">مهندسی دقیق و تأییدشده.</span>

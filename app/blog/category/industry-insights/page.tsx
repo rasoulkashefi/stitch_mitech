@@ -111,7 +111,7 @@ export default async function IndustryInsightsPage() {
           },
           {
             label: 'مطالعات موردی',
-            href: '/blog/category/case-studies',
+            href: '/blog/case-studies',
             desc: 'گزارش پروژه‌های پیاده‌سازی‌شده',
           },
           {

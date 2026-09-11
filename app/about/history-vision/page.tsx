@@ -86,7 +86,7 @@ export default function HistoryVisionPage() {
         },
         {
           label: 'مطالعات موردی و پایلوت‌ها',
-          href: '/blog/category/case-studies',
+          href: '/blog/case-studies',
           desc: 'نتایج پیاده‌سازی‌های عملیاتی در سازمان‌ها',
         },
       ]}
