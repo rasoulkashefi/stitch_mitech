@@ -8,10 +8,12 @@ import { keyTakeawaysType } from './objects/keyTakeawaysType';
 import { videoEmbedType } from './objects/videoEmbedType';
 import { seoType } from './objects/seoType';
 import { aiEngineType } from './objects/aiEngineType';
+import { formSubmissionType } from './formSubmission';
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
     postType,
+    formSubmissionType,
     calloutType,
     codeBlockType,
     statCardType,
