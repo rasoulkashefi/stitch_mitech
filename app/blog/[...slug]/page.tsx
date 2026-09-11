@@ -100,6 +100,49 @@ async function getPostData(rawSlug: string | string[]): Promise<{
   }
 }
 
+function getCategoryInfo(post: PostDetail, slugParam: string): { label: string; href: string } | null {
+  if (
+    slugParam.startsWith('robotics/') ||
+    post.categories?.some((c) => ['فناوری رباتیک', 'رباتیک', 'فناوری و ناوبری خودران'].includes(c))
+  ) {
+    return { label: 'فناوری رباتیک', href: '/blog/robotics' };
+  }
+  if (
+    slugParam.startsWith('electric-wheelchair/') ||
+    post.categories?.some((c) => ['ویلچر برقی', 'دانشنامه و مقالات ویلچر برقی'].includes(c))
+  ) {
+    return { label: 'دانشنامه ویلچر برقی', href: '/blog/electric-wheelchair' };
+  }
+  if (
+    slugParam.startsWith('case-studies/') ||
+    post.categories?.some((c) => ['مطالعات موردی', 'مطالعات موردی و پروژه‌ها'].includes(c))
+  ) {
+    return { label: 'مطالعات موردی', href: '/blog/category/case-studies' };
+  }
+  if (
+    post.categories?.some((c) =>
+      ['دیدگاه‌های صنعت', 'دیدگاه‌ها و تحلیل صنعت', 'تحلیل صنعت', 'تحلیل صنعت و مدل‌های تجاری AMaaS'].includes(c)
+    )
+  ) {
+    return { label: 'دیدگاه‌های صنعت', href: '/blog/category/industry-insights' };
+  }
+  if (
+    post.categories?.some((c) => ['اخبار شرکت', 'اخبار و رویدادهای شرکت', 'اخبار و تحولات میکائیل'].includes(c))
+  ) {
+    return { label: 'اخبار شرکت', href: '/blog/category/company-news' };
+  }
+  return null;
+}
+
+function getCategoryHref(category: string): string {
+  if (['فناوری رباتیک', 'رباتیک', 'فناوری و ناوبری خودران'].includes(category)) return '/blog/robotics';
+  if (['ویلچر برقی', 'دانشنامه و مقالات ویلچر برقی'].includes(category)) return '/blog/electric-wheelchair';
+  if (['مطالعات موردی', 'مطالعات موردی و پروژه‌ها'].includes(category)) return '/blog/category/case-studies';
+  if (['دیدگاه‌های صنعت', 'دیدگاه‌ها و تحلیل صنعت', 'تحلیل صنعت', 'تحلیل صنعت و مدل‌های تجاری AMaaS'].includes(category)) return '/blog/category/industry-insights';
+  if (['اخبار شرکت', 'اخبار و رویدادهای شرکت', 'اخبار و تحولات میکائیل'].includes(category)) return '/blog/category/company-news';
+  return '/blog';
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const raw = (await params).slug;
   const slugParam = Array.isArray(raw) ? raw.join('/') : raw;
@@ -204,6 +247,7 @@ export default async function BlogPostPage({ params }: Props) {
     : null;
   const headings = extractHeadings(post.body);
   const articleUrl = `https://mitech.ir/blog/${slugParam}`;
+  const parentCategory = getCategoryInfo(post, slugParam);
 
   // Extract FAQs from body for Google FAQPage Rich Snippet Schema
   const faqItems: { question: string; answer: string }[] = [];
@@ -272,12 +316,29 @@ export default async function BlogPostPage({ params }: Props) {
           name: 'مجله و وبلاگ',
           item: 'https://mitech.ir/blog',
         },
-        {
-          '@type': 'ListItem',
-          position: 3,
-          name: post.title,
-          item: articleUrl,
-        },
+        ...(parentCategory
+          ? [
+              {
+                '@type': 'ListItem',
+                position: 3,
+                name: parentCategory.label,
+                item: `https://mitech.ir${parentCategory.href}`,
+              },
+              {
+                '@type': 'ListItem',
+                position: 4,
+                name: post.title,
+                item: articleUrl,
+              },
+            ]
+          : [
+              {
+                '@type': 'ListItem',
+                position: 3,
+                name: post.title,
+                item: articleUrl,
+              },
+            ]),
       ],
     },
   ];
@@ -323,6 +384,14 @@ export default async function BlogPostPage({ params }: Props) {
               <Link href="/blog" className="hover:text-slate-900 transition-colors">
                 وبلاگ
               </Link>
+              {parentCategory && (
+                <>
+                  <span>/</span>
+                  <Link href={parentCategory.href} className="hover:text-emerald-600 transition-colors">
+                    {parentCategory.label}
+                  </Link>
+                </>
+              )}
               <span>/</span>
               <span className="text-slate-600 line-clamp-1 max-w-[180px] sm:max-w-xs">
                 {post.title}
@@ -330,11 +399,11 @@ export default async function BlogPostPage({ params }: Props) {
             </nav>
 
             <Link
-              href="/blog"
+              href={parentCategory ? parentCategory.href : '/blog'}
               className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-emerald-600 hover:text-emerald-700 transition-colors"
             >
               <ArrowRight className="h-4 w-4" />
-              بازگشت به وبلاگ
+              {parentCategory ? `بازگشت به ${parentCategory.label}` : 'بازگشت به وبلاگ'}
             </Link>
           </div>
 
@@ -342,12 +411,13 @@ export default async function BlogPostPage({ params }: Props) {
           {post.categories && post.categories.length > 0 && (
             <div className="flex flex-wrap gap-2 mb-5">
               {post.categories.map((category, index) => (
-                <span
+                <Link
                   key={index}
-                  className="inline-flex items-center rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700"
+                  href={getCategoryHref(category)}
+                  className="inline-flex items-center rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700 hover:bg-emerald-50 hover:text-emerald-700 hover:border-emerald-200 border border-transparent transition-colors"
                 >
                   {category}
-                </span>
+                </Link>
               ))}
             </div>
           )}

@@ -103,3 +103,26 @@ export const electricWheelchairPostsQuery = groq`
   }
 `;
 
+export const roboticsPostsQuery = groq`
+  *[_type == "post" && defined(slug.current) && (!defined(status) || status == "published") && (
+    slug.current match "robotics/*" ||
+    count((categories)[@ in ["فناوری رباتیک", "رباتیک", "فناوری و ناوبری خودران"]]) > 0 ||
+    count((tags)[@ match "*ربات*"]) > 0 ||
+    title match "*ربات*" ||
+    title match "*ناوبری*"
+  )] | order(publishedAt desc) {
+    _id,
+    title,
+    slug,
+    author,
+    mainImage,
+    categories,
+    tags,
+    publishedAt,
+    excerpt,
+    status,
+    featured
+  }
+`;
+
+

@@ -105,6 +105,11 @@ export default async function IndustryInsightsPage() {
         posts={posts}
         siblingCategories={[
           {
+            label: 'فناوری رباتیک',
+            href: '/blog/robotics',
+            desc: 'نوآوری‌های خودران و رباتیک',
+          },
+          {
             label: 'مطالعات موردی',
             href: '/blog/category/case-studies',
             desc: 'گزارش پروژه‌های پیاده‌سازی‌شده',

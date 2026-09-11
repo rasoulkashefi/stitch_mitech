@@ -36,7 +36,7 @@ export default function BlogListWithFilters({ initialPosts }: BlogListWithFilter
 
     const list = Array.from(cats);
     if (list.length === 0) {
-      return ['دیدگاه‌های صنعت', 'مطالعات موردی', 'اخبار شرکت'];
+      return ['دیدگاه‌های صنعت', 'مطالعات موردی', 'اخبار شرکت', 'فناوری رباتیک', 'ویلچر برقی'];
     }
     return list;
   }, [initialPosts]);

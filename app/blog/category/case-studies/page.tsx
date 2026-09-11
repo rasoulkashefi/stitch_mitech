@@ -100,6 +100,11 @@ export default async function CaseStudiesPage() {
         posts={posts}
         siblingCategories={[
           {
+            label: 'فناوری رباتیک',
+            href: '/blog/robotics',
+            desc: 'نوآوری‌های خودران و رباتیک',
+          },
+          {
             label: 'دیدگاه‌های صنعت',
             href: '/blog/category/industry-insights',
             desc: 'تحلیل‌های تخصصی آینده فناوری',
