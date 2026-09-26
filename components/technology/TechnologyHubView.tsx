@@ -14,7 +14,6 @@ import {
   Network,
   BrainCircuit,
   Radio,
-  Sparkles,
   ChevronLeft,
   CheckCircle2,
 } from 'lucide-react';

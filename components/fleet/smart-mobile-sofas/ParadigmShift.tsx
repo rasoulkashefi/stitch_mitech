@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
-import { Heart, Sparkles, Navigation, CheckCircle2, XCircle, Coffee, Compass } from 'lucide-react';
+import { Heart, Navigation, CheckCircle2, XCircle, Coffee, Compass } from 'lucide-react';
 
 const comparisonItems = [
   {
@@ -35,7 +35,7 @@ export default function ParadigmShift() {
         {/* Section Header */}
         <div className="mb-16 max-w-3xl text-right">
           <div className="inline-flex items-center gap-2 rounded-full bg-emerald-50 border border-emerald-600/20 px-3.5 py-1 text-xs font-bold text-emerald-700 mb-4">
-            <Sparkles size={14} className="text-emerald-600" />
+            <Compass size={14} className="text-emerald-600" />
             <span>تغییر پارادایم در تحرک فردی • The Paradigm Shift</span>
           </div>
           <h2 className="text-3xl font-extrabold text-blue-950 lg:text-5xl leading-tight tracking-tight">

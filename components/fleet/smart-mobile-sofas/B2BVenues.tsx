@@ -9,7 +9,6 @@ import {
   ShieldCheck,
   Check,
   ArrowLeft,
-  Sparkles,
   Layers,
 } from 'lucide-react';
 

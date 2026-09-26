@@ -9,7 +9,6 @@ import {
   Plane,
   HeartPulse,
   Landmark,
-  Sparkles,
   ShieldCheck,
   TrendingUp,
   Workflow,

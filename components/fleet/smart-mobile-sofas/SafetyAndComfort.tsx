@@ -7,7 +7,6 @@ import {
   ShoppingBag,
   Gauge,
   Radar,
-  Sparkles,
   ArrowLeft,
   Activity,
   Zap,
@@ -105,7 +104,7 @@ export default function SafetyAndComfort() {
 
         {/* Full High-Tech Dark Banner */}
         <div className="relative overflow-hidden rounded-3xl border border-slate-800 bg-slate-950 p-8 sm:p-10 text-white shadow-xl text-right">
-          <Sparkles
+          <Radar
             size={200}
             className="pointer-events-none absolute -left-10 -bottom-10 text-white opacity-[0.03]"
           />

@@ -4,7 +4,6 @@ import {
   Headphones,
   Wrench,
   GraduationCap,
-  Sparkles,
   ShieldCheck,
   CheckCircle,
   Network,
@@ -138,7 +137,7 @@ export default function MiddleEastVision() {
             
             <div className="lg:col-span-5 flex flex-col gap-3">
               <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-emerald-400">
-                <Sparkles size={16} />
+                <ShieldCheck size={16} />
                 <span>فرهنگ و ارزش‌های بنیادین</span>
               </div>
               <h3 className="text-2xl font-bold text-white leading-snug">

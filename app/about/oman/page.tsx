@@ -14,7 +14,7 @@ import {
   MapPin,
   CheckCircle2,
   ArrowLeft,
-  Sparkles,
+  Compass,
 } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -236,7 +236,7 @@ export default function OmanPage() {
       <section className="mx-auto max-w-7xl px-6 py-20 lg:py-28 font-[Vazirmatn,sans-serif]">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 rounded-full bg-emerald-100 border border-emerald-200 px-3.5 py-1 text-xs font-bold text-emerald-800 mb-3">
-            <Sparkles className="size-3.5 text-emerald-600" />
+            <Compass className="size-3.5 text-emerald-600" />
             <span>چشم‌انداز و مأموریت‌های استراتژیک در منطقه</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-blue-950 tracking-tight">

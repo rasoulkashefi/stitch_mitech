@@ -4,7 +4,6 @@ import React, { useState } from 'react';
 import { 
   Check, 
   X, 
-  Sparkles, 
   Sliders, 
   Tv, 
   Zap, 
@@ -121,7 +120,7 @@ export default function SpecsComparisonTable() {
         {/* Section Header */}
         <div className="max-w-3xl mb-12 text-right">
           <div className="inline-flex items-center gap-2 rounded-full border border-emerald-600/20 bg-emerald-50 px-4 py-1 text-xs font-bold text-emerald-700 mb-4">
-            <Sparkles size={14} />
+            <Sliders size={14} />
             <span>ماتریس جامع مشخصات فنی</span>
           </div>
 

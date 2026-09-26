@@ -1,11 +1,11 @@
 import { defineField, defineType } from 'sanity';
-import { SparklesIcon } from '@sanity/icons/Sparkles';
+import { RocketIcon } from '@sanity/icons/Rocket';
 
 export const aiEngineType = defineType({
   name: 'aiMetadata',
   title: 'بهینه‌سازی برای موتورهای هوش مصنوعی (AI & GEO Engine)',
   type: 'object',
-  icon: SparklesIcon,
+  icon: RocketIcon,
   fields: [
     defineField({
       name: 'aiSummary',

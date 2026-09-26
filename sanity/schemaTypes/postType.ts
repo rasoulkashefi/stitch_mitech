@@ -3,7 +3,7 @@ import { defineField, defineType } from 'sanity';
 import { DocumentTextIcon } from '@sanity/icons/DocumentText';
 import { ImageIcon } from '@sanity/icons/Image';
 import { EarthGlobeIcon } from '@sanity/icons/EarthGlobe';
-import { SparklesIcon } from '@sanity/icons/Sparkles';
+import { RocketIcon } from '@sanity/icons/Rocket';
 import { CogIcon } from '@sanity/icons/Cog';
 import { HighlightIcon } from '@sanity/icons/Highlight';
 import { LinkIcon } from '@sanity/icons/Link';
@@ -65,7 +65,7 @@ export const postType = defineType({
     {
       name: 'ai',
       title: '🤖 موتور هوش مصنوعی (GEO)',
-      icon: SparklesIcon,
+      icon: RocketIcon,
     },
     {
       name: 'workflow',

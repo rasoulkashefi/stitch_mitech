@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowLeft, Calendar, BookOpen, Sparkles } from 'lucide-react';
+import { ArrowLeft, Calendar, BookOpen } from 'lucide-react';
 import { client } from '@/sanity/lib/client';
 import { latestPostsQuery } from '@/sanity/lib/queries';
 import { PostSummary, formatPersianDate, getCategoryHref } from '@/sanity/types';
@@ -34,7 +34,7 @@ export default async function Blog() {
       <div className="mb-14 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
         <div className="max-w-2xl">
           <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-50/80 px-3.5 py-1 text-xs font-bold text-emerald-700">
-            <Sparkles className="h-3.5 w-3.5 text-emerald-600" />
+            <BookOpen className="h-3.5 w-3.5 text-emerald-600" />
             <span>مجله تخصصی و مقالات</span>
           </div>
           <h2 className="text-3xl font-extrabold text-blue-950 lg:text-4xl tracking-tight leading-tight">

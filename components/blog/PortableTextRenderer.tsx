@@ -13,7 +13,6 @@ import {
   Check,
   ChevronDown,
   HelpCircle,
-  Sparkles,
   Play,
   TrendingUp,
   BookmarkCheck,

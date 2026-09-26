@@ -5,7 +5,6 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import {
   ChevronRight,
-  Sparkles,
   Cog,
   PackageCheck,
   Wrench,
@@ -22,7 +21,7 @@ const navTabs = [
     slug: '' as const,
     label: 'مرکز خدمات و پشتیبانی',
     href: '/services',
-    icon: Sparkles,
+    icon: Wrench,
   },
   {
     slug: 'fleet-maintenance' as ServiceSlug,

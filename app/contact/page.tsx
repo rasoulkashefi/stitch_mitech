@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Contact from '@/components/Contact';
-import { Sparkles, Phone, Mail, MapPin, Send, HelpCircle } from 'lucide-react';
+import { PhoneCall, Phone, Mail, MapPin, Send, HelpCircle } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'تماس با ما و مشاوره | ام. آی. تک. (Mitech)',
@@ -66,7 +66,7 @@ export default function ContactPage() {
       <div className="bg-gradient-to-b from-blue-950 to-slate-900 text-white py-16 px-5 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-400/30 bg-emerald-500/10 px-3.5 py-1 text-xs font-bold text-emerald-400 mb-4">
-            <Sparkles size={14} />
+            <PhoneCall size={14} />
             ارتباط مستقیم
           </span>
           <h1 className="text-3xl sm:text-4xl font-extrabold text-white">تماس با فناوری هوشمند میکائیل</h1>

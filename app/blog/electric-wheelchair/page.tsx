@@ -2,7 +2,6 @@ import React from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import {
-  Sparkles,
   ShieldCheck,
   Scale,
   Wrench,
@@ -205,7 +204,7 @@ export default async function ElectricWheelchairHubPage() {
             <div className="max-w-3xl">
               {/* Pillar Badge */}
               <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-950/60 backdrop-blur-md px-3.5 py-1 text-xs font-semibold text-emerald-300 mb-6">
-                <Sparkles className="h-3.5 w-3.5 text-emerald-400" />
+                <BookOpen className="h-3.5 w-3.5 text-emerald-400" />
                 <span>کلاستر تخصصی دانش توانبخشی و تحرک مستقل</span>
               </div>
 

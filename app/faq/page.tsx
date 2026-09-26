@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import FaqExplorer from '@/components/faq/FaqExplorer';
 import { allFaqs } from '@/components/faq/faq-data';
-import { Sparkles, ChevronLeft } from 'lucide-react';
+import { HelpCircle, ChevronLeft } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'سوالات متداول رباتیک، ناوگان خودران و خدمات توانبخشی | ام. آی. تک.',
@@ -78,7 +78,7 @@ export default function FAQPage() {
 
           <div className="text-right">
             <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-50 px-3.5 py-1 text-xs font-semibold text-emerald-700 shadow-xs">
-              <Sparkles className="size-3.5" />
+              <HelpCircle className="size-3.5" />
               <span>مرکز راهنما و پایگاه دانش ام‌آی‌تک</span>
             </div>
 

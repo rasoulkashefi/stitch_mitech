@@ -4,7 +4,6 @@ import {
   Plane,
   Building,
   Palmtree,
-  Sparkles,
   ShieldCheck,
   Zap,
   Clock,
@@ -830,7 +829,7 @@ export const solutionsSubPagesData: Record<SolutionSlug, SolutionSubPageData> = 
         title: 'پوشش سطوح ضدباکتری و قابلیت ضدعفونی سریع (UV-C Ready)',
         desc: 'طراحی بدنه بدون شیار از متریال بیمارستانی مقاوم در برابر انواع مواد شوینده و الکل‌های ضدعفونی‌کننده قوی.',
         badge: '۱۰۰٪ سازگار با بهداشت بیمارستان',
-        icon: Sparkles,
+        icon: HeartPulse,
       },
     ],
 

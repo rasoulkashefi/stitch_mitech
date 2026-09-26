@@ -8,7 +8,6 @@ import {
   Radar,
   Gauge,
   Boxes,
-  Sparkles,
   Layers,
   CircleDot,
 } from 'lucide-react';
@@ -23,7 +22,7 @@ const navTabs = [
     slug: '' as const,
     label: 'مرکز فناوری و معماری',
     href: '/technology',
-    icon: Sparkles,
+    icon: Layers,
   },
   {
     slug: 'gps-independent-navigation' as TechSlug,

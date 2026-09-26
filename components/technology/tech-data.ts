@@ -15,7 +15,6 @@ import {
   Cpu,
   Eye,
   Sliders,
-  Sparkles,
   Layers,
   Lock,
   Compass,

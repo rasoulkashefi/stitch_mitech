@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { Sparkles, ChevronLeft, ArrowLeft, Check, Phone, Mail, MapPin, Briefcase, DollarSign, Loader2, AlertCircle } from 'lucide-react';
+import { ChevronLeft, ArrowLeft, Check, Phone, Mail, MapPin, Briefcase, DollarSign, Loader2, AlertCircle } from 'lucide-react';
 import { submitForm } from '@/app/actions/submitForm';
 
 export default function SalesContactPage() {

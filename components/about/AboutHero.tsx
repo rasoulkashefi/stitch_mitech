@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-  Sparkles,
   Zap,
   Navigation,
   ShieldCheck,
@@ -160,7 +159,7 @@ export default function AboutHero() {
 
               {/* Bottom Assurance Note */}
               <div className="mt-5 flex items-center gap-2 rounded-xl bg-slate-100/70 px-3.5 py-2.5 text-xs text-slate-600">
-                <Sparkles size={15} className="shrink-0 text-emerald-600" />
+                <ShieldCheck size={15} className="shrink-0 text-emerald-600" />
                 <span>طراحی، مهندسی و تجاری‌سازی با تکیه بر استانداردهای ایمنی روز اروپا و جهان</span>
               </div>
 

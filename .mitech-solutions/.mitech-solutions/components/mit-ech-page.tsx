@@ -15,7 +15,7 @@ import {
   Play,
   Radio,
   ShieldCheck,
-  Sparkles,
+  Layers,
   X,
   Zap,
 } from 'lucide-react'
@@ -82,4 +82,4 @@ export function MitechMenuIcon() { return <X className="size-5" /> }
 export function MitechFactoryIcon() { return <Factory className="size-5" /> }
 export function MitechCheckIcon() { return <Check className="size-5" /> }
 export function MitechMenuIconAlt() { return <Menu className="size-5" /> }
-export function MitechSparklesIcon() { return <Sparkles className="size-5" /> }
+export function MitechLayersIcon() { return <Layers className="size-5" /> }

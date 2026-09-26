@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { ArrowLeft, Check, Phone, Mail, MapPin, Sparkles } from 'lucide-react';
+import { ArrowLeft, Check, Phone, Mail, MapPin, Headphones } from 'lucide-react';
 
 const contactItems = [
   {
@@ -82,7 +82,7 @@ export default function SofaCTA() {
         <div className="lg:col-span-7 rounded-2xl border border-slate-200 bg-slate-50/50 p-8 sm:p-10 text-right">
           <div className="mb-6 pb-4 border-b border-slate-200">
             <div className="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-md mb-2">
-              <Sparkles size={13} />
+              <Headphones size={13} />
               <span>مشاوره تخصصی و برآورد ظرفیت</span>
             </div>
             <h3 className="text-xl font-bold text-slate-900">

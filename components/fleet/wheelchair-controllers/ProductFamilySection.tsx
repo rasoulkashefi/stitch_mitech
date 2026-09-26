@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import { 
   Check, 
-  Sparkles, 
+  Boxes, 
   ShieldCheck, 
   Tv, 
   Sliders, 
@@ -118,7 +118,7 @@ export default function ProductFamilySection() {
         {/* Section Header */}
         <div className="max-w-3xl mb-16 text-right">
           <div className="inline-flex items-center gap-2 rounded-full border border-slate-300 bg-[#F1F5F9] px-4 py-1 text-xs font-bold text-[#0F172A] mb-4">
-            <Sparkles size={14} className="text-emerald-600" />
+            <Boxes size={14} className="text-emerald-600" />
             <span>تنوع سبد محصولات توانبخشی</span>
           </div>
 

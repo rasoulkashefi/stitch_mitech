@@ -9,7 +9,7 @@ import {
   User,
   ArrowRight,
   PhoneCall,
-  Sparkles,
+  Building2,
   Tag,
 } from 'lucide-react';
 import { groq } from 'next-sanity';
@@ -547,7 +547,7 @@ export default async function BlogPostPage({ params }: Props) {
                 <div className="relative flex flex-col sm:flex-row items-center justify-between gap-6">
                   <div className="space-y-2 text-center sm:text-right">
                     <div className="inline-flex items-center gap-1.5 rounded-full bg-emerald-950/80 px-3 py-1 text-xs font-semibold text-emerald-400 border border-emerald-500/30">
-                      <Sparkles className="h-3 w-3" />
+                      <Building2 className="h-3 w-3" />
                       راهکارهای هوشمند سازمانی
                     </div>
                     <h3 className="text-xl sm:text-2xl font-bold">

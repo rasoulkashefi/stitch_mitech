@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { Sparkles, ChevronLeft, ArrowLeft, Check, Calendar, MapPin, Building2, Loader2, AlertCircle } from 'lucide-react';
+import { ChevronLeft, ArrowLeft, Check, Calendar, MapPin, Building2, Loader2, AlertCircle } from 'lucide-react';
 import { submitForm } from '@/app/actions/submitForm';
 
 export default function RequestDemoPage() {
@@ -75,7 +75,7 @@ export default function RequestDemoPage() {
           {/* Left Info Column */}
           <div className="lg:col-span-5">
             <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-200 bg-emerald-50 px-4 py-1.5 text-xs font-bold text-emerald-600 mb-4">
-              <Sparkles size={14} />
+              <Calendar size={14} />
               رزرو جلسه حضوری یا آنلاین
             </span>
             <h1 className="text-3xl sm:text-4xl font-extrabold text-blue-950 leading-tight">

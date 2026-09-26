@@ -2,7 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import {
-  Sparkles,
+  ShieldCheck,
   Bot,
   Cpu,
   Compass,
@@ -110,7 +110,7 @@ const TECHNICAL_PILLARS = [
   { text: 'ناوبری دقیق SLAM بدون نیاز به GPS', icon: CheckCircle2 },
   { text: 'درایورهای صنعتی پرقدرت با فیدبک آنی', icon: Sliders },
   { text: 'هوش مصنوعی لبه و فیوژن داده سنسورها', icon: Zap },
-  { text: 'استاندارد ایمنی صنعتی و مانیتورینگ زنده', icon: Sparkles },
+  { text: 'استاندارد ایمنی صنعتی و مانیتورینگ زنده', icon: ShieldCheck },
 ];
 
 const SIBLING_CATEGORIES = [
@@ -195,7 +195,7 @@ export default async function RoboticsHubPage() {
             <div className="max-w-3xl">
               {/* Pillar Badge */}
               <div className="inline-flex items-center gap-2 rounded-full border border-teal-500/30 bg-teal-950/60 backdrop-blur-md px-3.5 py-1 text-xs font-semibold text-teal-300 mb-6">
-                <Sparkles className="h-3.5 w-3.5 text-teal-400" />
+                <Cpu className="h-3.5 w-3.5 text-teal-400" />
                 <span>کلاستر تخصصی فناوری رباتیک، ناوبری خودران و درایورهای هوشمند</span>
               </div>
 

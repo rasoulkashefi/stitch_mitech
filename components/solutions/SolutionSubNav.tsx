@@ -9,7 +9,6 @@ import {
   Plane,
   HeartPulse,
   Landmark,
-  Sparkles,
   Layers,
 } from 'lucide-react';
 import { SolutionSlug, solutionsSubPagesData } from './solutions-data';
@@ -23,7 +22,7 @@ const navTabs = [
     slug: '' as const,
     label: 'مرکز راهکارها (Hub)',
     href: '/solutions',
-    icon: Sparkles,
+    icon: Layers,
   },
   {
     slug: 'malls' as SolutionSlug,

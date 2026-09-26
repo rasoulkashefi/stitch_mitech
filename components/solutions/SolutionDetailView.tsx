@@ -10,7 +10,6 @@ import {
   ChevronLeft,
   ShieldCheck,
   Zap,
-  Sparkles,
   Workflow,
   DollarSign,
   Boxes,

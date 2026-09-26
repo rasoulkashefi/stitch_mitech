@@ -12,7 +12,6 @@ import {
   TrendingUp,
   Boxes,
   CheckCircle2,
-  Sparkles,
   BarChart3,
   Users,
   CircleDot,

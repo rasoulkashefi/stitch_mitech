@@ -19,7 +19,6 @@ import {
   Sliders,
   CheckCircle2,
   Workflow,
-  Sparkles,
   Boxes,
   Compass,
   Radio,

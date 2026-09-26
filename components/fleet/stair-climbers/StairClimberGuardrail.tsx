@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Check, X, ShieldAlert, Sparkles } from 'lucide-react';
+import { Check, X, ShieldAlert, ShieldCheck } from 'lucide-react';
 
 const stairClimberAdvantages = [
   'عدم نیاز به هرگونه ریل‌کشی ثابت، سوراخ‌کاری دیوارها یا تخریب معماری راه‌پله',
@@ -28,7 +28,7 @@ export default function StairClimberGuardrail() {
         {/* Section Header */}
         <div className="max-w-3xl mb-14 text-right">
           <div className="inline-flex items-center gap-2 rounded-full bg-emerald-100/70 border border-emerald-300/60 px-3.5 py-1 text-xs font-bold text-emerald-800 mb-3">
-            <Sparkles className="size-3.5 text-emerald-600" />
+            <ShieldCheck className="size-3.5 text-emerald-600" />
             <span>راهنمای فنی انتخاب • تمایز پله‌پیما از بالابرهای ریل‌دار</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-blue-950 tracking-tight leading-tight">
@@ -50,7 +50,7 @@ export default function StairClimberGuardrail() {
             <div>
               <div className="flex items-center gap-3">
                 <div className="flex size-12 items-center justify-center rounded-2xl bg-emerald-50 text-emerald-600">
-                  <Sparkles className="size-6" />
+                  <Check className="size-6" />
                 </div>
                 <div>
                   <h3 className="text-xl sm:text-2xl font-black text-blue-950">پله‌پیمای پرتابل هوشمند ام‌آی‌تک</h3>

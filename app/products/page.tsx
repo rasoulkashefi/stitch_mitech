@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import ProductsCatalog from '@/components/products/ProductsCatalog';
 import { officialProducts } from '@/components/products/products-data';
-import { ChevronLeft, Sparkles } from 'lucide-react';
+import { ChevronLeft, Package } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'محصولات و تجهیزات هوشمند جابه‌جایی و رباتیک | ام. آی. تک. (Mitech)',
@@ -81,7 +81,7 @@ export default function ProductsPage() {
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
             <div className="max-w-3xl text-right">
               <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-50 px-3.5 py-1 text-xs font-semibold text-emerald-700 shadow-xs">
-                <Sparkles className="size-3.5" />
+                <Package className="size-3.5" />
                 <span>کاتالوگ تجاری محصولات فعال MITECH</span>
               </div>
 

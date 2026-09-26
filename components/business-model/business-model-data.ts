@@ -4,7 +4,8 @@ import {
   ShieldCheck,
   Zap,
   TrendingUp,
-  Sparkles,
+  Award,
+  Compass,
   Layers,
   Clock,
   DollarSign,
@@ -493,7 +494,7 @@ export const businessModelsData: Record<BusinessModelSlug, BusinessModelDetailDa
       {
         title: 'ارتقای چشمگیر تجربه مشتری و پرستیژ مجموعه',
         desc: 'ارائه لوکس‌ترین وسایل تردد هوشمند (کالسکه برقی خانواده، مبل هوشمند و ویلچر مدرن) که مرکز شما را به عنوان پیشرفته‌ترین مقصد معرفی می‌کند.',
-        icon: Sparkles,
+        icon: Award,
       },
       {
         title: 'داشبورد مالی شفاف و قابل ممیزی',
@@ -540,7 +541,7 @@ export const businessModelsData: Record<BusinessModelSlug, BusinessModelDetailDa
           'مسیرهای هدایت‌شده خودکار به فروشگاه‌ها یا سالن‌های خاص',
           'ایجاد درآمد اشتراکی سالانه با مشتریان وفادار مرکز',
         ],
-        icon: Sparkles,
+        icon: Compass,
       },
     ],
     steps: [

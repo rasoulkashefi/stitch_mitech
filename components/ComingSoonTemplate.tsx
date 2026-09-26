@@ -3,7 +3,6 @@
 import React from 'react';
 import Link from 'next/link';
 import {
-  Sparkles,
   ArrowLeft,
   ChevronLeft,
   Clock,
@@ -76,7 +75,7 @@ export default function ComingSoonTemplate({
             {/* Category + Status Badges */}
             <div className="flex flex-wrap items-center gap-3 mb-6">
               <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-400/30 bg-emerald-500/10 px-3.5 py-1 text-xs font-bold text-emerald-400 backdrop-blur-md">
-                <Sparkles size={14} />
+                <Boxes size={14} />
                 {category}
               </span>
               <span className="inline-flex items-center gap-1.5 rounded-full border border-amber-400/30 bg-amber-500/10 px-3.5 py-1 text-xs font-bold text-amber-300 backdrop-blur-md">

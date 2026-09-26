@@ -8,7 +8,6 @@ import {
   Bot,
   Wrench,
   Layers,
-  Sparkles,
   PhoneCall,
   ArrowLeft,
   HelpCircle,
@@ -16,7 +15,7 @@ import {
 import { allFaqs, type FAQItem } from './faq-data';
 
 const categories = [
-  { id: 'all', label: 'همه سوالات', icon: Sparkles, count: 11 },
+  { id: 'all', label: 'همه سوالات', icon: HelpCircle, count: 11 },
   { id: 'fleet', label: 'ناوگان خودران و هوشمند', icon: Bot, count: 4 },
   { id: 'support', label: 'خدمات و پشتیبانی توانبخشی', icon: Wrench, count: 4 },
   { id: 'business', label: 'مدل‌های تجاری و همکاری (AMaaS)', icon: Layers, count: 3 },

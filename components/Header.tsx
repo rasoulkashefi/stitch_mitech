@@ -30,7 +30,9 @@ import {
   Send,
   BookOpen,
   Newspaper,
-  Sparkles,
+  ArrowUpRight,
+  FileCheck,
+  Headphones,
   Wrench,
   Cog,
   PackageCheck,
@@ -78,7 +80,7 @@ const macroNavItems: MacroNavItem[] = [
             label: 'کاتالوگ جامع محصولات',
             href: '/products',
             desc: 'مشاهده و مقایسه تمام محصولات فعال',
-            icon: Sparkles,
+            icon: Boxes,
           },
           {
             label: 'ویلچرهای خودران و هوشمند',
@@ -90,7 +92,7 @@ const macroNavItems: MacroNavItem[] = [
             label: 'پله‌پیما و بالابر هوشمند',
             href: '/fleet/stair-climbers',
             desc: 'تردد امن طبقات بدون نیاز به ریل‌کشی',
-            icon: Sparkles,
+            icon: ArrowUpRight,
           },
           {
             label: 'کالسکه‌های هوشمند خانواده',
@@ -292,7 +294,7 @@ const macroNavItems: MacroNavItem[] = [
             label: 'مطالعات موردی',
             href: '/blog/case-studies',
             desc: 'گزارش نتایج استقرار در سازمان‌ها',
-            icon: Sparkles,
+            icon: FileCheck,
           },
           {
             label: 'اخبار شرکت',
@@ -687,7 +689,7 @@ export default function Header() {
                           {/* Quick Bottom Banner */}
                           <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between px-3 py-2 bg-slate-50/80 rounded-xl">
                             <div className="flex items-center gap-2 text-xs text-slate-600">
-                              <Sparkles size={14} className="text-emerald-600 shrink-0" />
+                              <Headphones size={14} className="text-emerald-600 shrink-0" />
                               <span className="whitespace-nowrap">نیاز به راهکار سفارشی یا مشاوره مهندسی ناوگان دارید؟</span>
                             </div>
                             <Link

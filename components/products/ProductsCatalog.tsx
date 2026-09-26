@@ -8,7 +8,7 @@ import {
   Bot,
   Accessibility,
   Cpu,
-  Sparkles,
+  LayoutGrid,
   FileText,
   PhoneCall,
   Search,
@@ -20,7 +20,7 @@ export type { ProductCategory, ProductItem };
 export { officialProducts };
 
 const categoryTabs: { id: ProductCategory; label: string; icon: LucideIcon; count: number }[] = [
-  { id: 'all', label: 'همه محصولات', icon: Sparkles, count: 7 },
+  { id: 'all', label: 'همه محصولات', icon: LayoutGrid, count: 7 },
   { id: 'fleet', label: 'ناوگان و ربات‌های خودران', icon: Bot, count: 4 },
   { id: 'rehab', label: 'تجهیزات توانبخشی فردی', icon: Accessibility, count: 1 },
   { id: 'hardware', label: 'کنترلر و سامانه‌های سخت‌افزاری', icon: Cpu, count: 2 },

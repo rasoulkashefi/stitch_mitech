@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import {
   ChevronRight,
-  Sparkles,
+  Briefcase,
   Workflow,
   Handshake,
 } from 'lucide-react';
@@ -20,7 +20,7 @@ const navTabs = [
     slug: '' as const,
     label: 'مرکز مدل‌های کسب‌وکار',
     href: '/business-model',
-    icon: Sparkles,
+    icon: Briefcase,
   },
   {
     slug: 'amaas' as BusinessModelSlug,

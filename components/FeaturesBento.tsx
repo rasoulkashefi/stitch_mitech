@@ -1,5 +1,5 @@
 import React from 'react';
-import { Cpu, ShieldCheck, Sparkles, ArrowLeft, Radar } from 'lucide-react';
+import { Cpu, ShieldCheck, UserCheck, ArrowLeft, Radar } from 'lucide-react';
 
 export default function FeaturesBento() {
   return (
@@ -70,14 +70,14 @@ export default function FeaturesBento() {
 
               {/* Card 3 – Full width, dark high-tech bg */}
               <div className="group relative col-span-2 overflow-hidden rounded-2xl border border-slate-800 bg-slate-950 p-8 text-white shadow-md hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
-                <Sparkles
+                <UserCheck
                   size={160}
                   className="pointer-events-none absolute -left-6 bottom-[-30px] text-white opacity-[0.03]"
                 />
 
                 <div className="relative flex flex-col gap-5">
                   <div className="grid size-11 place-items-center rounded-xl bg-white/10 text-emerald-400">
-                    <Sparkles size={22} />
+                    <UserCheck size={22} />
                   </div>
                   <div>
                     <h3 className="mb-2 text-xl font-bold text-white">

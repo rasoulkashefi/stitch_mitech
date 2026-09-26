@@ -1,7 +1,7 @@
 import React from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Sparkles, BookOpen, ArrowLeft } from 'lucide-react';
+import { BookOpen, ArrowLeft } from 'lucide-react';
 import { client } from '@/sanity/lib/client';
 import { postsQuery } from '@/sanity/lib/queries';
 import { PostSummary } from '@/sanity/types';
@@ -98,7 +98,7 @@ export default async function BlogPage() {
 
             <div className="max-w-3xl">
               <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-950/60 backdrop-blur-md px-3.5 py-1 text-xs font-semibold text-emerald-300 mb-6">
-                <Sparkles className="h-3.5 w-3.5 text-emerald-400" />
+                <BookOpen className="h-3.5 w-3.5 text-emerald-400" />
                 <span>مرجع تخصصی فناوری خودران و رباتیک خدمات</span>
               </div>
 

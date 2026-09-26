@@ -4,7 +4,7 @@ import React, { useState, useMemo, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Search, X, Calendar, User, ArrowLeft, BookOpen, Sparkles, Hash } from 'lucide-react';
+import { Search, X, Calendar, User, ArrowLeft, BookOpen, Bookmark, Hash } from 'lucide-react';
 import { PostSummary, formatPersianDate } from '@/sanity/types';
 import { urlForImage } from '@/sanity/lib/image';
 import BlogCard from '@/components/blog/BlogCard';
@@ -177,7 +177,7 @@ export default function BlogListWithFilters({ initialPosts }: BlogListWithFilter
               <div>
                 <div className="flex flex-wrap items-center gap-2 mb-4">
                   <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-50 px-3 py-1 text-xs font-bold text-emerald-700 border border-emerald-200/60">
-                    <Sparkles className="h-3 w-3 text-emerald-600" />
+                    <Bookmark className="h-3 w-3 text-emerald-600" />
                     مطلب ویژه و برگزیده
                   </span>
                   {featuredPost.categories && featuredPost.categories[0] && (

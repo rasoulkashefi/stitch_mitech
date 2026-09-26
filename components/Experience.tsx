@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import { HeartHandshake, ShieldCheck, Sparkles } from 'lucide-react';
+import { HeartHandshake, ShieldCheck, Navigation } from 'lucide-react';
 
 export default function Experience() {
   return (
@@ -28,7 +28,7 @@ export default function Experience() {
 
                 {/* Status Badge */}
                 <div className="absolute top-4 right-4 z-10 flex items-center gap-1.5 rounded-full border border-white/80 bg-white/90 px-3 py-1 text-xs font-semibold text-slate-800 shadow-sm backdrop-blur-md">
-                  <Sparkles className="h-3.5 w-3.5 text-emerald-600" />
+                  <Navigation className="h-3.5 w-3.5 text-emerald-600" />
                   <span>پلتفرم ناوبری و کنترل هوشمند</span>
                 </div>
               </div>

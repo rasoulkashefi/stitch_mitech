@@ -10,7 +10,6 @@ import {
   ChevronLeft,
   ShieldCheck,
   Zap,
-  Sparkles,
   Workflow,
   DollarSign,
   Boxes,
@@ -109,7 +108,7 @@ export default function BusinessDetailView({ slug }: BusinessDetailViewProps) {
             {/* Promise Box */}
             <div className="mt-8 rounded-2xl border border-emerald-500/30 bg-emerald-50/70 p-5 shadow-xs">
               <div className="flex items-center gap-2 text-xs font-bold text-emerald-800">
-                <Sparkles size={16} className="text-emerald-600" />
+                <ShieldCheck size={16} className="text-emerald-600" />
                 <span>تعهد و وعده اقتصادی میکائیل:</span>
               </div>
               <p className="mt-2 text-base font-extrabold text-blue-950 leading-7">

@@ -3,7 +3,6 @@ import Link from 'next/link';
 import {
   FolderOpen,
   ArrowLeft,
-  Sparkles,
   Compass,
   FileText,
 } from 'lucide-react';
@@ -60,7 +59,7 @@ export default function CategoryLanding({
           <div className="max-w-3xl">
             {/* Category Badge */}
             <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-950/60 backdrop-blur-md px-3.5 py-1 text-xs font-semibold text-emerald-300 mb-5">
-              <Sparkles className="h-3.5 w-3.5 text-emerald-400" />
+              <FolderOpen className="h-3.5 w-3.5 text-emerald-400" />
               <span>{badge}</span>
             </div>
 

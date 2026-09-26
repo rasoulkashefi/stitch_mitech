@@ -1,7 +1,6 @@
 import React from 'react';
 import {
   ShieldAlert,
-  Sparkles,
   HeartHandshake,
   Radar,
   Lock,
@@ -104,7 +103,7 @@ export default function SafetyAndComfort() {
 
           {/* Card 4: Full High-Tech Card (Span 3 on Desktop) */}
           <div className="md:col-span-2 lg:col-span-3 relative overflow-hidden rounded-2xl border border-slate-800 bg-slate-950 p-8 sm:p-10 text-white shadow-xl hover:-translate-y-1 transition-all duration-300 text-right">
-            <Sparkles
+            <Radar
               size={180}
               className="pointer-events-none absolute -left-8 -bottom-10 text-white opacity-[0.03]"
             />
