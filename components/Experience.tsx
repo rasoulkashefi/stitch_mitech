@@ -18,8 +18,8 @@ export default function Experience() {
               <div className="relative aspect-[3/4] sm:aspect-[4/5] w-full overflow-hidden rounded-2xl bg-gradient-to-b from-slate-200/60 via-slate-100 to-slate-200/70">
                 <Image
                   src="/images/sections/smart-wheelchair-controller.webp"
-                  alt="کنترلر هوشمند و جوی‌استیک ارگونومیک ویلچر برقی مای‌تک با نمایشگر دیجیتال وضعیت، سرعت، شارژ باتری و کلیدهای کنترل چندمنظوره"
-                  title="کنترلر هوشمند و ارگونومیک ویلچر برقی مای‌تک"
+                  alt="کنترلر هوشمند و جوی‌استیک ارگونومیک ویلچر برقی ام‌آی‌تک با نمایشگر دیجیتال وضعیت، سرعت، شارژ باتری و کلیدهای کنترل چندمنظوره"
+                  title="کنترلر هوشمند و ارگونومیک ویلچر برقی ام‌آی‌تک"
                   fill
                   priority
                   sizes="(max-width: 1024px) 100vw, 50vw"
@@ -37,7 +37,7 @@ export default function Experience() {
               <figcaption className="mt-3.5 flex flex-col gap-1 px-1 text-right">
                 <div className="flex items-center justify-between gap-2">
                   <span className="text-sm font-bold text-slate-900 sm:text-base">
-                    کنترلر ارگونومیک و ماژول ناوبری مای‌تک
+                    کنترلر ارگونومیک و ماژول ناوبری ام‌آی‌تک
                   </span>
                   <span className="inline-flex items-center rounded-md border border-emerald-200/60 bg-emerald-50 px-2 py-0.5 text-[11px] font-medium text-emerald-700">
                     نسل جدید

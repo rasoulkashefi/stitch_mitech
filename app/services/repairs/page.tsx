@@ -1,6 +1,7 @@
 import Script from 'next/script'
 import Image from 'next/image'
-import { Shell, CTA } from '@/components/services-pages'
+import { CTA } from '@/components/services-pages'
+import ServicesSubNav from '@/components/services/ServicesSubNav'
 import { FaqAccordion } from './FaqAccordion'
 import { Wrench, Zap, PowerOff, TriangleAlert, Ban, Joystick, Thermometer, Volume2, CheckCircle, Clock } from 'lucide-react'
 import type { Metadata } from 'next'
@@ -114,7 +115,8 @@ const supportedBrands = [
 
 export default function RepairsRoute() {
   return (
-    <Shell active="repairs">
+    <div className="w-full bg-white pb-24" dir="rtl">
+      <ServicesSubNav activeSlug="repairs" />
       <FaqSchema />
       
       {/* Hero Section */}
@@ -360,6 +362,6 @@ export default function RepairsRoute() {
       </section>
 
       <CTA />
-    </Shell>
+    </div>
   )
 }
