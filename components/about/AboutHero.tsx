@@ -72,7 +72,7 @@ export default function AboutHero() {
             </div>
 
             {/* Main H1 Headline */}
-            <h1 className="text-3xl font-extrabold leading-[1.3] text-blue-950 sm:text-4xl lg:text-5xl tracking-tight">
+            <h1 className="text-3xl font-extrabold leading-[1.3] text-slate-900 sm:text-4xl lg:text-5xl tracking-tight">
               بیش از یک دهه مهندسی؛
               <br />
               <span className="text-emerald-600">برای فردایی که خودش مسیر را می‌شناسد.</span>
@@ -81,7 +81,7 @@ export default function AboutHero() {
             {/* Story Paragraph */}
             <div className="space-y-4 text-base sm:text-lg leading-8 sm:leading-9 text-slate-600 font-normal">
               <p>
-                شرکت دانش‌بنیان <strong className="font-bold text-blue-950">«فناوری هوشمند میکائیل» (Mitech)</strong> از سال ۱۳۸۹ فعالیت رسمی خود را در حوزه فناوری کنترل و ناوبری در وسایل نقلیه الکتریکی و تکنولوژی درایو این وسایل <span className="font-semibold text-slate-900" dir="ltr">(EV Drives Technology)</span> آغاز نمود.
+                شرکت دانش‌بنیان <strong className="font-bold text-slate-900">«فناوری هوشمند میکائیل» (Mitech)</strong> از سال ۱۳۸۹ فعالیت رسمی خود را در حوزه فناوری کنترل و ناوبری در وسایل نقلیه الکتریکی و تکنولوژی درایو این وسایل <span className="font-semibold text-slate-900" dir="ltr">(EV Drives Technology)</span> آغاز نمود.
               </p>
               <p>
                 بیش از یک دهه تحقیق تخصصی در حوزه ادوات کمک-توانبخشی <span className="font-semibold text-slate-900" dir="ltr">(Assistive Devices)</span> و سیستم‌های رباتیک، منجر به خلق محصولاتی با بالاترین ضریب ایمنی و اعتمادپذیری گردیده که گلوگاه فناوری کنترل و ناوبری انواع متحرک‌های برقی محسوب شده و در سطح کیفی برندهای برتر جهانی ارزیابی می‌شوند.
@@ -126,7 +126,7 @@ export default function AboutHero() {
                     <Layers size={18} />
                   </div>
                   <div>
-                    <h2 className="text-sm font-bold text-blue-950">ستون‌های بنیادین توسعه</h2>
+                    <h2 className="text-sm font-bold text-slate-900">ستون‌های بنیادین توسعه</h2>
                     <p className="text-xs text-slate-500">مسیر بلوغ مهندسی ام. آی. تک.</p>
                   </div>
                 </div>
@@ -148,7 +148,7 @@ export default function AboutHero() {
                         <Icon size={20} />
                       </div>
                       <div className="flex flex-col gap-1">
-                        <h3 className="text-sm font-bold text-blue-950 leading-snug">
+                        <h3 className="text-sm font-bold text-slate-900 leading-snug">
                           {item.title}
                         </h3>
                         <p className="text-xs leading-5 text-slate-500 font-normal">

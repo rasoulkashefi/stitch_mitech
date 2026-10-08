@@ -29,7 +29,7 @@ export default function OmanMeetingRequest() {
           <Calendar className="size-6" />
         </div>
         <div>
-          <h3 className="text-xl sm:text-2xl font-black text-blue-950">
+          <h3 className="text-xl sm:text-2xl font-black text-slate-900">
             هماهنگی جلسه تجاری و استعلام پروژه‌های GCC
           </h3>
           <p className="text-xs text-slate-500 mt-0.5">

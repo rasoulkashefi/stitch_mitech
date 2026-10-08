@@ -42,7 +42,7 @@ export default function OfficialContact() {
             <span>اطلاعات تماس رسمی و مرکز استقرار</span>
           </div>
 
-          <h2 className="text-3xl font-extrabold leading-snug text-blue-950 sm:text-4xl lg:text-5xl tracking-tight">
+          <h2 className="text-3xl font-extrabold leading-snug text-slate-900 sm:text-4xl lg:text-5xl tracking-tight">
             هاب فنی و <span className="text-emerald-600">دفتر مرکزی</span>
           </h2>
 
@@ -71,7 +71,7 @@ export default function OfficialContact() {
                         <span className="text-xs font-bold text-emerald-700 uppercase tracking-wider">
                           آدرس دفتر مرکزی و پارک فناوری
                         </span>
-                        <h3 className="mt-1 text-base sm:text-lg font-bold text-blue-950 leading-relaxed">
+                        <h3 className="mt-1 text-base sm:text-lg font-bold text-slate-900 leading-relaxed">
                           تهران، پارک علم و فناوری دانشگاه امام حسین(ع)، واحد ۳۶۳
                         </h3>
                         <p className="mt-1 text-xs text-slate-500 font-medium">
@@ -118,7 +118,7 @@ export default function OfficialContact() {
                     </div>
                     <div>
                       <div className="text-xs text-slate-500">ساعات کاری رسمی</div>
-                      <div className="text-xs font-bold text-blue-950 mt-0.5">شنبه تا چهارشنبه: ۸:۳۰ الی ۱۷:۰۰</div>
+                      <div className="text-xs font-bold text-slate-900 mt-0.5">شنبه تا چهارشنبه: ۸:۳۰ الی ۱۷:۰۰</div>
                     </div>
                   </div>
 
@@ -128,7 +128,7 @@ export default function OfficialContact() {
                     </div>
                     <div>
                       <div className="text-xs text-slate-500">موقعیت شهری</div>
-                      <div className="text-xs font-bold text-blue-950 mt-0.5">قلب فناوری و تجارت تهران</div>
+                      <div className="text-xs font-bold text-slate-900 mt-0.5">قلب فناوری و تجارت تهران</div>
                     </div>
                   </div>
                 </div>
@@ -149,7 +149,7 @@ export default function OfficialContact() {
                     </div>
                     <div>
                       <div className="text-xs text-slate-500">تلفن مستقیم دفتر</div>
-                      <div className="text-sm font-mono font-bold text-blue-950 mt-0.5" dir="ltr">
+                      <div className="text-sm font-mono font-bold text-slate-900 mt-0.5" dir="ltr">
                         ۰۲۱-۸۸۸۹۳۴۱۲
                       </div>
                     </div>
@@ -172,7 +172,7 @@ export default function OfficialContact() {
                     </div>
                     <div>
                       <div className="text-xs text-slate-500">شماره همراه و واتساپ</div>
-                      <div className="text-sm font-mono font-bold text-blue-950 mt-0.5" dir="ltr">
+                      <div className="text-sm font-mono font-bold text-slate-900 mt-0.5" dir="ltr">
                         ۰۹۲۲ ۵۱۲ ۳۳۶۸
                       </div>
                     </div>
@@ -193,7 +193,7 @@ export default function OfficialContact() {
                     </div>
                     <div>
                       <div className="text-xs text-slate-500">پست الکترونیک رسمی</div>
-                      <div className="text-sm font-mono font-bold text-blue-950 mt-0.5" dir="ltr">
+                      <div className="text-sm font-mono font-bold text-slate-900 mt-0.5" dir="ltr">
                         support@mitech.de.com
                       </div>
                     </div>
@@ -214,7 +214,7 @@ export default function OfficialContact() {
                     </div>
                     <div>
                       <div className="text-xs text-slate-500">پرتال رسمی و بین‌المللی</div>
-                      <div className="text-sm font-mono font-bold text-blue-950 mt-0.5" dir="ltr">
+                      <div className="text-sm font-mono font-bold text-slate-900 mt-0.5" dir="ltr">
                         www.mitech.de.com
                       </div>
                     </div>

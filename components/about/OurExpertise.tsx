@@ -87,7 +87,7 @@ export default function OurExpertise() {
             <span>معماری محصولات و دامنه‌های مهندسی</span>
           </div>
 
-          <h2 className="text-3xl font-extrabold leading-snug text-blue-950 sm:text-4xl lg:text-5xl tracking-tight">
+          <h2 className="text-3xl font-extrabold leading-snug text-slate-900 sm:text-4xl lg:text-5xl tracking-tight">
             تنوع در نوآوری، <span className="text-emerald-600">یکپارچگی در کیفیت</span>
           </h2>
 
@@ -109,7 +109,7 @@ export default function OurExpertise() {
                     <Factory size={22} />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-blue-950">
+                    <h3 className="text-xl font-bold text-slate-900">
                       صنعت و لجستیک خودران
                     </h3>
                     <p className="text-xs font-medium text-slate-500">
@@ -141,7 +141,7 @@ export default function OurExpertise() {
                         </div>
                         <div className="flex-1">
                           <div className="flex flex-wrap items-baseline justify-between gap-1">
-                            <h4 className="text-base font-bold text-blue-950">
+                            <h4 className="text-base font-bold text-slate-900">
                               {prod.title}
                             </h4>
                             <span className="text-[11px] font-mono text-slate-400">
@@ -192,7 +192,7 @@ export default function OurExpertise() {
                     <HeartHandshake size={22} />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-blue-950">
+                    <h3 className="text-xl font-bold text-slate-900">
                       توانبخشی و تحرک فردی
                     </h3>
                     <p className="text-xs font-medium text-slate-500">
@@ -224,7 +224,7 @@ export default function OurExpertise() {
                         </div>
                         <div className="flex-1">
                           <div className="flex flex-wrap items-baseline justify-between gap-1">
-                            <h4 className="text-sm font-bold text-blue-950">
+                            <h4 className="text-sm font-bold text-slate-900">
                               {prod.title}
                             </h4>
                             <span className="text-[10px] font-mono text-slate-400">
@@ -274,7 +274,7 @@ export default function OurExpertise() {
                   <Cpu size={15} />
                   <span>معماری فنی یکپارچه (Unified Drive & Navigation Stack)</span>
                 </div>
-                <h4 className="text-lg font-bold text-blue-950">
+                <h4 className="text-lg font-bold text-slate-900">
                   پیوند عمیق درایوهای الکتریکی پرقدرت و هوش مصنوعی ناوبری خودران
                 </h4>
                 <p className="text-sm leading-7 text-slate-600">

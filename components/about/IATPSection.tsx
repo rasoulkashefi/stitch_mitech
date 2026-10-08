@@ -5,7 +5,6 @@ import {
   HeartHandshake,
   ShieldCheck,
   Award,
-  Sparkles,
   ArrowLeft,
   CheckCircle2,
   Smartphone,
@@ -35,7 +34,7 @@ export default function IATPSection() {
             <span>مرجع مادر-تخصصی سیستم‌های کنترل و ناوبری توانبخشی</span>
           </div>
 
-          <h2 className="text-3xl font-extrabold leading-snug text-blue-950 sm:text-4xl lg:text-5xl tracking-tight">
+          <h2 className="text-3xl font-extrabold leading-snug text-slate-900 sm:text-4xl lg:text-5xl tracking-tight">
             مرجع فناوری‌های کمکی هوشمند{' '}
             <span className="text-emerald-600">IATP</span>
           </h2>
@@ -60,7 +59,7 @@ export default function IATPSection() {
                   <Award size={20} />
                 </div>
                 <div>
-                  <h3 className="text-base sm:text-lg font-bold text-blue-950">
+                  <h3 className="text-base sm:text-lg font-bold text-slate-900">
                     ماموریت ملی در توانمندسازی و استقلال فردی
                   </h3>
                   <p className="text-xs text-slate-500">معرفی رسمی از سوی سازمان بهزیستی کل کشور</p>
@@ -74,19 +73,19 @@ export default function IATPSection() {
             </div>
 
             {/* Story Card 2: Two Wings of Flight */}
-            <div className="rounded-2xl border border-blue-900/10 bg-gradient-to-br from-blue-950 to-slate-900 p-6 sm:p-7 text-white shadow-lg">
+            <div className="rounded-2xl border border-slate-800 bg-slate-950 p-6 sm:p-7 text-white shadow-lg">
               <div className="flex items-center gap-3 mb-3">
                 <div className="grid size-10 place-items-center rounded-xl bg-emerald-500 text-slate-950 shadow-xs">
-                  <Sparkles size={20} />
+                  <Cpu size={20} />
                 </div>
                 <div>
                   <h3 className="text-base sm:text-lg font-bold text-white">
                     «دو بال پرواز»: تلفیق سخت‌افزار بومی با هوش مصنوعی
                   </h3>
-                  <p className="text-xs text-slate-300">گرنت بنیاد ملی علم ایران و دانشگاه صنعتی امیرکبیر</p>
+                  <p className="text-xs text-slate-400">گرنت بنیاد ملی علم ایران و دانشگاه صنعتی امیرکبیر</p>
                 </div>
               </div>
-              <p className="text-xs sm:text-sm leading-7 text-slate-200">
+              <p className="text-xs sm:text-sm leading-7 text-slate-300">
                 با ترکیب دو فناوری زیرساختی شامل <strong className="text-emerald-400 font-semibold">بال اول (کنترل و ناوبری فیزیکی درایوها)</strong> و{' '}
                 <strong className="text-emerald-400 font-semibold">بال دوم (بینایی ماشین و هوش مصنوعی)</strong>، فصل نوینی در حمل‌ونقل خودران رقم خورده است. با اخذ گرنت ملی علم در سال ۱۴۰۲ و همکاری رسمی دانشگاه امیرکبیر، این پلتفرم امروز علاوه بر حوزه توانبخشی، در صنایع فرودگاهی، تجاری، گردشگری و هتلینگ به کار گرفته می‌شود.
               </p>
@@ -103,7 +102,7 @@ export default function IATPSection() {
                 <div key={i} className="flex items-start gap-2.5 rounded-xl border border-slate-200/60 bg-white p-3.5 shadow-2xs">
                   <CheckCircle2 size={16} className="text-emerald-600 shrink-0 mt-0.5" />
                   <div>
-                    <h4 className="text-xs font-bold text-blue-950">{item.title}</h4>
+                    <h4 className="text-xs font-bold text-slate-900">{item.title}</h4>
                     <p className="text-[11px] text-slate-500 mt-0.5 leading-4">{item.desc}</p>
                   </div>
                 </div>
@@ -133,7 +132,7 @@ export default function IATPSection() {
                   <Activity size={13} className="text-emerald-600" />
                   اکوسیستم تحرک متصل (IoT Telemetry)
                 </span>
-                <span className="text-[11px] font-mono text-slate-500">IATP System</span>
+                <span className="text-[11px] font-semibold text-slate-500">IATP System</span>
               </div>
 
               {/* Enhanced Visual Image Container */}
@@ -156,7 +155,7 @@ export default function IATPSection() {
                     <Smartphone size={15} className="text-emerald-400 shrink-0" />
                     <span className="font-medium text-[11px] sm:text-xs">کنترل از راه دور، پایش مسیر و تله‌متری هوشمند</span>
                   </div>
-                  <span className="text-[10px] font-mono text-emerald-400 font-bold">MITECH APP</span>
+                  <span className="text-[10px] font-bold text-emerald-400 tracking-wider">MITECH APP</span>
                 </div>
               </div>
 
