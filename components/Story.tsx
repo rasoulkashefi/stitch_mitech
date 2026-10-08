@@ -1,11 +1,11 @@
-import React from 'react';
+import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 
 const stats = [
-  { value: '۱۳۸۹', label: 'سال تأسیس و آغاز تحقیقات' },
-  { value: 'دانش‌بنیان', label: 'سطح فناوری و نوآوری' },
-  { value: '۱۲+', label: 'حوزه صنعت و کاربرد' },
-  { value: 'AMaaS', label: 'پیشگام خدمات خودران' },
+  { value: '۱۳۸۹', label: 'آغاز R&D درایوهای الکتریکی (EV)' },
+  { value: 'IATP', label: 'مرجع رسمی سازمان بهزیستی کشور' },
+  { value: 'دانش‌بنیان', label: 'گرنت بنیاد ملی علم ایران (۱۴۰۲)' },
+  { value: 'امیرکبیر', label: 'همکاری رسمی در ناوبری خودران' },
 ];
 
 export default function Story() {
@@ -16,7 +16,7 @@ export default function Story() {
         {/* Right Side — Text Content */}
         <div className="flex flex-col gap-6">
           <p className="text-xs font-bold uppercase tracking-wider text-emerald-600">
-            داستان شکل‌گیری میکائیل
+            داستان شکل‌گیری و رویکرد میکائیل
           </p>
 
           <h2 className="text-3xl font-extrabold leading-snug text-blue-950 lg:text-4xl tracking-tight">
@@ -26,20 +26,20 @@ export default function Story() {
           </h2>
 
           <p className="text-base sm:text-lg leading-9 text-slate-600">
-            داستان میکائیل از یک ایده ساده اما بنیادین در سال ۱۳۸۹ آغاز شد: چگونه می‌توان با ترکیب دانش رباتیک خودران، هوش مصنوعی و مهندسی کنترل، استقلال و آسایش حرکت را به جامعه بازگرداند؟ امروز مفتخریم که پیشرفته‌ترین زیرساخت‌های حمل‌ونقل هوشمند و تجهیزات توانبخشی خودران را در منطقه توسعه می‌دهیم.
+            شکل‌گیری میکائیل از سال ۱۳۸۹ با تمرکز بر شکستن گلوگاه فناوری کنترل و ناوبری در وسایل نقلیه الکتریکی (EV Drives) و تجهیزات توانبخشی آغاز شد. با بیش از یک دهه انباشت دانش فنی و شناخته‌شدن به عنوان مرجع فناوری‌های کمکی هوشمند (IATP) از سوی سازمان بهزیستی کل کشور، و تلفیق آن با بال دوم پرواز یعنی هوش مصنوعی و بینایی ماشین از طریق گرنت بنیاد ملی علم ایران و همکاری دانشگاه امیرکبیر، امروز پیشرفته‌ترین پلتفرم‌های حمل‌ونقل هوشمند و خودران را راهبری می‌کنیم.
           </p>
 
           <div>
-            <a
-              href="#about"
+            <Link
+              href="/about/history-vision"
               className="group inline-flex items-center gap-2 text-sm font-bold text-blue-950 transition-colors hover:text-emerald-600"
             >
-              بیشتر درباره مسیر نوآوری ما بخوانید
+              بیشتر درباره تاریخچه و رویکرد ما بخوانید
               <ArrowLeft
                 size={16}
                 className="transition-transform group-hover:-translate-x-1"
               />
-            </a>
+            </Link>
           </div>
         </div>
 

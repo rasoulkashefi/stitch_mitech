@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import AboutHero from '@/components/about/AboutHero';
+import IATPSection from '@/components/about/IATPSection';
 import OurExpertise from '@/components/about/OurExpertise';
 import MiddleEastVision from '@/components/about/MiddleEastVision';
 import OfficialContact from '@/components/about/OfficialContact';
@@ -83,13 +84,16 @@ export default function AboutPage() {
       {/* 1. Hero Section & Story Genesis */}
       <AboutHero />
 
-      {/* 2. Product Architecture & Expertise Bento Grid */}
+      {/* 2. Official IATP Welfare Reference & Connected Mobility Showcase */}
+      <IATPSection />
+
+      {/* 3. Product Architecture & Expertise Bento Grid */}
       <OurExpertise />
 
-      {/* 3. Regional Vision & CTSC Hub */}
+      {/* 4. Regional Vision & CTSC Hub */}
       <MiddleEastVision />
 
-      {/* 4. Official Headquarters & Contact Hub */}
+      {/* 5. Official Headquarters & Contact Hub */}
       <OfficialContact />
     </main>
   );

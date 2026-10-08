@@ -81,10 +81,13 @@ export default function AboutHero() {
             {/* Story Paragraph */}
             <div className="space-y-4 text-base sm:text-lg leading-8 sm:leading-9 text-slate-600 font-normal">
               <p>
-                شرکت توسعه ام. آی. تک. (MITech) در سال ۱۳۸۹ (۲۰۱۰) تأسیس شد. ما کارمان را از قلب تپنده وسایل نقلیه، یعنی <strong className="font-bold text-blue-950">«فناوری درایوهای الکتریکی»</strong> آغاز کردیم.
+                شرکت دانش‌بنیان <strong className="font-bold text-blue-950">«فناوری هوشمند میکائیل» (Mitech)</strong> از سال ۱۳۸۹ فعالیت رسمی خود را در حوزه فناوری کنترل و ناوبری در وسایل نقلیه الکتریکی و تکنولوژی درایو این وسایل <span className="font-semibold text-slate-900" dir="ltr">(EV Drives Technology)</span> آغاز نمود.
               </p>
               <p>
-                با گذشت بیش از یک دهه و تسلط بر این هسته بنیادین، امروز به یکی از پیشگامان <strong className="font-bold text-blue-950">فناوری ناوبری خودران (Autonomous Drives)</strong> در کاربردهای متنوع تحرک هوشمند تبدیل شده‌ایم. هدف ما ارائه راهکارهای پیشرفته، ایمن و کارآمد منطبق بر استانداردهای جهانی است.
+                بیش از یک دهه تحقیق تخصصی در حوزه ادوات کمک-توانبخشی <span className="font-semibold text-slate-900" dir="ltr">(Assistive Devices)</span> و سیستم‌های رباتیک، منجر به خلق محصولاتی با بالاترین ضریب ایمنی و اعتمادپذیری گردیده که گلوگاه فناوری کنترل و ناوبری انواع متحرک‌های برقی محسوب شده و در سطح کیفی برندهای برتر جهانی ارزیابی می‌شوند.
+              </p>
+              <p className="text-sm sm:text-base leading-7 text-slate-500">
+                با اخذ گرنت بنیاد ملی علم ایران و همکاری رسمی دانشگاه صنعتی امیرکبیر در حوزه بینایی ماشین و هوش مصنوعی، فصل نوینی در دستیابی به پلتفرم‌های حمل‌ونقل خودران سازمانی و انفرادی هوشمند در کشور گشوده شده است.
               </p>
             </div>
 
