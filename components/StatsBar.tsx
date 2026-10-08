@@ -1,9 +1,8 @@
-import React from 'react';
-import { Clock, Award, Users, ShieldCheck } from 'lucide-react';
+import { Clock, Award, GraduationCap, ShieldCheck } from 'lucide-react';
 
 const stats = [
-  { value: '۱۰+ سال', label: 'نوآوری و مهندسی رباتیک', icon: Award },
-  { value: '۲۵۰+ سازمان', label: 'مراکز تجاری، فرودگاهی و درمانی', icon: Users },
+  { value: '۱۵+ سال', label: 'نوآوری و مهندسی رباتیک', icon: Award },
+  { value: 'دانش‌بنیان', label: 'دارای گرنت بنیاد ملی علم و همکاری با دانشگاه امیرکبیر', icon: GraduationCap },
   { value: '۲۴/۷', label: 'پشتیبانی فنی و مانیتورینگ', icon: Clock },
   { value: '۱۰۰٪', label: 'توسعه الگوریتم و سخت‌افزار بومی', icon: ShieldCheck },
 ];
@@ -23,7 +22,7 @@ export default function StatsBar() {
             <span className="text-2xl lg:text-3xl font-extrabold text-blue-950 tracking-tight">
               {value}
             </span>
-            <p className="text-xs font-medium text-slate-500 max-w-[170px] leading-5">
+            <p className="text-xs font-medium text-slate-500 max-w-[195px] leading-5">
               {label}
             </p>
           </div>
