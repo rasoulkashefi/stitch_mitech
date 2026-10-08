@@ -68,7 +68,7 @@ export default function StairClimberCTA() {
 
             <div className="text-center">
               <span className="text-xs text-slate-400">
-                پاسخگویی سریع در ساعات اداری • ۰۲۱-۸۸۷۷۴۴۱۱
+                پاسخگویی در ساعات اداری • ۰۲۱-۸۸۸۹۳۴۱۲ | ۰۹۲۲ ۵۱۲ ۳۳۶۸
               </span>
             </div>
           </div>

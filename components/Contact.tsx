@@ -1,24 +1,32 @@
 "use client";
 
 import React, { useState } from 'react';
-import { Phone, Mail, MapPin, ArrowLeft, Check, Loader2, AlertCircle } from 'lucide-react';
+import { Phone, Smartphone, Mail, MapPin, ArrowLeft, Check, Loader2, AlertCircle } from 'lucide-react';
 import { submitForm } from '@/app/actions/submitForm';
 
 const contactItems = [
   {
     icon: Phone,
-    title: 'تماس تلفنی مستقیم',
-    label: '۰۲۱-۸۸۷۷۴۴۱۱',
+    title: 'شماره تماس دفتر مرکزی',
+    label: '۰۲۱-۸۸۸۹۳۴۱۲',
+    href: 'tel:02188893412',
+  },
+  {
+    icon: Smartphone,
+    title: 'شماره همراه و پشتیبانی',
+    label: '۰۹۲۲ ۵۱۲ ۳۳۶۸',
+    href: 'tel:09225123368',
   },
   {
     icon: Mail,
     title: 'پست الکترونیک رسمی',
     label: 'info@mitech.ir',
+    href: 'mailto:info@mitech.ir',
   },
   {
     icon: MapPin,
-    title: 'دفتر مرکزی و پارک فناوری',
-    label: 'تهران، پارک علم و فناوری | ایران',
+    title: 'دفتر مرکزی',
+    label: 'تهران، پارک علم و فناوری دانشگاه امام حسین(ع)، واحد ۳۶۳',
   },
 ];
 
@@ -90,14 +98,24 @@ export default function Contact() {
 
           {/* Contact Rows */}
           <div className="flex flex-col gap-4">
-            {contactItems.map(({ icon: Icon, title, label }, i) => (
+            {contactItems.map(({ icon: Icon, title, label, href }, i) => (
               <div key={i} className="flex items-center gap-4">
                 <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white border border-slate-200/70 text-emerald-600 shadow-xs">
                   <Icon size={18} strokeWidth={2} />
                 </span>
                 <div>
                   <p className="text-xs text-slate-400">{title}</p>
-                  <p className="text-sm font-bold text-slate-800 leading-6">{label}</p>
+                  {href ? (
+                    <a
+                      href={href}
+                      className="text-sm font-bold text-slate-800 leading-6 hover:text-emerald-600 transition-colors"
+                      dir={href.startsWith('tel:') ? 'ltr' : undefined}
+                    >
+                      {label}
+                    </a>
+                  ) : (
+                    <p className="text-sm font-bold text-slate-800 leading-6">{label}</p>
+                  )}
                 </div>
               </div>
             ))}

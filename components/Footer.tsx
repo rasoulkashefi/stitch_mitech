@@ -75,15 +75,19 @@ export default function Footer() {
             <div className="mt-6 flex flex-col gap-3">
               <div className="flex items-center gap-3 text-xs text-slate-400">
                 <Phone size={14} className="text-emerald-400 shrink-0" />
-                <span dir="ltr">۰۲۱-۸۸۷۷۴۴۱۱</span>
+                <a href="tel:02188893412" className="hover:text-emerald-400 transition-colors" dir="ltr">۰۲۱-۸۸۸۹۳۴۱۲</a>
+              </div>
+              <div className="flex items-center gap-3 text-xs text-slate-400">
+                <Phone size={14} className="text-emerald-400 shrink-0" />
+                <a href="tel:09225123368" className="hover:text-emerald-400 transition-colors" dir="ltr">۰۹۲۲ ۵۱۲ ۳۳۶۸</a>
               </div>
               <div className="flex items-center gap-3 text-xs text-slate-400">
                 <Mail size={14} className="text-emerald-400 shrink-0" />
-                <span>info@mitech.ir</span>
+                <a href="mailto:info@mitech.ir" className="hover:text-emerald-400 transition-colors">info@mitech.ir</a>
               </div>
               <div className="flex items-start gap-3 text-xs text-slate-400">
                 <MapPin size={14} className="text-emerald-400 shrink-0 mt-0.5" />
-                <span>تهران، پارک علم و فناوری | ایران</span>
+                <span className="leading-5">تهران، پارک علم و فناوری دانشگاه امام حسین(ع)، واحد ۳۶۳</span>
               </div>
             </div>
 

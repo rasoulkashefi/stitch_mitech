@@ -46,13 +46,27 @@ export default function ContactPage() {
     mainEntity: {
       '@type': 'Organization',
       name: 'Mitech',
-      contactPoint: {
-        '@type': 'ContactPoint',
-        telephone: '+98-21-88774411',
-        contactType: 'customer service',
-        email: 'info@mitech.ir',
-        availableLanguage: ['Persian', 'English']
-      }
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Tehran',
+        addressCountry: 'IR',
+        streetAddress: 'تهران، پارک علم و فناوری دانشگاه امام حسین(ع)، واحد ۳۶۳'
+      },
+      contactPoint: [
+        {
+          '@type': 'ContactPoint',
+          telephone: '+98-21-88893412',
+          contactType: 'customer service',
+          email: 'info@mitech.ir',
+          availableLanguage: ['Persian', 'English']
+        },
+        {
+          '@type': 'ContactPoint',
+          telephone: '+98-922-512-3368',
+          contactType: 'mobile support',
+          availableLanguage: ['Persian', 'English']
+        }
+      ]
     }
   };
 

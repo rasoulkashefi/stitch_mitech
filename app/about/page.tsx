@@ -50,13 +50,28 @@ export default function AboutPage() {
     logo: 'https://mitech.ir/logo/logo.png',
     description: 'پیشگام در فناوری ناوبری خودران، رباتیک صنعتی و تجهیزات توانبخشی هوشمند در خاورمیانه.',
     foundingDate: '2010',
-    contactPoint: {
-      '@type': 'ContactPoint',
-      telephone: '+98-21-88774411',
-      contactType: 'customer service',
-      areaServed: 'IR',
-      availableLanguage: ['Persian', 'English']
-    }
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Tehran',
+      addressCountry: 'IR',
+      streetAddress: 'تهران، پارک علم و فناوری دانشگاه امام حسین(ع)، واحد ۳۶۳'
+    },
+    contactPoint: [
+      {
+        '@type': 'ContactPoint',
+        telephone: '+98-21-88893412',
+        contactType: 'customer service',
+        areaServed: 'IR',
+        availableLanguage: ['Persian', 'English']
+      },
+      {
+        '@type': 'ContactPoint',
+        telephone: '+98-922-512-3368',
+        contactType: 'technical support',
+        areaServed: 'IR',
+        availableLanguage: ['Persian', 'English']
+      }
+    ]
   };
 
   return (

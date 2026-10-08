@@ -69,13 +69,13 @@ export default function OfficialContact() {
                       </div>
                       <div>
                         <span className="text-xs font-bold text-emerald-700 uppercase tracking-wider">
-                          آدرس دفتر مرکزی و هاب فنی
+                          آدرس دفتر مرکزی و پارک فناوری
                         </span>
                         <h3 className="mt-1 text-base sm:text-lg font-bold text-blue-950 leading-relaxed">
-                          تهران، میدان ولیعصر، مجتمع تجارت ایرانیان، طبقه ۳، واحد ۱۸
+                          تهران، پارک علم و فناوری دانشگاه امام حسین(ع)، واحد ۳۶۳
                         </h3>
                         <p className="mt-1 text-xs text-slate-500 font-medium">
-                          دسترسی سریع از طریق ایستگاه تقاطعی مترو میدان ولیعصر (خطوط ۳ و ۶) و سامانه BRT
+                          پایگاه مرکزی طراحی، تحقیق و توسعه و پشتیبانی سیستم‌های خودران میکائیل
                         </p>
                       </div>
                     </div>
@@ -159,9 +159,9 @@ export default function OfficialContact() {
                   </span>
                 </a>
 
-                {/* WhatsApp */}
+                {/* WhatsApp & Mobile Support */}
                 <a
-                  href="https://wa.me/989192314010"
+                  href="https://wa.me/989225123368"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group flex items-center justify-between rounded-2xl border border-slate-200/50 bg-white p-4.5 shadow-2xs hover:border-emerald-300 hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
@@ -171,9 +171,9 @@ export default function OfficialContact() {
                       <MessageCircle size={20} />
                     </div>
                     <div>
-                      <div className="text-xs text-slate-500">ارتباط واتساپ</div>
+                      <div className="text-xs text-slate-500">شماره همراه و واتساپ</div>
                       <div className="text-sm font-mono font-bold text-blue-950 mt-0.5" dir="ltr">
-                        ۰۹۱۹۲۳۱۴۰۱۰
+                        ۰۹۲۲ ۵۱۲ ۳۳۶۸
                       </div>
                     </div>
                   </div>

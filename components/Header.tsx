@@ -884,7 +884,7 @@ export default function Header() {
                           <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between px-3 py-2 bg-slate-50/80 rounded-xl">
                             <div className="flex items-center gap-2 text-xs text-slate-600">
                               <PhoneCall size={14} className="text-emerald-600 shrink-0" />
-                              <span className="whitespace-nowrap">ارتباط با دفتر مرکزی و واحد فروش: ۰۲۱-۸۸۷۷۴۴۱۱</span>
+                              <span className="whitespace-nowrap">دفتر مرکزی و فروش: ۰۲۱-۸۸۸۹۳۴۱۲ | ۰۹۲۲۵۱۲۳۳۶۸</span>
                             </div>
                             <Link
                               href="/contact"
@@ -1056,7 +1056,7 @@ export default function Header() {
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="flex items-center justify-center gap-2 rounded-xl border border-slate-200 bg-slate-50 py-2.5 text-xs font-bold text-slate-700 hover:bg-slate-100 whitespace-nowrap"
               >
-                <span>تماس با واحد فروش (۰۲۱-۸۸۷۷۴۴۱۱)</span>
+                <span>تماس با واحد فروش (۰۲۱-۸۸۸۹۳۴۱۲)</span>
               </Link>
             </div>
           </div>

@@ -85,23 +85,39 @@ export default function SalesContactPage() {
             </p>
 
             <div className="mt-8 flex flex-col gap-4">
-              <div className="flex items-center gap-4 rounded-2xl border border-slate-200/80 bg-white p-4 shadow-sm">
+              <a
+                href="tel:02188893412"
+                className="flex items-center gap-4 rounded-2xl border border-slate-200/80 bg-white p-4 shadow-sm hover:border-blue-300 transition-colors"
+              >
                 <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-900">
                   <Phone size={20} />
                 </div>
                 <div>
-                  <div className="text-xs text-slate-500">شماره تماس مستقیم واحد فروش</div>
-                  <div className="text-base font-bold text-slate-900 mt-0.5" dir="ltr">۰۲۱-۸۸۷۷۴۴۱۱ (داخلی ۱۰۲)</div>
+                  <div className="text-xs text-slate-500">شماره تماس دفتر مرکزی (فروش و خدمات)</div>
+                  <div className="text-base font-bold text-slate-900 mt-0.5" dir="ltr">۰۲۱-۸۸۸۹۳۴۱۲</div>
                 </div>
-              </div>
+              </a>
+
+              <a
+                href="tel:09225123368"
+                className="flex items-center gap-4 rounded-2xl border border-slate-200/80 bg-white p-4 shadow-sm hover:border-emerald-300 transition-colors"
+              >
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-emerald-50 text-emerald-700">
+                  <Phone size={20} />
+                </div>
+                <div>
+                  <div className="text-xs text-slate-500">شماره همراه و ارتباط مستقیم</div>
+                  <div className="text-base font-bold text-slate-900 mt-0.5" dir="ltr">۰۹۲۲ ۵۱۲ ۳۳۶۸</div>
+                </div>
+              </a>
 
               <div className="flex items-center gap-4 rounded-2xl border border-slate-200/80 bg-white p-4 shadow-sm">
-                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-emerald-50 text-emerald-700">
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-800">
                   <Mail size={20} />
                 </div>
                 <div>
                   <div className="text-xs text-slate-500">ایمیل ارتباط تجاری و قراردادها</div>
-                  <div className="text-base font-bold text-slate-900 mt-0.5" dir="ltr">sales@mitech.ir</div>
+                  <a href="mailto:sales@mitech.ir" className="text-base font-bold text-slate-900 mt-0.5 block hover:text-blue-900 transition-colors" dir="ltr">sales@mitech.ir</a>
                 </div>
               </div>
 
@@ -111,7 +127,7 @@ export default function SalesContactPage() {
                 </div>
                 <div>
                   <div className="text-xs text-slate-500">نشانی دفتر مرکزی</div>
-                  <div className="text-sm font-bold text-slate-900 mt-0.5">تهران، پارک علم و فناوری | ایران</div>
+                  <div className="text-sm font-bold text-slate-900 mt-0.5 leading-6">تهران، پارک علم و فناوری دانشگاه امام حسین(ع)، واحد ۳۶۳</div>
                 </div>
               </div>
             </div>
