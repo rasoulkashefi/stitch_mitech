@@ -1,6 +1,5 @@
-'use client';
-
 import React from 'react';
+import Image from 'next/image';
 import { Award, ShieldCheck, Headphones, FileText, PhoneCall, ArrowLeft, CheckCircle2 } from 'lucide-react';
 
 export default function GoldenWarrantyCTA() {
@@ -73,18 +72,35 @@ export default function GoldenWarrantyCTA() {
             </div>
 
             {/* Left Badge Showcase */}
-            <div className="lg:col-span-4 flex justify-center">
-              <div className="relative p-8 rounded-3xl bg-slate-800/80 border border-slate-700/80 text-center max-w-xs w-full shadow-2xl backdrop-blur-md">
-                <div className="w-20 h-20 mx-auto rounded-2xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 mb-4 shadow-inner">
-                  <Award size={44} />
+            <div className="lg:col-span-4 flex flex-col items-center gap-4">
+              <div className="relative p-6 rounded-3xl bg-slate-800/80 border border-slate-700/80 text-center max-w-xs w-full shadow-2xl backdrop-blur-md">
+                <div className="w-16 h-16 mx-auto rounded-2xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 mb-3 shadow-inner">
+                  <Award size={36} />
                 </div>
-                <div className="text-4xl font-black text-emerald-400 tracking-tight">۳۰ ماه</div>
-                <div className="text-sm font-bold text-white mt-1.5">ضمانت طلایی تعویض</div>
+                <div className="text-3xl font-black text-emerald-400 tracking-tight">۳۰ ماه</div>
+                <div className="text-sm font-bold text-white mt-1">ضمانت طلایی تعویض</div>
                 <div className="text-xs text-slate-300 mt-2 leading-5">
                   شامل تمامی ماژول‌های مینی، پرو و ایکسپرو و بردهای درایور موتور DC
                 </div>
 
-                <div className="mt-6 pt-4 border-t border-slate-700 text-xs text-emerald-400 font-semibold flex items-center justify-center gap-1.5">
+                {/* Real Manufacturing Label */}
+                <div className="mt-4 pt-3 border-t border-slate-700/70">
+                  <div className="relative aspect-[16/9] w-full rounded-xl overflow-hidden border border-slate-700/80 shadow-md">
+                    <Image
+                      src="/images/fleet/controllers/manufacturing-label.webp"
+                      alt="پلاک تولید و اصالت ساخت ایران کنترلر میکائیل"
+                      fill
+                      className="object-cover"
+                      sizes="300px"
+                    />
+                  </div>
+                  <div className="text-[11px] text-slate-400 font-medium mt-1.5 flex items-center justify-center gap-1">
+                    <ShieldCheck size={13} className="text-emerald-400 shrink-0" />
+                    <span>شماره سریال انحصاری • ساخت ایران</span>
+                  </div>
+                </div>
+
+                <div className="mt-4 pt-3 border-t border-slate-700 text-xs text-emerald-400 font-semibold flex items-center justify-center gap-1.5">
                   <ShieldCheck size={14} />
                   <span>استاندارد تأییدشده معاونت علمی</span>
                 </div>

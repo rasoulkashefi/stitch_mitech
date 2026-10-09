@@ -5,15 +5,30 @@ import Image from 'next/image';
 import { 
   Check, 
   Boxes, 
-  ShieldCheck, 
   Tv, 
   Sliders, 
   Lightbulb, 
-  SlidersHorizontal,
-  ChevronDown,
-  ArrowLeft,
-  Volume2
+  Smartphone, 
+  ArrowLeft, 
+  Volume2, 
+  ShieldCheck, 
+  Eye, 
+  Gauge, 
+  Flame,
+  ChevronLeft,
+  ChevronRight
 } from 'lucide-react';
+
+interface AngleView {
+  label: string;
+  image: string;
+}
+
+interface ProductModelVariant {
+  name: string;
+  power: string;
+  app: string;
+}
 
 interface ProductCardData {
   id: string;
@@ -22,7 +37,9 @@ interface ProductCardData {
   badge: string;
   tagline: string;
   description: string;
-  image: string;
+  defaultImage: string;
+  angles: AngleView[];
+  variants: ProductModelVariant[];
   displayType: string;
   accentColor: string;
   highlightPill: string;
@@ -33,80 +50,218 @@ interface ProductCardData {
 const products: ProductCardData[] = [
   {
     id: 'mini',
-    name: 'میکائیل مینی (Mini)',
-    englishName: 'Mikaeel Mini',
-    badge: 'اقتصادی و فشرده',
-    tagline: 'بالاترین سطح مانورپذیری در فضاهای بسته و محدود',
-    description: 'مدلی مینیمال با نمایشگر LED، طراحی شده برای ایجاد بالاترین سطح مانورپذیری در فضاهای بسته و محدود. ابعاد بسیار کوچک این ماژول، خطر برخورد جویستیک با دیواره‌ها را به صفر می‌رساند.',
-    image: '/images/fleet/controllers/mini.jpg',
-    displayType: 'نمایشگر LED خطی',
+    name: 'آرتک مینی (ARTECH-Mini)',
+    englishName: 'ARTECH-Mini Controller Series',
+    badge: 'فوق‌فشرده و اقتصادی',
+    tagline: 'بالاترین سطح مانورپذیری در فضاهای بسته و ناهمواری‌ها',
+    description: 'کنترلر آرتک- مینی با نمایشگر LED خطی، مجهز به نرم‌افزار هدایت‌پذیری پیشرفته و کنترل سرعت هوشمند در ناهمواری‌ها. طراحی فوق‌فشرده این ماژول خطر برخورد جویستیک با چارچوب درها را به صفر می‌رساند.',
+    defaultImage: '/images/fleet/controllers/mini.webp',
+    angles: [
+      { label: 'نمای روبه‌رو', image: '/images/fleet/controllers/mini.webp' },
+      { label: 'برچسب اصالت', image: '/images/fleet/controllers/manufacturing-label.webp' },
+      { label: 'پورت شارژ و خروجی صوتی', image: '/images/fleet/controllers/joystick-port-detail.webp' },
+    ],
+    variants: [
+      { name: 'ARTECH-Mini 50', power: 'موتورهای تا ۳۵۰ وات', app: 'ویلچرهای سبک و ارتوپدی' },
+      { name: 'ARTECH-Mini 90', power: 'موتورهای تا ۷۰۰ وات', app: 'ویلچرهای مبله و توان بالا' },
+    ],
+    displayType: 'نمایشگر LED خطی چندرنگ',
     accentColor: 'border-slate-300 text-slate-700 bg-white',
     highlightPill: 'حداقل ابعاد • صفر برخورد',
     features: [
-      'نمایشگر خطی LED شفاف برای باتری و سرعت',
-      'طراحی فوق فشرده ارگونومیک جهت پیشگیری از برخورد با چهارچوب درها',
-      'بهینه‌سازی شده برای فضاهای محدود مسکونی و بالابرها',
-      'حداکثر خروجی آمپر: 55A / 90A',
-      'دمای عملیاتی فوق‌العاده: ۲۵- تا ۵۰+ درجه سانتی‌گراد',
+      'نمایشگر خطی LED شفاف با نشانگر تفکیکی سرعت و وضعیت شارژ باتری',
+      'نرم‌افزار هدایت‌پذیری پیشرفته و کنترل سرعت تطبیقی هوشمند در عبور از موانع و شیب',
+      'قابلیت شخصی‌سازی و برنامه‌پذیری پارامترهای حرکتی در منزل (Programmable @Home)',
+      'ابعاد مینیمال ارگونومیک جهت تردد آسان در فضاهای محدود مسکونی و آسانسورها',
+      'معماری دوبخشی ماژولار همراه با ۳۰ ماه گارانتی طلایی تعویض',
     ],
     keySpecs: [
-      { label: 'نمایشگر', value: 'LED خطی' },
-      { label: 'توان جریان', value: '55A / 90A' },
-      { label: 'جک جانبی', value: 'ندارد' },
-      { label: 'ابعاد', value: 'فوق فشرده' },
+      { label: 'نمایشگر', value: 'LED خطی چندسطحی' },
+      { label: 'توان خروجی', value: '350W و 700W' },
+      { label: 'جک برقی', value: 'ندارد' },
+      { label: 'تنظیم خانگی', value: 'پشتیبانی دارد' },
     ],
   },
   {
     id: 'pro',
-    name: 'میکائیل پرو (Pro)',
-    englishName: 'Mikaeel Pro',
-    badge: 'پیشرفته با نمایشگر گرافیکی',
-    tagline: 'شخصی‌سازی خانگی و پشتیبانی از ضعف عضلانی',
-    description: 'مجهز به نمایشگر LCD گرافیکی قدرتمند و پشتیبانی از زیرساخت کد فعال‌سازی و درگاه‌های کمکی.',
-    image: '/images/fleet/controllers/pro.jpg',
-    displayType: 'Graphic LCD Display',
+    name: 'آرتک پرو (ARTECH-PRO)',
+    englishName: 'ARTECH-PRO Touch & Action',
+    badge: 'پیشرفته با نمایشگر LCD و تاچ موبایل',
+    tagline: 'صفحه نمایش فارسی، هدایت لمسی با موبایل و پشتیبانی از جک برقی',
+    description: 'جویستیک هوشمند آرتک-پرو با نمایشگر LCD گرافیکی به زبان فارسی و ۵ زبان بین‌المللی با تنظیم خودکار نور. مجهز به اتصال بلوتوث برای هدایت کامل از طریق صفحه لمسی گوشی و کنترل جک‌های برقی.',
+    defaultImage: '/images/fleet/controllers/pro.webp',
+    angles: [
+      { label: 'نمای روبه‌رو', image: '/images/fleet/controllers/pro.webp' },
+      { label: 'نیم‌رخ ارگونومیک', image: '/images/fleet/controllers/joystick-profile-detail.webp' },
+      { label: 'پورت شارژر XLR', image: '/images/fleet/controllers/joystick-port-detail.webp' },
+    ],
+    variants: [
+      { name: 'ARTECH-PRO Touch (50/90)', power: 'توان ۳۵۰W و ۷۰۰W', app: 'نمایشگر فارسی + ناوبری لمسی با گوشی' },
+      { name: 'ARTECH-PRO Action (50/90)', power: 'توان ۳۵۰W و ۷۰۰W', app: 'کنترل جک‌های برقی ایستا، نشیمن و کمری' },
+    ],
+    displayType: 'نمایشگر گرافیکی LCD چندزبانه',
     accentColor: 'border-slate-300 text-slate-700 bg-white',
-    highlightPill: 'Programmable @Home',
+    highlightPill: 'LCD فارسی • هدایت با موبایل',
     features: [
-      'Programmable @Home: امکان شخصی‌سازی تنظیمات نرم‌افزاری در منزل بدون نیاز به مراجعه حضوری',
-      'مدیریت جک‌ها: پشتیبانی از یک جک جانبی برقی (مانند جک ایستا)',
-      'تطبیق با ضعف عضلانی: پشتیبانی از کلیدهای روشن/خاموش خارجی (External Buddy-Button)',
-      'فعال‌سازی حساسیت ۴ برابر اهرم (4x Sensitivity) برای توان‌یابان با توان حرکتی محدود',
-      'ورودی‌ها: پشتیبانی از حداکثر ۳ ورودی برنامه‌پذیر',
+      'نمایشگر LCD گرافیکی با پشتیبانی از زبان فارسی و ۵ زبان دیگر با تنظیم خودکار نور محیط',
+      'اتصال مستقیم به گوشی هوشمند اندروید و کنترل کامل ناوبری از صفحه لمسی موبایل',
+      'نسخه Action: پشتیبانی و کنترل یک یا چند جک برقی (ایستا، نشیمن، کمری و زیرپایی) از جویستیک و گوشی',
+      'رابط‌های اختصاصی ضعف عضلانی: کلید خارجی کمکی (Buddy-Button) و حساسیت ۴ برابری اهرم',
+      'امکان شخصی‌سازی کامل در منزل با کد فعال‌سازی Programmable @Home',
     ],
     keySpecs: [
-      { label: 'نمایشگر', value: 'Graphic LCD' },
-      { label: 'جک برقی', value: '۱ عدد (ایستا)' },
-      { label: 'تنظیمات در منزل', value: 'پشتیبانی دارد' },
-      { label: 'رابط عضلانی', value: 'کلید کمکی + 4x' },
+      { label: 'نمایشگر', value: 'Graphic LCD سنسوردار' },
+      { label: 'کنترل با گوشی', value: 'بلوتوث + اندروید' },
+      { label: 'جک برقی', value: 'نسخه Action (۱+ جک)' },
+      { label: 'توان خروجی', value: '350W و 700W' },
     ],
   },
   {
     id: 'xpro',
-    name: 'میکائیل ایکسپرو (X-Pro)',
-    englishName: 'Mikaeel X-Pro',
-    badge: 'پرچمدار هوشمند (Flagship)',
-    tagline: 'روشنایی StVZO، مدیریت ۵ جک و ایمنی برتر شهری',
-    description: 'پیشرفته‌ترین عضو خانواده که تمام قابلیت‌های نسخه Pro را به سطح بالاتری ارتقا داده است.',
-    image: '/images/fleet/controllers/xpro.jpg',
-    displayType: 'Full Graphic Color LCD',
+    name: 'آرتک ایکسپرو (ARTECH-XPRO)',
+    englishName: 'ARTECH-XPRO Flagship Series',
+    badge: 'پرچمدار هوشمند (Full Option)',
+    tagline: 'روشنایی استاندارد اروپایی، مدیریت چند جک iSeating و بوق شهری',
+    description: 'کامل‌ترین و پیشرفته‌ترین عضو خانواده کنترلرهای توانبخشی میکائیل. مجهز به خروجی سیستم روشنایی کامل و فلاشرها، هدایت بلوتوثی با تلفن همراه، بوق شهری و مدیریت چندگانه محرک‌های وضعیت.',
+    defaultImage: '/images/fleet/controllers/xpro.webp',
+    angles: [
+      { label: 'نمای روبه‌رو', image: '/images/fleet/controllers/xpro.webp' },
+      { label: 'جزئیات پنل و LCD', image: '/images/fleet/controllers/xpro-panel-detail.webp' },
+      { label: 'پورت صنعتی و اسپیکر', image: '/images/fleet/controllers/joystick-port-detail.webp' },
+    ],
+    variants: [
+      { name: 'ARTECH-XPRO Light (50/90)', power: 'توان ۳۵۰W و ۷۰۰W', app: 'سیستم روشنایی، چراغ جلو و فلاشرهای چپ/راست' },
+      { name: 'ARTECH-XPRO Action (50/90)', power: 'توان ۳۵۰W و ۷۰۰W', app: 'فول آپشن روشنایی + کنترل تا ۵ جک iSeating' },
+    ],
+    displayType: 'Full Graphic LCD با تله‌متری جامع',
     accentColor: 'border-emerald-600 text-emerald-700 bg-emerald-50',
-    highlightPill: 'iSeating تا ۵ جک • روشنایی StVZO',
+    highlightPill: 'روشنایی StVZO • تا ۵ جک iSeating',
     features: [
-      'سیستم روشنایی بین‌المللی: پشتیبانی کامل از چراغ‌ها، پروژکتور و فلاشر با استاندارد اروپایی StVZO',
-      'پشتیبانی گسترده از جک‌ها (iSeating): قابلیت کنترل حداکثر ۵ جک جانبی برقی (ایستا، کمری، پایی و...) ',
-      'ورودی‌های توسعه‌یافته: پشتیبانی از حداکثر ۶ ورودی برنامه‌پذیر (Programmable Inhibits)',
-      'فضای باز و شهری: مجهز به بوق پرقدرت اختصاصی برای تردد ایمن در محیط‌های پررفت‌وآمد شهری',
-      'تمام قابلیت‌های مدل Pro شامل Programmable @Home و فیلترهای تطبیق ضعف عضلانی',
+      'سیستم روشنایی استاندارد اروپایی StVZO: کلیدهای اختصاصی چراغ جلو، فلاشرهای چپ و راست و چراغ هشدار',
+      'پشتیبانی جامع iSeating: قابلیت کنترل و مدیریت همزمان تا ۵ جک جانبی برقی (نشیمن، پشتی، ایستا و...)',
+      'کنترل و پایش دوگانه: هدایت مستقیم از اهرم جویستیک و اپلیکیشن اختصاصی تلفن همراه',
+      'بوق قدرتمند اختصاصی با گریل آکوستیک تقویت‌شده جهت تردد ایمن در خیابان‌ها و اماکن پرتردد',
+      'حداکثر ورودی‌های بازدارنده و ایمنی (Programmable Inhibits) تا ۶ ورودی مستقل',
     ],
     keySpecs: [
-      { label: 'نمایشگر', value: 'Graphic LCD' },
-      { label: 'جک برقی', value: 'تا ۵ جک (iSeating)' },
-      { label: 'سیستم روشنایی', value: 'استاندارد StVZO' },
-      { label: 'ورودی برنامه‌پذیر', value: 'تا ۶ ورودی' },
+      { label: 'سیستم روشنایی', value: 'استاندارد StVZO + فلاشر' },
+      { label: 'جک‌های برقی', value: 'تا ۵ جک (iSeating)' },
+      { label: 'کنترل موبایل', value: 'Bluetooth Android' },
+      { label: 'توان خروجی', value: '350W و 700W' },
     ],
   },
 ];
+
+function ProductImageCarousel({ product }: { product: ProductCardData }) {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [touchStartX, setTouchStartX] = useState<number | null>(null);
+
+  const slides = product.angles;
+  const total = slides.length;
+
+  const goToNext = () => {
+    setCurrentIndex((prev) => (prev + 1) % total);
+  };
+
+  const goToPrev = () => {
+    setCurrentIndex((prev) => (prev - 1 + total) % total);
+  };
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchStartX(e.touches[0].clientX);
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartX === null) return;
+    const touchEndX = e.changedTouches[0].clientX;
+    const diff = touchStartX - touchEndX;
+
+    if (Math.abs(diff) > 35) {
+      if (diff > 0) {
+        goToNext();
+      } else {
+        goToPrev();
+      }
+    }
+    setTouchStartX(null);
+  };
+
+  const currentSlide = slides[currentIndex] || slides[0];
+
+  return (
+    <div
+      className="relative aspect-[4/3] w-full rounded-2xl overflow-hidden bg-white border border-slate-200/80 shadow-xs mb-6 group/slider select-none"
+      onTouchStart={handleTouchStart}
+      onTouchEnd={handleTouchEnd}
+    >
+      {/* Product Image Stage */}
+      <div className="relative w-full h-full flex items-center justify-center p-4 sm:p-5">
+        <Image
+          src={currentSlide.image}
+          alt={`${product.name} - ${currentSlide.label}`}
+          fill
+          className="object-contain p-4 sm:p-5 transition-transform duration-500 group-hover:scale-105"
+          sizes="(max-width: 768px) 100vw, 33vw"
+        />
+      </div>
+
+      {/* Top Attribute Badge */}
+      <div className="absolute top-3 right-3 z-10 bg-white/95 backdrop-blur-md px-3 py-1 rounded-full border border-slate-200 text-xs font-bold text-[#0F172A] shadow-xs pointer-events-none">
+        {product.highlightPill}
+      </div>
+
+      {/* Modern Navigation Controls */}
+      {total > 1 && (
+        <>
+          {/* Previous / Next Arrow Controls */}
+          <button
+            type="button"
+            onClick={(e) => {
+              e.stopPropagation();
+              goToPrev();
+            }}
+            aria-label="تصویر قبلی"
+            className="absolute right-2.5 top-1/2 -translate-y-1/2 z-20 size-8 sm:size-9 rounded-full bg-white/90 hover:bg-white text-slate-700 hover:text-slate-950 border border-slate-200 shadow-md flex items-center justify-center opacity-80 sm:opacity-0 sm:group-hover/slider:opacity-100 transition-all hover:scale-105 active:scale-95"
+          >
+            <ChevronRight size={18} />
+          </button>
+
+          <button
+            type="button"
+            onClick={(e) => {
+              e.stopPropagation();
+              goToNext();
+            }}
+            aria-label="تصویر بعدی"
+            className="absolute left-2.5 top-1/2 -translate-y-1/2 z-20 size-8 sm:size-9 rounded-full bg-white/90 hover:bg-white text-slate-700 hover:text-slate-950 border border-slate-200 shadow-md flex items-center justify-center opacity-80 sm:opacity-0 sm:group-hover/slider:opacity-100 transition-all hover:scale-105 active:scale-95"
+          >
+            <ChevronLeft size={18} />
+          </button>
+
+          {/* Discreet Pagination Indicator Dots */}
+          <div className="absolute bottom-3 left-1/2 -translate-x-1/2 z-20 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-slate-900/60 backdrop-blur-md">
+            {slides.map((_, idx) => (
+              <button
+                key={idx}
+                type="button"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setCurrentIndex(idx);
+                }}
+                aria-label={`نمایش زاویه ${idx + 1}`}
+                className={`transition-all duration-300 rounded-full ${
+                  currentIndex === idx
+                    ? 'w-4 h-1.5 bg-emerald-400'
+                    : 'w-1.5 h-1.5 bg-white/60 hover:bg-white'
+                }`}
+              />
+            ))}
+          </div>
+        </>
+      )}
+    </div>
+  );
+}
 
 export default function ProductFamilySection() {
   const [selectedMobileTab, setSelectedMobileTab] = useState('pro');
@@ -119,17 +274,17 @@ export default function ProductFamilySection() {
         <div className="max-w-3xl mb-16 text-right">
           <div className="inline-flex items-center gap-2 rounded-full border border-slate-300 bg-[#F1F5F9] px-4 py-1 text-xs font-bold text-[#0F172A] mb-4">
             <Boxes size={14} className="text-emerald-600" />
-            <span>تنوع سبد محصولات توانبخشی</span>
+            <span>تنوع سبد محصولات توانبخشی آرتک</span>
           </div>
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0F172A] leading-tight tracking-tight">
             خانواده کنترلرهای
             <br />
-            <span className="text-emerald-600">ویلچر برقی میکائیل</span>
+            <span className="text-emerald-600">ویلچر برقی میکائیل (سری ARTECH)</span>
           </h2>
 
           <p className="mt-6 text-base sm:text-lg leading-8 text-slate-600 font-normal text-justify">
-            سبد محصولات میکائیل در سه رده فشرده، پیشرفته و فول‌آپشن برای پوشش تمامی نیازهای حرکتی و محدودیت‌های فیزیکی توان‌یابان طراحی شده است تا هر کاربر با هر سطح از توانایی جسمی، حرکتی امن، دقیق و مستقل را تجربه کند.
+            خانواده کنترلرهای ویلچر برقی آرتک در سه رده مینی (فشرده و مانورپذیر)، پرو (مجهز به نمایشگر فارسی و هدایت موبایل) و ایکسپرو (پرچمدار روشنایی و جک‌های چندگانه) تولید می‌شوند. تمام مدل‌ها با موتورهای ۳۵۰ وات و ۷۰۰ وات سازگار بوده و همراه با ۳۰ ماه گارانتی طلایی تعویض عرضه می‌گردند.
           </p>
         </div>
 
@@ -150,7 +305,7 @@ export default function ProductFamilySection() {
           ))}
         </div>
 
-        {/* 3 Modular Product Cards (Desktop Grid / Responsive) */}
+        {/* 3 Modular Product Cards */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {products.map((product) => {
             const isSelectedOnMobile = selectedMobileTab === product.id;
@@ -162,7 +317,7 @@ export default function ProductFamilySection() {
                 className={`product-card group rounded-3xl ${
                   isFeatured
                     ? 'bg-white border-2 border-emerald-500/50 shadow-xl ring-2 ring-emerald-500/20'
-                    : 'bg-[#F1F5F9] border border-slate-200'
+                    : 'bg-[#F8FAFC] border border-slate-200'
                 } p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 ${
                   isSelectedOnMobile ? 'block' : 'hidden sm:flex'
                 }`}
@@ -186,26 +341,31 @@ export default function ProductFamilySection() {
                     {product.tagline}
                   </p>
 
-                  {/* Product Visual Container */}
-                  <div className="relative aspect-[4/3] w-full rounded-2xl overflow-hidden bg-white/70 border border-slate-200/80 mb-6 group-hover:border-slate-300 shadow-inner">
-                    <Image
-                      src={product.image}
-                      alt={product.name}
-                      fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-105"
-                      sizes="(max-width: 768px) 100vw, 33vw"
-                    />
-                    
-                    {/* Corner Tag */}
-                    <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full border border-slate-200 text-xs font-bold text-[#0F172A] shadow-xs">
-                      {product.highlightPill}
-                    </div>
-                  </div>
+                  {/* Modern Product Image Carousel (Swipeable, Dot indicators, Arrow controls) */}
+                  <ProductImageCarousel product={product} />
 
                   {/* Description */}
                   <p className="text-sm leading-6 text-slate-700 mb-6 text-justify">
                     {product.description}
                   </p>
+
+                  {/* Model Sub-Variants Table */}
+                  <div className="rounded-2xl bg-white border border-slate-200 p-3 mb-6">
+                    <div className="text-[11px] font-extrabold text-slate-500 uppercase tracking-wider mb-2">
+                      تیپ‌ها و ظرفیت‌های توان این خانواده:
+                    </div>
+                    <div className="space-y-2">
+                      {product.variants.map((v, vIdx) => (
+                        <div key={vIdx} className="flex flex-col sm:flex-row sm:items-center justify-between text-xs py-1.5 border-b border-slate-100 last:border-b-0 gap-1">
+                          <span className="font-bold text-slate-900">{v.name}</span>
+                          <span className="text-emerald-700 font-semibold bg-emerald-50 px-2 py-0.5 rounded text-[11px] self-start sm:self-auto">
+                            {v.power}
+                          </span>
+                          <span className="text-slate-500 text-[11px]">{v.app}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
 
                   {/* Mini Spec Matrix */}
                   <div className="grid grid-cols-2 gap-2.5 p-3 rounded-2xl bg-white border border-slate-200/70 mb-6">
@@ -247,10 +407,10 @@ export default function ProductFamilySection() {
                   </a>
 
                   <a
-                    href="#golden-warranty"
+                    href="#modules-and-subsystems"
                     className="w-full py-2.5 px-4 rounded-xl text-center text-xs font-semibold text-slate-600 bg-white border border-slate-200 hover:bg-slate-100 transition-colors"
                   >
-                    استعلام قیمت و مشاوره خرید
+                    مشاهده ماژول درایور و لوازم جانبی
                   </a>
                 </div>
 

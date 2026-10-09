@@ -38,15 +38,34 @@ export default function RoboticsNavigationSection() {
           {/* Left / Visual Side (in RTL: right is content, left is photo) */}
           <div className="lg:col-span-6 order-2 lg:order-1">
             <div className="relative rounded-3xl overflow-hidden border border-slate-700/60 bg-slate-800/50 shadow-2xl shadow-slate-950/80 group">
-              <div className="relative aspect-[16/10] w-full">
+              <div className="relative aspect-[16/10] w-full bg-slate-950">
                 <Image
-                  src="/images/fleet/controllers/robotics-driver.jpg"
-                  alt="درایور موتور DC و پردازنده ناوبری رباتیک میکائیل"
+                  src={
+                    activeTab === 'ugv'
+                      ? '/images/fleet/controllers/autonomous-wheelchair-real.webp'
+                      : '/images/fleet/controllers/power-module-xpm.webp'
+                  }
+                  alt={
+                    activeTab === 'ugv'
+                      ? 'پلتفرم ویلچر برقی خودران میکائیل مجهز به لیدار و پردازشگر ناوبری SLAM'
+                      : 'ماژول قدرت XPM و درایور موتور DC توان بالای میکائیل'
+                  }
                   fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  className={
+                    activeTab === 'ugv'
+                      ? 'object-cover transition-transform duration-700 group-hover:scale-105'
+                      : 'object-contain p-6 transition-transform duration-700 group-hover:scale-105'
+                  }
                   sizes="(max-width: 1024px) 100vw, 50vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent pointer-events-none" />
+                <div className="absolute top-4 right-4 z-10">
+                  <span className="rounded-full bg-slate-900/85 backdrop-blur-md border border-slate-700/80 px-3.5 py-1 text-xs font-semibold text-emerald-400 shadow-md">
+                    {activeTab === 'ugv'
+                      ? 'پلتفرم ویلچر خودران و ناوبری SLAM'
+                      : 'ماژول درایور توان بالا و هیت‌سینک XPM'}
+                  </span>
+                </div>
               </div>
 
               {/* Floating Telemetry Box */}
