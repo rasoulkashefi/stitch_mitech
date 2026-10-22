@@ -30,11 +30,11 @@ Derived from `MiTech_SEO_Final_IA_Keyword_Migration_V4.xlsx`.
 - **Focus Keywords**: باتری ویلچر برقی, شارژ صحیح ویلچر برقی, عمر باتری لیتیومی ویلچر, تعویض باطری ویلچر
 - **Intent**: Technical guide.
 
-### 5. Stairlift vs. Stair Climber Transparency (P1 Priority)
+### 5. Stairlift Controller & Drive Transparency (P1 Priority)
 - **Target URL / Slug**: `/blog/stairlift`
 - **Category**: `دانشنامه و مقالات ویلچر برقی`
-- **Focus Keywords**: استیرلیفت, بالابر پله خانگی, تفاوت استیرلیفت با پله پیما, پله پیما چرخشی
-- **Strategic Guardrail**: Disclose that legacy fixed-rail stairlifts are discontinued/non-commercial due to building modifications, and explain the advantages of Mitech's portable smart stair climbers (`/fleet/stair-climbers`).
+- **Focus Keywords**: کنترلر پله پیما, درایور پله پیما, استیرلیفت, ARTECH-Pro XLift, پله پیما مستقیم, پله پیما پیچشی, Custom-curve Stairlift
+- **Strategic Guardrail**: Disclose clearly that Mitech manufactures the intelligent stairlift controller and motor driver (ARTECH-Pro XLift supporting single and dual motors up to 700W) for straight (Straight Stairlift) and custom-curved (Custom-curve Stairlift) installations, supplying to manufacturers and installers rather than building the mechanical chair/rail mechanics (`/fleet/stair-climbers`).
 
 ### 6. Solar Panel Cleaning Robotics & Drives (P1 Priority)
 - **Target URL / Slug**: `/blog/robotics/solar-panel-cleaning`

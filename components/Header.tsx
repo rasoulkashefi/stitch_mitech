@@ -89,9 +89,9 @@ const macroNavItems: MacroNavItem[] = [
             icon: Bot,
           },
           {
-            label: 'پله‌پیما و بالابر هوشمند',
+            label: 'درایور و سیستم کنترل پله‌پیما',
             href: '/fleet/stair-climbers',
-            desc: 'تردد امن طبقات بدون نیاز به ریل‌کشی',
+            desc: 'درایور پله‌پیما تک و دو موتوره تا ۷۰۰W',
             icon: ArrowUpRight,
           },
           {

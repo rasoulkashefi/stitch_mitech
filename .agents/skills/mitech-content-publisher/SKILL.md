@@ -19,6 +19,13 @@ This skill equips the agent to write authoritative, enterprise-grade engineering
   2. خانواده‌ها و توان‌یابان نیازمند تجهیزات پیشرفته موبیلیتی و خدمات تخصصی (B2C)
 - **Palette Association**: Dark Slate (`#0F172A`), Emerald Green (`#059669` / `#10B981`), Titanium Grey.
 
+### 0. Prerequisite: Anti-Cannibalization & Inventory Check (Mandatory)
+Before proposing or drafting any article:
+1. Always consult `.agents/skills/mitech-content-publisher/references/published_articles_registry.md` to inspect all published titles, slugs, primary keywords, and visual concepts.
+2. Ensure the proposed topic does not cannibalize existing articles or site pillar pages.
+3. Check visual concepts of previous articles to avoid repeating image compositions, environments, or subjects.
+4. After publishing any new article, add its entry to `published_articles_registry.md`.
+
 ---
 
 ## 2. The 8-Section Article Architecture
@@ -117,11 +124,15 @@ The body must use these exact markers for interactive components:
 ## 4. Visual Generation Protocol (Native Antigravity Image Model)
 
 Whenever an image prompt is placed in the article:
-- **Style Constraint**: `Industrial photography, slightly futuristic, professional, associated with Mikaeel logistics robotics brand. clean surfaces, no text, no fabricated logos, no gibberish branding, industrial matte finish, 8k resolution, cinematic studio lighting.`
+- **Style Constraint**: `Industrial and clinical photography, slightly futuristic, realistic, associated with Mikaeel robotics brand. Clean surfaces, no text, no fabricated logos, no gibberish branding, matte finish, 8k resolution, cinematic lighting.`
+- **Authentic Iranian Context & Modesty (Strict Mandate)**:
+  - Faces must reflect authentic, dignified Iranian/Middle Eastern features.
+  - When depicting women (engineers, doctors, nurses, researchers), adhere strictly to Iranian professional standards: modest formal workplace attire (e.g. professional medical lab coat, formal dark blazer/suit, neat office headscarf/maghnaeh).
+  - Absolutely ZERO sexualization, tight/revealing clothes, exaggerated curves, or decorative/glamour modeling. Women must be portrayed as serious, dignified professionals.
 - **Aspect Ratio**:
   - Featured Cover Image: `16:9`
   - Technical / Detail Shots: `3:2` or `16:9`
-- Call the native `generate_image` tool.
+- Call the native `image-generator` subagent (or `generate_image` tool).
 - Save the resulting image in `.agents/skills/mitech-content-publisher/images/` or workspace scratch.
 
 ---

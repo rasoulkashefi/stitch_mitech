@@ -6,33 +6,36 @@ import StairClimberSpecsTable from '@/components/fleet/stair-climbers/StairClimb
 import StairClimberCTA from '@/components/fleet/stair-climbers/StairClimberCTA';
 
 export const metadata: Metadata = {
-  title: 'پله‌پیما و بالابر هوشمند | ام. آی. تک. (Mitech)',
+  title: 'درایور و سیستم کنترل هوشمند پله‌پیما ARTECH-Pro XLift | ام. آی. تک. (Mitech)',
   description:
-    'طراحی و ساخت انواع پله‌پیما و تجهیزات بالابر توانبخشی هوشمند با ایمنی فوق‌العاده و ارگونومی استاندارد جهت تردد مستقل توانیابان.',
+    'طراحی و تولید درایور و سامانه کنترل پله‌پیما مدل ARTECH-Pro XLift با پشتیبانی از پله‌پیماهای تک‌موتوره و دو‌موتوره تا سقف ۷۰۰ وات؛ مناسب پله‌پیماهای مسیر مستقیم (Straight) و پیچشی سفارشی (Custom-curve).',
   keywords: [
-    'پله پیما',
-    'پله پیما برقی',
-    'قیمت پله پیما',
-    'پله پیما خانگی',
-    'ویلچر پله پیما',
+    'درایور پله پیما',
+    'کنترلر پله پیما',
+    'ARTECH-Pro XLift',
+    'درایور پله پیما ۷۰۰ وات',
+    'پله پیما مستقیم',
+    'پله پیما پیچشی',
+    'Stairlift',
+    'Custom-curve Stairlift',
+    'برد پله پیما',
     'ام آی تک',
     'Mitech',
-    'تجهیزات توانبخشی',
-    'بالابر پله',
-    'پله نورد برقی',
+    'تعمیر درایور پله پیما',
+    'بالابر پله خانگی',
   ],
   openGraph: {
-    title: 'پله‌پیما و بالابر هوشمند ام. آی. تک. (Mitech) | آزادی در حرکت میان طبقات',
+    title: 'درایور و سیستم کنترل هوشمند پله‌پیما ARTECH-Pro XLift | ام. آی. تک. (Mitech)',
     description:
-      'طراحی و ساخت انواع پله‌پیما و تجهیزات بالابر توانبخشی هوشمند با ایمنی فوق‌العاده و ارگونومی استاندارد جهت تردد مستقل توانیابان.',
+      'درایور صنعتی پله‌پیما با پشتیبانی از سیستم‌های تک‌موتوره و دو‌موتوره تا سقف ۷۰۰ وات؛ حرکت نرم S-Curve و ایمنی Fail-Safe در پله‌پیماهای مستقیم و پیچشی.',
     url: 'https://mitech.ir/fleet/stair-climbers',
     siteName: 'ام. آی. تک. (Mitech)',
     images: [
       {
-        url: '/images/fleet/stair-climber-og.jpg',
-        width: 1200,
-        height: 675,
-        alt: 'پله‌پیما و بالابر توانبخشی هوشمند ام آی تک',
+        url: '/images/fleet/stairlift/curved-stairlift-landing.jpg',
+        width: 1024,
+        height: 768,
+        alt: 'درایور و سیستم کنترل پله پیما ARTECH-Pro XLift ام آی تک',
       },
     ],
     locale: 'fa_IR',
@@ -40,10 +43,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'پله‌پیما و بالابر هوشمند | ام. آی. تک. (Mitech)',
+    title: 'درایور و کنترلر پله‌پیما ARTECH-Pro XLift | ام. آی. تک. (Mitech)',
     description:
-      'طراحی و ساخت انواع پله‌پیما و تجهیزات بالابر توانبخشی هوشمند با ایمنی فوق‌العاده و ارگونومی استاندارد.',
-    images: ['/images/fleet/stair-climber-og.jpg'],
+      'درایور پله‌پیما با پشتیبانی از پله‌پیماهای تک‌موتوره و دو‌موتوره تا سقف ۷۰۰ وات؛ سازگار با پله‌پیماهای مستقیم و پیچشی سفارشی.',
+    images: ['/images/fleet/stairlift/curved-stairlift-landing.jpg'],
   },
   alternates: {
     canonical: 'https://mitech.ir/fleet/stair-climbers',
@@ -59,15 +62,16 @@ export default function StairClimbersPage() {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Product',
-    name: 'پله‌پیما و بالابر هوشمند ام. آی. تک. (Mitech Stair Climber)',
-    image: 'https://mitech.ir/images/fleet/stair-climber-og.jpg',
+    name: 'درایور و سیستم کنترل هوشمند پله‌پیما ARTECH-Pro XLift',
+    model: 'ARTECH-Pro XLift',
+    image: 'https://mitech.ir/images/fleet/stairlift/artech-pro-xlift-driver.jpg',
     description:
-      'طراحی و ساخت انواع پله‌پیما و تجهیزات بالابر توانبخشی هوشمند با ایمنی فوق‌العاده و ارگونومی استاندارد جهت تردد مستقل توانیابان و سالمندان میان طبقات.',
+      'طراحی و تولید درایور صنعتی پله‌پیما با پشتیبانی از پله‌پیماهای تک‌موتوره و دو‌موتوره تا سقف ۷۰۰ وات برای انواع پله‌پیماهای مسیر مستقیم (Straight Stairlift) و پیچشی سفارشی (Custom-curve Stairlift).',
     brand: {
       '@type': 'Brand',
       name: 'Mitech',
     },
-    category: 'Medical & Rehabilitation Robotics',
+    category: 'Industrial Drives & Rehabilitation Motion Control',
     offers: {
       '@type': 'AggregateOffer',
       priceCurrency: 'IRR',
@@ -81,19 +85,19 @@ export default function StairClimbersPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      {/* 1. Hero Section */}
+      {/* 1. Hero Section: ARTECH-Pro XLift Driver & Real Installation */}
       <StairClimberHero />
 
-      {/* 2. Content Guardrail (Stair Climber vs. Legacy Stairlift) */}
+      {/* 2. Guardrail & Applications: Straight vs Custom-curve Stairlifts */}
       <StairClimberGuardrail />
 
-      {/* 3. Core Tech Specs (Sensors, Emergency Brake, Brushless Motors, Lithium BMS) */}
+      {/* 3. Core Tech Specs (High Power 700W, S-Curve, Fail-Safe Brake, Diagnostics) */}
       <StairClimberTechSpecs />
 
       {/* 4. Complete Engineering Specifications Table */}
       <StairClimberSpecsTable />
 
-      {/* 5. Demo / Consultation CTA */}
+      {/* 5. Consultation & OEM / Retrofit Supply CTA */}
       <StairClimberCTA />
     </main>
   );

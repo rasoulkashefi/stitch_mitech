@@ -384,6 +384,32 @@ async function main() {
   console.log(`\n📄 Reading article: ${basename(resolvedMdPath)}...`);
   const markdown = await readFile(resolvedMdPath, 'utf8');
 
+  // Parse image alt texts from markdown sections 4 and 6
+  let mainAlt = '';
+  let mainCaption = '';
+  const altTextsFromSection6 = [];
+  try {
+    const imageSec = section(markdown, '۴. تصویر شاخص و کاور مقاله');
+    mainAlt = field(imageSec, 'متن جایگزین تصویر شاخص (Alt Text)');
+    mainCaption = field(imageSec, 'کپشن یا عکاس/منبع تصویر');
+  } catch {}
+
+  try {
+    const geoSec = section(markdown, '۶. بهینه‌سازی برای هوش مصنوعی');
+    const lines = geoSec.split(/\r?\n/);
+    const startIdx = lines.findIndex(l => l.includes('توضیحات جایگزین تصاویر تولیدی'));
+    if (startIdx >= 0) {
+      for (let j = startIdx + 1; j < lines.length; j++) {
+        const line = lines[j].trim();
+        if (/^\d+\.\s+/.test(line)) {
+          altTextsFromSection6.push(clean(line.replace(/^\d+\.\s+/, '')));
+        } else if (line.startsWith('-') || line.startsWith('#')) {
+          break;
+        }
+      }
+    }
+  } catch {}
+
   // Upload provided images to Sanity
   const uploadedImages = [];
   for (let i = 0; i < imagePaths.length; i++) {
@@ -394,11 +420,20 @@ async function main() {
       const asset = await client.assets.upload('image', fileBuffer, {
         filename: basename(imgPath),
       });
+
+      const alt = i === 0
+        ? (mainAlt || 'تصویر شاخص مقاله میکائیل')
+        : (altTextsFromSection6[i] || altTextsFromSection6[i - 1] || 'تصویرسازی فنی و تجهیزات تخصصی میکائیل');
+
+      const caption = i === 0
+        ? (mainCaption || 'تصویرسازی اختصاصی تیم توسعه و پژوهش میکائیل')
+        : 'سامانه موبیلیتی و تجهیزات خودران بالینی - واحد تحقیق و توسعه میکائیل';
+
       uploadedImages.push({
         assetId: asset._id,
         localPath: imgPath,
-        alt: i === 0 ? 'تصویر شاخص کارشناسی ویلچر برقی' : 'تست و عیب‌یابی باتری و مدارات الکترونیکی ویلچر برقی در آزمایشگاه میکائیل',
-        caption: i === 0 ? 'تیم پژوهش و توسعه میکائیل' : 'پایش ولتاژ و تست سلامت سلول‌های باتری با تجهیزات آزمایشگاهی',
+        alt,
+        caption,
       });
     } else {
       console.warn(`⚠️ Warning: Image file not found: ${imgPath}`);

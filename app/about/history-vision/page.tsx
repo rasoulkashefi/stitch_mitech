@@ -184,7 +184,7 @@ export default function HistoryVisionPage() {
                   {[
                     { title: 'کنترلرهای توانبخشی (Micro-Controllers)', desc: 'هدایت انواع ویلچر برقی با پردازش فوق‌روان Hall جوی‌استیک' },
                     { title: 'درایورهای موتور توان‌بالا (Power Drivers)', desc: 'مدیریت حرارتی ماسفت‌ها و مصرف بهینه باتری' },
-                    { title: 'بالابرهای پرتابل پله‌پیما (Stair Climbers)', desc: 'تراز خودکار ژیروسکوپی و ترمزهای Fail-Safe' },
+                    { title: 'درایورهای پله‌پیما (Stairlift Controllers)', desc: 'پشتیبانی تک و دو موتوره تا ۷۰۰W برای مسیرهای مستقیم و پیچشی' },
                     { title: 'درایوهای ربات‌های صنعتی و هدایت‌شونده', desc: 'ارتباطات شبکه صنعتی CANopen و Modbus' },
                   ].map((item, idx) => (
                     <div key={idx} className="rounded-xl border border-slate-200/60 bg-white p-4 shadow-2xs">
